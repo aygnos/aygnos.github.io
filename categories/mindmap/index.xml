@@ -3,7 +3,7 @@
   <channel>
       <title>Mindmap on Akagi201&#39;s Cyberspace </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/categories/mindmap/index.xml</link>
+    <link>http://akagi201.github.io/categories/mindmap/index.xml</link>
     
     
     <copyright>Copyright (c) 2008 - 2014, Akagi201; all rights reserved.</copyright>
@@ -11,10 +11,10 @@
     
     <item>
       <title>mindmap template</title>
-      <link>http://localhost:1313/mindmap/mindmap-template</link>
+      <link>http://akagi201.github.io/mindmap/mindmap-template</link>
       <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://localhost:1313/mindmap/mindmap-template</guid>
+      <guid>http://akagi201.github.io/mindmap/mindmap-template</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
