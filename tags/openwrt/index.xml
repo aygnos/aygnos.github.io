@@ -38,5 +38,150 @@
 </description>
     </item>
     
+    <item>
+      <title>book template</title>
+      <link>http://akagi201.github.io/book/book-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/book/book-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>blog template</title>
+      <link>http://akagi201.github.io/blog/blog-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/blog-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>slide template</title>
+      <link>http://akagi201.github.io/slide/slide-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/slide/slide-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tool template</title>
+      <link>http://akagi201.github.io/tool/tool-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/tool/tool-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>project template</title>
+      <link>http://akagi201.github.io/project/project-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/project/project-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
