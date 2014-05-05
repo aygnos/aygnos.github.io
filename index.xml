@@ -7,33 +7,112 @@
     
     
     <copyright>Copyright (c) 2008 - 2014, Akagi201; all rights reserved.</copyright>
-    <updated>Thu, 01 May 2014 00:00:00 UTC</updated>
+    <updated>Mon, 05 May 2014 00:00:00 UTC</updated>
     
     <item>
-      <title>project template</title>
-      <link>http://akagi201.github.io/project/project-template</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      <title>无线基础之无线网卡</title>
+      <link>http://akagi201.github.io/blog/wireless-device</link>
+      <pubDate>Mon, 05 May 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://akagi201.github.io/project/project-template</guid>
+      <guid>http://akagi201.github.io/blog/wireless-device</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+&lt;p&gt;今天利用一个上午的时间把gentoo装好了, 昨天因为网线的原因导致我这边网络一直超时, 郁闷死我了, 多亏我今天足智多谋发现了. 由于OpenWrt的代码仓库版本更新非常频繁, 所以开发分支里面的库和内核版本比一般的桌面linux发行版都要新. 有一个基本常识是host开发主机上面的库和编译工具版本要比源码使用的版本新, 否则就会出现一些奇怪的问题, 无法解决. 所以, 选择一个滚动升级的linux发行版用于开发是明智的选择(相信我, 不难的). 这样筛选后就只剩下Arch和Gentoo了, Arch比较不稳定(希望不被喷, Arch的wiki跟Gentoo一样丰富是好东西), 所以Gentoo是你最明智的选择.用Gentoo编译了一下openwrt, 比我之前用debian节省了至少一半的时间, 哈哈, 爽. BTW, 不要给Gentoo安装图形界面, 很废时间, 也会出现很多冲突, 那就需要你身边有个高手了(我还不是要靠低调之神Yokit的帮忙才解决一些问题).&lt;/p&gt;
 
-&lt;p&gt;What content&lt;/p&gt;
+&lt;p&gt;在进入无线研究之前你需要一套趁手的装备, 这套装备包括硬件和软件, 当然这个也就是我们要做的东西, 其中必然涉及一些硬件和软件的选型. 本文重点介绍一下网卡芯片的选型与相关知识.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
-
-&lt;p&gt;How conent&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
-
-&lt;p&gt;Why content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;常见网卡接口&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Peripheral_Component_Interconnect&#34;&gt;PCI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/USB&#34;&gt;USB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/PC_card&#34;&gt;PCMCIA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Mini_PCI#Mini_PCI&#34;&gt;Mini PCI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/PCI_Express_Mini_Card#PCI_Express_Mini_Card&#34;&gt;PCI Express Mini&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;底层芯片组&lt;/h2&gt;
+
+&lt;p&gt;无论使用哪种接口的网卡, 他们的核心都是&amp;rdquo;芯片组&amp;rdquo;. 这采集关键所在, 我们要关注的电气性能也是针对芯片组的. 目前常见的WLAN芯片厂商有:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://wikidevi.com/wiki/Atheros&#34;&gt;Atheros(已被高通收购)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://zh-cn.broadcom.com/&#34;&gt;Broadcom(博通)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.intel.com/content/www/us/en/wireless-network/wireless-products.html&#34;&gt;Intel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ralinktech.com/en/&#34;&gt;Ralink(已被联发科收购)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.realtek.com.tw/&#34;&gt;Realtek&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;驱动程序&lt;/h2&gt;
+
+&lt;p&gt;由于芯片的性能跟驱动的支持是分不开的, 所以, 良好的驱动支持, 也是我们要重点考虑的一项参数.
+linux内核当前无线网卡驱动架构说明:
+&lt;img src=&#34;http://akagi201.qiniudn.com/mac80211.bmp&#34; alt=&#34;mac80211&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;可以看到linux下的无线驱动程序经过了一段&amp;rdquo;发展期&amp;rdquo;, 最终以&amp;rdquo;mac80211驱动框架&amp;rdquo;作为最终的&amp;rdquo;主树结构&amp;rdquo;.
+关于mac80211驱动框架的详细文档请查看: &lt;a href=&#34;http://wireless.kernel.org/en/developers/Documentation/mac80211&#34;&gt;http://wireless.kernel.org/en/developers/Documentation/mac80211&lt;/a&gt;.
+mac80211是一个无线驱动的框架, 它提供了大量的API, 规范, 在这个框架下编写驱动程序能和其他的驱动具有良好的共享性, 兼容性(类似与windows下的NDIS框架的作用).&lt;/p&gt;
+
+&lt;p&gt;一般来说, 各家芯片厂商都会提供配套的驱动程序, 并提供更新支持
+1. Atheros(AR系列)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://www.qca.qualcomm.com/resources/driverdownloads/&amp;gt;
+&amp;lt;http://wireless.kernel.org/en/users/Drivers/Atheros&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Broadcom(BCM系列)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://zh-cn.broadcom.com/support/802.11/linux_sta.php&amp;gt;
+&amp;lt;http://wiki.centos.org/zh/HowTos/Laptops/Wireless/Broadcom&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Intel&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://wireless.kernel.org/en/users/Drivers/iwlwifi&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Ralink(RT系类)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://www.mediatek.com/en/downloads/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;淘宝上卖的很多卡皇的内置芯片就是这种RT型号(所谓卡皇就是无良厂家违规的放大了无线发射功率, 大家还是慎重考虑, wifi近距离接触(贴着身体)还是有危害的, 通常半米到1米左右还是可以认为是安全的)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Realtek(RTL系列)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://www.realtek.com.tw/DOWNLOADS/downloadsView.aspx?Langid=1&amp;amp;PNid=14&amp;amp;PFid=7&amp;amp;Level=5&amp;amp;Conn=4&amp;amp;DownTypeID=3&amp;amp;GetDown=false&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;需要注意的, 我们在选择驱动的时候需要关注一下当前驱动是否支持USB(因为现在大多数人包括我自己都是使用外置网卡进行实验的).&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;待续&lt;/h2&gt;
+
+&lt;p&gt;上面我们提到过, 不同型号的网卡的*主要差别*在于内置的芯片组, 但是, 一个无线网卡的好坏除了和上面说的芯片组, 驱动有关外, 还和他自身的一些物理, 电气特性有关, 下一篇我们会进一步与大家交流.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Wireless_network_interface_controller&#34;&gt;http://en.wikipedia.org/wiki/Wireless_network_interface_controller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.freebuf.com/articles/wireless/33524.html&#34;&gt;http://www.freebuf.com/articles/wireless/33524.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.csdn.net/sudochen/article/details/8889719&#34;&gt;http://blog.csdn.net/sudochen/article/details/8889719&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;Signature&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: Akagi201(我的微信, 加我请注明: 真实姓名-公司/专长)&lt;/li&gt;
+&lt;li&gt;Blog: &lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AK创客空间qq群: 212106391 (加群暗号: ak)&lt;/li&gt;
+&lt;li&gt;请支持本微信公众号, 分享给你的朋友们: AKmaker&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -68,40 +147,11 @@
     </item>
     
     <item>
-      <title>slide template</title>
-      <link>http://akagi201.github.io/slide/slide-template</link>
+      <title>project template</title>
+      <link>http://akagi201.github.io/project/project-template</link>
       <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://akagi201.github.io/slide/slide-template</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
-
-&lt;p&gt;What content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
-
-&lt;p&gt;How conent&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
-
-&lt;p&gt;Why content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>book template</title>
-      <link>http://akagi201.github.io/book/book-template</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/book/book-template</guid>
+      <guid>http://akagi201.github.io/project/project-template</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
@@ -150,70 +200,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Kernel</title>
-      <link>http://akagi201.github.io/blog/learning-kernel</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-kernel</guid>
-      <description>
-
-&lt;p&gt;我是从大二开始使用linux系统的, 当时除了玩单片机之外, 所有工作完全在linux完成, 克服了种种&amp;rdquo;困难&amp;rdquo;. 不过现在看来自己除了佩服自己当时的热情之外, 就只觉得自己太幼稚了. &amp;ldquo;在正确的时间做正确的事情, 用正确的工具做正确的事情.&amp;rdquo; 就像以前一直很偏爱C语言一样, 一定要写成内核模块, 内核线程&amp;hellip; 现在自己变得更加聪明了.&lt;/p&gt;
-
-&lt;p&gt;我大学期间一直没有机会碰linux内核, 只有在大三下的时候, 在实验室玩ARM开发板, 才知道, 原来linux内核做了这么多的工作, 一个hello world能够轻松的运行起来, 背后有多少的东西在默默无闻的工作着.&lt;/p&gt;
-
-&lt;p&gt;毕业后我按照自己的规划找了一份嵌入式软件开发的工作. 公司也还算给力, 给了我足够的时间来学习. 我当时是从驱动入手的, 主要看了一本书和一个英文文档, 分别是LDD3和LKMPG. 这本书我前段时间又看了一遍, 觉得这个不适合一个新手看, 难怪我当初看的那么累, 原因有是作者在书内容里无缝地介绍了软件架构, 代码复用等等对于新手来说高级的东西, 这些应该属于软件工程的内容, 这样当然有好处, 但是给人感觉就是复杂, 相比之下国内的书会简单直接很多. 另外LDD3是基于2.6内核的API写的驱动, 已经有大牛移植到linux3.x上面了.&lt;/p&gt;
-
-&lt;p&gt;其实, 内核代码发展很快, 差几个版本基本就面目全非了, 所以, 要多看, 多思考, 有整体把握. 这样, 过段时间拿到最新的代码了, 自己也有能力跟踪进去.&lt;/p&gt;
-
-&lt;p&gt;最近, 在linux社区上面看了几篇有趣的东西, 在HN上貌似也火了一下, 所以, 分享出来给大家玩下.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Eudyptula&lt;/h2&gt;
-
-&lt;p&gt;模仿Matasano Crypto Challenge(集中48小时的练习, 培训参与者密码系统如何建立以及如何被攻击), 面向linux内核的一系列编程练习, 任务难度逐渐增加. 一切是从给little@eudyptula-challenge.org发一封邮件说你要加入开始的. 由于实际的内核开发就是通过邮件列表沟通的, 所以, 必须要熟悉邮件工具是必备技能.&lt;/p&gt;
-
-&lt;p&gt;PS: 由于我发了邮件他还没回我, 呵呵, 后面等做了几个任务之后再跟大家分享一下.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Kernel 101&lt;/h2&gt;
-
-&lt;p&gt;这篇文章最近在HN上比较火, 教你从0开始写一个kernel, 当然功能仅仅是打印一行信息而已. 对于新手来说还是比较好的学习材料. 源码就2个文件, 一段汇编主要功能就是跳转到C程序的kmain函数; 一段C代码, 将显存内容清空并赋值为一段字符串.&lt;/p&gt;
-
-&lt;p&gt;其中几个关键知识点记录一下:
-1. x86的CPU启动后从地址[0xFFFFFFF0]处开始执行, 这个是设计CPU时写死的. 从芯片手册上可以查到. 下面提到的一些地址都是芯片手册中规定统一的, 所以x86架构才能够通用, 各种OS都能安装, 不需要繁琐的移植工作.
-2. 启动流程: 上电 -&amp;gt; CPU[0xFFFFFFF0] -&amp;gt; 跳转到内存中BIOS代码 -&amp;gt; 根据BIOS配置将物理设备第一个扇区的代码copy到物理内存的[0x7c00]位置(即boot loader的代码) -&amp;gt; bootloader将内核代码加载到物理内存&lt;a href=&#34;x86 CPU宏内核代码起始地址, 也就是后面我们编写的汇编程序的链接地址&#34;&gt;0x100000&lt;/a&gt;.
-3. 汇编代码中使用了一些nasm的伪指令, 所以, um, 看注释就好.
-4. 通常的内核开发还需要提供一个根文件系统文件的, 这个简单例子是不包含文件系统的.
-5. grub2下添加引导项的方法, 成败在于此, 需要注意你的/boot分区是否是一个独立分区, 如果不是独立分区那么ok, 安装作者的文章搞起; 如果你像我一样安装系统时候将/boot独立一个256M空间的分区, 那么要内核文件位置使用相对/boot相对地址. 另外注意, 要使用msdos2, 否则会失败.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$sudo vim /boot/grub/grub.conf
-
-//在文件中其他引导项下面添加如下
-menuentry &#39;Akagi201 Lovely Kernel&#39; {
-    set root=&#39;hd0,msdos2&#39;
-    multiboot /kernel-7001 ro
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;What my new-born kernel says&lt;/h2&gt;
-
-&lt;p&gt;um, 我改了一下颜色, 跟字符内容, 哈哈, 没啥技术含量啦!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akgrub.png&#34; alt=&#34;akgrub&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akkernel.png&#34; alt=&#34;akkernel&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;links&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The Linux Kernel Module Programming Guide: &lt;a href=&#34;http://tldp.org/LDP/lkmpg/2.6/html/&#34;&gt;http://tldp.org/LDP/lkmpg/2.6/html/&lt;/a&gt; 看完这个你就能让内核输出hello world啦.&lt;/li&gt;
-&lt;li&gt;LDD3-examples-3.x: &lt;a href=&#34;https://github.com/duxing2007/ldd3-examples-3.x&#34;&gt;https://github.com/duxing2007/ldd3-examples-3.x&lt;/a&gt; 你应该会注意到不同的branch对应不同的内核版本, 很赞吧!&lt;/li&gt;
-&lt;li&gt;kernel 101 on HN: &lt;a href=&#34;https://news.ycombinator.com/item?id=7588205&#34;&gt;https://news.ycombinator.com/item?id=7588205&lt;/a&gt; 有人还做了FUSE版本, 作者也要出ARM版本了, 可以关注下, 上面作者有更多的细节解释.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -334,6 +320,128 @@ menuentry &#39;Akagi201 Lovely Kernel&#39; {
 &lt;li&gt;Douban: &lt;a href=&#34;http://www.douban.com/people/Akagi201&#34;&gt;@Akagi201&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Linkedin: &lt;a href=&#34;http://cn.linkedin.com/in/akagi201&#34;&gt;@Akagi201&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SegmentFault:&lt;a href=&#34;http://segmentfault.com/u/akagi201&#34;&gt;@Akagi201&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning Kernel</title>
+      <link>http://akagi201.github.io/blog/learning-kernel</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-kernel</guid>
+      <description>
+
+&lt;p&gt;我是从大二开始使用linux系统的, 当时除了玩单片机之外, 所有工作完全在linux完成, 克服了种种&amp;rdquo;困难&amp;rdquo;. 不过现在看来自己除了佩服自己当时的热情之外, 就只觉得自己太幼稚了. &amp;ldquo;在正确的时间做正确的事情, 用正确的工具做正确的事情.&amp;rdquo; 就像以前一直很偏爱C语言一样, 一定要写成内核模块, 内核线程&amp;hellip; 现在自己变得更加聪明了.&lt;/p&gt;
+
+&lt;p&gt;我大学期间一直没有机会碰linux内核, 只有在大三下的时候, 在实验室玩ARM开发板, 才知道, 原来linux内核做了这么多的工作, 一个hello world能够轻松的运行起来, 背后有多少的东西在默默无闻的工作着.&lt;/p&gt;
+
+&lt;p&gt;毕业后我按照自己的规划找了一份嵌入式软件开发的工作. 公司也还算给力, 给了我足够的时间来学习. 我当时是从驱动入手的, 主要看了一本书和一个英文文档, 分别是LDD3和LKMPG. 这本书我前段时间又看了一遍, 觉得这个不适合一个新手看, 难怪我当初看的那么累, 原因有是作者在书内容里无缝地介绍了软件架构, 代码复用等等对于新手来说高级的东西, 这些应该属于软件工程的内容, 这样当然有好处, 但是给人感觉就是复杂, 相比之下国内的书会简单直接很多. 另外LDD3是基于2.6内核的API写的驱动, 已经有大牛移植到linux3.x上面了.&lt;/p&gt;
+
+&lt;p&gt;其实, 内核代码发展很快, 差几个版本基本就面目全非了, 所以, 要多看, 多思考, 有整体把握. 这样, 过段时间拿到最新的代码了, 自己也有能力跟踪进去.&lt;/p&gt;
+
+&lt;p&gt;最近, 在linux社区上面看了几篇有趣的东西, 在HN上貌似也火了一下, 所以, 分享出来给大家玩下.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Eudyptula&lt;/h2&gt;
+
+&lt;p&gt;模仿Matasano Crypto Challenge(集中48小时的练习, 培训参与者密码系统如何建立以及如何被攻击), 面向linux内核的一系列编程练习, 任务难度逐渐增加. 一切是从给little@eudyptula-challenge.org发一封邮件说你要加入开始的. 由于实际的内核开发就是通过邮件列表沟通的, 所以, 必须要熟悉邮件工具是必备技能.&lt;/p&gt;
+
+&lt;p&gt;PS: 由于我发了邮件他还没回我, 呵呵, 后面等做了几个任务之后再跟大家分享一下.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Kernel 101&lt;/h2&gt;
+
+&lt;p&gt;这篇文章最近在HN上比较火, 教你从0开始写一个kernel, 当然功能仅仅是打印一行信息而已. 对于新手来说还是比较好的学习材料. 源码就2个文件, 一段汇编主要功能就是跳转到C程序的kmain函数; 一段C代码, 将显存内容清空并赋值为一段字符串.&lt;/p&gt;
+
+&lt;p&gt;其中几个关键知识点记录一下:
+1. x86的CPU启动后从地址[0xFFFFFFF0]处开始执行, 这个是设计CPU时写死的. 从芯片手册上可以查到. 下面提到的一些地址都是芯片手册中规定统一的, 所以x86架构才能够通用, 各种OS都能安装, 不需要繁琐的移植工作.
+2. 启动流程: 上电 -&amp;gt; CPU[0xFFFFFFF0] -&amp;gt; 跳转到内存中BIOS代码 -&amp;gt; 根据BIOS配置将物理设备第一个扇区的代码copy到物理内存的[0x7c00]位置(即boot loader的代码) -&amp;gt; bootloader将内核代码加载到物理内存&lt;a href=&#34;x86 CPU宏内核代码起始地址, 也就是后面我们编写的汇编程序的链接地址&#34;&gt;0x100000&lt;/a&gt;.
+3. 汇编代码中使用了一些nasm的伪指令, 所以, um, 看注释就好.
+4. 通常的内核开发还需要提供一个根文件系统文件的, 这个简单例子是不包含文件系统的.
+5. grub2下添加引导项的方法, 成败在于此, 需要注意你的/boot分区是否是一个独立分区, 如果不是独立分区那么ok, 安装作者的文章搞起; 如果你像我一样安装系统时候将/boot独立一个256M空间的分区, 那么要内核文件位置使用相对/boot相对地址. 另外注意, 要使用msdos2, 否则会失败.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$sudo vim /boot/grub/grub.conf
+
+//在文件中其他引导项下面添加如下
+menuentry &#39;Akagi201 Lovely Kernel&#39; {
+    set root=&#39;hd0,msdos2&#39;
+    multiboot /kernel-7001 ro
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;What my new-born kernel says&lt;/h2&gt;
+
+&lt;p&gt;um, 我改了一下颜色, 跟字符内容, 哈哈, 没啥技术含量啦!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akgrub.png&#34; alt=&#34;akgrub&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akkernel.png&#34; alt=&#34;akkernel&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;links&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Linux Kernel Module Programming Guide: &lt;a href=&#34;http://tldp.org/LDP/lkmpg/2.6/html/&#34;&gt;http://tldp.org/LDP/lkmpg/2.6/html/&lt;/a&gt; 看完这个你就能让内核输出hello world啦.&lt;/li&gt;
+&lt;li&gt;LDD3-examples-3.x: &lt;a href=&#34;https://github.com/duxing2007/ldd3-examples-3.x&#34;&gt;https://github.com/duxing2007/ldd3-examples-3.x&lt;/a&gt; 你应该会注意到不同的branch对应不同的内核版本, 很赞吧!&lt;/li&gt;
+&lt;li&gt;kernel 101 on HN: &lt;a href=&#34;https://news.ycombinator.com/item?id=7588205&#34;&gt;https://news.ycombinator.com/item?id=7588205&lt;/a&gt; 有人还做了FUSE版本, 作者也要出ARM版本了, 可以关注下, 上面作者有更多的细节解释.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>book template</title>
+      <link>http://akagi201.github.io/book/book-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/book/book-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>blog template</title>
+      <link>http://akagi201.github.io/blog/blog-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/blog-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
