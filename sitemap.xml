@@ -8,12 +8,12 @@
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/about</loc>
+    <loc>http://akagi201.github.io/link</loc>
     <lastmod>2014-05-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/link</loc>
+    <loc>http://akagi201.github.io/about</loc>
     <lastmod>2014-05-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,37 +23,7 @@
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/mindmap/mindmap-template</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://akagi201.github.io/book/book-template</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://akagi201.github.io/slide/slide-template</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://akagi201.github.io/blog/learning-kernel</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://akagi201.github.io/blog/blog-template</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://akagi201.github.io/tool/tool-template</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://akagi201.github.io/project/project-template</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
   </url>
   
