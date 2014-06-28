@@ -4,35 +4,10 @@
       <title>Recent Content on Akagi201&#39;s Cyberspace </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://akagi201.github.io/index.xml</link>
-    
+    <language>en-us</language>
     
     <copyright>Copyright (c) 2008 - 2014, Akagi201; all rights reserved.</copyright>
     <updated>Sat, 24 May 2014 00:00:00 UTC</updated>
-    
-    <item>
-      <title>link</title>
-      <link>http://akagi201.github.io/link</link>
-      <pubDate>Sat, 24 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/link</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Invite Link&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.v2ex.com/?r=Akagi201&#34;&gt;V2ex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;portal.qiniu.com/signup?code=16n5jhzad4mz2&#34;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Friends&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.8090sec.com/&#34;&gt;人生注入点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.programlife.net/&#34;&gt;代码疯子&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://spud.in/&#34;&gt;茴香-徐嘉轶&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>About Akagi201</title>
@@ -71,6 +46,31 @@
 
 &lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akmaker_qr.jpg&#34; alt=&#34;AKmaker&#34; /&gt;
 &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>link</title>
+      <link>http://akagi201.github.io/link</link>
+      <pubDate>Sat, 24 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/link</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Invite Link&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.v2ex.com/?r=Akagi201&#34;&gt;V2ex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;portal.qiniu.com/signup?code=16n5jhzad4mz2&#34;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Friends&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.8090sec.com/&#34;&gt;人生注入点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.programlife.net/&#34;&gt;代码疯子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://spud.in/&#34;&gt;茴香-徐嘉轶&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -183,6 +183,35 @@ mac80211是一个无线驱动的框架, 它提供了大量的API, 规范, 在这
     </item>
     
     <item>
+      <title>mindmap template</title>
+      <link>http://akagi201.github.io/mindmap/mindmap-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/mindmap/mindmap-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>book template</title>
       <link>http://akagi201.github.io/book/book-template</link>
       <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
@@ -217,93 +246,6 @@ mac80211是一个无线驱动的框架, 它提供了大量的API, 规范, 在这
       <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
       
       <guid>http://akagi201.github.io/slide/slide-template</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
-
-&lt;p&gt;What content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
-
-&lt;p&gt;How conent&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
-
-&lt;p&gt;Why content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>blog template</title>
-      <link>http://akagi201.github.io/blog/blog-template</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/blog-template</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
-
-&lt;p&gt;What content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
-
-&lt;p&gt;How conent&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
-
-&lt;p&gt;Why content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tool template</title>
-      <link>http://akagi201.github.io/tool/tool-template</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/tool/tool-template</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
-
-&lt;p&gt;What content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
-
-&lt;p&gt;How conent&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
-
-&lt;p&gt;Why content&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>mindmap template</title>
-      <link>http://akagi201.github.io/mindmap/mindmap-template</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://akagi201.github.io/mindmap/mindmap-template</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
@@ -387,6 +329,64 @@ menuentry &#39;Akagi201 Lovely Kernel&#39; {
 &lt;li&gt;The Linux Kernel Module Programming Guide: &lt;a href=&#34;http://tldp.org/LDP/lkmpg/2.6/html/&#34;&gt;http://tldp.org/LDP/lkmpg/2.6/html/&lt;/a&gt; 看完这个你就能让内核输出hello world啦.&lt;/li&gt;
 &lt;li&gt;LDD3-examples-3.x: &lt;a href=&#34;https://github.com/duxing2007/ldd3-examples-3.x&#34;&gt;https://github.com/duxing2007/ldd3-examples-3.x&lt;/a&gt; 你应该会注意到不同的branch对应不同的内核版本, 很赞吧!&lt;/li&gt;
 &lt;li&gt;kernel 101 on HN: &lt;a href=&#34;https://news.ycombinator.com/item?id=7588205&#34;&gt;https://news.ycombinator.com/item?id=7588205&lt;/a&gt; 有人还做了FUSE版本, 作者也要出ARM版本了, 可以关注下, 上面作者有更多的细节解释.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>blog template</title>
+      <link>http://akagi201.github.io/blog/blog-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/blog-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tool template</title>
+      <link>http://akagi201.github.io/tool/tool-template</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://akagi201.github.io/tool/tool-template</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What&lt;/h2&gt;
+
+&lt;p&gt;What content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;How&lt;/h2&gt;
+
+&lt;p&gt;How conent&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Why&lt;/h2&gt;
+
+&lt;p&gt;Why content&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://akagi201.org&#34;&gt;http://akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
