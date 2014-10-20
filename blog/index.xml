@@ -53,6 +53,27 @@
     </item>
     
     <item>
+      <title>Learning CMake</title>
+      <link>http://akagi201.github.io/blog/learning-cmake/</link>
+      <pubDate>Sun, 19 Oct 2014 00:35:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-cmake/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning%20cmake.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning cmake&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning cmake on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;为了更好的掌握CLion, 最近把CMake Practice看完, 并练习了一下. 完成之后发现内容很少. 老的autotools也是要掌握的, openwrt上编译很多项目还是要用到他.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Github Repo&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/learning-cmake&#34;&gt;https://github.com/Akagi201/learning-cmake&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Learning FFmpeg</title>
       <link>http://akagi201.github.io/blog/learning-ffmpeg/</link>
       <pubDate>Fri, 10 Oct 2014 10:31:26 CST</pubDate>
