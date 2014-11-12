@@ -6,8 +6,21 @@
     <link>http://akagi201.github.io/index.xml</link>
     <language>en-us</language>
     
+    <copyright>Akagi201</copyright>
+    <updated>Thu, 13 Nov 2014 01:28:26 CST</updated>
     
-    <updated>Tue, 21 Oct 2014 02:53:26 CST</updated>
+    <item>
+      <title>Learning uC/OS</title>
+      <link>http://akagi201.github.io/blog/learning-ucos/</link>
+      <pubDate>Thu, 13 Nov 2014 01:28:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-ucos.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-ucos&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-ucos on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就续表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>About Blog</title>
