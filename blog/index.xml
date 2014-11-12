@@ -7,7 +7,22 @@
     <language>en-us</language>
     
     <copyright>Akagi201</copyright>
-    <updated>Thu, 13 Nov 2014 01:28:26 CST</updated>
+    <updated>Thu, 13 Nov 2014 01:50:26 CST</updated>
+    
+    <item>
+      <title>Learning Libuv</title>
+      <link>http://akagi201.github.io/blog/learning-libuv/</link>
+      <pubDate>Thu, 13 Nov 2014 01:50:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-libuv.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-libuv&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-libuv on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;想研究libuv很久了, 一直没有用他的机会, 这次项目中有个多进程管理的地方, 正纠结怎么操作麻烦的信号量时, 想起libuv也可以完成这件事, 所以, 赶紧用起来. 不用白不用.&lt;/p&gt;
+
+&lt;p&gt;Lua在嵌入式领域大有可以, 可以编译成一个liblua.a的库静态连接到C程序, 还有很多丰富的工具, 本身语言有非常小巧, 以后还是多用lua写写, 方便移植啊. 多平台各种差异, 搞死人啊.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning uC/OS</title>
@@ -18,7 +33,7 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-ucos.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-ucos&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-ucos on MindMup&lt;/a&gt;
 &lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就续表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
+&lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就绪表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
 </description>
     </item>
     
