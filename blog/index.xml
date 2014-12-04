@@ -7,7 +7,26 @@
     <language>en-us</language>
     
     <copyright>Akagi201</copyright>
-    <updated>Thu, 13 Nov 2014 01:50:26 CST</updated>
+    <updated>Thu, 04 Dec 2014 21:35:26 CST</updated>
+    
+    <item>
+      <title>Learning Google C&#43;&#43; Testing Framework</title>
+      <link>http://akagi201.github.io/blog/learning-gtest/</link>
+      <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-gtest.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-gtest&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-gtest on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
+
+&lt;p&gt;跟着牛人的脚本慢慢前进是不会错的. 选择了&lt;code&gt;CLion&lt;/code&gt;, 导致选择了&lt;code&gt;CMake&lt;/code&gt;, 又由&lt;code&gt;CMake&lt;/code&gt;跟&lt;code&gt;CLion&lt;/code&gt;选择了&lt;code&gt;GTest&lt;/code&gt;. 学习下来发现都是好东西.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Google C++ Testing Framework&lt;/code&gt;简称&lt;code&gt;GTest&lt;/code&gt;, 跟&lt;code&gt;CMake&lt;/code&gt;集成的非常好, 而且他本身就是用&lt;code&gt;CMake&lt;/code&gt;编译的, 作为一个转向&lt;code&gt;CMake&lt;/code&gt;开发者来说, 这是极赞的.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GTest&lt;/code&gt;文档相应比较少, 对于新手来说可能有点曲线, 我写了几个集成&lt;code&gt;Makefile&lt;/code&gt;跟&lt;code&gt;CMake&lt;/code&gt;的例子, 可以看看: &lt;a href=&#34;https://github.com/Akagi201/learning-gtest&#34;&gt;https://github.com/Akagi201/learning-gtest&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning Libuv</title>
