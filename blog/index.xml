@@ -7,7 +7,36 @@
     <language>en-us</language>
     
     <copyright>Akagi201</copyright>
-    <updated>Thu, 04 Dec 2014 21:35:26 CST</updated>
+    <updated>Tue, 09 Dec 2014 03:55:26 CST</updated>
+    
+    <item>
+      <title>Learning cURL</title>
+      <link>http://akagi201.github.io/blog/learning-curl/</link>
+      <pubDate>Tue, 09 Dec 2014 03:55:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-curl/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-curl.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-gtest&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-gtest on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;cURL全称是&amp;rdquo;Client for URLs&amp;rdquo;, 即URL客户端.&lt;/p&gt;
+
+&lt;p&gt;是&lt;a href=&#34;https://github.com/bagder&#34;&gt;Daniel Stenberg&lt;/a&gt;的一个个人项目, 就放在个人的一个二级域名&lt;a href=&#34;http://curl.haxx.se/&#34;&gt;http://curl.haxx.se/&lt;/a&gt;下, 所以有的地方略显粗糙也可以理解了.&lt;/p&gt;
+
+&lt;p&gt;项目历史应该比较久远了, 文档全是用的&lt;code&gt;manpage&lt;/code&gt;写的, 不用到处找了, 直接&lt;code&gt;man&lt;/code&gt;就可以了.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl&lt;/code&gt;的&lt;code&gt;repo&lt;/code&gt;由两部分组成, &lt;code&gt;curl&lt;/code&gt;命令行跟&lt;code&gt;libcurl&lt;/code&gt;, 其中复杂的东西都在&lt;code&gt;libcurl&lt;/code&gt;中了.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;源码结构&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;curl&lt;/code&gt;命令行的源码在&lt;code&gt;src/&lt;/code&gt;, 入口在&lt;code&gt;tool_main.c&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;libcurl&lt;/code&gt;的源码在&lt;code&gt;lib/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;API example&lt;/code&gt;的源码在&lt;code&gt;docs/examples&lt;/code&gt;下.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning Google C&#43;&#43; Testing Framework</title>
