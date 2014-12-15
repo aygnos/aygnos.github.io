@@ -6,8 +6,41 @@
     <link>http://akagi201.github.io/index.xml</link>
     <language>en-us</language>
     
-    <copyright>Akagi201</copyright>
-    <updated>Mon, 15 Dec 2014 21:50:26 CST</updated>
+    
+    <updated>Tue, 16 Dec 2014 03:37:08 CST</updated>
+    
+    <item>
+      <title>License</title>
+      <link>http://akagi201.github.io/license/</link>
+      <pubDate>Tue, 16 Dec 2014 03:37:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/license/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Content license&lt;/h2&gt;
+
+&lt;p&gt;All non-code blog content is licensed under &lt;a href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons BY-NC-SA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Code license&lt;/h2&gt;
+
+&lt;p&gt;All source code files and snippets found on this blog, unless otherwise explicitly noted, are licensed under the terms below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;Copyright 2013-2014 Bob Liu
+
+Licensed under the Apache License, Version 2.0 (the &amp;quot;License&amp;quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &amp;quot;AS IS&amp;quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning RTP</title>
