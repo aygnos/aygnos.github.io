@@ -7,7 +7,31 @@
     <language>en-us</language>
     
     <copyright>Akagi201</copyright>
-    <updated>Tue, 09 Dec 2014 03:55:26 CST</updated>
+    <updated>Mon, 15 Dec 2014 21:50:26 CST</updated>
+    
+    <item>
+      <title>Learning RTP</title>
+      <link>http://akagi201.github.io/blog/learning-rtp/</link>
+      <pubDate>Mon, 15 Dec 2014 21:50:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-rtp/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-rtp.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-rtp&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-rtp on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;RTP&lt;/code&gt;(Real-time Transport Protocol)是用于Internet上针对多媒体数据流的一种传输协议. &lt;code&gt;RTP&lt;/code&gt;被定义为在一对一或一对多的传输情况下工作, 其目的是提供时间信息和实现流同步. &lt;code&gt;RTP&lt;/code&gt;通常使用&lt;code&gt;UDP&lt;/code&gt;来传送数据, 但&lt;code&gt;RTP&lt;/code&gt;也可以在&lt;code&gt;TCP&lt;/code&gt;或&lt;code&gt;ATM&lt;/code&gt;等其他协议之上工作.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;RTP&lt;/code&gt;本身并没有提供按时发送机制或其他服务质量(QoS)保证, 它依赖于底层服务去实现这一过程. &lt;code&gt;RTP&lt;/code&gt;并不保证传送或防止无序传送, 也不确定底层网络的可靠性.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;book&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&#34;&gt;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627&#34;&gt;http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning cURL</title>
