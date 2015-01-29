@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Compile Debian Kernel &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Compile Debian Kernel</h1>
+  <span class="post-date">Mon, May 20, 2013</span>
+      
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/0/04/Debian_logo.png" alt="Debian Logo" />
+</p>
+
+<h2 id="toc_0">Changes to the pristine kernel source(原始的kernel source, www.kernel.org)</h2>
+
+<ul>
+<li>pristine kernel source == upstream kernel source</li>
+<li>由于 licensing restrictions, unclear license information, failure to comply with the Debian Free Software Guidelines (DFSG), 部分的kernel被移除为了发布Debian archive的 main section(the source in the main section of the Debian archive). 这种搬移工具产生了 linux_version.orig.tar.xz tarball, 作为原始的上流源码(original upstream source). version是实际的upstream version.</li>
+<li>在2.6.31-1以后的版本中, 所有的已知的没有源码的firmware已经被从Debian package中移除了, 但是他们大多被包含在 firmware-nonfree package中.</li>
+<li>Reference:</li>
+<li><a href="http://www.debian.org/vote/2006/vote_007">Handling source-less firmware in the Linux kernel</a></li>
+<li><a href="http://lists.debian.org/debian-kernel/2006/10/msg00541.html">position statement</a></li>
+<li><a href="http://wiki.debian.org/KernelFirmwareLicensing">KernelFirmwareLicensing</a></li>
+</ul>
+
+<h2 id="toc_1">Debian kernel patches</h2>
+
+<ul>
+<li>Debian kernel的源码: linux_version.orig.tar.xz(去掉license不合格的firmware) + Debian patches</li>
+<li>Debian patches: 必要的修复严重bug fixes 和 安全漏洞(security holes)</li>
+<li>Debian version of the kernel packages: version-revision(version: upstream kernel version, revision: patchlevel)</li>
+<li>接受patch的原则: fix a bug or add hardware support.</li>
+<li>patches introducing optional features 推荐提交到 upstream maintainer.</li>
+</ul>
+
+<h2 id="toc_2">Refs</h2>
+
+<ol>
+<li>一直保持最新的文档 <a href="http://kernel-handbook.alioth.debian.org">Debian Linux Kernel Handbook</a></li>
+</ol>
+
+</div>
+</div>
+
+  </body>
+</html>

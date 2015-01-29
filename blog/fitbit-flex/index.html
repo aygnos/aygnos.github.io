@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Fitbit Flex &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Fitbit Flex</h1>
+  <span class="post-date">Tue, Sep 17, 2013</span>
+      
+
+<ul>
+<li><p>排斥英文的小伙伴们可以不用看了, 各种数据, 各种软件全是英文的.</p>
+
+<h2 id="toc_0">clients</h2></li>
+
+<li><p>pc: <a href="http://www.fitbit.com/setup">http://www.fitbit.com/setup</a> 下载安装 FitbitConnect, 貌似只有2个功能: 同步和升级固件.第一次使用会搜索设备, 然后搜到之后, 双击一下手环表示确认, 我勒个去, 太有科技感了.看配置信息(dashboard)会跳转到网页.</p></li>
+
+<li><p>Android: 只能看数据, 同步目前需要蓝牙4.0, wifi现在还不支持, 看fitbit的开发博客貌似正在beta阶段.</p></li>
+</ul>
+
+<h2 id="toc_1">update firmware</h2>
+
+<ul>
+<li>通过pc端可以升级, 刚入手时候是50, 升级后变成64了. 具体多了哪些功能还不清楚, 总之越新越好. 升级过程有点慢, 手都不敢动, 很怕升级失败的说.</li>
+</ul>
+
+<h2 id="toc_2">Specs</h2>
+
+<ul>
+<li>5个白点LED灯，一个蓝牙芯片，一个三轴加速度传感器，一个振动马达，还有一个主控芯片，微小的电池续航能力竟能达到5-7天。还有一块NFC标签, 用于支持NFC的手机同步的.</li>
+<li>五个LED灯是跟天线套在一个塑料壳上，有一层黑色胶布把它、电池和整块电路板绑在一起，合得比较紧密.</li>
+<li>蓝牙芯片使用的是Nordic的NRF8001.</li>
+<li>接下来有两片不明的芯片写有“NXE”和“NAI”字样，其中NAI芯片上还带有疑似二维码的信息.</li>
+<li>主控芯片用的是意法半导体的STM32L。电池容量未标清，目测可能是20mAh左右.</li>
+</ul>
+
+<h2 id="toc_3">关于卡路里消耗的精度问题</h2>
+
+<ul>
+<li>由于fitbit有庞大的数据库源，只要你输入了精确的身高+体重，fitbit就能基本了解你的步长和单步消耗卡路里的平均值，之后这些数据都会很准。</li>
+<li>所以初次使用，建议录入自己的精确身高和体重，以后记得更新体重的变化，这样会让数据更准。</li>
+</ul>
+
+<h2 id="toc_4">睡眠跟踪</h2>
+
+<ul>
+<li>睡前 拍打4-5下触发睡眠跟踪模式，早上醒来再同样操作即可。 在刚躺下的时候记得猛拍它，进入睡眠模式，这样早晨sync一下就能以图表的形式看到昨晚睡眠情况，中途醒了几次，深度睡眠浅度睡眠分别占了多少。我觉得一天几个小时就差不多了，再多真是挥霍生命。</li>
+</ul>
+
+<h2 id="toc_5">充电</h2>
+
+<ul>
+<li>大概半小时就能冲到8成以上，但是足足充满需要两三小时的，充满电五颗LED会同时闪烁.</li>
+</ul>
+
+<h2 id="toc_6">操作</h2>
+
+<ul>
+<li>没有任何可见的按钮，平时的操作是靠快速点击：啪啪两下，显示今日目标完成情况，5颗LED各代表20%完成度。。如果猛烈的啪啪啪啪啪点了好多下，就会进入睡眠模式，最左和最右两颗LED亮，再一次啪啪啪啪啪就会切回普通计步模式。而且LED绝大部分时候也是不会亮的，据说运动量达到了设定的目标会有震动和”happy dancing”</li>
+</ul>
+
+<h2 id="toc_7">Refs</h2>
+
+<ul>
+<li><a href="http://www.leiphone.com/chaijie-fitbit-flex.html">http://www.leiphone.com/chaijie-fitbit-flex.html</a></li>
+<li><a href="https://help.fitbit.com/customer/portal/articles/798019">https://help.fitbit.com/customer/portal/articles/798019</a></li>
+<li><a href="http://tech2ipo.com/59590">http://tech2ipo.com/59590</a></li>
+<li><a href="http://knewone.com/things/fitbit-flex/reviews/51af49127373c295b700001c">http://knewone.com/things/fitbit-flex/reviews/51af49127373c295b700001c</a></li>
+<li><a href="https://zlz.im/fitbit-flex-review/">https://zlz.im/fitbit-flex-review/</a></li>
+<li><a href="http://www.fitbit.com/group/229BXW">Fitbit 官方中文小组</a></li>
+<li><a href="http://dev.fitbit.com/">Fitbit API</a></li>
+<li><a href="http://www.douban.com/group/fitbit/">Fitbit 豆瓣小组</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

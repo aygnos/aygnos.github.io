@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Root Nook Simple Touch &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Root Nook Simple Touch</h1>
+  <span class="post-date">Sat, May 31, 2014</span>
+      
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-success.jpg" alt="nookmanager-success" />
+</p>
+
+<p>今天断网了大半天, 然后玩了一会Calibre, 翻出了我的Nook3, 刚好利用这个假期打算把他root掉.</p>
+
+<h2 id="toc_0">使用NookManager进行root</h2>
+
+<ol>
+<li>固件升级到官方1.2.1(我的原来是1.1.5的, 如果不升级那么root时会ModManager会安装失败)</li>
+<li>下载NookManager.img.</li>
+<li>使用dd命令将NookManager.img写入一个空的sd卡中.(我用Mac OS X系统, linux下类似, win下用相应工具)</li>
+</ol>
+
+<pre><code>akagi201@akrmbp ~ $ ls /dev/disk*
+/dev/disk0   /dev/disk0s1 /dev/disk0s2 /dev/disk0s3 /dev/disk1   /dev/disk1s1
+akagi201@akrmbp ~ $ sudo diskutil umount force /dev/disk1s1
+Volume (null) on disk1s1 force-unmounted
+akagi201@akrmbp ~ $ sudo dd if=/Users/akagi201/Downloads/NookManager.img of=/dev/disk1 bs=1m
+64+0 records in
+64+0 records out
+67108864 bytes transferred in 49.549986 secs (1354367 bytes/sec)
+</code></pre>
+
+<ol>
+<li>关掉Nook的电源, 插入sd卡, 然后开机, 会显示15秒的NookManager的信息.</li>
+</ol>
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-start.jpg" alt="nookmanager-start" />
+</p>
+
+<ol>
+<li>选择&rdquo;No, continue without wireless&rdquo;, 选yes需要刷机之前设备有连过你附近的ap, 才能验证通过.(这个其实可以改进啦)</li>
+</ol>
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-wifi.jpg" alt="nookmanager-wifi" />
+</p>
+
+<ol>
+<li>使用NookManager做一次备份! Rescue -&gt; Backup -&gt; Format remaining space on SD card -&gt; Create backup. (需要花费15~45分钟, 最终备份文件大小是几百M)</li>
+</ol>
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-backup.jpg" alt="nookmanager-backup" />
+</p>
+
+<ol>
+<li><p>使用USB线连接电脑和nook, 拷贝NookBackup分区下的backup.full.gz和backup.full.md5到电脑, 最好上传到网盘备份好.</p></li>
+
+<li><p>Root! 备份之后, Back -&gt; Back -&gt; Main Menu -&gt; Root -&gt; Root my device (然后看到全是成功, 如果不成功说明你用其他方法root过或者没有升级到官方的1.2.1)</p></li>
+</ol>
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-root.jpg" alt="nookmanager-root" />
+</p>
+
+<p><img src="http://akagi201.qiniudn.com/nookmanager-success.jpg" alt="nookmanager-success" />
+</p>
+
+<ol>
+<li>Back -&gt; Exit -&gt; 拔出SD卡 -&gt; 设备自动重启 -&gt; 选择Relaunch. 搞定.</li>
+</ol>
+
+<h2 id="toc_1">Refs</h2>
+
+<ul>
+<li><a href="http://forum.xda-developers.com/showthread.php?t=2040351">http://forum.xda-developers.com/showthread.php?t=2040351</a></li>
+<li><a href="http://nookdevs.com/Nook_Simple_Touch/Rooting">http://nookdevs.com/Nook_Simple_Touch/Rooting</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>
