@@ -148,6 +148,11 @@
   </url>
   
   <url>
+    <loc>http://akagi201.github.io/blog/git-commit-convention/</loc>
+    <lastmod>2014-03-24T01:32:08+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://akagi201.github.io/blog/mov-vs-ldr/</loc>
     <lastmod>2014-03-19T09:24:08+08:00</lastmod>
   </url>
@@ -160,6 +165,11 @@
   <url>
     <loc>http://akagi201.github.io/blog/learning-lua/</loc>
     <lastmod>2014-03-13T12:45:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://akagi201.github.io/blog/mindmup/</loc>
+    <lastmod>2014-03-10T01:52:18+08:00</lastmod>
   </url>
   
   <url>
@@ -208,6 +218,11 @@
   </url>
   
   <url>
+    <loc>http://akagi201.github.io/blog/minicom-on-mac/</loc>
+    <lastmod>2013-10-27T05:41:08+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://akagi201.github.io/blog/keep-gitting-my-cv-with-markdown/</loc>
     <lastmod>2013-09-27T00:43:08+08:00</lastmod>
   </url>
@@ -220,6 +235,11 @@
   <url>
     <loc>http://akagi201.github.io/blog/compile-debian-kernel/</loc>
     <lastmod>2013-05-20T20:27:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://akagi201.github.io/blog/ak-dotfiles/</loc>
+    <lastmod>2013-05-20T13:29:26+08:00</lastmod>
   </url>
   
 </urlset>

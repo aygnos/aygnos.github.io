@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> Streaming Protocols &middot; Akagi201 </title>
+  <title> git commit 规范 &middot; Akagi201 </title>
 
   
   <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
@@ -67,12 +67,75 @@
 
     <div class="content container">
 <div class="post">
-  <h1>Streaming Protocols</h1>
-  <span class="post-date">Tue, Sep 9, 2014</span>
-      <p>整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.</p>
+  <h1>git commit 规范</h1>
+  <span class="post-date">Mon, Mar 24, 2014</span>
+      
 
-<p><a href="https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9" data-role="mindmup-embed" title="streaming protocols" data-width="90%" data-height="500" data-style="border:1px solid black;margin-bottom:5px;">streaming protocols on MindMup</a>
-<script async src="https://www.mindmup.com/external-embed.js"></script></p>
+<p>最近发现自己的git log太乱了, 稍微整理一下规范.</p>
+
+<h2 id="toc_0">基本原则</h2>
+
+<ul>
+<li>永远不在<code>git commit</code>后增加<code>-m &lt;msg&gt;</code>来添加日志. 直接git commit [-a]然后会出现一个编辑界面.</li>
+<li>在.vimrc中添加一行, 来检查拼写和自动折行.</li>
+</ul>
+
+<pre><code>autocmd Filetype gitcommit setlocal spell textwidth=72
+</code></pre>
+
+<ul>
+<li>第一行应该少于50个字, <strong>随后一个空行</strong>, 然后写具体内容.</li>
+</ul>
+
+<h2 id="toc_1">举例</h2>
+
+<ul>
+<li>总体格式</li>
+</ul>
+
+<pre><code>模块名: msg +补充信息关键字(time/issue/review) 补充信息(#issue号 可被github识别)
+</code></pre>
+
+<ul>
+<li><p>第一次提交用 <code>first blood</code></p></li>
+
+<li><p>记录花费时间2d 3h</p></li>
+</ul>
+
+<pre><code>othermsg +time 2d 3h
+</code></pre>
+
+<ul>
+<li>修issue: 1234</li>
+</ul>
+
+<pre><code>othermsg +issue #1234
+</code></pre>
+
+<ul>
+<li>提交的同时, 有代码审查, 审查人user1, user2</li>
+</ul>
+
+<pre><code>othermsg +review @user1 @user2
+</code></pre>
+
+<ul>
+<li>提交的同时, 和1112号代码审查相关联</li>
+</ul>
+
+<pre><code>othermsg +review 项目代码审查关键字-1112
+</code></pre>
+
+<p>任何项目管理工具(即使使用文本文件管理)都会很容易解析上述信息, 无论用的是git还是svn.</p>
+
+<p>另外更详细的信息会在代码中或者项目管理工具中出现, 不需要提交太多&rdquo;othermsg&rdquo;, 一两句概述的话或单词说清楚就行.</p>
+
+<h2 id="toc_2">Refs</h2>
+
+<ul>
+<li><a href="http://segmentfault.com/q/1010000000395039">http://segmentfault.com/q/1010000000395039</a></li>
+<li><a href="http://ruby-china.org/topics/15737">http://ruby-china.org/topics/15737</a></li>
+</ul>
 
 </div>
 </div>

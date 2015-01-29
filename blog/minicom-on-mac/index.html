@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> minicom on mac &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>minicom on mac</h1>
+  <span class="post-date">Sun, Oct 27, 2013</span>
+      
+
+<h2 id="toc_0">USB转串口驱动</h2>
+
+<ul>
+<li>我使用的芯片是FTDI的根据FTDI官网的说明,需要下载VCP(Virtual COM Port)驱动.下载了64位的2.2.18版本,ps这东西版本也挺旧的了,是2012/08/08发布的.</li>
+<li>另外一种适配器基于Silicon Labs的CP2012芯片, Windows, Linux和 Mac下都有驱动<a href="http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx">http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx</a></li>
+<li>ps: 另外一种常见得USB转串口驱动(Prolific PL2303):
+在Prolific官网上面也有:(<a href="http://www.prolific.com.tw/US/ShowProduct.aspx?pcid=41&amp;showlevel=0041-0041">http://www.prolific.com.tw/US/ShowProduct.aspx?pcid=41&amp;showlevel=0041-0041</a>).</li>
+<li>参考文献中还有其他的驱动,有需要的可以到参考文献中去查.</li>
+<li>安装前先删除已有的USB转串口驱动(我跳过了)</li>
+<li>安装好之后,打开一个Terminal, 输入 ls /dev/cu.*, 找到包含有usbserial或类似的东西.我的结果:</li>
+</ul>
+
+<pre><code>    $ ls /dev/cu.*                                                             
+    /dev/cu.Bluetooth-Incoming-Port /dev/cu.usbserial-AD02COJ7
+    /dev/cu.Bluetooth-Modem
+</code></pre>
+
+<ul>
+<li>注意:一个serial device会在/dev下面出现2次, 一个是tty.<em>,用来 calling into UNIX systems, 一个是cu.</em>, (Call-Up)用来从他们中 calling out(如: modems).我们想要从我们的Mac中call-out所以我们选用/dev/cu.*.</li>
+<li>TTY device与CU device的技术区别是:
+/dev/tty.*会wait(或者listen)for DCD(data-carrier-detect),如:某人在response之前calling in.
+/dev/cu.*不会assert DCD, 所以他们将总是立刻connect(respond or succeed).</li>
+</ul>
+
+<h2 id="toc_1">Terminal emulation</h2>
+
+<ul>
+<li>GUI apps: Zterm(收费, 支持VT100 emulation), goSerial(不支持 VT100), SecureCRT for Mac(收费)</li>
+<li>Terminal apps: screen, minicom(recommend,and I used)</li>
+<li>built-in: screen(screen /dev/cu.usbserial-AD02COJ7 115200, 退出:  type CTRL-A, then CTRL-.)</li>
+</ul>
+
+<h2 id="toc_2">Minicom</h2>
+
+<ul>
+<li>支持VT100 emulation(which means it sorta kinda works with Meridian Mail (Function keys on a MacBook: fn + f-key))</li>
+<li>先运行minicom -s来配置, 修改device name和流控信息, 然后 Save setup as dfl(default) and Exit.</li>
+<li>每次运行minicom前都记得插入usb转串口.</li>
+<li>在minicom中, 命令都是 Ctrl-A <key>
+修改port settings: Ctrl-A P
+Command Summary: Ctrl-A Z
+Quit Minicom: Ctrl-A X</li>
+</ul>
+
+<h2 id="toc_3">screen</h2>
+
+<p>Mac自带的命令行工具, 可以用来连接USB虚拟串口, 使用方法:</p>
+
+<pre><code>screen /dev/cu.SLAB_USBtoUART 115200
+</code></pre>
+
+<p>这里的/dev/cu.SLAB_USBtoUART是虚拟串口的设备文件节点, 确保装好了适配器的驱动, 插入适配器应该就会找到它们了. 电脑通过/dev/cu.<em>设备文件来连接其他串口设备, 通过/dev/tty.</em> 接受来自其他设备的连接.</p>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="http://pbxbook.com/other/mac-tty.html">在mac下使用串口方法</a></li>
+<li><a href="http://www.ftdichip.com">FTDI官网</a></li>
+<li><a href="http://h4x3rotab.github.io/blog/2014/01/31/os-xxia-de-usbzhuan-uart/">http://h4x3rotab.github.io/blog/2014/01/31/os-xxia-de-usbzhuan-uart/</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

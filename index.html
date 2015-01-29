@@ -40,8 +40,6 @@
       
       <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
-      
       <li><a href="http://akagi201.github.io/book">Book</a> </li>
       
       <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
@@ -1675,6 +1673,85 @@ make
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/git-commit-convention/">
+        git commit 规范
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Mar 24, 2014</span>
+
+    
+
+<p>最近发现自己的git log太乱了, 稍微整理一下规范.</p>
+
+<h2 id="toc_0">基本原则</h2>
+
+<ul>
+<li>永远不在<code>git commit</code>后增加<code>-m &lt;msg&gt;</code>来添加日志. 直接git commit [-a]然后会出现一个编辑界面.</li>
+<li>在.vimrc中添加一行, 来检查拼写和自动折行.</li>
+</ul>
+
+<pre><code>autocmd Filetype gitcommit setlocal spell textwidth=72
+</code></pre>
+
+<ul>
+<li>第一行应该少于50个字, <strong>随后一个空行</strong>, 然后写具体内容.</li>
+</ul>
+
+<h2 id="toc_1">举例</h2>
+
+<ul>
+<li>总体格式</li>
+</ul>
+
+<pre><code>模块名: msg +补充信息关键字(time/issue/review) 补充信息(#issue号 可被github识别)
+</code></pre>
+
+<ul>
+<li><p>第一次提交用 <code>first blood</code></p></li>
+
+<li><p>记录花费时间2d 3h</p></li>
+</ul>
+
+<pre><code>othermsg +time 2d 3h
+</code></pre>
+
+<ul>
+<li>修issue: 1234</li>
+</ul>
+
+<pre><code>othermsg +issue #1234
+</code></pre>
+
+<ul>
+<li>提交的同时, 有代码审查, 审查人user1, user2</li>
+</ul>
+
+<pre><code>othermsg +review @user1 @user2
+</code></pre>
+
+<ul>
+<li>提交的同时, 和1112号代码审查相关联</li>
+</ul>
+
+<pre><code>othermsg +review 项目代码审查关键字-1112
+</code></pre>
+
+<p>任何项目管理工具(即使使用文本文件管理)都会很容易解析上述信息, 无论用的是git还是svn.</p>
+
+<p>另外更详细的信息会在代码中或者项目管理工具中出现, 不需要提交太多&rdquo;othermsg&rdquo;, 一两句概述的话或单词说清楚就行.</p>
+
+<h2 id="toc_2">Refs</h2>
+
+<ul>
+<li><a href="http://segmentfault.com/q/1010000000395039">http://segmentfault.com/q/1010000000395039</a></li>
+<li><a href="http://ruby-china.org/topics/15737">http://ruby-china.org/topics/15737</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/mov-vs-ldr/">
         ARM汇编:MOV, LDR, LDR伪指令之间区别
       </a>
@@ -1799,6 +1876,296 @@ ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指�
 
 <ul>
 <li><a href="http://www.56.com/w87/album-aid-12231435.html">http://www.56.com/w87/album-aid-12231435.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/mindmup/">
+        MindMup
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Mar 10, 2014</span>
+
+    
+
+<p>因为自己看的一个视频课程使用的是思维导图的方式记录笔记的, 所以决定, 自己也选择一种思维导图吧, 经过多种思维导图软件的比较, 最后选择了mindmup(online)+freemind(local), 完全开源免费的解决方案, 主要是用了一下很顺手. 够智能, 够所见即所得. BTW, 因为知识记录这种长久的东西, 还是自己搭建或者使用开源的东西靠谱.</p>
+
+<h2 id="toc_0">Features</h2>
+
+<ul>
+<li><p>Zero friction: 可以从任何地方, 任何设备访问. 可以使用MindMup Anonymous Public Storage用于公开的mindmap(不需要注册), google drive用于私人的mindmap.</p></li>
+
+<li><p>Productive: 响应式设计来使用 desktop和mobile, 使用了html5技术.</p></li>
+
+<li><p>Community-driven and Open: 开发是用户驱动, 新特性的优先级由用户投票决定.</p></li>
+</ul>
+
+<h2 id="toc_1">Mouse and touch operations</h2>
+
+<p>MindMup有丰富的快捷键接口, 但是大多数操作也同时可以使用鼠标或者触屏操作来实现.</p>
+
+<ul>
+<li>click and drag the center node: move map</li>
+<li>click and drag the background: move map</li>
+<li>scroll with trackpad/touchpad: move map</li>
+<li>click a node: change current selection</li>
+<li>shift+click a node: multi-select, add a node to selection</li>
+<li>shift+drag a node: manually position a node. Children of the root node can be pulled in any direction, lower level nodes can only be positioned in the direction of its parent relative to the root</li>
+<li>double-click a node: edit</li>
+<li>drag and drop a node between its siblings: reorder siblings</li>
+<li>drag and drop a node on another node: move node to a new parent</li>
+<li>drag a top level 1 node from left to right side of the root (or right-left): switch the position of the node(脑图只区分左右, 不区分上下)</li>
+<li>alt+click, ctrl+click and cmd+click: link between the currently selected node and the clicked node (only if they are not already related)</li>
+<li>drag an image onto a node: associate the image with the node as an icon</li>
+<li>drag an image onto the background: add the image as a child node of the currently selected node</li>
+</ul>
+
+<h2 id="toc_2">keyboard shortcuts</h2>
+
+<p>MindMup对于所有的编辑操作都有快捷键. 在Mac os x上, Ctrl和Cmd键都被记作Ctrl键. 一些浏览器阻止某些键绑定, 所以, 如果Cmd+Space不工作的话, 尝试Ctrl+Space.</p>
+
+<h3 id="toc_3">node manipulation</h3>
+
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Enter</td>
+<td>Add sibling</td>
+</tr>
+
+<tr>
+<td>Shift+Enter</td>
+<td>Add sibling above</td>
+</tr>
+
+<tr>
+<td>Shift+Enter</td>
+<td>Line break (when editing node text)</td>
+</tr>
+
+<tr>
+<td>Tab</td>
+<td>Add child</td>
+</tr>
+
+<tr>
+<td>Shift+Tab</td>
+<td>Insert parent</td>
+</tr>
+
+<tr>
+<td>Space</td>
+<td>Edit node</td>
+</tr>
+
+<tr>
+<td>Shift+Space</td>
+<td>Change node color</td>
+</tr>
+
+<tr>
+<td>a</td>
+<td>View or edit node attachment</td>
+</tr>
+
+<tr>
+<td>i</td>
+<td>Add an image or change the existing image/icon associated with the node</td>
+</tr>
+
+<tr>
+<td>Backspace or Delete</td>
+<td>Remove node</td>
+</tr>
+
+<tr>
+<td>Ctrl+Up/Down Arrow keys</td>
+<td>Move node up/down</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_4">editing</h3>
+
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Ctrl+s</td>
+<td>Save</td>
+</tr>
+
+<tr>
+<td>Ctrl+x or c</td>
+<td>Cut</td>
+</tr>
+
+<tr>
+<td>Ctrl+v or p</td>
+<td>Paste</td>
+</tr>
+
+<tr>
+<td>Ctrl+Shift+v</td>
+<td>Paste Style only(粘贴所复制内容的格式)</td>
+</tr>
+
+<tr>
+<td>Ctrl+c or y</td>
+<td>Copy</td>
+</tr>
+
+<tr>
+<td>u or Ctrl+z</td>
+<td>Undo</td>
+</tr>
+
+<tr>
+<td>r or Ctrl+y or Ctrl+Shift+z</td>
+<td>Redo</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_5">selection</h3>
+
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Arrow keys</td>
+<td>Select the node up/down/left/right of the currently selected one</td>
+</tr>
+
+<tr>
+<td>Shift + Arrow keys</td>
+<td>Add node up/down/left/right to selection (useful to multi-select siblings)</td>
+</tr>
+
+<tr>
+<td>{</td>
+<td>Multi-select the current node and the entire subtree under it</td>
+</tr>
+
+<tr>
+<td>[</td>
+<td>Multi-select only the subtree under the current node (not the node itself)</td>
+</tr>
+
+<tr>
+<td>=</td>
+<td>Multi-select all the siblings of the current node (that have the same parent)</td>
+</tr>
+
+<tr>
+<td>.</td>
+<td>Cancel multi-selection and select only the current node again</td>
+</tr>
+
+<tr>
+<td>1 - 9</td>
+<td>Select all nodes of a particular level (eg 1 selects all first level nodes)</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Select the root node and recenter view</td>
+</tr>
+
+<tr>
+<td>Ctrl+f</td>
+<td>Find node by part of title</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_6">navigation and screen</h3>
+
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/ or f</td>
+<td>Fold or unfold children</td>
+</tr>
+
+<tr>
+<td>Ctrl + or z</td>
+<td>Zoom in</td>
+</tr>
+
+<tr>
+<td>Ctrl - or Shift z</td>
+<td>Zoom out</td>
+</tr>
+
+<tr>
+<td>Esc, Ctrl+0</td>
+<td>Reset map view - select root node and bring it to the center of the screen(目前测试效果和0一样)</td>
+</tr>
+
+<tr>
+<td>Ctrl+b</td>
+<td>Convert floating toolbar to menu (press again to convert back)</td>
+</tr>
+
+<tr>
+<td>Ctrl+Shift+b</td>
+<td>Hide top menu (press again to show)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_7">Storage options</h2>
+
+<ol>
+<li><p>MindMup Anonymous Public Storage: 免费, 公开, 你们的存储在Amazon&rsquo;s S3文件存储服务. 一旦保存, 变成只读. 任何对于一个map的修改会创建一个新的map和新的url. url是随机生成的, 只有知道了url, 任何人都可以访问.</p></li>
+
+<li><p>MindMup Gold: Amazon&rsquo;s S3 文件存储服务. 没有匿名存储的很多限制, 我们知道谁拥有这个map, map的url是永久的, 不随着修改而改变.详看<a href="http://blog.mindmup.com/p/mindmup-gold.html">mindmup-gold</a></p></li>
+
+<li><p>Google Drive: 修改会保存在原有的文件.详看<a href="http://blog.mindmup.com/p/working-with-google-drive.html">working-with-google-drive</a></p></li>
+
+<li><p>Browser Storage: 这个是在你的浏览器中的html存储, 与我们的网站连接. 虽然他有一个url, 但是内容只可以在同一个浏览器的profile被访问. 存储是永久的, 所以你可以关掉浏览器和关机, 内容都不会丢失.</p></li>
+
+<li><p>Dropbox: 与Google Drive完全一样. 详细<a href="http://blog.mindmup.com/p/working-with-dropbox.html">working-with-dropbox</a></p></li>
+
+<li><p>GitHub: (需要你激活扩展)</p></li>
+</ol>
+
+<h2 id="toc_8">Refs</h2>
+
+<ul>
+<li><a href="http://blog.mindmup.com/p/mouse-and-touch-operations.html">http://blog.mindmup.com/p/mouse-and-touch-operations.html</a></li>
+<li><a href="http://blog.mindmup.com/p/keyboard-shortcuts.html">http://blog.mindmup.com/p/keyboard-shortcuts.html</a></li>
+<li><a href="http://blog.mindmup.com/p/storage-options.html">http://blog.mindmup.com/p/storage-options.html</a></li>
 </ul>
 
   </div>
@@ -3477,6 +3844,80 @@ brew install coreutils e2fsprogs ossp-uuid asciidoc binutils bzip2 fastjar flex 
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/minicom-on-mac/">
+        minicom on mac
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Oct 27, 2013</span>
+
+    
+
+<h2 id="toc_0">USB转串口驱动</h2>
+
+<ul>
+<li>我使用的芯片是FTDI的根据FTDI官网的说明,需要下载VCP(Virtual COM Port)驱动.下载了64位的2.2.18版本,ps这东西版本也挺旧的了,是2012/08/08发布的.</li>
+<li>另外一种适配器基于Silicon Labs的CP2012芯片, Windows, Linux和 Mac下都有驱动<a href="http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx">http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx</a></li>
+<li>ps: 另外一种常见得USB转串口驱动(Prolific PL2303):
+在Prolific官网上面也有:(<a href="http://www.prolific.com.tw/US/ShowProduct.aspx?pcid=41&amp;showlevel=0041-0041">http://www.prolific.com.tw/US/ShowProduct.aspx?pcid=41&amp;showlevel=0041-0041</a>).</li>
+<li>参考文献中还有其他的驱动,有需要的可以到参考文献中去查.</li>
+<li>安装前先删除已有的USB转串口驱动(我跳过了)</li>
+<li>安装好之后,打开一个Terminal, 输入 ls /dev/cu.*, 找到包含有usbserial或类似的东西.我的结果:</li>
+</ul>
+
+<pre><code>    $ ls /dev/cu.*                                                             
+    /dev/cu.Bluetooth-Incoming-Port /dev/cu.usbserial-AD02COJ7
+    /dev/cu.Bluetooth-Modem
+</code></pre>
+
+<ul>
+<li>注意:一个serial device会在/dev下面出现2次, 一个是tty.<em>,用来 calling into UNIX systems, 一个是cu.</em>, (Call-Up)用来从他们中 calling out(如: modems).我们想要从我们的Mac中call-out所以我们选用/dev/cu.*.</li>
+<li>TTY device与CU device的技术区别是:
+/dev/tty.*会wait(或者listen)for DCD(data-carrier-detect),如:某人在response之前calling in.
+/dev/cu.*不会assert DCD, 所以他们将总是立刻connect(respond or succeed).</li>
+</ul>
+
+<h2 id="toc_1">Terminal emulation</h2>
+
+<ul>
+<li>GUI apps: Zterm(收费, 支持VT100 emulation), goSerial(不支持 VT100), SecureCRT for Mac(收费)</li>
+<li>Terminal apps: screen, minicom(recommend,and I used)</li>
+<li>built-in: screen(screen /dev/cu.usbserial-AD02COJ7 115200, 退出:  type CTRL-A, then CTRL-.)</li>
+</ul>
+
+<h2 id="toc_2">Minicom</h2>
+
+<ul>
+<li>支持VT100 emulation(which means it sorta kinda works with Meridian Mail (Function keys on a MacBook: fn + f-key))</li>
+<li>先运行minicom -s来配置, 修改device name和流控信息, 然后 Save setup as dfl(default) and Exit.</li>
+<li>每次运行minicom前都记得插入usb转串口.</li>
+<li>在minicom中, 命令都是 Ctrl-A <key>
+修改port settings: Ctrl-A P
+Command Summary: Ctrl-A Z
+Quit Minicom: Ctrl-A X</li>
+</ul>
+
+<h2 id="toc_3">screen</h2>
+
+<p>Mac自带的命令行工具, 可以用来连接USB虚拟串口, 使用方法:</p>
+
+<pre><code>screen /dev/cu.SLAB_USBtoUART 115200
+</code></pre>
+
+<p>这里的/dev/cu.SLAB_USBtoUART是虚拟串口的设备文件节点, 确保装好了适配器的驱动, 插入适配器应该就会找到它们了. 电脑通过/dev/cu.<em>设备文件来连接其他串口设备, 通过/dev/tty.</em> 接受来自其他设备的连接.</p>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="http://pbxbook.com/other/mac-tty.html">在mac下使用串口方法</a></li>
+<li><a href="http://www.ftdichip.com">FTDI官网</a></li>
+<li><a href="http://h4x3rotab.github.io/blog/2014/01/31/os-xxia-de-usbzhuan-uart/">http://h4x3rotab.github.io/blog/2014/01/31/os-xxia-de-usbzhuan-uart/</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/keep-gitting-my-cv-with-markdown/">
         Keep Gitting My CV With Markdown
       </a>
@@ -3644,6 +4085,64 @@ brew install coreutils e2fsprogs ossp-uuid asciidoc binutils bzip2 fastjar flex 
 <ol>
 <li>一直保持最新的文档 <a href="http://kernel-handbook.alioth.debian.org">Debian Linux Kernel Handbook</a></li>
 </ol>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/ak-dotfiles/">
+        ak dotfiles
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, May 20, 2013</span>
+
+    
+
+<h2 id="toc_0">整理自己的dotfiles</h2>
+
+<ul>
+<li>很早就有这个想法了, 可是自己太懒惰了, 另外, 公司的事情属实让人很蛋疼, 一直搁浅到现在. 为了弥补我丢失的时光, 要求自己以后每天最早10点下班. 晚上用来整理自己的文档和笔记.</li>
+<li>本来想法很粗糙, 后来想到通过网上的大家来学习, 发现了比自己整理自己的糟糕配置更有效的方法. GitHub真是个好东西. 我觉得GitHub是我们这代与上一代Programmer的明显差别的地方, 一定要好好利用.</li>
+</ul>
+
+<h2 id="toc_1">dotfiles on GitHub</h2>
+
+<h3 id="toc_2">idgatt</h3>
+
+<ul>
+<li>idgatt: It&rsquo;s Dangerous to Go Alone! Take This! 的首字母, 不得不对老外的思维差异感到震惊, 呵呵, 个人觉得很丑, 有空熟悉了github命令和规则后, 改下repo的名字吧: ak_dotfiles.</li>
+<li>简单的说这个就是一个自动化脚本, 帮助你管理oh my zsh 和 spf13-vim(呵呵, 刚巧我跟这位author同样的兴趣)
+<a href="https://github.com/Akagi201/idgatt">idgatt</a></li>
+</ul>
+
+<h3 id="toc_3">oh-my-zsh</h3>
+
+<ul>
+<li>zsh: 已经是MAC OS X的默认shell了, 比bash强大n倍, 兼容bash, linux默认bash坑了多少人啊(包括我). z代表最终的意思, 可见其完美程度. 我现在用的还不多, 但交互操作显示和自动提示功能明显很强大. 慢慢熟悉.
+<a href="https://github.com/robbyrussell/oh-my-zsh/">oh-my-zsh</a></li>
+</ul>
+
+<h3 id="toc_4">spf13-vim</h3>
+
+<ul>
+<li>spf13-vim: vim谁都知道, 那配置起来是相当的麻烦, 要至少花个半年时间吧, 这个配置有点缺点的, 一个是名字不太好看, 另外就是配置文件到处都是, 有点乱.
+<a href="https://github.com/spf13/spf13-vim">spf13-vim</a></li>
+</ul>
+
+<h2 id="toc_5">TODO</h2>
+
+<ul>
+<li>软件列表怎么用github同步呢?</li>
+<li>windows开发环境怎么记录呢?类似coolapk的应用集和豆瓣的豆列这种就好了.</li>
+<li>windows下的Portableapps, 这个是必须的.可惜公司dropbox没有能穿透啊, 想把portableapps放到dropbox里面</li>
+</ul>
+
+<h2 id="toc_6">Refs</h2>
+
+<ul>
+<li><a href="http://dotfiles.github.io/">dotfiles@GitHub</a></li>
+</ul>
 
   </div>
   
