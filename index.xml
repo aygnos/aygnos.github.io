@@ -7,7 +7,36 @@
     <language>en-us</language>
     
     
-    <updated>Tue, 16 Dec 2014 03:37:08 CST</updated>
+    <updated>Wed, 14 Jan 2015 16:02:08 CST</updated>
+    
+    <item>
+      <title>Stream Encoder</title>
+      <link>http://akagi201.github.io/blog/stream-encoder/</link>
+      <pubDate>Wed, 14 Jan 2015 16:02:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/stream-encoder/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;OBS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jp9000/obs-studio&#34;&gt;https://github.com/jp9000/obs-studio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开发前说明: &lt;a href=&#34;https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/&#34;&gt;https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文档: &lt;a href=&#34;http://jp9000.github.io/OBS/&#34;&gt;http://jp9000.github.io/OBS/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OBS core: libobs, OBS UI: obs, core跟ui是独立的.&lt;/li&gt;
+&lt;li&gt;OBS core plugins: plugins&lt;/li&gt;
+&lt;li&gt;IRC: #obsproject on Freenode, #obs-dev on Quakenet&lt;/li&gt;
+&lt;li&gt;settings estimator: &lt;a href=&#34;https://obsproject.com/estimator&#34;&gt;https://obsproject.com/estimator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;BLE&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wenjiegit/Bull-Live-Encoder&#34;&gt;https://github.com/wenjiegit/Bull-Live-Encoder&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>License</title>
