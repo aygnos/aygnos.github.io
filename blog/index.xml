@@ -218,610 +218,215 @@
     </item>
     
     <item>
-      <title>Learning Makefile</title>
-      <link>http://akagi201.github.io/blog/learning-makefile/</link>
-      <pubDate>Thu, 05 Jun 2014 01:08:08 CST</pubDate>
+      <title>Learning Network</title>
+      <link>http://akagi201.github.io/blog/learning-network/</link>
+      <pubDate>Wed, 17 Sep 2014 15:28:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-makefile/</guid>
+      <guid>http://akagi201.github.io/blog/learning-network/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/learning-makefile.png&#34; alt=&#34;learning-makefile&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;系统的学习了一下Makefile, 隐含规则部分没有详细看, 实际使用过程中也不会依靠这个东西的.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;参考资料&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;跟我一起学Makefile&lt;/li&gt;
-&lt;li&gt;GNU Makefile Reference: &lt;a href=&#34;http://www.gnu.org/software/make/manual/make.html&#34;&gt;http://www.gnu.org/software/make/manual/make.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;另一个淘宝前辈的总结(简单向, 我的更偏向深入一些): &lt;a href=&#34;http://kenwublog.com/arrange-makefile-knowledges&#34;&gt;http://kenwublog.com/arrange-makefile-knowledges&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;调试makefile: &lt;a href=&#34;http://coolshell.cn/articles/3790.html&#34;&gt;http://coolshell.cn/articles/3790.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;偶遇的好东西&lt;/h2&gt;
-
-&lt;p&gt;自主学习的一个好处就是, 在研究的过程中会发现很多好玩的东西.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;All Cheat Sheets in one page: &lt;a href=&#34;http://www.cheat-sheets.org/&#34;&gt;http://www.cheat-sheets.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;一个更加牛逼的东西, 在任何软件界面下按住command键不放即可显示快捷键 &lt;a href=&#34;http://www.mediaatelier.com/CheatSheet/&#34;&gt;http://www.mediaatelier.com/CheatSheet/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PopClip, 一个效率工具吧.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Mindmap&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;由于记录的notes太多了, 不能使用免费的存储服务, open放到google drive了 &lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5UWhnVjlmd2tWM1E/edit?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5UWhnVjlmd2tWM1E/edit?usp=sharing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Root Nook Simple Touch</title>
-      <link>http://akagi201.github.io/blog/root-nook-simple-touch/</link>
-      <pubDate>Sat, 31 May 2014 23:14:24 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/root-nook-simple-touch/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-success.jpg&#34; alt=&#34;nookmanager-success&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;今天断网了大半天, 然后玩了一会Calibre, 翻出了我的Nook3, 刚好利用这个假期打算把他root掉.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;使用NookManager进行root&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;固件升级到官方1.2.1(我的原来是1.1.5的, 如果不升级那么root时会ModManager会安装失败)&lt;/li&gt;
-&lt;li&gt;下载NookManager.img.&lt;/li&gt;
-&lt;li&gt;使用dd命令将NookManager.img写入一个空的sd卡中.(我用Mac OS X系统, linux下类似, win下用相应工具)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ ls /dev/disk*
-/dev/disk0   /dev/disk0s1 /dev/disk0s2 /dev/disk0s3 /dev/disk1   /dev/disk1s1
-akagi201@akrmbp ~ $ sudo diskutil umount force /dev/disk1s1
-Volume (null) on disk1s1 force-unmounted
-akagi201@akrmbp ~ $ sudo dd if=/Users/akagi201/Downloads/NookManager.img of=/dev/disk1 bs=1m
-64+0 records in
-64+0 records out
-67108864 bytes transferred in 49.549986 secs (1354367 bytes/sec)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;关掉Nook的电源, 插入sd卡, 然后开机, 会显示15秒的NookManager的信息.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-start.jpg&#34; alt=&#34;nookmanager-start&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;选择&amp;rdquo;No, continue without wireless&amp;rdquo;, 选yes需要刷机之前设备有连过你附近的ap, 才能验证通过.(这个其实可以改进啦)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-wifi.jpg&#34; alt=&#34;nookmanager-wifi&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;使用NookManager做一次备份! Rescue -&amp;gt; Backup -&amp;gt; Format remaining space on SD card -&amp;gt; Create backup. (需要花费15~45分钟, 最终备份文件大小是几百M)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-backup.jpg&#34; alt=&#34;nookmanager-backup&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用USB线连接电脑和nook, 拷贝NookBackup分区下的backup.full.gz和backup.full.md5到电脑, 最好上传到网盘备份好.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Root! 备份之后, Back -&amp;gt; Back -&amp;gt; Main Menu -&amp;gt; Root -&amp;gt; Root my device (然后看到全是成功, 如果不成功说明你用其他方法root过或者没有升级到官方的1.2.1)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-root.jpg&#34; alt=&#34;nookmanager-root&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-success.jpg&#34; alt=&#34;nookmanager-success&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Back -&amp;gt; Exit -&amp;gt; 拔出SD卡 -&amp;gt; 设备自动重启 -&amp;gt; 选择Relaunch. 搞定.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://forum.xda-developers.com/showthread.php?t=2040351&#34;&gt;http://forum.xda-developers.com/showthread.php?t=2040351&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nookdevs.com/Nook_Simple_Touch/Rooting&#34;&gt;http://nookdevs.com/Nook_Simple_Touch/Rooting&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wireless Penetration</title>
-      <link>http://akagi201.github.io/blog/wireless-penetration/</link>
-      <pubDate>Wed, 28 May 2014 15:28:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/wireless-penetration/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/wireless-penetration.png&#34; alt=&#34;wireless-penetration&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;之前&lt;a href=&#34;http://www.zhihu.com/people/Akagi201&#34;&gt;知乎&lt;/a&gt;上有人私信我, 问我无线安全都需要了解哪些东西, 如何去学, 当时没有给他一个好的答案, 最近在研究无线安全攻防方面的东西, 刚好看到一个不错的东西整理一下框架, 然后, 慢慢补充细节.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a142782190c86701310d3e06c80965547f&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Wireless Penetration&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Wireless Penetration on MindMup&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1463fc090205c0132ece74a07efcd9b01&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Introduction to Computer Networks&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Introduction to Computer Networks on MindMup&lt;/a&gt;
 &lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Refs&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Google Drive&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.wirelessdefence.org&#34;&gt;http://www.wirelessdefence.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;mindmup 免费的在线分享放不下了, 只能放到google drive上了.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>Learning Kernel</title>
-      <link>http://akagi201.github.io/blog/learning-kernel/</link>
-      <pubDate>Thu, 01 May 2014 06:14:08 CST</pubDate>
+      <title>Streaming Protocols</title>
+      <link>http://akagi201.github.io/blog/streaming-protocols/</link>
+      <pubDate>Tue, 09 Sep 2014 15:28:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-kernel/</guid>
+      <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
+      <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9&#34; data-role=&#34;mindmup-embed&#34; title=&#34;streaming protocols&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;streaming protocols on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning OpenWrt - Outline</title>
+      <link>http://akagi201.github.io/blog/learning-openwrt/</link>
+      <pubDate>Mon, 25 Aug 2014 03:02:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-openwrt/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1a4fe3d700e3201320be50ecffad778f1&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Learning OpenWrt&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Learning OpenWrt on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FreeRADIUS新手入门 - 我翻译的开源书</title>
+      <link>http://akagi201.github.io/blog/freeradius-beginners-guide/</link>
+      <pubDate>Fri, 22 Aug 2014 13:35:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/freeradius-beginners-guide/</guid>
       <description>
 
-&lt;p&gt;我是从大二开始使用linux系统的, 当时除了玩单片机之外, 所有工作完全在linux完成, 克服了种种&amp;rdquo;困难&amp;rdquo;. 不过现在看来自己除了佩服自己当时的热情之外, 就只觉得自己太幼稚了. &amp;ldquo;在正确的时间做正确的事情, 用正确的工具做正确的事情.&amp;rdquo; 就像以前一直很偏爱C语言一样, 一定要写成内核模块, 内核线程&amp;hellip; 现在自己变得更加聪明了.&lt;/p&gt;
+&lt;p&gt;最近在搭建CoovaChilli + FreeRadius的认证系统. 顺便把一本英文书翻译一下. 由于时间比较匆忙, 所以还不保证质量, 想尽快翻译完, 然后在慢慢斟酌个别语句. 这个项目本身也是试水作品, 为以后写自己的书做些&lt;strong&gt;技术储备&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;我大学期间一直没有机会碰linux内核, 只有在大三下的时候, 在实验室玩ARM开发板, 才知道, 原来linux内核做了这么多的工作, 一个hello world能够轻松的运行起来, 背后有多少的东西在默默无闻的工作着.&lt;/p&gt;
+&lt;p&gt;在写书的过程中发现几个问题:
+* gitbook中文支持有写问题, 有时候文本最左边字会叠在一起.
+* 有时候gitbook会崩溃, 有时候搜狗输入法会比较卡, 不知道是否是兼容性问题, 要及时保存.
+* 原文章节层次结构太乱了, 只有一级跟二级标题, 三级标题, 四级标题跟二级标题字体样式完全一样, 没法区分, 抽空要整理下.
+* markdown感觉层次太多的时候会记不住自己在哪层了.
+* github还没同步过来, 国内用gitbook写书的还不多, 问了一圈没得到答复.&lt;/p&gt;
 
-&lt;p&gt;毕业后我按照自己的规划找了一份嵌入式软件开发的工作. 公司也还算给力, 给了我足够的时间来学习. 我当时是从驱动入手的, 主要看了一本书和一个英文文档, 分别是LDD3和LKMPG. 这本书我前段时间又看了一遍, 觉得这个不适合一个新手看, 难怪我当初看的那么累, 原因有是作者在书内容里无缝地介绍了软件架构, 代码复用等等对于新手来说高级的东西, 这些应该属于软件工程的内容, 这样当然有好处, 但是给人感觉就是复杂, 相比之下国内的书会简单直接很多. 另外LDD3是基于2.6内核的API写的驱动, 已经有大牛移植到linux3.x上面了.&lt;/p&gt;
-
-&lt;p&gt;其实, 内核代码发展很快, 差几个版本基本就面目全非了, 所以, 要多看, 多思考, 有整体把握. 这样, 过段时间拿到最新的代码了, 自己也有能力跟踪进去.&lt;/p&gt;
-
-&lt;p&gt;最近, 在linux社区上面看了几篇有趣的东西, 在HN上貌似也火了一下, 所以, 分享出来给大家玩下.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Eudyptula&lt;/h2&gt;
-
-&lt;p&gt;模仿Matasano Crypto Challenge(集中48小时的练习, 培训参与者密码系统如何建立以及如何被攻击), 面向linux内核的一系列编程练习, 任务难度逐渐增加. 一切是从给little@eudyptula-challenge.org发一封邮件说你要加入开始的. 由于实际的内核开发就是通过邮件列表沟通的, 所以, 必须要熟悉邮件工具是必备技能.&lt;/p&gt;
-
-&lt;p&gt;PS: 由于我发了邮件他还没回我, 呵呵, 后面等做了几个任务之后再跟大家分享一下.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Kernel 101&lt;/h2&gt;
-
-&lt;p&gt;这篇文章最近在HN上比较火, 教你从0开始写一个kernel, 当然功能仅仅是打印一行信息而已. 对于新手来说还是比较好的学习材料. 源码就2个文件, 一段汇编主要功能就是跳转到C程序的kmain函数; 一段C代码, 将显存内容清空并赋值为一段字符串.&lt;/p&gt;
-
-&lt;p&gt;其中几个关键知识点记录一下:
-1. x86的CPU启动后从地址[0xFFFFFFF0]处开始执行, 这个是设计CPU时写死的. 从芯片手册上可以查到. 下面提到的一些地址都是芯片手册中规定统一的, 所以x86架构才能够通用, 各种OS都能安装, 不需要繁琐的移植工作.
-2. 启动流程: 上电 -&amp;gt; CPU[0xFFFFFFF0] -&amp;gt; 跳转到内存中BIOS代码 -&amp;gt; 根据BIOS配置将物理设备第一个扇区的代码copy到物理内存的[0x7c00]位置(即boot loader的代码) -&amp;gt; bootloader将内核代码加载到物理内存&lt;a href=&#34;x86 CPU宏内核代码起始地址, 也就是后面我们编写的汇编程序的链接地址&#34;&gt;0x100000&lt;/a&gt;.
-3. 汇编代码中使用了一些nasm的伪指令, 所以, um, 看注释就好.
-4. 通常的内核开发还需要提供一个根文件系统文件的, 这个简单例子是不包含文件系统的.
-5. grub2下添加引导项的方法, 成败在于此, 需要注意你的/boot分区是否是一个独立分区, 如果不是独立分区那么ok, 安装作者的文章搞起; 如果你像我一样安装系统时候将/boot独立一个256M空间的分区, 那么要内核文件位置使用相对/boot相对地址. 另外注意, 要使用msdos2, 否则会失败.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$sudo vim /boot/grub/grub.conf
-
-//在文件中其他引导项下面添加如下
-menuentry &#39;Akagi201 Lovely Kernel&#39; {
-    set root=&#39;hd0,msdos2&#39;
-    multiboot /kernel-7001 ro
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;What my new-born kernel says&lt;/h2&gt;
-
-&lt;p&gt;um, 我改了一下颜色, 跟字符内容, 哈哈, 没啥技术含量啦!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akgrub.png&#34; alt=&#34;akgrub&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/akkernel.png&#34; alt=&#34;akkernel&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;links&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;在线阅读地址&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The Linux Kernel Module Programming Guide: &lt;a href=&#34;http://tldp.org/LDP/lkmpg/2.6/html/&#34;&gt;http://tldp.org/LDP/lkmpg/2.6/html/&lt;/a&gt; 看完这个你就能让内核输出hello world啦.&lt;/li&gt;
-&lt;li&gt;LDD3-examples-3.x: &lt;a href=&#34;https://github.com/duxing2007/ldd3-examples-3.x&#34;&gt;https://github.com/duxing2007/ldd3-examples-3.x&lt;/a&gt; 你应该会注意到不同的branch对应不同的内核版本, 很赞吧!&lt;/li&gt;
-&lt;li&gt;kernel 101 on HN: &lt;a href=&#34;https://news.ycombinator.com/item?id=7588205&#34;&gt;https://news.ycombinator.com/item?id=7588205&lt;/a&gt; 有人还做了FUSE版本, 作者也要出ARM版本了, 可以关注下, 上面作者有更多的细节解释.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://freeradius.akagi201.org&#34;&gt;http://freeradius.akagi201.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;github地址(还没同步过来, 求助)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/freeradius-beginners-guide&#34;&gt;https://github.com/Akagi201/freeradius-beginners-guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>保护你的隐私, 从PGP开始</title>
-      <link>http://akagi201.github.io/blog/protect-your-privacy-with-pgp/</link>
-      <pubDate>Sat, 29 Mar 2014 07:11:08 CST</pubDate>
+      <title>将OpenWrt变成完美的BSP</title>
+      <link>http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/</link>
+      <pubDate>Thu, 03 Jul 2014 12:26:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/protect-your-privacy-with-pgp/</guid>
+      <guid>http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/</guid>
       <description>
 
-&lt;p&gt;以前大学还在玩ubuntu的时候, 天天逛ubuntu的中文论坛, 看到这么个家伙, &lt;a href=&#34;http://adam8157.info/about&#34;&gt;http://adam8157.info/about&lt;/a&gt;, 他的about页面一直放了一个&lt;code&gt;My PGP/GPG key ID: 2F39D84D&lt;/code&gt;, 我一直不知道是干什么用的, 我还特意到知乎上问了一下, 不过貌似知乎对这么被认为是可google的问题没兴趣(对八卦和吐槽感兴趣?), 没得到满意答案, 今天有个空挡, 还是自己研究下.&lt;/p&gt;
+&lt;p&gt;BSP(Board Support Package)对于嵌入式开发者一定不陌生, 就是针对一种板子适配指定的操作系统(常见的是linux)所需要的bootloader, 板上外设的所有驱动, 还有内核, 通常还包括一个根文件系统(里面包含能确保板子能跑起来的基本的一些配置)和toolchain.&lt;/p&gt;
 
-&lt;p&gt;PGP(OpenPGP)是一个历史悠久的电子加密和签章系统, 透过public key加密演算法, 保护个人电子资料, 不会在散布过程或存储媒体中被有心者窥视, 破坏或伪装. 不同于一般以CA(Certificate Authority, 认证机构)为基础的签章, 加密系统, PGP是分散式的系统, PGP没有中央的控制或信任机构, 因此不会被政府, 少数机构所控制,入侵. 在这个公权力无法被信任的年代, 我们正需要这样的系统, 保护我们的通讯安全.&lt;/p&gt;
+&lt;p&gt;随着软件系统的发展, 越来越多的统一化环境配置的工具出现, 像vagrant, docker等, 这样, 将运行环境一起打包就不会出现过去那种, 在我的机器上能运行, 在你的机器上运行不了的情况了.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Web Of Trust&lt;/h2&gt;
+&lt;p&gt;嵌入式开发也是一样, 每次面对一种新的SOC, 多要进行一些重复工作, 像裁剪系统, 裁剪busybox, 移植各种应用, 各种库等. 对于开发而言, 对于每种平台开发时, 都要有一些细小的差异. 而这些差异是可以统一起来的. 解决方案就是OpenWrt.&lt;/p&gt;
 
-&lt;p&gt;PGP是透过所谓的web of trust, 建构信任网. 也对于, 透过人际网路, 一对一的交换PGP key(public key), 安全的通讯管道, 建立在人和人之们的信任感上. 相对的, 以CA为基础的系统, 是透过少数集中的组织, 交换public key. 因此, CA容易受政府或少数机构的控制, 而破坏其安全性. 而web of trust则没这样的问题, 没有中央机构可以伪造你的PGP key. PGP的使用者, 透过web of trust确保所使用的 key, 不是政府或第三方所伪造的.&lt;/p&gt;
+&lt;p&gt;用OpenWrt作为BSP, 这使得用户和开发者可以快速熟悉不同的/新的硬件产品. 关于OpenWrt的详细内容, 在OpenWrt的官方文档有非常详细的介绍. &lt;a href=&#34;http://wiki.openwrt.org/doc/start&#34;&gt;http://wiki.openwrt.org/doc/start&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;那么公司如何用OpenWrt做自己的产品呢? 根据开源项目的特点需要进行一些修改.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;OpenWrt Buildroot的Makefile wrapper&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Web Of Trust的运作: &lt;a href=&#34;http://www.pgpi.org/doc/pgpintro/#p20&#34;&gt;http://www.pgpi.org/doc/pgpintro/#p20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;download tool: 下载指定版本的OpenWrt&lt;/li&gt;
+&lt;li&gt;patchset: 对指定版本的OpenWrt进行打补丁, 确保稳定&lt;/li&gt;
+&lt;li&gt;package feed: 自己软件包的 package feed.&lt;/li&gt;
+&lt;li&gt;dl link directory: 将~/dl链接到openwrt/dl.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;伪造Public Key&lt;/h2&gt;
-
-&lt;p&gt;CA为基础的系统, Public Key的散布是透过CA对Public Key进行签名. CA会有一份公开的Public Key, 透过使用对应的secret key对某Public Key签名, 由CA保证其正确性. 而使用者, 透过验证通讯对方的Public Key是否有CA的正确签名, 确保使用正确的Public Key. 这样的系统, 建立在对CA的信任, 因此CA必需是公信的第三者. 然而, 事实上没有绝对公信的第三者, 政治力量随时可能入侵CA, 透过CA的Key, 伪造任何人的Public Key. 因此, 像CA这类中央式的系统, 容易受外力影向, 进行大规模隐私侵害, 无法保护通信的自由和隐密. 事实上, 中国某CA运作单位, 就被怀疑有这种&lt;a href=&#34;http://blog.nutsfactory.net/2010/02/02/remove-cnnic-cert-on-linux/&#34;&gt;可能&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;PGP工具&lt;/h2&gt;
-
-&lt;p&gt;PGP系统的实现, 有两项主要工具, PGP和GPG. PGP是原先的实现, 而GPG则是GNU实现的相容工具, 和PGP相容. 本文介绍GPG的使用.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;产生PGP Key&lt;/h2&gt;
-
-&lt;p&gt;GPG基本上会产生两对key, 一组用来sign(签章), 另一组用来encrypt(加密).  Encryption用途的key, 因为比较常被使用, 因此较容易受攻击. (透过分析加密的样本, 数量愈多, 愈可能分析出原本的key.) 因此, 一般建议定期更换加密用的 key. 然而, 更换key非常麻烦, 必需一一重新和拥有你的key的朋友交换. 因此, 签章用途的key通常是和加密用途的key分开的. 签章用途的key较少使用, 因此较不易被破解, 通常是永久使用. 在你更换新加密用途的key时, 能够使用签章用途的key, 为新的key签名. 因此, 你可以透过email或其它网路的方式散布你加密用途的新key. 收到新key的朋友, 就可以使用你签章用途的key, 验证你的新key.&lt;/p&gt;
-
-&lt;p&gt;产生新的PGP key的方法:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;## 两种安装方法
-#1. brew install gnupg # 命令行和linux完全一样
-#2. https://gpgtools.org/ # GUI界面, 其实命令行就够了
-
-akagi201@akrmbp ~ $ gpg --gen-key
-gpg (GnuPG) 1.4.16; Copyright (C) 2013 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-gpg: directory `/Users/akagi201/.gnupg&#39; created
-gpg: new configuration file `/Users/akagi201/.gnupg/gpg.conf&#39; created
-gpg: WARNING: options in `/Users/akagi201/.gnupg/gpg.conf&#39; are not yet active during this run
-gpg: keyring `/Users/akagi201/.gnupg/secring.gpg&#39; created
-gpg: keyring `/Users/akagi201/.gnupg/pubring.gpg&#39; created
-Please select what kind of key you want:
-   (1) RSA and RSA (default)
-   (2) DSA and Elgamal
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-Your selection? 4
-RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048)
-Requested keysize is 2048 bits
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &amp;lt;n&amp;gt;  = key expires in n days
-      &amp;lt;n&amp;gt;w = key expires in n weeks
-      &amp;lt;n&amp;gt;m = key expires in n months
-      &amp;lt;n&amp;gt;y = key expires in n years
-Key is valid for? (0)
-Key does not expire at all
-Is this correct? (y/N) y
-
-You need a user ID to identify your key; the software constructs the user ID
-from the Real Name, Comment and Email Address in this form:
-    &amp;quot;Heinrich Heine (Der Dichter) &amp;lt;heinrichh@duesseldorf.de&amp;gt;&amp;quot;
-
-Real name: Akagi201
-Email address: akagi201@gmail.com
-Comment: Bob Liu
-You selected this USER-ID:
-    &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot;
-
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
-You need a Passphrase to protect your secret key.
-
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-...+++++
-..+++++
-gpg: /Users/akagi201/.gnupg/trustdb.gpg: trustdb created
-gpg: key BAD7F7A3 marked as ultimately trusted
-public and secret key created and signed.
-
-gpg: checking the trustdb
-gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
-gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
-pub   2048R/BAD7F7A3 2014-05-27
-      Key fingerprint = E19A 2B9C B30F 8D0E 3F14  8C9F 7BAA 088C BAD7 F7A3
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-
-Note that this key cannot be used for encryption.  You may want to use
-the command &amp;quot;--edit-key&amp;quot; to generate a subkey for this purpose.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;建议选(3)或者(4)(我选了4), 产生只用来签章的key, 并将有效时间设定为永远. 在产生签章用途的key之后, 该key会存在keyring里, 通常是home目录下的.gnupg 子目录, 你能用gpg列出目前存在的key.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --list-keys
-/Users/akagi201/.gnupg/pubring.gpg
-----------------------------------
-pub   2048R/BAD7F7A3 2014-05-27
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-
-akagi201@akrmbp ~ $ gpg --list-secret-keys
-/Users/akagi201/.gnupg/secring.gpg
-----------------------------------
-sec   2048R/BAD7F7A3 2014-05-27
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这列出你有一把PGP的Public Key, 接着列出你有一把Secret Key. 这两把key的ID都是0xBAD7F7A3(第二栏, 斜线后), 代表他们是同一对key. Secret Key是使用者收藏(前面有sec字样), 不能让别人知道的部分, 用在签名用途. 而public key则是公开给别人知道(pub字样), 用来验证你的签名.&lt;/p&gt;
-
-&lt;p&gt;接着我们要产生加密用途的key.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --edit-key BAD7F7A3
-gpg (GnuPG) 1.4.16; Copyright (C) 2013 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret key is available.
-
-pub  2048R/BAD7F7A3  created: 2014-05-27  expires: never       usage: SC
-                     trust: ultimate      validity: ultimate
-[ultimate] (1). Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-
-gpg&amp;gt; addkey
-Key is protected.
-
-You need a passphrase to unlock the secret key for
-user: &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot;
-2048-bit RSA key, ID BAD7F7A3, created 2014-05-27
-
-Please select what kind of key you want:
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-   (5) Elgamal (encrypt only)
-   (6) RSA (encrypt only)
-Your selection? 6
-RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048)
-Requested keysize is 2048 bits
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &amp;lt;n&amp;gt;  = key expires in n days
-      &amp;lt;n&amp;gt;w = key expires in n weeks
-      &amp;lt;n&amp;gt;m = key expires in n months
-      &amp;lt;n&amp;gt;y = key expires in n years
-Key is valid for? (0) 2y
-Key expires at Thu May 26 10:59:08 2016 CST
-Is this correct? (y/N) y
-Really create? (y/N) y
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-..+++++
-.+++++
-
-pub  2048R/BAD7F7A3  created: 2014-05-27  expires: never       usage: SC
-                     trust: ultimate      validity: ultimate
-sub  2048R/6E980A59  created: 2014-05-27  expires: 2016-05-26  usage: E
-[ultimate] (1). Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-
-gpg&amp;gt; quit
-Save changes? (y/N) y
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;请选择(5)或(6)(这里我选择了6), 产生专用来加密用的public key. 这里将有效时间设为两年(2y), 可依据需要设定. 完成之后, 会看到一把subkey(前面有sub字样), 这里得到的key ID为0x6E980A59. 0x6E980A59为0xBAD7F7A3的subkey. 0x6E980A59的有效期限为2年, 因此, 两年之后你必须生成一把新的key, 以取代这把.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;kagi201@akrmbp ~ $ gpg --list-sigs
-/Users/akagi201/.gnupg/pubring.gpg
-----------------------------------
-pub   2048R/BAD7F7A3 2014-05-27
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sig 3        BAD7F7A3 2014-05-27  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
-sig          BAD7F7A3 2014-05-27  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里可以看到, 0xBAD7F7A3和0x6E980A59这两把key都用0xBAD7F7A3这把key签章过(前面有sig字样). 也就是0xBAD7F7A3 有一个self-sign, 自已签自己.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --armor --export BAD7F7A3
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v1
-
-mQENBFOD/ZQBCADQNTAV2KI+37d/Ep1ginwR2AoMTPe4AbhGVBr5LJsWbrW/y/Ap
-Fyar6eAcT2OLAASpAyJNZpGxrG5QmKRjvcC/Bdx4mudWExs1o3aUwGIeCCUBVBdj
-r0g2kZji/UbuaArRWVBotl/DIqvYswKM762FnQoOKTlMlj45U1dY1WS2ZP8KFhHV
-5RWqJknY8p42QC5Tl09m7TCxkAz7ms+qU8Ya6Af4vLdSo8V7bpbATD2BQtPTpfZt
-3z9rezvDRcsWK4O3Cmx5z+Q6HjQZV7Wbg2L3Q0yUzHktMM997WmRlT3zyUYXeAxG
-wZSAGKcVd4gvHOLiRB5GyuYr8lIQH0GN/uCzABEBAAG0J0FrYWdpMjAxIChCb2Ig
-TGl1KSA8YWthZ2kyMDFAZ21haWwuY29tPokBOAQTAQIAIgUCU4P9lAIbAwYLCQgH
-AwIGFQgCCQoLBBYCAwECHgECF4AACgkQe6oIjLrX96OgqggAr21OZvGgqwo59G7H
-9QGjwVD5OliJgAUuykEuzCv4ATKm+7Y/g/HgGUqIILKzknOPCe2VGTs+6RA98zWk
-9nbdCUEu7oUZTBYq5h1uuPkm4FoJyyrwatSNChqJ4qav6jpZDqGnHwNeEwdY1WNG
-uoC+MDM38u5KET6TnqYgmd5B0HWlUuiUx57uKE70vPRpziNDloeLzKdfD0fibKHN
-ZFOgJJZkoPhr/yigqmQEfdrajTY4YGEy/2HYIULZYQs0paRe0SVw0UqbDZanOvlr
-KOv6XFtH66DjY0pTgUWUXfGylzJAAtgQXQOFDXURC2oYG9DRkvA8q5gaZpqJT4f9
-3Awk0bkBDQRTg/98AQgAwTKF9C/72yRmtTVaLziH93eKSc8jKOPt+Ncio5l+Bdhj
-lJqJLzQWBB8uRa76wcTKMUpPMOPAMYqZjMekbVIrKFfNHh3pD+y90M/rDkhM2M4Z
-gV6XtHnjqhQ4woqejM6k1ADKgndZNoau0TlJ7TagPM33Nay43vHo/BPcx6rs4Ssa
-oSnv0sf4PBJeDfhjna+LVAQ18/rPBRijL/Xh6Bn2PWTrmF59g2mmdzV3WMOMsC+I
-VkuXP20Vg4B0hFi6t9Hx/B5JL9t/xEEo2YKRyia8F4vtraSlhbMwVnfPfWuG5YSh
-AsBa1ByLxCbNdELoLwU69ZDmgFH2x8JdUcm2vslwLwARAQABiQElBBgBAgAPBQJT
-g/98AhsMBQkDwmcAAAoJEHuqCIy61/ejD9MH/A3vij2gjaLl3u1CAQB6n8DUSiyr
-+bzEkoLHcJDYAM49oM3GPnkCSLJVM7EYmnlR6GOO4PwXlr2GjoxIer+MDCJ8hq98
-n+H/2kgV8me/DDSoI1WUiIrcVLBcvylqZv3UWN4Vz+hP48iS/CEtPO6up/l3UAL3
-YMWpi96+pnPodjMXL8JcIHlvx8Syxz1J0REI1J7uiGqzvJ9wu4ASYAHtJgi3qsvS
-0FvAJcbdWMRNs51Pi0C1SYeztV7yRih8lTjI9ylUoncY5nKPtHrXjCNfpe0fClHx
-JLz3WwlAX8gFyM3C+dl/622e7EvK9hO/spn8kS3lHD3q2V3t8GtSM4RzsY4=
-=G9Ls
------END PGP PUBLIC KEY BLOCK-----
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;透过上面的指令, 你能将你的public key export出来(导出), 印在纸上, 或存在U盘上, 或者是贴在网路上散布. 然而, 别人如何确定这把key是你的?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --fingerprint
-/Users/akagi201/.gnupg/pubring.gpg
-----------------------------------
-pub   2048R/BAD7F7A3 2014-05-27
-      Key fingerprint = E19A 2B9C B30F 8D0E 3F14  8C9F 7BAA 088C BAD7 F7A3
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面指令能列出你的public key的fingerprint(指纹)印出来, 这相当于public key浓缩之后的特征(digest). 因此, 其它使用者只需比对这组fingerprint是否和public key的相符, 就能确定这把key的正确性. 因此, 通常你会把fingerprint 印在纸上, 面对面交给对方. 必要时, 还会检查对方的身份证, 护照或其它身份证明文件.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_4&#34;&gt;交换key&lt;/h2&gt;
-
-&lt;p&gt;在开始交换key之前, 建议先把你的public key上传到key server, 别人只需从key server上下载你的key. key server 是由第三方所维护的, 只负责key的散布, 而不负责签名, 因此不会有前面所述伪造的问题.&lt;/p&gt;
-
-&lt;p&gt;如下, 上传 0xBAD7F7A3这把key.(注意, 这里需要把shell的http代理关掉,否则上传失败) 上传完之后可以到&lt;a href=&#34;http://keys.gnupg.net/&#34;&gt;http://keys.gnupg.net/&lt;/a&gt;查询.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --send-keys BAD7F7A3
-gpg: sending key BAD7F7A3 to hkp server keys.gnupg.net
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;之后, 你只需告诉别人你的key id和fingerprint, 其它使用者就能下载和验证完整的public key.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --recv-keys BAD7F7A3
-gpg: requesting key BAD7F7A3 from hkp server keys.gnupg.net
-gpg: key BAD7F7A3: &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot; not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-akagi201@akrmbp ~ $ gpg --fingerprint
-/Users/akagi201/.gnupg/pubring.gpg
-----------------------------------
-pub   2048R/BAD7F7A3 2014-05-27
-      Key fingerprint = E19A 2B9C B30F 8D0E 3F14  8C9F 7BAA 088C BAD7 F7A3
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如, 本人的key ID是 0xBAD7F7A3. User ID为&amp;rdquo;Akagi201 (Bob Liu)&amp;ldquo;(前有uid字样). 你可以透过上面的指令下载我的 public key, 并验证fingerprint.&lt;/p&gt;
-
-&lt;p&gt;在下载和验证完成别人的public key之后, 若对方是你信任的人, 你可以为他的key签名. 当你为别人的key签名之后, 对方可以分布你的签名, 加强他的public key的可信度, 于是认识你的朋友, 可以依据你的签名, 决定是否相信该public key. 你也可以依据朋友的签名, 决定是否相信其它人的 public key.(下面的例子中我自己没法再给我自己签名了)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --sign-key BAD7F7A3
-
-pub  2048R/BAD7F7A3  created: 2014-05-27  expires: never       usage: SC
-                     trust: ultimate      validity: ultimate
-sub  2048R/6E980A59  created: 2014-05-27  expires: 2016-05-26  usage: E
-[ultimate] (1). Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-
-&amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot; was already signed by key BAD7F7A3
-Nothing to sign with key BAD7F7A3
-
-Key not changed so no update needed.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面的指令将使用你的secret key, 为 0xBAD7F7A3这把public key签章. 签完之后, 就可以看到0xBAD7F7A3这把key 多了一个签名. 你能将这个签名后的public key(再次)上传到key server, 或export成档案散布. 通常该public key 的原拥有者, 会希望取得你的签名.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --list-sigs
-/Users/akagi201/.gnupg/pubring.gpg
-----------------------------------
-pub   2048R/BAD7F7A3 2014-05-27
-uid                  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sig 3        BAD7F7A3 2014-05-27  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
-sig          BAD7F7A3 2014-05-27  Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;toc_5&#34;&gt;加密&lt;/h2&gt;
-
-&lt;p&gt;当你想要传送机密资料给其它人时, 可使用对方的public key为信件和资料加密. 只有对应的secret key, 才能解开该份信件或资料.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ gpg --armor --encrypt --output akmsg.asc akmsg.txt
-You did not specify a user ID. (you may use &amp;quot;-r&amp;quot;)
-
-Current recipients:
-
-Enter the user ID.  End with an empty line: Akagi201
-
-Current recipients:
-2048R/6E980A59 2014-05-27 &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot;
-
-Enter the user ID.  End with an empty line:
-akagi201@akrmbp ~ $ cat akmsg.asc
------BEGIN PGP MESSAGE-----
-Version: GnuPG v1
-
-hQEMA4V0fiJumApZAQgAq5In+b2OiG7ruCfhbycUEUKgSTGrcSdErFuWHbWKpcSj
-xItKaJX6s5FGGG01p4Q9h/kYzhOzwnxHmMDFszzcW9cxBSPXES5qpGJd5lO0PTCX
-t7yma4geYmFG1zajkJzsnVyJl4NTvfnMgRcAKRqD5QZuo6vQNaURGsDtwcqY/iRt
-6wD958HnBr3+OGkP6KCsjbhYsOrIaVnnfF0TEK0cxyCgu2743O8F9rwhwwTVBCMU
-qHRXaHjRaGysflcnXlqHVRbHFYKTg+Mo2K2avricTKzu/bdV6J1jeCkqfXrbGKqD
-aDxCmYZH1y7JmBNJJhYaWlth0b3Ir26+kO/RSOji2NJRAcJ1/bZK6uROY1LeuMps
-G0zdH0ODNvV/sAe+9C23CqGFXrN/z4XdEHR1WyU3ZWUrPnEP4Z1hkQ2zy8ncy32I
-92E6SyWit6R7KNbhHu8/A7jt
-=F1tG
------END PGP MESSAGE-----
-akagi201@akrmbp ~ $ cat akmsg.txt
-This is secret
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如上面的指令, 使用0x6E980A59这把key(0xBAD7F7A3的subkey), 将akmsg.txt这份文件加密, 并存成akmsg.asc. 上面指令中, 只需输入对方的email address或者user ID(uid), 就会从你的keyring中, 找出对方用来加密的public key.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_6&#34;&gt;解密&lt;/h2&gt;
-
-&lt;p&gt;在你收到加密的文件时, 只需使用下面指令就可以使用存在keyring里的secret key, 为文件解密.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ rm akmsg.txt
-akagi201@akrmbp ~ $ gpg --decrypt --output akmsg.txt akmsg.asc
-
-You need a passphrase to unlock the secret key for
-user: &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot;
-2048-bit RSA key, ID 6E980A59, created 2014-05-27 (main key ID BAD7F7A3)
-
-gpg: encrypted with 2048-bit RSA key, ID 6E980A59, created 2014-05-27
-      &amp;quot;Akagi201 (Bob Liu) &amp;lt;akagi201@gmail.com&amp;gt;&amp;quot;
-akagi201@akrmbp ~ $ cat akmsg.txt
-This is secret
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;toc_7&#34;&gt;提醒&lt;/h2&gt;
-
-&lt;p&gt;虽然可能性不是那么高, 但你永远不知道哪一天会需要这样的科技, 以保障你的通讯安全. 若不从现在开始建立你的web of trust, 需要时, 可能为时已晚. 请妥善保管你的secret key, 别让任何人有机可趁. 保护自己, 也保护朋友.&lt;/p&gt;
+&lt;h2 id=&#34;toc_1&#34;&gt;使用OpenWrt buildroot过程的技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OpenWrt的buildroot编译系统, 包含fetching, patching, compiling, packaging的过程. 在fetching阶段会联网下载源码到dl目录, 所以, 一个好的方法是, 将dl目录保存在自己本地机器的一个固定位置, 然后软链接到openwrt/dl目录, 这样就不用每次下载重复的包了, 另外, 有时由于网络原因, 可以手动下载包放到这个目录.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>地理围栏(Geo-fencing)</title>
+      <link>http://akagi201.github.io/blog/geo-fencing/</link>
+      <pubDate>Thu, 26 Jun 2014 02:21:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/geo-fencing/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/geofencing.png&#34; alt=&#34;geofencing&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Geo-fencing&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A geo-fence is a virtual perimeter for a real-world geographic area.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Geo-fence&#34;&gt;http://en.wikipedia.org/wiki/Geo-fence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;地理围栏(Geo-fencing)是LBS的一种新应用, 就是用一个虚拟的栅栏围出一个虚拟地理边界. 当手机进入, 离开某个特定地理区域, 或在该区域内活动时, 手机可以接收自动通知和警告.&lt;/li&gt;
+&lt;li&gt;有了地理围栏技术, 位置社交网站就可以帮助用户在进入某一地区时自动登记, 可应用智能购物, 个人助理, 家庭成员/朋友的发现, 智能家居等领域.&lt;/li&gt;
+&lt;li&gt;地理围栏可通过蓝牙, WIFI, GPS等定位技术完成, 移动设备进入围栏后会自动选择最低功耗方式进行定位, 地理围栏技术为开发者提供全新想象空间.&lt;/li&gt;
+&lt;li&gt;地理围栏技术均是: 预先划定一些多边形的区域, 一个中心化的设备或者云端知道定位源进入该区域; 定位源知道自己进入该区域; 触发一些响应, 例如消息的push. 在智能硬件时代, 这种能够更加精准地定位, 更加节省功耗, 更加有效率低成本的互联互通方式, 迎来爆发机会.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Geo-fencing vs LBS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;地理围栏的地理区域是被网格化的. 网格化的标准是根据一个地理区域内的业务和商业聚类的, 而不是纯粹的经纬度和城市地图的匹配.&lt;/li&gt;
+&lt;li&gt;实际上地理围栏的各个围栏的区隔是一个个的应用需求群地图. 主要的商业需求聚集在特定区域, 形成的一个聚合信息服务区域.&lt;/li&gt;
+&lt;li&gt;终端自己或者在网络帮助下能够识别所处的围栏.&lt;/li&gt;
+&lt;li&gt;用户的围栏信息彼此之间能够共享, 也能够与应用开发商分享.&lt;/li&gt;
+&lt;li&gt;双向, 互动是关键.&lt;/li&gt;
+&lt;li&gt;商业群落是地理围栏的核心, 类似城市的商圈.&lt;/li&gt;
+&lt;li&gt;价值整合, 场景整合, 信息流资金流整合是关键.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Geo-fencing vs Beacons&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mashable.com/2014/02/24/beacons-geofencing-location/&#34;&gt;http://mashable.com/2014/02/24/beacons-geofencing-location/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.mobizou.com/geolocation-privacy-gaining-steam/&#34;&gt;http://www.mobizou.com/geolocation-privacy-gaining-steam/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Geo-fencing Applications&lt;/h2&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;百度的地理围栏技术&lt;/h3&gt;
+
+&lt;p&gt;百度地理围栏技术是国内首家提供离线+在线地理围栏服务的产品, 基于位置的提醒和离在线结合的方式, 实现了功耗的大幅降低. 用户离关键位置点较远的时候, 会进行距离判断, 在用户到达围栏周围的时候, 再请求在线定位, 询问用户是否触发围栏.由于用户不需要一直打开GPS, 所以在使用该功能时达到了省流量, 省电的目的.&lt;/p&gt;
+
+&lt;p&gt;百度地理围栏技术&amp;rdquo;离线+在线&amp;rdquo;的技术策略, 能够让在用户体验上更为顺畅, 摆脱网络状况的限制, 避免智能手机普遍待机时间短的缺点, 极大提升了地理围栏的工作效率, 因此使用百度定位SDK提供的地理围栏服务的开发者能够设计开发更适合用户需求的产品. 目前, 已经有大量开发者利用百度地理围栏SDK开发相关应用, 精彩创意层出不穷.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Intel的地理围栏技术&lt;/h3&gt;
+
+&lt;p&gt;Intel的地理围栏技术采用了有效地将地理信息整合到移动平台的应用中去, 极大提高应用的易用性, 同时权衡系统待机时间与响应时间是Intel地理围栏的关键亮点, 实现了低功耗, 快速响应和高精度三者的完美结合, 其围栏技术的创新点:&lt;/p&gt;
+
+&lt;p&gt;1）使用MCU完成连续监测功能.&lt;/p&gt;
+
+&lt;p&gt;2）基于情境自动甑选合理的位置提供模块.&lt;/p&gt;
+
+&lt;p&gt;3）通过传感器轨迹推算实现实时定位和矫正.&lt;/p&gt;
+
+&lt;p&gt;Intel地理围栏技术亮点包括:&lt;/p&gt;
+
+&lt;p&gt;1）多定位源GNSS/Modem/WiFi.&lt;/p&gt;
+
+&lt;p&gt;2）传感器轨迹推算.&lt;/p&gt;
+
+&lt;p&gt;3）多地理围栏.&lt;/p&gt;
+
+&lt;p&gt;4）情境感知.&lt;/p&gt;
+
+&lt;p&gt;5）自适应.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Apple的地理围栏 - iBeacons技术&lt;/h3&gt;
+
+&lt;p&gt;iBeacon的出现让地理定位能够更加精确——从几百米的精度提高到了一米甚至半米. 这个精细度非常高的地理围栏, 终于可以让很多的实际物体都有条件具有了定义自己地理位置标识的能力, 例如一张桌子, 一把椅子, 都可以有自己的地理坐标.&lt;/p&gt;
+
+&lt;p&gt;苹果在iOS 7中推出的iBeacon协议包含两个部分:&lt;/p&gt;
+
+&lt;p&gt;1）按照苹果对iBeacon发射设备的数据流格式, 定制蓝牙设备广播, 那么这台低功耗蓝牙设备就可以被识别为iBeacon协议发射装置.&lt;/p&gt;
+
+&lt;p&gt;2）利用iOS设备对蓝牙的广播发出设备进行判断, 如果其发出的广播数据符合iBeacon的协议, 那么就认为这台低功耗蓝牙的发射装置是一台iBeacon基站.&lt;/p&gt;
+
+&lt;p&gt;由于iBeacon建立在蓝牙协议的基础上, 所以这个技术天然拥有了两个优势:&lt;/p&gt;
+
+&lt;p&gt;1）硬件的无缝过渡, 不需要硬件厂商投入成本进行完全不同的硬件开发.&lt;/p&gt;
+
+&lt;p&gt;2）现有数据传输协议对于用户来说没有太大迁移成本, 完全有能力像智能路由(Wi-Fi协议)一样成为物联网的数据中心节点.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_7&#34;&gt;其他的地理围栏技术&lt;/h3&gt;
+
+&lt;p&gt;地理围栏技术在10年前便已出现. 在去年的Google IO大会上便已经有了地理围栏的展览.&lt;/p&gt;
+
+&lt;p&gt;Meridian平台便提供Zones地理围栏功能, 这项功能允许用户在开发者推出的室内地图App上随意用多边形圈区域, 而当用户真正到达这些区域时, app会立马推送通知. 除了Meridian, 国外还有几家地理围栏平台, 比如PlaceCast, Digby Localpoint, Wifarer和ShopKick. 和上述几家最大的不同是, Meridian是通过Wifi传感而非GPS定位.&lt;/p&gt;
+
+&lt;p&gt;而Google Lititude API也支持开发者在地图上标记多边形的围栏区域, App进入该趋于时便会收到push消息. 与iBeacons等技术不同的是, 这个push消息不是由基站发送, 而是云端推动的. 跟百度地图的地理围栏技术有些相似.&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_8&#34;&gt;Refs&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.codemud.net/~thinker/GinGin_CGI.py/show_id_doc/478&#34;&gt;http://www.codemud.net/~thinker/GinGin_CGI.py/show_id_doc/478&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ARM汇编:MOV, LDR, LDR伪指令之间区别</title>
-      <link>http://akagi201.github.io/blog/mov-vs-ldr/</link>
-      <pubDate>Wed, 19 Mar 2014 09:24:08 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/mov-vs-ldr/</guid>
-      <description>
-
-&lt;p&gt;在编译ARM汇编时, 用MOV指令编译有时会出错, 但是, 有时又对了, 还有LDR, 有时要加个&amp;rdquo;=&amp;ldquo;, 有时又不加了, 非常容易搞混.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;1. &amp;ldquo;8位图&amp;rdquo;数据&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/8bit.jpg&#34; alt=&#34;8bit&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;2. MOV指令&lt;/h2&gt;
-
-&lt;p&gt;MOV指令可以把立即数或者寄存器内容(注意: 这里绝对不可以是内存!!)传递给一个寄存器.
-对于立即数是有要求的, 就是上边的&amp;rdquo;8位图&amp;rdquo;数据. 只能由一个8bit连续有效位通过偶数次移位得到的数.
-它为什么会有这样的限制呢?
-原因是, MOV本身就是一个32bit指令, 除了指令码本身, 他不可能再带一个可以表示32bit的数字, 所以用了其中的12bit来表示立即数, 其中4bit表示移位的尾数(循环右移, 且数值*2), 8bit用来表示要移位的一个基数.
-如果立即数超过这个范围, 就没有办法用一条MOV指令给寄存器赋值(这里就要用到LDR伪指令了, 查看反汇编指令, 你会看到LDR伪指令此变成了两条指令~~).&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;3. LDR指令&lt;/h2&gt;
-
-&lt;p&gt;首先呢, ldr指令既可以是大范围的地址读取伪指令, 也可以内存访问指令. 当它的第二个参数前面有&amp;rdquo;=&amp;ldquo;时, 表示伪指令, 否则表示内存访问指令.
-LDR指令就是个单寄存器存储的ARM存储器访问指令, 补充了MOV指令不能访问内存的缺陷.
-ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指令(我说的是单个寄存器~~).
-想要把数据从内存中某处读取到寄存器中, 只能用ldr.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;4. LDR伪指令&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;LDR伪指令没有立即数范围的限制, 即可以直接赋值, 因为这是一条伪指令.
-如果立即数在MOV的要求内, 系统会自动用一条汇编MOV指令来实现. 如果不在MOV的范围内, 就用其它的方式来实现, 比如变成了两条指令, 或者从PC偏移地址读取一个32位的数据给寄存器.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;关于LDR伪指令, 可以装载一个32bit立即数的说法并不正确, 因为在实际中并不是这一条语句装载了32bit立即数(跟上面的貌似一样, 呵呵~~), 比如:&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;ldr r1,=0x70000000&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;其实真正的汇编代码是将某个地址的值传递给r1, 就是说需要一个地址存放0x70000000这个立即数, 在反汇编中,
-如果仔细看会发现, 如果这个立即数可以用mov指令的表达形式来表达, 编译器就直接用mov了.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_4&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_7ec8fc2c01014epa.html&#34;&gt;http://blog.sina.com.cn/s/blog_7ec8fc2c01014epa.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.leikeji.com/thread-546-1-1.html&#34;&gt;http://www.leikeji.com/thread-546-1-1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

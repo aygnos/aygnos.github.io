@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> OpenWrt开发文档 &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>OpenWrt开发文档</h1>
+  <span class="post-date">Sat, Feb 22, 2014</span>
+      
+
+<h3 id="toc_0">优秀文档中文项目-欢迎你的加入</h3>
+
+<ul>
+<li><a href="http://akmaker.com"><strong>AK创客空间</strong></a></li>
+<li><a href="https://github.com/AKmaker/openwrt-cn"><strong>OpenWrt中文化项目</strong></a></li>
+</ul>
+
+<h3 id="toc_1">wiki</h3>
+
+<p><a href="http://wiki.openwrt.org/doc/start">wiki导航</a></p>
+
+<h2 id="toc_2">编译</h2>
+
+<ul>
+<li><a href="http://downloads.openwrt.org/docs/buildroot-documentation.html#about">早期OpenWrt编译文档</a></li>
+<li><a href="http://wiki.openwrt.org/about/toolchain">工具链</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">编译准备</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/build">编译</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/feeds">添加feeds</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.generate">Image Builder</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk">SDK</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/extroot.howtobuild">Rootfs on External Storage (extroot) (<sup>1</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/extroot">Rootfs on External Storage (extroot) (<sup>2</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/wireless-router-with-a-3g-dongle">wireless router which is connected to either a wired, a wireless or a 3G wireless connection</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/single.package">How to Build a Single Package</a></li>
+</ul>
+
+<h2 id="toc_3">开发</h2>
+
+<ul>
+<li><a href="http://wiki.openwrt.org/doc/devel/crosscompile">Cross Compile</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=32330">外部编译器设置-(<sup>1</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=29804">外部编译器设置-(<sup>2</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=12436">外部编译器设置-(<sup>3</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/packages">Creating packages</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/feeds">Feeds</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/dependencies">Using Dependencies</a></li>
+<li><a href="https://dev.openwrt.org/wiki/SubmittingPatches">How To Submit Patches to OpenWrt</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/external_toolchain">External Toolchain - Use OpenWrt as External Toolchain (<sup>1</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="https://lists.openwrt.org/pipermail/openwrt-devel/2009-February/003774.html">External Toolchain - Use OpenWrt as External Toolchain (<sup>2</sup>&frasl;<sub>2</sub>)</a></li>
+</ul>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="http://blog.csdn.net/openme_openwrt/article/details/7348452">http://blog.csdn.net/openme_openwrt/article/details/7348452</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

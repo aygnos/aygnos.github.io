@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> 在Mac OS X下配置OpenWrt Buildroot环境 &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>在Mac OS X下配置OpenWrt Buildroot环境</h1>
+  <span class="post-date">Mon, Oct 28, 2013</span>
+      
+
+<h2 id="toc_0">与linux相比会遇到的2个问题</h2>
+
+<ol>
+<li>OpenWrt需要一个case-sensitive filesystem, 而Mac OS X默认提供的文件系统是case-insensitive.</li>
+<li>Mac OS X下缺少大量的开发工具包, 在普通linux下都有.</li>
+<li>使用一个disk image(避免再次分区硬盘), 和Homebrew.</li>
+</ol>
+
+<h2 id="toc_1">steps</h2>
+
+<ol>
+<li>Disk Image Creation
+hdiutil create -size 20g -fs &ldquo;Case-sensitive HFS+&rdquo; -volname OpenWrt OpenWrt.dmg
+hdiutil attach OpenWrt.dmg
+这个命令会在当前目录创建一个20GB image, 并且attach他名字为&rdquo;OpenWrt&rdquo;, 执行后你会在Finder中看到OpenWrt volume, 是空的.
+cd /Volumes/OpenWrt</li>
+<li>Packages installation
+有两种类型的packages:</li>
+<li>XCode framework: Apple development SDK
+. 包含了core compilers和libraries.</li>
+<li>Homebrew framework: a package manager用来下载开源components到你的系统.
+brew install coreutils e2fsprogs ossp-uuid asciidoc binutils bzip2 fastjar flex getopt gtk2 intltool jikes hs-zlib openssl p5-extutils-makemaker python26 subversion rsync ruby sdcc unzip gettext libxslt bison gawk autoconf wget gmake ncurses findutils</li>
+<li>missing: bzip2 getopt(gnu-getopt代替, 将mac os x自带的/usr/bin/getopt 重命名备份，把gnu-getopt链接到/usr/local/bin/getopt) gtk2 jikes zlib p5-extutils-makemaker tar(gnu-tar代替) python26(python代替) rsync unzip gmake ncurses</li>
+</ol>
+
+<h2 id="toc_2">Easy Build</h2>
+
+<p>不需要产生或下载不必要的packages.<a href="http://wiki.openwrt.org/doc/howto/easy.build">http://wiki.openwrt.org/doc/howto/easy.build</a></p>
+
+<h2 id="toc_3">Refs</h2>
+
+<ul>
+<li><a href="http://wiki.openwrt.org/easy.build.macosx">Setup MacOSX as an OpenWrt build environment</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence.macosx">OpenWrt Buildroot – Installation on Mac OS X</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=34676">https://forum.openwrt.org/viewtopic.php?id=34676</a>
+<a href="http://digiland.tw/viewtopic.php?id=2105">http://digiland.tw/viewtopic.php?id=2105</a></li>
+<li><a href="http://blog.csdn.net/mirkerson/article/details/7287931">http://blog.csdn.net/mirkerson/article/details/7287931</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

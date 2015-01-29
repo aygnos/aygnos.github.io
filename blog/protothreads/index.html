@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Protothreads &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Protothreads</h1>
+  <span class="post-date">Sat, Dec 14, 2013</span>
+      
+
+<h2 id="toc_0">Specs</h2>
+
+<ul>
+<li>没有专用的机器代码, 纯c实现.</li>
+<li>不使用容易犯错的跳转指令.</li>
+<li>占用极少内存.</li>
+<li>在不在操作系统里用都可以提供blocking event-handlers(可阻塞的事件句柄??).</li>
+<li>提供给事件触发系统(event-driven)线性代码执行(linear code execution).</li>
+<li>提供顺序的控制流程(sequential flow of control)不需要使用复杂的状态机(state machine)或者完全的多线程(full multi-threading).</li>
+<li>Protothreads 是无优先级的, 因此, 一个上下文切换(context switch)只会发生在阻塞操作(blocking operations)上.</li>
+<li>Protothreads function as stackless, lightweight threads providing a blocking context cheaply using minimal memory per protothread (on the order of single bytes).</li>
+<li>Protothreads 是无栈的, 表示需要全局变量来保持变量用来跨上下文切换(across context switches).</li>
+<li>Protothread 的概念是被Adam Dunkels和Oliver Schmidt开发的.</li>
+</ul>
+
+<h2 id="toc_1">Adam Dunkels</h2>
+
+<ul>
+<li>看了一下他的wiki页面, 原来这个人还是个牛人, 在嵌入式领域写了不少东西.</li>
+<li>博士, 瑞典的企业家和程序员, Thingsquare的创始人.</li>
+<li>IPSO Alliance的创始人, 推广对于小的设备(嵌入式和无线传感器)的IP网络通信. alliance&rsquo;s white paper的作者.</li>
+<li>他的工作主要是关注网络技术和小的嵌入式设备和无线传感器的分布式通信.</li>
+<li>作品有: uIP(micro-IP), lwIP, Protothreads, Contilki, uVNC, MiniWeb, phpstack, uBASIC.</li>
+<li>书籍: <Interconnecting Smart Objects with IP - the Next Internet>.</li>
+<li></li>
+</ul>
+
+<h2 id="toc_2">Example</h2>
+
+<pre><code class="language-C">#include &quot;pt.h&quot;
+ 
+struct pt pt;
+struct timer timer;
+ 
+PT_THREAD(example(struct pt *pt))
+{
+  PT_BEGIN(pt);
+ 
+  while(1) {
+    if(initiate_io()) {
+      timer_start(&amp;timer);
+      PT_WAIT_UNTIL(pt,
+         io_completed() ||
+         timer_expired(&amp;timer));
+      read_data();
+    }
+  }
+  PT_END(pt);
+}
+</code></pre>
+
+<h2 id="toc_3">Refs</h2>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Protothreads">http://en.wikipedia.org/wiki/Protothreads</a></li>
+<li><a href="http://dunkels.com/adam/pt/index.html">http://dunkels.com/adam/pt/index.html</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Adam_Dunkels">http://en.wikipedia.org/wiki/Adam_Dunkels</a></li>
+<li><a href="http://www.amazon.com/Interconnecting-Smart-Objects-IP-Internet/dp/0123751659">http://www.amazon.com/Interconnecting-Smart-Objects-IP-Internet/dp/0123751659</a></li>
+<li><a href="http://hi.baidu.com/hyper99/item/bcf1dbc50af11247a8ba9422">http://hi.baidu.com/hyper99/item/bcf1dbc50af11247a8ba9422</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

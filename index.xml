@@ -314,143 +314,46 @@ limitations under the License.
     </item>
     
     <item>
-      <title>Learning Makefile</title>
-      <link>http://akagi201.github.io/blog/learning-makefile/</link>
-      <pubDate>Thu, 05 Jun 2014 01:08:08 CST</pubDate>
+      <title>Learning Network</title>
+      <link>http://akagi201.github.io/blog/learning-network/</link>
+      <pubDate>Wed, 17 Sep 2014 15:28:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-makefile/</guid>
+      <guid>http://akagi201.github.io/blog/learning-network/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/learning-makefile.png&#34; alt=&#34;learning-makefile&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;系统的学习了一下Makefile, 隐含规则部分没有详细看, 实际使用过程中也不会依靠这个东西的.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;参考资料&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;跟我一起学Makefile&lt;/li&gt;
-&lt;li&gt;GNU Makefile Reference: &lt;a href=&#34;http://www.gnu.org/software/make/manual/make.html&#34;&gt;http://www.gnu.org/software/make/manual/make.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;另一个淘宝前辈的总结(简单向, 我的更偏向深入一些): &lt;a href=&#34;http://kenwublog.com/arrange-makefile-knowledges&#34;&gt;http://kenwublog.com/arrange-makefile-knowledges&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;调试makefile: &lt;a href=&#34;http://coolshell.cn/articles/3790.html&#34;&gt;http://coolshell.cn/articles/3790.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;偶遇的好东西&lt;/h2&gt;
-
-&lt;p&gt;自主学习的一个好处就是, 在研究的过程中会发现很多好玩的东西.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;All Cheat Sheets in one page: &lt;a href=&#34;http://www.cheat-sheets.org/&#34;&gt;http://www.cheat-sheets.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;一个更加牛逼的东西, 在任何软件界面下按住command键不放即可显示快捷键 &lt;a href=&#34;http://www.mediaatelier.com/CheatSheet/&#34;&gt;http://www.mediaatelier.com/CheatSheet/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PopClip, 一个效率工具吧.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Mindmap&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;由于记录的notes太多了, 不能使用免费的存储服务, open放到google drive了 &lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5UWhnVjlmd2tWM1E/edit?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5UWhnVjlmd2tWM1E/edit?usp=sharing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Root Nook Simple Touch</title>
-      <link>http://akagi201.github.io/blog/root-nook-simple-touch/</link>
-      <pubDate>Sat, 31 May 2014 23:14:24 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/root-nook-simple-touch/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-success.jpg&#34; alt=&#34;nookmanager-success&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;今天断网了大半天, 然后玩了一会Calibre, 翻出了我的Nook3, 刚好利用这个假期打算把他root掉.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;使用NookManager进行root&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;固件升级到官方1.2.1(我的原来是1.1.5的, 如果不升级那么root时会ModManager会安装失败)&lt;/li&gt;
-&lt;li&gt;下载NookManager.img.&lt;/li&gt;
-&lt;li&gt;使用dd命令将NookManager.img写入一个空的sd卡中.(我用Mac OS X系统, linux下类似, win下用相应工具)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~ $ ls /dev/disk*
-/dev/disk0   /dev/disk0s1 /dev/disk0s2 /dev/disk0s3 /dev/disk1   /dev/disk1s1
-akagi201@akrmbp ~ $ sudo diskutil umount force /dev/disk1s1
-Volume (null) on disk1s1 force-unmounted
-akagi201@akrmbp ~ $ sudo dd if=/Users/akagi201/Downloads/NookManager.img of=/dev/disk1 bs=1m
-64+0 records in
-64+0 records out
-67108864 bytes transferred in 49.549986 secs (1354367 bytes/sec)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;关掉Nook的电源, 插入sd卡, 然后开机, 会显示15秒的NookManager的信息.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-start.jpg&#34; alt=&#34;nookmanager-start&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;选择&amp;rdquo;No, continue without wireless&amp;rdquo;, 选yes需要刷机之前设备有连过你附近的ap, 才能验证通过.(这个其实可以改进啦)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-wifi.jpg&#34; alt=&#34;nookmanager-wifi&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;使用NookManager做一次备份! Rescue -&amp;gt; Backup -&amp;gt; Format remaining space on SD card -&amp;gt; Create backup. (需要花费15~45分钟, 最终备份文件大小是几百M)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-backup.jpg&#34; alt=&#34;nookmanager-backup&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用USB线连接电脑和nook, 拷贝NookBackup分区下的backup.full.gz和backup.full.md5到电脑, 最好上传到网盘备份好.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Root! 备份之后, Back -&amp;gt; Back -&amp;gt; Main Menu -&amp;gt; Root -&amp;gt; Root my device (然后看到全是成功, 如果不成功说明你用其他方法root过或者没有升级到官方的1.2.1)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-root.jpg&#34; alt=&#34;nookmanager-root&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/nookmanager-success.jpg&#34; alt=&#34;nookmanager-success&#34; /&gt;
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Back -&amp;gt; Exit -&amp;gt; 拔出SD卡 -&amp;gt; 设备自动重启 -&amp;gt; 选择Relaunch. 搞定.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Refs&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://forum.xda-developers.com/showthread.php?t=2040351&#34;&gt;http://forum.xda-developers.com/showthread.php?t=2040351&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nookdevs.com/Nook_Simple_Touch/Rooting&#34;&gt;http://nookdevs.com/Nook_Simple_Touch/Rooting&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wireless Penetration</title>
-      <link>http://akagi201.github.io/blog/wireless-penetration/</link>
-      <pubDate>Wed, 28 May 2014 15:28:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/wireless-penetration/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/wireless-penetration.png&#34; alt=&#34;wireless-penetration&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;之前&lt;a href=&#34;http://www.zhihu.com/people/Akagi201&#34;&gt;知乎&lt;/a&gt;上有人私信我, 问我无线安全都需要了解哪些东西, 如何去学, 当时没有给他一个好的答案, 最近在研究无线安全攻防方面的东西, 刚好看到一个不错的东西整理一下框架, 然后, 慢慢补充细节.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a142782190c86701310d3e06c80965547f&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Wireless Penetration&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Wireless Penetration on MindMup&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1463fc090205c0132ece74a07efcd9b01&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Introduction to Computer Networks&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Introduction to Computer Networks on MindMup&lt;/a&gt;
 &lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Refs&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Google Drive&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.wirelessdefence.org&#34;&gt;http://www.wirelessdefence.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;mindmup 免费的在线分享放不下了, 只能放到google drive上了.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Streaming Protocols</title>
+      <link>http://akagi201.github.io/blog/streaming-protocols/</link>
+      <pubDate>Tue, 09 Sep 2014 15:28:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
+      <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9&#34; data-role=&#34;mindmup-embed&#34; title=&#34;streaming protocols&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;streaming protocols on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning OpenWrt - Outline</title>
+      <link>http://akagi201.github.io/blog/learning-openwrt/</link>
+      <pubDate>Mon, 25 Aug 2014 03:02:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-openwrt/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1a4fe3d700e3201320be50ecffad778f1&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Learning OpenWrt&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Learning OpenWrt on MindMup&lt;/a&gt;
+&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
     </item>
     

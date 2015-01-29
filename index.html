@@ -308,6 +308,238 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-network/">
+        Learning Network
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Sep 17, 2014</span>
+
+    
+
+<p><a href="https://www.mindmup.com/map/a1463fc090205c0132ece74a07efcd9b01" data-role="mindmup-embed" title="Introduction to Computer Networks" data-width="90%" data-height="500" data-style="border:1px solid black;margin-bottom:5px;">Introduction to Computer Networks on MindMup</a>
+<script async src="https://www.mindmup.com/external-embed.js"></script></p>
+
+<h2 id="toc_0">Google Drive</h2>
+
+<ul>
+<li>mindmup 免费的在线分享放不下了, 只能放到google drive上了.</li>
+<li><a href="https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing">https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/streaming-protocols/">
+        Streaming Protocols
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Sep 9, 2014</span>
+
+    <p>整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.</p>
+
+<p><a href="https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9" data-role="mindmup-embed" title="streaming protocols" data-width="90%" data-height="500" data-style="border:1px solid black;margin-bottom:5px;">streaming protocols on MindMup</a>
+<script async src="https://www.mindmup.com/external-embed.js"></script></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-openwrt/">
+        Learning OpenWrt - Outline
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Aug 25, 2014</span>
+
+    <p><a href="https://www.mindmup.com/map/a1a4fe3d700e3201320be50ecffad778f1" data-role="mindmup-embed" title="Learning OpenWrt" data-width="90%" data-height="500" data-style="border:1px solid black;margin-bottom:5px;">Learning OpenWrt on MindMup</a>
+<script async src="https://www.mindmup.com/external-embed.js"></script></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/freeradius-beginners-guide/">
+        FreeRADIUS新手入门 - 我翻译的开源书
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Aug 22, 2014</span>
+
+    
+
+<p>最近在搭建CoovaChilli + FreeRadius的认证系统. 顺便把一本英文书翻译一下. 由于时间比较匆忙, 所以还不保证质量, 想尽快翻译完, 然后在慢慢斟酌个别语句. 这个项目本身也是试水作品, 为以后写自己的书做些<strong>技术储备</strong>.</p>
+
+<p>在写书的过程中发现几个问题:
+* gitbook中文支持有写问题, 有时候文本最左边字会叠在一起.
+* 有时候gitbook会崩溃, 有时候搜狗输入法会比较卡, 不知道是否是兼容性问题, 要及时保存.
+* 原文章节层次结构太乱了, 只有一级跟二级标题, 三级标题, 四级标题跟二级标题字体样式完全一样, 没法区分, 抽空要整理下.
+* markdown感觉层次太多的时候会记不住自己在哪层了.
+* github还没同步过来, 国内用gitbook写书的还不多, 问了一圈没得到答复.</p>
+
+<h2 id="toc_0">在线阅读地址</h2>
+
+<ul>
+<li><a href="http://freeradius.akagi201.org">http://freeradius.akagi201.org</a></li>
+</ul>
+
+<h2 id="toc_1">github地址(还没同步过来, 求助)</h2>
+
+<ul>
+<li><a href="https://github.com/Akagi201/freeradius-beginners-guide">https://github.com/Akagi201/freeradius-beginners-guide</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/">
+        将OpenWrt变成完美的BSP
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Jul 3, 2014</span>
+
+    
+
+<p>BSP(Board Support Package)对于嵌入式开发者一定不陌生, 就是针对一种板子适配指定的操作系统(常见的是linux)所需要的bootloader, 板上外设的所有驱动, 还有内核, 通常还包括一个根文件系统(里面包含能确保板子能跑起来的基本的一些配置)和toolchain.</p>
+
+<p>随着软件系统的发展, 越来越多的统一化环境配置的工具出现, 像vagrant, docker等, 这样, 将运行环境一起打包就不会出现过去那种, 在我的机器上能运行, 在你的机器上运行不了的情况了.</p>
+
+<p>嵌入式开发也是一样, 每次面对一种新的SOC, 多要进行一些重复工作, 像裁剪系统, 裁剪busybox, 移植各种应用, 各种库等. 对于开发而言, 对于每种平台开发时, 都要有一些细小的差异. 而这些差异是可以统一起来的. 解决方案就是OpenWrt.</p>
+
+<p>用OpenWrt作为BSP, 这使得用户和开发者可以快速熟悉不同的/新的硬件产品. 关于OpenWrt的详细内容, 在OpenWrt的官方文档有非常详细的介绍. <a href="http://wiki.openwrt.org/doc/start">http://wiki.openwrt.org/doc/start</a></p>
+
+<p>那么公司如何用OpenWrt做自己的产品呢? 根据开源项目的特点需要进行一些修改.</p>
+
+<h2 id="toc_0">OpenWrt Buildroot的Makefile wrapper</h2>
+
+<ul>
+<li>download tool: 下载指定版本的OpenWrt</li>
+<li>patchset: 对指定版本的OpenWrt进行打补丁, 确保稳定</li>
+<li>package feed: 自己软件包的 package feed.</li>
+<li>dl link directory: 将~/dl链接到openwrt/dl.</li>
+</ul>
+
+<h2 id="toc_1">使用OpenWrt buildroot过程的技巧</h2>
+
+<ul>
+<li>OpenWrt的buildroot编译系统, 包含fetching, patching, compiling, packaging的过程. 在fetching阶段会联网下载源码到dl目录, 所以, 一个好的方法是, 将dl目录保存在自己本地机器的一个固定位置, 然后软链接到openwrt/dl目录, 这样就不用每次下载重复的包了, 另外, 有时由于网络原因, 可以手动下载包放到这个目录.</li>
+<li></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/geo-fencing/">
+        地理围栏(Geo-fencing)
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Jun 26, 2014</span>
+
+    
+
+<p><img src="http://akagi201.qiniudn.com/geofencing.png" alt="geofencing" />
+</p>
+
+<h2 id="toc_0">Geo-fencing</h2>
+
+<ul>
+<li>A geo-fence is a virtual perimeter for a real-world geographic area.</li>
+<li><a href="http://en.wikipedia.org/wiki/Geo-fence">http://en.wikipedia.org/wiki/Geo-fence</a></li>
+<li>地理围栏(Geo-fencing)是LBS的一种新应用, 就是用一个虚拟的栅栏围出一个虚拟地理边界. 当手机进入, 离开某个特定地理区域, 或在该区域内活动时, 手机可以接收自动通知和警告.</li>
+<li>有了地理围栏技术, 位置社交网站就可以帮助用户在进入某一地区时自动登记, 可应用智能购物, 个人助理, 家庭成员/朋友的发现, 智能家居等领域.</li>
+<li>地理围栏可通过蓝牙, WIFI, GPS等定位技术完成, 移动设备进入围栏后会自动选择最低功耗方式进行定位, 地理围栏技术为开发者提供全新想象空间.</li>
+<li>地理围栏技术均是: 预先划定一些多边形的区域, 一个中心化的设备或者云端知道定位源进入该区域; 定位源知道自己进入该区域; 触发一些响应, 例如消息的push. 在智能硬件时代, 这种能够更加精准地定位, 更加节省功耗, 更加有效率低成本的互联互通方式, 迎来爆发机会.</li>
+</ul>
+
+<h2 id="toc_1">Geo-fencing vs LBS</h2>
+
+<ul>
+<li>地理围栏的地理区域是被网格化的. 网格化的标准是根据一个地理区域内的业务和商业聚类的, 而不是纯粹的经纬度和城市地图的匹配.</li>
+<li>实际上地理围栏的各个围栏的区隔是一个个的应用需求群地图. 主要的商业需求聚集在特定区域, 形成的一个聚合信息服务区域.</li>
+<li>终端自己或者在网络帮助下能够识别所处的围栏.</li>
+<li>用户的围栏信息彼此之间能够共享, 也能够与应用开发商分享.</li>
+<li>双向, 互动是关键.</li>
+<li>商业群落是地理围栏的核心, 类似城市的商圈.</li>
+<li>价值整合, 场景整合, 信息流资金流整合是关键.</li>
+</ul>
+
+<h2 id="toc_2">Geo-fencing vs Beacons</h2>
+
+<ul>
+<li><a href="http://mashable.com/2014/02/24/beacons-geofencing-location/">http://mashable.com/2014/02/24/beacons-geofencing-location/</a></li>
+<li><a href="http://www.mobizou.com/geolocation-privacy-gaining-steam/">http://www.mobizou.com/geolocation-privacy-gaining-steam/</a></li>
+</ul>
+
+<h2 id="toc_3">Geo-fencing Applications</h2>
+
+<h3 id="toc_4">百度的地理围栏技术</h3>
+
+<p>百度地理围栏技术是国内首家提供离线+在线地理围栏服务的产品, 基于位置的提醒和离在线结合的方式, 实现了功耗的大幅降低. 用户离关键位置点较远的时候, 会进行距离判断, 在用户到达围栏周围的时候, 再请求在线定位, 询问用户是否触发围栏.由于用户不需要一直打开GPS, 所以在使用该功能时达到了省流量, 省电的目的.</p>
+
+<p>百度地理围栏技术&rdquo;离线+在线&rdquo;的技术策略, 能够让在用户体验上更为顺畅, 摆脱网络状况的限制, 避免智能手机普遍待机时间短的缺点, 极大提升了地理围栏的工作效率, 因此使用百度定位SDK提供的地理围栏服务的开发者能够设计开发更适合用户需求的产品. 目前, 已经有大量开发者利用百度地理围栏SDK开发相关应用, 精彩创意层出不穷.</p>
+
+<h3 id="toc_5">Intel的地理围栏技术</h3>
+
+<p>Intel的地理围栏技术采用了有效地将地理信息整合到移动平台的应用中去, 极大提高应用的易用性, 同时权衡系统待机时间与响应时间是Intel地理围栏的关键亮点, 实现了低功耗, 快速响应和高精度三者的完美结合, 其围栏技术的创新点:</p>
+
+<p>1）使用MCU完成连续监测功能.</p>
+
+<p>2）基于情境自动甑选合理的位置提供模块.</p>
+
+<p>3）通过传感器轨迹推算实现实时定位和矫正.</p>
+
+<p>Intel地理围栏技术亮点包括:</p>
+
+<p>1）多定位源GNSS/Modem/WiFi.</p>
+
+<p>2）传感器轨迹推算.</p>
+
+<p>3）多地理围栏.</p>
+
+<p>4）情境感知.</p>
+
+<p>5）自适应.</p>
+
+<h3 id="toc_6">Apple的地理围栏 - iBeacons技术</h3>
+
+<p>iBeacon的出现让地理定位能够更加精确——从几百米的精度提高到了一米甚至半米. 这个精细度非常高的地理围栏, 终于可以让很多的实际物体都有条件具有了定义自己地理位置标识的能力, 例如一张桌子, 一把椅子, 都可以有自己的地理坐标.</p>
+
+<p>苹果在iOS 7中推出的iBeacon协议包含两个部分:</p>
+
+<p>1）按照苹果对iBeacon发射设备的数据流格式, 定制蓝牙设备广播, 那么这台低功耗蓝牙设备就可以被识别为iBeacon协议发射装置.</p>
+
+<p>2）利用iOS设备对蓝牙的广播发出设备进行判断, 如果其发出的广播数据符合iBeacon的协议, 那么就认为这台低功耗蓝牙的发射装置是一台iBeacon基站.</p>
+
+<p>由于iBeacon建立在蓝牙协议的基础上, 所以这个技术天然拥有了两个优势:</p>
+
+<p>1）硬件的无缝过渡, 不需要硬件厂商投入成本进行完全不同的硬件开发.</p>
+
+<p>2）现有数据传输协议对于用户来说没有太大迁移成本, 完全有能力像智能路由(Wi-Fi协议)一样成为物联网的数据中心节点.</p>
+
+<h3 id="toc_7">其他的地理围栏技术</h3>
+
+<p>地理围栏技术在10年前便已出现. 在去年的Google IO大会上便已经有了地理围栏的展览.</p>
+
+<p>Meridian平台便提供Zones地理围栏功能, 这项功能允许用户在开发者推出的室内地图App上随意用多边形圈区域, 而当用户真正到达这些区域时, app会立马推送通知. 除了Meridian, 国外还有几家地理围栏平台, 比如PlaceCast, Digby Localpoint, Wifarer和ShopKick. 和上述几家最大的不同是, Meridian是通过Wifi传感而非GPS定位.</p>
+
+<p>而Google Lititude API也支持开发者在地图上标记多边形的围栏区域, App进入该趋于时便会收到push消息. 与iBeacons等技术不同的是, 这个push消息不是由基站发送, 而是云端推动的. 跟百度地图的地理围栏技术有些相似.</p>
+
+<h2 id="toc_8">Refs</h2>
+
+<ul>
+<li><a href="http://www.leikeji.com/thread-546-1-1.html">http://www.leikeji.com/thread-546-1-1.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/learning-makefile/">
         Learning Makefile
       </a>
@@ -452,6 +684,117 @@ akagi201@akrmbp ~ $ sudo dd if=/Users/akagi201/Downloads/NookManager.img of=/dev
 
 <ul>
 <li><a href="http://www.wirelessdefence.org">http://www.wirelessdefence.org</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/wireless-device/">
+        无线基础之无线网卡
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, May 5, 2014</span>
+
+    
+
+<p>今天利用一个上午的时间把gentoo装好了, 昨天因为网线的原因导致我这边网络一直超时, 郁闷死我了, 多亏我今天足智多谋发现了. 由于OpenWrt的代码仓库版本更新非常频繁, 所以开发分支里面的库和内核版本比一般的桌面linux发行版都要新. 有一个基本常识是host开发主机上面的库和编译工具版本要比源码使用的版本新, 否则就会出现一些奇怪的问题, 无法解决. 所以, 选择一个滚动升级的linux发行版用于开发是明智的选择(相信我, 不难的). 这样筛选后就只剩下Arch和Gentoo了, Arch比较不稳定(希望不被喷, Arch的wiki跟Gentoo一样丰富是好东西), 所以Gentoo是你最明智的选择.用Gentoo编译了一下openwrt, 比我之前用debian节省了至少一半的时间, 哈哈, 爽. BTW, 不要给Gentoo安装图形界面, 很废时间, 也会出现很多冲突, 那就需要你身边有个高手了(我还不是要靠低调之神Yokit的帮忙才解决一些问题).</p>
+
+<p>在进入无线研究之前你需要一套趁手的装备, 这套装备包括硬件和软件, 当然这个也就是我们要做的东西, 其中必然涉及一些硬件和软件的选型. 本文重点介绍一下网卡芯片的选型与相关知识.</p>
+
+<h2 id="toc_0">常见网卡接口</h2>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Peripheral_Component_Interconnect">PCI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/USB">USB</a></li>
+<li><a href="http://en.wikipedia.org/wiki/PC_card">PCMCIA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Mini_PCI#Mini_PCI">Mini PCI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/PCI_Express_Mini_Card#PCI_Express_Mini_Card">PCI Express Mini</a>.</li>
+</ul>
+
+<h2 id="toc_1">底层芯片组</h2>
+
+<p>无论使用哪种接口的网卡, 他们的核心都是&rdquo;芯片组&rdquo;. 这采集关键所在, 我们要关注的电气性能也是针对芯片组的. 目前常见的WLAN芯片厂商有:</p>
+
+<ol>
+<li><a href="https://wikidevi.com/wiki/Atheros">Atheros(已被高通收购)</a></li>
+<li><a href="http://zh-cn.broadcom.com/">Broadcom(博通)</a></li>
+<li><a href="http://www.intel.com/content/www/us/en/wireless-network/wireless-products.html">Intel</a></li>
+<li><a href="http://www.ralinktech.com/en/">Ralink(已被联发科收购)</a></li>
+<li><a href="http://www.realtek.com.tw/">Realtek</a></li>
+</ol>
+
+<h2 id="toc_2">驱动程序</h2>
+
+<p>由于芯片的性能跟驱动的支持是分不开的, 所以, 良好的驱动支持, 也是我们要重点考虑的一项参数.
+linux内核当前无线网卡驱动架构说明:
+<img src="http://akagi201.qiniudn.com/mac80211.bmp" alt="mac80211" />
+</p>
+
+<p>可以看到linux下的无线驱动程序经过了一段&rdquo;发展期&rdquo;, 最终以&rdquo;mac80211驱动框架&rdquo;作为最终的&rdquo;主树结构&rdquo;.
+关于mac80211驱动框架的详细文档请查看: <a href="http://wireless.kernel.org/en/developers/Documentation/mac80211">http://wireless.kernel.org/en/developers/Documentation/mac80211</a>.
+mac80211是一个无线驱动的框架, 它提供了大量的API, 规范, 在这个框架下编写驱动程序能和其他的驱动具有良好的共享性, 兼容性(类似与windows下的NDIS框架的作用).</p>
+
+<p>一般来说, 各家芯片厂商都会提供配套的驱动程序, 并提供更新支持
+1. Atheros(AR系列)</p>
+
+<pre><code>&lt;http://www.qca.qualcomm.com/resources/driverdownloads/&gt;
+&lt;http://wireless.kernel.org/en/users/Drivers/Atheros&gt;
+</code></pre>
+
+<ol>
+<li>Broadcom(BCM系列)</li>
+</ol>
+
+<pre><code>&lt;http://zh-cn.broadcom.com/support/802.11/linux_sta.php&gt;
+&lt;http://wiki.centos.org/zh/HowTos/Laptops/Wireless/Broadcom&gt;
+</code></pre>
+
+<ol>
+<li>Intel</li>
+</ol>
+
+<pre><code>&lt;http://wireless.kernel.org/en/users/Drivers/iwlwifi&gt;
+</code></pre>
+
+<ol>
+<li>Ralink(RT系类)</li>
+</ol>
+
+<pre><code>&lt;http://www.mediatek.com/en/downloads/&gt;
+</code></pre>
+
+<p>淘宝上卖的很多卡皇的内置芯片就是这种RT型号(所谓卡皇就是无良厂家违规的放大了无线发射功率, 大家还是慎重考虑, wifi近距离接触(贴着身体)还是有危害的, 通常半米到1米左右还是可以认为是安全的)</p>
+
+<ol>
+<li>Realtek(RTL系列)</li>
+</ol>
+
+<pre><code>&lt;http://www.realtek.com.tw/DOWNLOADS/downloadsView.aspx?Langid=1&amp;PNid=14&amp;PFid=7&amp;Level=5&amp;Conn=4&amp;DownTypeID=3&amp;GetDown=false&gt;
+</code></pre>
+
+<p>需要注意的, 我们在选择驱动的时候需要关注一下当前驱动是否支持USB(因为现在大多数人包括我自己都是使用外置网卡进行实验的).</p>
+
+<h2 id="toc_3">待续</h2>
+
+<p>上面我们提到过, 不同型号的网卡的*主要差别*在于内置的芯片组, 但是, 一个无线网卡的好坏除了和上面说的芯片组, 驱动有关外, 还和他自身的一些物理, 电气特性有关, 下一篇我们会进一步与大家交流.</p>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Wireless_network_interface_controller">http://en.wikipedia.org/wiki/Wireless_network_interface_controller</a></li>
+<li><a href="http://www.freebuf.com/articles/wireless/33524.html">http://www.freebuf.com/articles/wireless/33524.html</a></li>
+<li><a href="http://blog.csdn.net/sudochen/article/details/8889719">http://blog.csdn.net/sudochen/article/details/8889719</a></li>
+</ul>
+
+<h2 id="toc_5">Signature</h2>
+
+<ul>
+<li>Author: Akagi201(我的微信, 加我请注明: 真实姓名-公司/专长)</li>
+<li>Blog: <a href="http://akagi201.org">http://akagi201.org</a></li>
+<li>AK创客空间qq群: 212106391 (加群暗号: ak)</li>
+<li>请支持本微信公众号, 分享给你的朋友们: AKmaker</li>
 </ul>
 
   </div>
@@ -880,6 +1223,458 @@ This is secret
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/network-device-framework/">
+        网络嵌入式设备框架
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Mar 26, 2014</span>
+
+    
+
+<p>这不是什么新鲜东西, 无线路由器很早前就开始使用了, 不过最近才慢慢理解其原理. 现在网络嵌入式设备的功能越来越强大了, 各芯片厂商的解决方法支持着这种复杂性.</p>
+
+<h2 id="toc_0">1. 一个网络芯片架构</h2>
+
+<p><img src="http://akagi201.qiniudn.com/network-device-hardware.png" alt="network-device-hardware" />
+</p>
+
+<p>大家应该看得出来, 这是一个DSL芯片. 其网络部分由一个switch core构成核心,  对外有3个交换口(粉红色的): 左侧为以太网MAC, 可外接以太网芯片MAC或PHY, 称为LAN端；右侧为DSL的TPS子层，按照DSL标准传输ATM/PTM数据，成为WAN端；上面的是一个PDMA片级总线，与片上系统SoC通信.</p>
+
+<p>另外还有几个额外的交换口, 主要是提供额外功能的: 一个QDMA用于扩展core外Mem; LTR和WTR是两个转换引擎, 当LAN或WAN端的数据包需要一些特殊处理时(如VLAN, PPPOE头等), 会被分别交换到这两个口进行转换后, 再发回Queue中. 再另外, LAN, WAN端各有一个classifier, 是预分类器, 在数据包进入switch core前, 先进行一个粗略的划分, 决定发往哪个端口.</p>
+
+<p>以上的这些功能都是switch core独立完成的, SoC系统只需对其进行简单的配置, 控制即可. 所以SoC的性能并不需要太高(CPU大概是130MHz的). 注意, 该switch core和一般以太网switch的区别, 首先其端口类型就不同, 所提供的功能也跟为复杂.</p>
+
+<p>这里给出一个简单的以太网switch芯片的架构, 如下图所示, 其核心就是一个register集, 对它们进行配置(内部EEPROM, 或外部MDIO总线), 可以实现port-VLAN, 二层filter等功能. 其结构相对简单, 因为其所有端口都是以太网口.</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-switch.png" alt="network-switch" />
+</p>
+
+<p>用该芯片接在上述DSL芯片的LAN端, 构成网络系统如下图所示:</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-switch-lan.png" alt="network-switch-lan" />
+</p>
+
+<p>以太网switch可以自主实现port-VLAN功能, 并通过一个trunk口与switch core相连, 而switch core有很好的vlan_tag classifier功能. 另外WAN端实现了8个硬件通道PVCs, 且switch core也能对它进行很好的classifier. 综上, 就可以实现所谓的port-mapping功能, 只要一跟DSL接入线, 就可在家庭里实现IPTV, Internet, 可视电话等业务的分离.</p>
+
+<p>注意, 所有这些功能都是switch core自动完成的, 网络数据包不需要进入SoC的协议栈, 这和后面讲的一般的路由器是不同的.</p>
+
+<h2 id="toc_1">2. 嵌入式片上系统</h2>
+
+<h3 id="toc_2">2.1 与外界的交互方式</h3>
+
+<p>这里的SoC系统主要功能有: 与外界用户的交互, 解析用户指令, 配置系统.</p>
+
+<p>解析指令对软件系统来说很简单, 配置系统, 前面也说了, 主要是读写一些register, 也很简单. 关键就在于与外界用户交互.</p>
+
+<p>很容易想到的一种方式是网络, SoC也连在switch core上, 有自己的IP, MAC. 当然它和switch core是片上bus相连的, 通信时并不需要MAC, 这里只是把自己伪装成一个通用的以太网设备, 可以被switch core和外界PC识别.</p>
+
+<p>要通信, 当然就需要协议栈了, 不过, 这里的SoC系统不需要处理额外(正常通信)的数据, 所以协议栈也选择简单的LWIP, 如之前的博文所述. 最常用的网络通信方式就http了, 另外还有telent等.</p>
+
+<p>呵呵, 连接192.168.1.1实际就是去连接其内部的SoC, 一般的交换机, 路由器都是这样的, 而不是什么端口. 当我还是一个超级菜鸟时, 这个问题困扰了好久, 纠结.</p>
+
+<p>另外, 嵌入式系统中, 还有一个最常用的交互方式是串口UART. UART是一个非常简单的I/O设备, 它通过直接读写管脚的电平信号(串行的)来实现输入输出, 没有任何额外的中断, 控制等机制. 虽然简单, 不能用以实现复杂, 可靠的功能, 但用作嵌入式系统的调试方法却非常有效.</p>
+
+<p>UART就像是嵌入式设备的键盘/显示器. 它是一种非常简单的硬件资源, 在它之上可以构建通用的I/O设备tty, 在tty之上, 就可以实现各种应用, 如shell等.</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-uart.png" alt="network-uart" />
+</p>
+
+<p>硬件资源UART, 虚拟层设备tty都是系统的资源, 在Uc/OS中, 一般作为全局量, 在其上的应用则通过task来完成. 如XSHELL_TASK中, 就是通过一个while(1)循环, 不停地通过tty_get_line()读取命令行. 注意, 该函数已经不是裸的硬件操作了, 而是加上了一个上层操作, 即识别\r\n来作为结束符, 也是通过一个while(1)循环来作的. 读到电平为空, 则忽略, 因为UART太简单了, 没有中断, 缓存机制等(没有详细去考究, 只是粗略地浏览了一下代码, 好像是这样的吧!).</p>
+
+<p>最后, 外界用户读写电平, 当然不同用示波器了. 呵呵, PC上装个串口驱动, 那么PC的键盘/显示器就为嵌入式板子所用啦.</p>
+
+<h3 id="toc_3">2.2 bootloader</h3>
+
+<p>这就像一个心结, 你一天不理解它, 就一天不能安心地开发嵌入式系统, 尽管你可以把软件写得很出色.</p>
+
+<p>传统的PC机上电后, cpu核的指令指针(如cs:ip)会指向系统内某段固化的代码, 如BIOS, 这些代码被烧录在rom存储器中, 断电也不会丢失. 它们会调用我们开发的代码(如操作系统软件、或一些简单的前后台程序).</p>
+
+<p>一个嵌入式怎么启动, 其实大意和PC(所有这种代码机器)差不多. 当然不同厂商的芯片, 也有各自的方式特点, 以公司的这款芯片来说(注意, 这里说的是芯片上集成的SoC子系统), 它有好几种方式启动.</p>
+
+<p>首先, 其芯片内集成了一个BootRom, 它里面的代码(也就是二进制的门电路)是在芯片的一部分, 即芯片生产出来就有的. 芯片对外有个引脚(boot-mode_pin), 把它接低, 则芯片上电后的ip指向该BootRom, 执行里面的代码. 这些代码很简单, 一般会实现BOOTP, tffp等功能, 从网络上下载OS的内核到内存中来运行. 这就是所谓的网络无盘系统的工作方式.</p>
+
+<p>不过现在好像这种方式用的少了, 存储器便宜啊. 一般都会把boot-mode_pin拉高, 这样上电后ip指向外部flash. 很容易想到flash和PC上的硬盘类似, 是差不多, 有点区别. PC上电后先执行BIOS, 由BIOS装载硬盘的bootloader扇区. 而嵌入式系统一般不这么麻烦, 它直接就在flash中运行这些代码.</p>
+
+<p>现在的cpu-core一般都是32位的, 即有4G物理寻址空间, 而嵌入式的SDRAM并不要那么大, 所有可以把外部flash和SDRAM一起编址:</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-storage.png" alt="network-storage" />
+</p>
+
+<p>系统上电后, ip指向2G处, 则可以直接在flash运行初始的代码, 只是速率比较慢, 所以开始的代码往往是把后面的一个image下载到SDRAM中去, 然后在SDRAM中运行.</p>
+
+<p>至于flash的基址为什么能是2G, 这是由CPU的地址总线和flash的SPI总线的特殊的电路连接方式决定的, 呵呵, 电子出身的应该不难理解. 而且, 有些芯片还提高一些外部引脚pin, 来为地址线加上一个offset(比如1M), 那么两个处理芯片就可以使用同一个flash的不同的部分了(0~1M, 1~2M), 而其内部只觉得都是从2G地址开始的.</p>
+
+<p>下面一个关键问题就是, flash中是什么, 怎么来的, 能改变吗?</p>
+
+<p>一般flash中的东西, 是由具体应用来决定的, 开头一般都是bootloader代码, 后面有一个image文件, 公司的网络系统, 需要一个启动配置文件, 也简单的放在flash中:</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-flash-layout.png" alt="network-flash-layout" />
+</p>
+
+<p>Bootloaer一般放在开头, 便于执行. 后面的则也可以直接这样按照物理空间分配, 复杂一点, 也可以做成文件系统fs, 如嵌入式linux. 主要包括一些配置文件, log信息文件. 最重要的是IMAGE文件, 一般要被加载到SDRAM中去运行, 这也是我们开发系统功能应用的关键.</p>
+
+<p>那这些内容怎么来的呢? 一般初始时, 会用特定的硬件工具厂商提供的一个初始的文件(格式就是上图所示)烧到flash中, 就像当年我们烧8051单片机一样, 再把flash焊在板子上. 如果运行过程中, 代码被改死了, 系统再也起不来了, 那对不起, 只能重新焊一个新的flash了. 而一个补救的方法是在flash中准备两个image, 板子上预留一个特殊的按键, 按下后启动新的image(前面讲的flash-offset方法). 还有一种方法, 是通过内部bootrom启动, 无盘启动. 实现当然需要一定的硬件支持, 如前面所述的那个boot-mode_pin不能焊死, 用一个跳冒, 或者通过一些特殊电路接在以太网上, 以太网事先有数据传输时, 则使用内启动, 如组播升级. 方法各不一啦.</p>
+
+<p>最后, flash里面的内容怎么变? 很简单, 它既然也在cpu的变址内, 直接用cpu把数据写到flash中不就行了. 一般用http服务, client会post一个image文件上来, server端检查没问题, 就写到flash中, 这就是手动升级.</p>
+
+<h3 id="toc_4">3. 一个无线路由器的架构分析</h3>
+
+<p>前面提到的公司芯片解决方案, SoC子系统的功能很有限, 通信数据包一般不会到SoC的协议栈. 而目前市场上的无线路由器系统, 系统中的CPU功能一般很强大, RAM配置也很强大, 一般都能运行大型系统软件, 如Linux.</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-router-framework.png" alt="network-router-framework" />
+</p>
+
+<p>这是一块单独的芯片, 而其几乎包含了一个完整的PC机主板上的所有内容, CPU的功能还是很强劲了, 670MHz的MIPS核, 通过桥片连接数据总线. 这里的sys_bus差不多相当于PC中的PCI总线, 诸如USB控制器等都挂在其下. 这里主要看一下网络设备, 主要有两个, 一个802.11n标准的WLAN收发器, 一个4FE+2GE的以太网交换机.</p>
+
+<p>和之前介绍的DSL芯片不同, 他的两个网络接口都是接在系统总线上, 而没有通过一个switch-core交互. 因此, CPU内必须维护一个功能完整的协议栈, 而且SWC往往也被虚拟化为wan和lan口, 参见下面的结构图:</p>
+
+<p><img src="http://akagi201.qiniudn.com/network-router-struct.png" alt="network-router-struct" />
+</p>
+
+<p>首先, 先明确一个概念, 在统计网络设备的端口数, 不要忘了还有一个端口连接CPU的. 比如, SWC对外有4FE+2GE, 而实际上它还有第七个端口连接到CPU. 然后就能理解有些数据传输只在这些只能得网络设备中完成了, 而有些则需要进入CPU的协议栈. 更准确的概念应该是, 片内CPU系统也相当于一个PC, 共同接在交换设备上.</p>
+
+<p>这里比较特殊的是这个SWC设备, 照理它的所有端口应该是等价的, 所处网段也相同, 但通过VLAN技术, 把3, 4, CPU端口化为一个VLAN, 而5, CPU化为另一个VLAN, 这是SWC硬件支持的port-mapping, 它能只允许同一个VLAN下的机器通信. 这里就有一个特殊的CPU端口, 它同属于两个VLAN, 称为trunk, SWC硬件在trunk口下收发数据时, 必须带有vlan_tag(802.1q). 在CPU系统内, 因为物理通路只有一个, 只能通过软件的方式来实现VLAN的划分(如Linux下的VLAN). 另外, 一般把wlan挂在LAN内, 所以在Linux中可以用一个虚拟Bridge设备来连接这两个设备. 下面来看几种数据交换的途径:</p>
+
+<ol>
+<li>3, 4间通信, 在PC机发起的ARP协议阶段, SWC也学习并记录了MAC表, SWC可以直接交换.</li>
+<li>1, 2间通信, 也像ethernet交换机那样, 直接在wlan设备中交换吗? 没研究过wlan协议啊, 姑且这样认为吧.</li>
+<li>3, 1间通信, 是同一网段的, DMAC为PC1的MAC地址, 在SWC中会将它从CPU端口发出去, 当然会加上lan_vlan-tag, 因此会被netdev_eth设备接收到, 而该设备已经变成了bridge设备的一个端口, 因此bridge设备会接管该pkt, 并根据MAC表, 从netdev_wlan设备(已经是端口啦)发出, wlan设备受到pkt后, 根据802.11n协议, 发给对应的PC.</li>
+<li>5和其它通信, 不管是3, 4还是1, 2, 都是不同网段, 因此在PC的路由系统中, 会将数据发往gw-IP2, 即pkt的DMAC为片上CPU的MAC, 那么在SWC中会将pkt从CPU端口发出去, 当然会打上wan_vlan-tag, 因此会被netdev_eth-vlan设备接收, 并进入片上CPU系统的协议栈(注意, 之前的3种情况都不会进的). 此时, 片上CPU系统就充当了路由功能, 选择bridge设备下发, bridge设备中根据MAC选择对应端口下发.</li>
+<li>其它向5通信, 和上面一样, 只是方向反过来.</li>
+<li>片上CPU系统自身也有MAC, IP(192.168.1.1), 外部PC发送数据, 通过wlan, swc设备到达CPU系统的interface, interface发现是发给自己的, 则会传递给上层协议栈.</li>
+</ol>
+
+<p>当然这里只是最基本的情况, 现在的路由器设备已经集成了非常多的功能, 如DHCP, NAT, DNS等等.</p>
+
+<h2 id="toc_5">Refs</h2>
+
+<ul>
+<li><a href="http://www.cnblogs.com/zmkeil/archive/2013/05/26/3100096.html">http://www.cnblogs.com/zmkeil/archive/2013/05/26/3100096.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/httpd-framework/">
+        uhttpd实现框架
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Mar 25, 2014</span>
+
+    
+
+<p>uhttpd是一个简单的web服务器程序, 以前没怎么接触过, 所以这里主要是对web服务器设计的一些学习总结. OpenWrt系统中, 真正用到的(需要了解的), 其实不多, 主要就是cgi的处理, 包括与cgi程序的信息交互等, 最后一节详细描述一下.</p>
+
+<h2 id="toc_0">1. HTTP协议概述</h2>
+
+<p>HTTP协议是目前互联网使用最广泛的应用层协议. 其协议框架很简单, 在一个TCP连接中, 以一问一答的方式进行信息交互. 具体讲, 就是客户端(如常见的浏览器)connect服务端的知名端口(通常是80), 建立一个TCP连接, 然后发送一个request; 服务器端对该request解析后, 发回相应的request应答, 并关闭TCP连接. 这就是一次交互, 之后客户端再有请求, 则重复上面的过程.</p>
+
+<p>交互报文格式如下图所示:</p>
+
+<p><img src="http://akagi201.qiniudn.com/uhttpd-protocol.png" alt="uhttpd-protocol" />
+</p>
+
+<p>Request报文首行为request-line, 其中, type有GET, POST, HEAD三种方式, 然后最重要的是URL, 他告诉服务器所请求的资源. Response报文首行为responsee-line, 其中最重要的是code, 他告知客户端相应情况(found, redirect, error等), 然后跟一个简单的可读的短语.</p>
+
+<p>两种报文后面具体的内容格式差不多, 都是一些headers(其中, 冒号前的str指明header类型), 然后以一个空行标识header结束, 后面是数据. 对于request, 只有POST类型的请求需要提交数据, 其他类型的是没有数据的. Response报文的数据就是URL所指定的资源文件(HTML, DOC, gif等).</p>
+
+<h2 id="toc_1">2. 服务器架构</h2>
+
+<p>uhttpd作为一个简单的web服务器, 其代码量并不多, 而且组织结构比较清楚. 和其他网络服务器差不多, 其main函数进行一些初始化(首先parse config-file, 然后parse argv), 然后进入一个循环, 不断地监听, 每当有一个客户请求到达时, 则对他进行处理.</p>
+
+<p>对于web服务器, 所要做的处理主要就是分析URL, 判断出是file-request, cgi-request或lua-request, 这主要是根据URL的最前面的字符串(称为前缀prefix)得出的; 然后就用相应的形式进行处理. 如下图所示:</p>
+
+<p><img src="http://akagi201.qiniudn.com/uhttpd-framework.png" alt="uhttpd-framework" />
+</p>
+
+<h2 id="toc_2">3. cgi-response流程</h2>
+
+<p>前面已提到, openwrt系统中使用uhttpd服务, 主要是用cgi方式来回应客户请求的, 下面就对这种方式详细阐述.</p>
+
+<h3 id="toc_3">3.1 URL解析</h3>
+
+<p>由上图红字所示, uh_cgi_request需要两个参数path info和interpreter, 其中, pin是一个struct, 包含了路径中各种有用信息; ipr指明所用的cgi程序, 因为一个服务器中可以有多个cgi程序.</p>
+
+<p><img src="http://akagi201.qiniudn.com/uhttpd-url.png" alt="uhttpd-url" />
+</p>
+
+<p>如图所示, docroot是服务器的资源目录, 是为了os准确定位资源位置, 由uhttpd的config文件设定, 如openwrt中为/www. 后面的是client传来的url, 开头的为cgi-prefix, 也是由uhttpd的config文件设定的, 它指明server端采用cgi处理方式, 如openwrt中的为/www/cgi-bin; 紧接着的是cgi的程序名, 它指明了使用哪个cgi程序; 再后面就是实际的path信息了, 在cgi方式中, 它会被当成参数供cgi程序使用.</p>
+
+<h3 id="toc_4">3.2 CGI处理框架</h3>
+
+<p>要运行cgi程序, 首先意味着需fork出一个子进程, 并通过execl函数替换进程空间为cgi程序; 其次, 数据传递, 子进程替换了进程空间后, 怎么获得原信息, 又怎么把回馈数据传输给父进程(即uhttpd), 父进程又怎么接收这些数据.</p>
+
+<p>!(uhttpd-cgi)[<a href="http://akagi201.qiniudn.com/uhttpd-cgi.png">http://akagi201.qiniudn.com/uhttpd-cgi.png</a>]</p>
+
+<p>首先创建2个pipe, 这实际上是利用AF_UNIX协议域, 创建2个相连的socket_unix, 那么, 他们映射的文件描述符(即这里的fd[0], fd[1])就构成了一个pipe, 且这种关系即使fork后也仍然存在, 因为fork仅是增加了文件的引用次数, 而OS维护的file结构和socket结构都没变, 这就是父子进程间传递数据的方式. 然后fork出一个子进程.</p>
+
+<p>子进程中首先把2个管道的一端close, 注意这仅是使得文件引用次数变为1. 由于子进程待会要excel替换, 替换后rfd, wfd就不存在了, 因此, 先把他们dup2给知名的stdin, stdout, 这样即使execl替换后, ipt-&gt;extu程序可以以此来和父进程传递数据. 另外, execl替换后, cgi程序仍需要之前的一些参数信息, 如PATH_INFO等, 这种情况下, 最简单的办法就是setenv, 把需要的参数设为环境变量.</p>
+
+<p>为什么要2个pipe, 因为子进程向父进程传递回馈数据需要一个out-pipe, 而若有post数据, 子进程还需要一个in-pipe, 从父进程读取post数据.</p>
+
+<p>父进程中首先也是close, 同上所述. 若有post数据, 先从http request-header中得到content-length, 为后面传递给子进程做准备. 然后进入一个循环(为什么要循环, 什么时候退出, 后面讲), 通过select轮询io, 超时, 中断的情况就不看了, 轮询的io一个是reader, 即从子进程读取回馈数据, 而若有post数据的话, 还要另一个io, writer, 向子进程写post数据. 主要的处理就是上图中红色字所示, 具体如下:</p>
+
+<p><img src="http://akagi201.qiniudn.com/uhttpd-post.png" alt="uhttpd-post" />
+</p>
+
+<h2 id="toc_5">Refs</h2>
+
+<ul>
+<li><a href="http://www.cnblogs.com/zmkeil/archive/2013/05/14/3078766.html">http://www.cnblogs.com/zmkeil/archive/2013/05/14/3078766.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/openwrt-on-virtual-machine/">
+        在虚拟机上搭建OpenWrt平台
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Mar 25, 2014</span>
+
+    
+
+<h2 id="toc_0">1. OpenWrt平台搭建</h2>
+
+<h3 id="toc_1">1.1 环境准备</h3>
+
+<p>系统Debian7.4, 安装好官网buildroot说明的必备软件包 <a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">http://wiki.openwrt.org/doc/howto/buildroot.exigence</a></p>
+
+<p>注意, 尽量使用较新的linux发行版, 因为openwrt比较新, 而且通常要在trunk分支下开发, 所以依赖的软件包都比较新, 避免繁琐的依赖关系问题.</p>
+
+<h3 id="toc_2">1.2 编译固件</h3>
+
+<p>使用git或者svn下载源码
+修改<code>feeds.conf.default</code>
+然后更新软件索引</p>
+
+<pre><code>./scripts/feeds update –a
+./scripts/feeds install –a
+</code></pre>
+
+<p>注意, 这里下载的知识编译固件用的控制文件(索引文件), 不包含源码.</p>
+
+<p>然后运行make menuconfig(省去一些检查测试步骤, 具体可看官网说明), 这里注意3点:
+1. Target system, 这个一定要选准.
+2. Target Image, 选择固件image的格式, 这里我们准备在x86的VM上运行, 可以选择VMDK, 直接编译出硬盘文件, 并且包含grub.
+3. 根据需要选择软件包, 要想通过web登录配置, 4个地方要选: Base system -&gt; uci, Libraries -&gt; libuci-lua, LuCI全选, Network -&gt; uhttpd.</p>
+
+<p>注意软件可以选择m或者y, 前者表示只编译出<code>xxx.ipk</code>安装包文件, 用户需要时将它上载到路由器中, <code>opkg install xxx.ipk</code> 安装, 后者表示直接编译在固件中.</p>
+
+<p>最后运行make, 开始编译(可以使用make -j4 V=s加速编译和增加打印编译出错信息), 自动创建dl, build_dir两个目录, 依次调用tools, toolchain, package, target目录中的Makefile编译(前两者是工具, 然后用这个工具编译后两者). 自动根据指示下载所需的源码包, 放在dl目录下, 然后解压到build_dir目录中进行编译. build_dir中有3个子目录, host是于平台无关的一些工具, toolchain中式特定平台的工具, ulibc中式C库, 应用程序等.</p>
+
+<h3 id="toc_3">1.3 VMware中运行OpenWrt</h3>
+
+<p>启动VMware, 新建虚拟机(custom), 以编译出的VMDK文件为硬盘, 直接power on就可以进入OpenWrt, 在目录/bin, /usr/bin等目录下, 有我们选择安装的应用程序的可执行文件, 运行他们实现各种功能.</p>
+
+<h2 id="toc_4">2. 网络配置的简单示例</h2>
+
+<p>我们在虚拟机下运行, 虚拟机的网络模式有3种: nat, host-only, bridge. 我们安装完VMware后, 主机新增了2快虚拟网卡VMnet1, VMnet8, 前者相当于所有host-only模式的VM的交换机, 所有host-only模式的VM可通过它相互通信, 但不能与外界通信; 后者相当于素有nat模式的VM的交换机, 不同之处在于, 他可以NAT到主机的实际网口, 去访问外网(即相当于有个上行口(WAN口)), bridge模式指利用主机的实际网口与外界通信.</p>
+
+<p>我们为OpenWrt的VM准备2块网卡, 一块是bridge模式, 另一块是host-only模式; 同时运行另一VM(red hat), 只有一块host-only模式的网卡, 如下图:</p>
+
+<p><img src="http://akagi201.qiniudn.com/openwrt-vmnet.png" alt="openwrt-vmnet" />
+</p>
+
+<p>OpenWrt的网络配置文件为<code>/etc/config/network</code>, 编辑写入:</p>
+
+<pre><code>configure interface lan
+    option ifname eth0
+    option proto dhcp
+configure interface wan
+    option igname eth1
+    option proto dhcp
+</code></pre>
+
+<p>然后重启网络 <code>/etc/init.d/network restart</code></p>
+
+<p>再写入2条路由</p>
+
+<pre><code>Route add-net 10.10.10.0/24 dev eth0
+Route add default dev eth1
+</code></pre>
+
+<p>再在VM-Redhat写入2条路由(注意: dev和gw的区别)</p>
+
+<pre><code>Route add-net 10.10.10.0/24 dev eth0
+Route add default gw 10.10.10.130
+</code></pre>
+
+<p>这样, 实际局域网的主机就可通过OpenWrt这个路由器与host-only虚拟语句网的主机通信了, 当然前提是各主机应设一条网关路由到182.168.68.187</p>
+
+<h2 id="toc_5">3. 应用程序开发</h2>
+
+<p>应用程序开发有2种方法.</p>
+
+<h3 id="toc_6">3.1 方法一</h3>
+
+<p>利用menuconfig, 直接与固件一起编译, 即预先把相关文件放到 <code>trunk/package/myapp</code> 目录下, make menuconfig时就能找到该软件包, 选择(可以选y编译进固件中, 或m只编译成.ipk包)即可.</p>
+
+<p>比如, 在package目录下mkdir hello world, 里面放些什么则至关重要, 可以参考其他包的内容, 其中的Makefile的最关键的, 其他都可选, 比如我们这里还放了一个src子目录, 里面放helloworld.c, Makefile(它是真正编译用的).</p>
+
+<p>Makefile的内容可参考模板, 一般分为很多节, 第一节一般说明程序名称, 版本等; 第二节说明软件包的基本属性(他是一般包, 还是kernel包, SECTION, CATEGORY字段说明其在menuconfig中的位置, 一定要写准确, 该包的依赖关系等). 注意Makefile中Tab符不能乱用, 一般表示command, 这里的属性字段不用用Tab, 只能用空格.</p>
+
+<p>后面几节描述了他的编译安装方法. 一般就是把src里的内容copy到build_dir/uClib下, 然后用toolchain来编译, 最后install一节可以指明该app在固件中被放在哪个目录下(/bin, 或 /usr/bin等).</p>
+
+<h3 id="toc_7">3.2 方法二</h3>
+
+<p>利用SDK, 就像android开发一样, 利用sdk编译出软件安装包, 上传到设备, 安装即可使用. 首先在make menuconfig的时候, 把build SDK选项选上, 那么, 固件编译好后, 在trunk/bin/x86下就有一个SDK.tar文件, 解压, 进入里面.</p>
+
+<p>可以发现里面的内容和trunk主目录下的非常相似, 也有package, buld_dir, dl等目录, 实际上它正是模拟了一个固件的编译环境, 这样就简单了, 如方法一所述, 在package目录下建立我们的app子目录, 放入必要的文件, 然后退回到SDK目录, 直接make即可, 编译好的.ipk包在SDK/bin/x86/package下.</p>
+
+<p>至于上传.ipk包到路由器上, 对于实际设备, 可以scp工具, 在VMware下没找到更好的方法.</p>
+
+<h3 id="toc_8">3.3 为什么要用ipk包</h3>
+
+<p>ilk包是openwrt特有的, 为什么用这个呢, 直接把可执行文件copy到设备中不就行了吗? 回头看看hello world中的Makefile的最后一节install就ming明白了, ilk包li里不仅有可执行文件, 还有安装该文件的具体指示, 甚至还有其他一些配置, 启动文件, 以及他们的安装方式.</p>
+
+<p>联想network命令就是这样的, 进到package/conf下, 看他的Makefile最后, 其实就是拷贝文件.</p>
+
+<h2 id="toc_9">Refs</h2>
+
+<ul>
+<li><a href="http://www.cnblogs.com/zmkeil/archive/2013/04/17/3027385.html">http://www.cnblogs.com/zmkeil/archive/2013/04/17/3027385.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/gdbserver-on-openwrt/">
+        Gdbserver On OpenWrt
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Mar 24, 2014</span>
+
+    
+
+<p>编写的程序部署到OpenWrt上出错, 打日志是个好办法, 但是今天遇到的情况, 日志也不能显示出正确的程序流程, 实在诡异, 因此, 决定尝试调试器.</p>
+
+<p>熟悉在普通的电脑上使用gdb调试的基本方法: <a href="http://www.ibm.com/developerworks/linux/library/l-gdb/">http://www.ibm.com/developerworks/linux/library/l-gdb/</a></p>
+
+<p>下载<gdb quick reference>2张纸, 打印出来放在手边备用.</p>
+
+<p>路由器中的存储空间十分有限, OpenWRT的包管理器opkg提供的GDB占用大约1.5MB空间. 路由器本身有8M的存储空间, 目前只剩200KB了, GDB的大小不能接受. 相比之下, GDBServer的大小 不到100KB, 这是可以接受的.</p>
+
+<h2 id="toc_0">gdbserver远程调试方法</h2>
+
+<h3 id="toc_1">路由器端</h3>
+
+<ol>
+<li>安装gdbserver</li>
+</ol>
+
+<pre><code>opkg install gdbserver
+</code></pre>
+
+<ol>
+<li>进入目录, 运行gdbserver, 监听网络端口</li>
+</ol>
+
+<pre><code>gdbserver 192.168.8.1:4455 xxxx
+</code></pre>
+
+<h3 id="toc_2">PC端</h3>
+
+<ol>
+<li>根据OpenWrt SDK位置配置好PATH路径</li>
+<li>进入被调试的程序文件, 这是为了向gdb提供程序的调试信息.</li>
+<li>指定被调试的程序文件, 启动gdb.</li>
+</ol>
+
+<pre><code>mips-openwrt-linux-gdb xxxx
+</code></pre>
+
+<ol>
+<li>在gdb中连接远程调试器</li>
+</ol>
+
+<pre><code>target remote 192.168.8.1:4455
+</code></pre>
+
+<ol>
+<li>等待崩溃</li>
+</ol>
+
+<pre><code>bt
+</code></pre>
+
+<p>如果连接成功, 则此时就可以像平常一样使用gdb来调试程序了, 不过调试目标是位于路由器的程序. 使用这个方法可以很轻易的定位到程序错误的位置. 毕竟是动态调试.</p>
+
+<h2 id="toc_3">编译gdb和gdbserver方法</h2>
+
+<pre><code># gdb的编译
+cd ~/gdb/gdb-7.3.1
+mkdir bin
+cd bin
+../configure --prefix=/opt/gdb-7.3.1 --host=i686-pc-linux-gnu --target=mips-linux
+make
+make install
+
+# gdbserver的编译
+cd ~/gdb/gdb-7.3.1/gdb/gdbserver
+mkdir bin
+cd bin
+export CC=/opt/openwrt/kamikaze_7.09/staging_dir_mips/bin/mips-linux-gcc
+../configure --target=mips-linux --host=mips-linux
+make
+</code></pre>
+
+<h2 id="toc_4">补充</h2>
+
+<p>如果上面的方法不能工作, 有可能是openwrt设备上的库被stripped了, 可以在host主机上使用没有stripped的库来远程调试.</p>
+
+<h2 id="toc_5">openwrt源码上编译工具链</h2>
+
+<p>在menuconfig上enable gdb 和 gdbserver.</p>
+
+<pre><code>Advanced configuration options (for developers) → Toolchain Options → Build gdb
+</code></pre>
+
+<pre><code>Utilities → gdbserver
+</code></pre>
+
+<h2 id="toc_6">给你想调试的包增加调试信息</h2>
+
+<ol>
+<li>添加CFLAGS到你要调试的package的Makefile中.</li>
+</ol>
+
+<pre><code>TARGET_CFLAGS += -ggdb3
+</code></pre>
+
+<ol>
+<li>重新编译package带有CONFIG_DEBUG.</li>
+</ol>
+
+<pre><code>make package/busybox/{clean,compile} V=99 CONFIG_DEBUG=y
+</code></pre>
+
+<ol>
+<li>或者在menuconfig中使能debug info</li>
+</ol>
+
+<pre><code>Global build settings &gt; Compile packages with debugging info
+</code></pre>
+
+<h2 id="toc_7">Refs</h2>
+
+<ul>
+<li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">https://sourceware.org/gdb/current/onlinedocs/gdb/</a></li>
+<li><a href="http://h4x3rotab.github.io/blog/2014/02/27/openwrtxia-de-gdbyuan-cheng-diao-shi/">http://h4x3rotab.github.io/blog/2014/02/27/openwrtxia-de-gdbyuan-cheng-diao-shi/</a></li>
+<li><a href="http://blog.csdn.net/vastsmile/article/details/5614856">http://blog.csdn.net/vastsmile/article/details/5614856</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/mov-vs-ldr/">
         ARM汇编:MOV, LDR, LDR伪指令之间区别
       </a>
@@ -979,6 +1774,37 @@ ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指�
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-lua/">
+        Learning Lua
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Mar 13, 2014</span>
+
+    
+
+<p><a href="http://www.mindmup.com/map/a12d3121208cdc0131d62e527f97a5150c" data-role="mindmup-embed" title="lua语言学习" data-width="90%" data-height="500" data-style="border:1px solid black;margin-bottom:5px;">lua语言学习 on MindMup</a>
+<script async src="http://www.mindmup.com/external-embed.js"></script></p>
+
+<h2 id="toc_0">学习的动机</h2>
+
+<ul>
+<li>因为TI NSPIRE</li>
+<li>因为OpenWrt</li>
+<li>因为刚好看到一个不错的课程</li>
+<li>因为现在刚好有时间和兴致</li>
+</ul>
+
+<h2 id="toc_1">Refs</h2>
+
+<ul>
+<li><a href="http://www.56.com/w87/album-aid-12231435.html">http://www.56.com/w87/album-aid-12231435.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/learning-embedded-system-note/">
         Learning Embedded System Note
       </a>
@@ -1007,6 +1833,1645 @@ ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指�
 <p>学习了一种工具画流程图工具.</p>
 
 <iframe id="embed_dom" name="embed_dom" frameborder="0" style="border:1px solid #000;display:block;width:430px; height:320px;" src="http://www.processon.com/embed/532d8ae60cf253b242881338"></iframe>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/wireless-device-workflow/">
+        无线产品开发流程概述
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Mar 9, 2014</span>
+
+    
+
+<p>本人做无线产品设计已经好多年, 做过的产品大概有三, 四十种, 简单的, 复杂的都有. 现如今我的设计一版成功的概率很大, 即使不能一版成功, 也可以在第一版中实现90%以上的功能, 性能, 朋友们因此还送给我了一下绰号&rdquo;一版达人&rdquo;. 我想其实我也不是有多么深不可测的技术水平, 可能跟别人相比, 我最大的优点就是细心, 并善于思考. 我想在这里简单地分享一下我的心得体会, 我在这里想大概讲述一下无线产品的开发流程.</p>
+
+<p>无线产品就是把物理接口上的数据转为在空间传输的电磁波. 物理接口就是CVBS, S/PDIF, HDMI, 网口, 串口, E1, T1, ADSL等, 具体采用什么接口由产品形态决定. 电磁波的特征, 如频率, 频宽, 调制方式等由相关的协议标准决定. 如蓝牙, Zigbee就是指定在2.4GHz频段运行的. 无线产品的硬件设计决定了产品的接口形式, 传输距离, 传输速度的问题. 软件设计决定了数据如传输. 这里主要探讨的是无线产品的硬件设计.</p>
+
+<h2 id="toc_0">无线产品的七大功能模块</h2>
+
+<p>有了前面对无线产品的理解, 我把每个硬件产品都分为七大部分, 我想这应该是我首创的, 目前为止我还没有听过别的工程师这样说过.</p>
+
+<p><img src="http://akagi201.qiniudn.com/wireless-hardware.png" alt="wireless-hardware" />
+</p>
+
+<ol>
+<li><p>CPU+RAM+Flash, 又可以称为最小系统, 是整个产品的核心, 负责所有部分的正常运转.</p></li>
+
+<li><p>接口, 接口可以分为内部接口和外部接口. 内部接口用于产品内部不同器件之间的连接, 如PCI, MII, I2S, LVDS等. 外部接口是产品与外部进行通信的接口, 如网口, 音视频接口, 天线接口等.</p></li>
+
+<li><p>射频, 无线产品的射频设计是至关重要的, 整个产品的最重要的性能几乎全部体现在这里, 这部分在根本上决定了无线传输的距离, 可靠性.</p></li>
+
+<li><p>电源, 电源是整个产品的&rdquo;营养供给&rdquo;, 保证了电源的&rdquo;营养丰富, 健康&rdquo;, 才能确保产品整体的稳定性.</p></li>
+
+<li><p>时钟, 在大多数人眼中, 时钟可能都是一个不起眼的小角色, 但是, 在无线产品中, 很多实际问题都是由时钟及其附属电路引起的, 所以我向来都足够重视时钟电路.</p></li>
+
+<li><p>复位, 复位在整个产品中也许随处可见, 大部分芯片都需要进行复位, 可靠的复位是产品稳定工作的又一重要保证.</p></li>
+
+<li><p>按键, LED, GPIO, 有人可能会说, 这部分还值得一提吗? 我认为值得. 按键与LED是最直观的UI, 无线产品中的其他部分几乎都与UI无关, 同时, 按键, LED一般都是连接在GPIO上的, GPIO往往又起到上电配置的作用, 因此, 我认为GPIO很重要.</p></li>
+</ol>
+
+<h2 id="toc_1">一般开发流程</h2>
+
+<p><img src="http://akagi201.qiniudn.com/wireless-hardware-designflow.gif" alt="wireless-hardware-designflow" />
+</p>
+
+<h2 id="toc_2">Refs</h2>
+
+<ul>
+<li><a href="http://www.beamsky.com/topics/wireless-product-design-overview.html">http://www.beamsky.com/topics/wireless-product-design-overview.html</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/802_11ac-hardware/">
+        802.11ac路由选购技术攻略 -- 不花冤枉钱的ac网络架设指南
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Mar 8, 2014</span>
+
+    
+
+<p>802.11ac虽然还在草拟草案的阶段(<a href="http://grouper.ieee.org/groups/802/11/Reports/802.11_Timelines.htm">IEEE的时间表</a>), 但科技不待人. 对于高速WiFi高速无线传输的殷切需求, 各大厂家已经陆续推出旗舰无线路由, 价钱还不断下降, 连双核AC路由也进入千元以内消费级别之列. 802.11ac制式的无线路由应该如何选择?</p>
+
+<h2 id="toc_0">为什么要买ac路由? 3天线的N900路由确实不够用吗?</h2>
+
+<p>为什么开头要先问这个问题, 因为购买一套802.11ac上网设备价钱不菲! 以旗舰1750ac为例, 很多人讨论的Asus ac66u要1050RMB, 双核D-Link DIR-868L要900RMB, 而匹配AC1750的PCI-E卡插网卡(3天线)要600RMB, 也就是说总的成本很可能在1500RMB以上!</p>
+
+<p>换句话说, 你确定用超过1500元去突破802.11n的速度极限值得吗?</p>
+
+<p>不卖关子了, 802.11n的WiFi无线的实际速度极限是: 200Mbps. 升级802.11ac是笔大投资, 要慎重考虑.</p>
+
+<h2 id="toc_1">AC1200, AC1300, AC1750…购买前先了解AC制式</h2>
+
+<p>AC路由的最高理论速度有好几种, 譬如说D-Link就已经有7款AC路由, 当然把自己的产品线过度复杂化未必是明智选择, Asus现在有3款, ac66, ac56u和ac68u. Asus的新款AC68也即将推出, 速度能达到AC1900.</p>
+
+<p><img src="http://akagi201.qiniudn.com/asus-rtac68u.png" alt="ASUS AC products" />
+</p>
+
+<p>先说这些1200, 1750数值是怎么来的, 是不是1750的理论连接最高速度是1750Mbps? 不是的. 根据SmallnetBuilder总结的行业现行命名准则:</p>
+
+<pre><code>ac路由的标称速度 = n制式的理论最高速度 + ac制式的理论最高速度
+</code></pre>
+
+<p><img src="http://akagi201.qiniudn.com/acrouter-speed.jpg" alt="Proposed router class summary" />
+</p>
+
+<p>至于为什么ac制式会有不同速度和天线数量, 与下文要解释的QAM Coding传输模式有关.</p>
+
+<p>应该如何选择哪个速度的ac路由器? 除了​​考虑价格和家里上网接入的带宽之外, 十分重要的一点是接收端是否匹配. 例如说ac68是MIMO 3X3也就是3天线的产品, 它的ac理论极限速度是1300Mbps, 要匹配3天线的接收器才能发挥这个速度. 那3天线的接收器要多少钱? Asus自己出的要600多RMB.</p>
+
+<p><img src="http://akagi201.qiniudn.com/acnet.jpg" alt="acnet" />
+
+3天线ac接收器的价钱不菲, ASUS的这款要600多RMB.</p>
+
+<p>请注意了! 现在很多商家夸大USB AC接收器的接收能力! 例如这款Netgear的A6200, 在官网写明了是867Mbps的速率(ac双天线的极限速度), 但是不少商家却标称其是AC1750 USB网卡!</p>
+
+<p><img src="http://akagi201.qiniudn.com/netgear-A6200.jpg" alt="netgear a6200" />
+</p>
+
+<p>这款Netgear A6200的真面目是2×2 MIMO的USB网卡.</p>
+
+<p>总的来说, 3天线的ac路由器就需要搭配3天线的接收网卡, 双天线就搭配双天线. 那么手机呢?和n制式时代一样, 都是单天线的天下. 例如Samsung Galaxy S4是用Broadcom 4335 WiFi芯片单天线.</p>
+
+<h2 id="toc_2">802.11ac Coding和极限速度的关系</h2>
+
+<p>对比起现行主流的802.11n, 802.11ac提供更加复杂的数模转换无线传输方式(Modulation), 这是ac跑得快的核心因素. 什么是Modulation? 从Wiki借用一张图解释:</p>
+
+<p><img src="http://akagi201.qiniudn.com/QAM16_Demonstration.gif" alt="QAM16_Demonstration" />
+</p>
+
+<p>16 QAM 的解码模式</p>
+
+<p>众所周知, WiFi信号是无线电波, 无线电波有相位和强弱的特征值. QAM的转换模式就是把数据包放到不同相位和不同强弱的电波上. 16-QAM就是有16个相位和强弱的信号点, 所以, 接收端通过一次读取16个信号点就可以获得16个数据包.</p>
+
+<p><img src="http://akagi201.qiniudn.com/modulation-data-rate.jpg" alt="modulation-data-rate" />
+</p>
+
+<p>802.11n和ac Modulation的关系，现行的ac最主要在80MHz上运行</p>
+
+<p>从上图可以看出n和ac的编码差别: 802.11n支持64-QAM, 跑在40MHz, 而802.11ac可以支持256-QAM, 跑在160MHz. 简单说明, 就是n制式是64部车走在40米宽的路上, 802.11ac是256部车跑在160米宽的路上. 所以ac制式的理论速度比n快上几倍. 现行的ac最主要在80MHz上运行, 所以单天线ac的理论速度能跑到433Mbps, 双天线867Mbps, 三天线1300Mbps.</p>
+
+<p>上图的QAM速度仅仅是标准的QAM速度, 不同厂家可以作出优化, 例如ASUS的AC68声称能达到AC1900, Smallnetbuilder写了一篇分析文章分析ASUS无线路由的AC1900是怎么来的, 最后ASUS, Broadcom官方的解释是作出了一定程度的修改. 这又为大家选购AC路由增加了麻烦, ASUS的加速算法Buffalo未必支持, Broadcom的算法Atheros未必支持, 在选购时候特别要留意路由器和接收网卡的匹配. Upsangel和SmallNetBuider更加觉得, AC1900只是&rdquo;作秀科技&rdquo;的产物, 营销意义大于速度的实质提升:</p>
+
+<ul>
+<li><a href="http://upsangel.com/router-2/ac1900-performance-and-price-trap/">标签陷阱？802.11AC“最高规格”ac1900路由器Router是否值得买</a></li>
+</ul>
+
+<h2 id="toc_3">ac实际传输速度到底比n快多少?</h2>
+
+<p>什么N450, AC1750这些都是标称速度, 我们用户关心的是实际速度! 下面就列一下802.11ac和802.11n的无线路由器实际速度差距(约数, 不为精准参考):</p>
+
+<ul>
+<li>N制式：双天线(N300/N600) – 80Mbps， 三天线（N450/N900) – 200Mbps</li>
+<li>AC制式：双天线(AC1200) – 300Mbps，三天线（AC1600/AC1750) – 350Mbps</li>
+</ul>
+
+<p>也就是说, 200Mb带宽的家庭用3天线的n制式可能吃饱, 稳定地吃饱的话要用ac. ac现时的极限速度在350Mbps左右, 200Mb以上的宽带上网很难用ac WiFi吃饱. 接着分析802.11ac的不足之处, 不要买了后悔.</p>
+
+<h2 id="toc_4">802.11ac的弱项不足</h2>
+
+<h3 id="toc_5">高频段传输 = 穿墙能力减弱</h3>
+
+<p>频率越高穿墙性能越低(在WiFi这个频段适用, 如果在X射线的频段频率越高就穿透力越强, 见多普勒的光粒二像性). 还记得香港4G刚刚出炉的时候, 数码通打着的旗号就是信号好, 因为其用的4G频谱频率比其他电讯商的低. 上面说了ac由于要跑256-QAM, 在宽频段(80MHz)才能跑得到, 而80MHz只能在5GHz的高频段跑, 因为2.4GHz已经拥挤不堪互相干扰严重(不信你搜一下家里收到多少个邻居的2.4G信号, 我搜到20个). 所以如果你家很多墙, ac未必能发挥其快速性能.</p>
+
+<h3 id="toc_6">占用频宽倍增 = 更容易受干扰</h3>
+
+<p>由于要占用80MHz～160MHz的频宽作传输, 使得信号有更加大的机会被干扰. 例如最典型的例子是USB 3.0和2.4GHz的频率冲突:</p>
+
+<p><img src="http://akagi201.qiniudn.com/usbwifi5g.jpg" alt="usbwifi5g" />
+</p>
+
+<p>USB3.0和WiFi 5GHz的频率重叠干扰</p>
+
+<h3 id="toc_7">欠缺第三方Firmware支援</h3>
+
+<p>如果你是DD-WRT/OpenWRT的玩家, 那么选购ac路由要特别注意了, 因为第三方软件和驱动的开发未必跟得上官方新硬件的开发. 可能没有第三方Firmware的支援, 不能刷ROM.(主要是硬件平台model太新, 开源界跟进还需要时间, 而不是ac路由器不容易支持开源固件)</p>
+
+<h2 id="toc_8">AC路由的选购</h2>
+
+<p>本文集中谈到了802.11ac制式所引伸的选购问题, 而基本的无线路由器的选购原则绝对不能忽略, 包括路由CPU和内存的选择, 天线的选择等, 一定要参阅本站最热门的文章(台湾upsangel的博客):</p>
+
+<ul>
+<li><a href="http://upsangel.com/dd-wrt/router-technical-buying-guide/"> 买什么路由好? 技术结合实际的Router攻略! - 扔掉各大网站的&rdquo;广告/导购&rdquo;吧!</a></li>
+</ul>
+
+<p>说到怎么比较AC路由器的性能, 著名的网站SmallNetBuilder可以给我们不少参考, 其中最多人关心的AC WiFi速度比较图:</p>
+
+<p><img src="http://akagi201.qiniudn.com/1750ac.jpg" alt="1750ac" />
+</p>
+
+<p>AC1750的速度比较图, 上传+下载</p>
+
+<p>SmallNetBuider有很多有用的资讯, 对路由的评测比较专业和客观. 不要单看这些速度指标来买路由, 因为这些测试是在关闭所有防火墙和应用的情况下进行的测试, 实际用起来未必一样.</p>
+
+<p>Upsangel最后列一下主流的AC路由器, 如有遗漏请告知:</p>
+
+<ul>
+<li>ASUS：RT-AC66 (AC1750), AC68 (AC1900)、AC56u</li>
+<li>Belkin：AC1200 DB</li>
+<li>Buffalo：WZR-1166DHP (AC1200) 、WZR-1750DHP (AC 1750)</li>
+<li>D-Link：AC750、AC1000、AC1200、AC1300、AC1750</li>
+<li>Linksys：EA6300、EA6400、EA6500、EA6700，除第一款其他3款为AC1300</li>
+<li>NetGear：R6200、R6250、R6300</li>
+<li>TP-Link：Archer C7、TL-WDR7500</li>
+</ul>
+
+<p>**最后, Upsangel为大家奉上玩转路由器附加强大功能的攻略(架设VPN Server、共享Printer、Scanner、离线BT等)，请参考: **
+<a href="http://www.hkepc.com/forum/viewthread.php?tid=2025967&amp;extra=page%3D1">普通視像頭+OpenWRT變 IP CAM - OpenWRT, DD-WRT資源補完</a></p>
+
+<h2 id="toc_9">Refs</h2>
+
+<ul>
+<li><a href="http://wemaker.cc/167">http://wemaker.cc/167</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/openwrt-10-years/">
+        About
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Mar 8, 2014</span>
+
+    
+
+<p>如果不是为了写这篇文章, 笔者还真没意识到OpenWrt这个项目已经10年了.</p>
+
+<p>在这个重新强调人工智能, 机器学习, 重新重视物理机械交互的新兴智能机器人的时代, 我们有理由相信因为其纯正的Linux味道, 小型化, 亲近物理交互的特征, 身为Linux社区与物理交互的最佳桥梁, OpenWrt会迎来新一轮的发展.</p>
+
+<p>一切都始于2002年12月, Linksys发布了定义家用无线路由器产品形态的WRT54G, 由于成本的原因, Linksys使用Linux作为固件而不是授权费用很高的VxWorks. 根据GPL条款, 据称是哥伦比亚大学法学院教授Eben Moglen向Linksys提出了开源要求, Linksys随即照办, 之后在一堆各种hack WRT54G固件中, 2004年生长出来了OpenWrt. 2005年到2007年, 最初的稳定版叫White Russian, 之后的Kamikaze延续到2010年, Backfire到2013年, 随后Attitude Adjustment发布, 而最新版的Barrier Breaker也已经在持续开发中, 据称将很快发布.</p>
+
+<p>从一开始, OpenWrt就是各类路由器hack固件中的领头羊, 并成为嵌入式Linux系统的核心贡献者之一, 特别是Linux on mips, 最近的内核更新代码有很大部分是由OpenWrt社区贡献的.</p>
+
+<p>在各种路由器的hack固件中, OpenWrt为什么能脱颖而出? 笔者认为关键原因是OpenWrt社区彻底的开源精神, 不要忽视<a href="http://openwrt.org">http://openwrt.org</a>上面明晃晃的&rdquo;Wireless Freedom&rdquo;几个字. OpenWrt社区的组织者Gregers Petersen第一title是人类学家, 专注于自由软件及相关社会学研究. 以此为基因, OpenWrt社区聚集了一大批纯正的Linux各个方向的死忠级专家, 从而使OpenWrt具备了如下与传统nor flash嵌入式Linux截然不同的高级特征:</p>
+
+<h2 id="toc_0">1.SquashFS与JFFS2文件系统的整合形成的overlayfs机制</h2>
+
+<p>对用户而言, OpenWrt的整个文件系统是完全动态可读写的, 而其中的固件部分是用SquashFS实施的只读压缩文件系统, 而用户所有的对文件系统的增删改都是用类似&rdquo;差值&rdquo;的形态存储在JFFS2文件系统中的, 二者用overlayfs机制黏合, 对用户完全透明. 因此我们可以在文件系统中肆意发挥, 随便折腾, 出现任何问题则可像手机一样恢复出厂设置, 并提供fail-safe模式帮助用户修复系统.</p>
+
+<p>而在传统的嵌入式Linux里, 固件是静态的, 对系统做任何一点与可运行程序相关的变动, 比如增加一个模块, 删除一个应用程序, 都要重新编译全部固件, 并重新刷写, 就好比你一个Android手机要升级微信就要重新刷机. 这种反人类的传统文件系统完全阻挡了非专业爱好者进入嵌入式Linux这一领域.</p>
+
+<h2 id="toc_1">2. UCI(Unified Configuration Interface)</h2>
+
+<p>帮助用户在任何平台的OpenWrt上用同样的方法配置系统, 网络和应用. 在Boardcom的平台上, 在Atheros的平台上, 甚至x86的平台上, 修改系统配置均为同样的命令. 而UCI的机制并不是二进制硬件虚拟层实现的, 是由Linux shell脚本实现的. 这毫无疑问是一种别致的创新, 比Android来的轻巧得多. OpenWrt里的Linux shell脚本用得很帅很高端, 那种感觉怎么形容呢? 就好像精通十八般武艺的高手有一天特别复古地拿起铅笔刀在硬盘上刻出来了系统, 就是这种感觉.</p>
+
+<h2 id="toc_2">3. Opkg包管理系统与丰富的软件源</h2>
+
+<p>是一个与桌面级Linux使用的apt-get, yum等同级别的包管理系统, 使用形如: <code>opkg install xxxx-app</code> 的命令从互联网软件源中安装大约3000余种各种软件. 软件数量虽然没法跟手机的应用市场比, 但是要知道, 这里头的任何一个软件都来头不小, 是经过Linux社区千锤百炼的东西, 一个应用折腾一个月都玩不够. 类型覆盖网络, 音频, 视频, 程序开发, Linux系统管理等. 当然, 如果是专业比较偏的东西OpenWrt的软件源里还是不够完善, 比如笔者团队用到的OpenCV的东西, 源里就没有, 就靠自己交叉编译了.</p>
+
+<h2 id="toc_3">4. Luci WEB界面系统</h2>
+
+<p>除CLI命令行终端界面外, 不同于桌面级Linux使用屏幕GUI作为交互界面, OpenWrt使用WEB界面交互. 而不同于传统路由器web管理界面的是, luci是用户可订制的, 安装了支持luci的软件后, WEB界面系统就中出现了新的模块, 而opkg本身也web化了.这个特征让用户感觉很像手机的app store.</p>
+
+<h2 id="toc_4">5.积极, 完整的社区</h2>
+
+<p>OpenWrt与Arch Linux, Debian, FFmpeg, MinGW, PostgreSQL等开源领域重要的软件一起, 是Software in the Public Interest, Inc.资助和保护的项目, OpenWrt社区在美国, 欧洲, 中国, 俄罗斯有大量的追随者, 有不计其数的分支和代码贡献者. 社区活跃度非常高.</p>
+
+<p>这几个特征加起来, 赋予OpenWrt比肩桌面级Linux和现代移动操作系统(Android)的用户体验, 完全回避了传统嵌入式Linux的磨叽和枯燥, 使一个小小的路由器真正成为完整的, 现代的, 开放的计算系统, 降低了入门门槛, 产生了大量非嵌入式专业的爱好者群体. OpenWrt框架的奠定者们和广泛的代码贡献者们, 在桌面级和现代操作系统的理念下, 也使OpenWrt成为嵌入式Linux领域个性十足而广受追捧的佼佼者.</p>
+
+<p>OpenWrt社区的组织者Gregers Petersen在一次采访中提到, 除了传统的路由器用途, 在智能家居主控设备, 机器人, 飞行器, 工业控制设备, voIP设备等很多领域, 都有爱好者和商业项目在使用OpenWrt, 甚至有爱好者已经完整移植了Android系统并且真正打通了电话. 而嫁接到OpenWrt上的Arduino Yun, 使大家意识到Linux与物理世界交互一种非常简单的可能性, 这赋予了OpenWrt更大的想象空间.</p>
+
+<p>在新型智能设备和机器人的热潮中, OpenWrt的价值也越来越得到人们的重视. 相比Android系统, OpenWrt被认为是更加适应智能设备和机器人的平台. Android的整体设计构架全部着眼于重度依赖屏幕与人进行交互, 导致从硬件到软件的设计上都严重依赖于图形界面的展示, 有过多的GPU硬件加速和软件上的图形, 3D库, 而智能设备和机器人并不强调屏幕, 相对更多地依赖于机械, 网络与人进行交互, Android上的这些图形图像特征反倒成为影响功耗, 系统尺寸, 稳定性的负面因素. 再加之相对于Android的Java虚拟机对效率的严重损耗, OpenWrt直接的原生二进制代码得到了更高的计算效率.</p>
+
+<p>在这个重新强调人工智能, 机器学习, 重新重视物理机械交互的新兴智能机器人的时代, 我们有理由相信因为其纯正的Linux味道, 小型化, 亲近物理交互的特征, 身为Linux社区与物理交互的最佳桥梁, OpenWrt会迎来新一轮的发展.</p>
+
+<h2 id="toc_5">Refs</h2>
+
+<ul>
+<li><a href="http://wemaker.cc/322">http://wemaker.cc/322</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/openwrt-developing/">
+        OpenWrt开发文档
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Feb 22, 2014</span>
+
+    
+
+<h3 id="toc_0">优秀文档中文项目-欢迎你的加入</h3>
+
+<ul>
+<li><a href="http://akmaker.com"><strong>AK创客空间</strong></a></li>
+<li><a href="https://github.com/AKmaker/openwrt-cn"><strong>OpenWrt中文化项目</strong></a></li>
+</ul>
+
+<h3 id="toc_1">wiki</h3>
+
+<p><a href="http://wiki.openwrt.org/doc/start">wiki导航</a></p>
+
+<h2 id="toc_2">编译</h2>
+
+<ul>
+<li><a href="http://downloads.openwrt.org/docs/buildroot-documentation.html#about">早期OpenWrt编译文档</a></li>
+<li><a href="http://wiki.openwrt.org/about/toolchain">工具链</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">编译准备</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/build">编译</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/feeds">添加feeds</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.generate">Image Builder</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk">SDK</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/extroot.howtobuild">Rootfs on External Storage (extroot) (<sup>1</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/extroot">Rootfs on External Storage (extroot) (<sup>2</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/wireless-router-with-a-3g-dongle">wireless router which is connected to either a wired, a wireless or a 3G wireless connection</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howtobuild/single.package">How to Build a Single Package</a></li>
+</ul>
+
+<h2 id="toc_3">开发</h2>
+
+<ul>
+<li><a href="http://wiki.openwrt.org/doc/devel/crosscompile">Cross Compile</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=32330">外部编译器设置-(<sup>1</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=29804">外部编译器设置-(<sup>2</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=12436">外部编译器设置-(<sup>3</sup>&frasl;<sub>3</sub>)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/packages">Creating packages</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/feeds">Feeds</a></li>
+<li><a href="http://wiki.openwrt.org/doc/devel/dependencies">Using Dependencies</a></li>
+<li><a href="https://dev.openwrt.org/wiki/SubmittingPatches">How To Submit Patches to OpenWrt</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/external_toolchain">External Toolchain - Use OpenWrt as External Toolchain (<sup>1</sup>&frasl;<sub>2</sub>)</a></li>
+<li><a href="https://lists.openwrt.org/pipermail/openwrt-devel/2009-February/003774.html">External Toolchain - Use OpenWrt as External Toolchain (<sup>2</sup>&frasl;<sub>2</sub>)</a></li>
+</ul>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="http://blog.csdn.net/openme_openwrt/article/details/7348452">http://blog.csdn.net/openme_openwrt/article/details/7348452</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/port-openwrt-to-pcduino/">
+        移植OpenWrt到pcDuino
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Feb 19, 2014</span>
+
+    
+
+<h3 id="toc_0">OpenWrt</h3>
+
+<p>OpenWrt是一个高度模块化, 高度自动化的嵌入式Linux系统, 拥有强大的网络组件, 常常被用于工控设备, 电话, 小型机器人, 智能家居, 路由器以及VOIP设备中. OpenWrt支持各种处理器架构，无论是对ARM，X86，PowerPC或者MIPS都有很好的支持. 其多达3000多种软件包, 囊括从工具链(toolchain), 到内核(linux kernel), 到软件包(packages), 再到根文件系统(rootfs)整个体系, 使得用户只需简单的一个make命令即可方便快速地定制一个具有特定功能的嵌入式系统来制作固件. 其模块化设计也可以方便的移植各类功能到OpenWrt下, 加快开发速度.</p>
+
+<p>对于开发人员, OpenWrt是使用框架来构建应用程序, 而无需建立一个完整的固件来支持. 对于用户来说, 这意味着其拥有完全定制的能力, 可以用前所未有的方式使用该设备.</p>
+
+<p><img src="http://akagi201.qiniudn.com/openwrt-logo.png" alt="openwrt-logo" />
+</p>
+
+<p>2014年12月19日小米路由器公测版正式发售, 也意味着OpenWrt进入国内主流科技企业的眼球. 然而OpenWrt到底是一款什么样的操作系统呢? 对于创客来讲, 怎么才能融入创客的设计, 下面就从零介绍如果在pcDuino上开发OpenWrt.</p>
+
+<p>OpenWrt项目始于2004年1月. 最早的OpenWrt版本基于Linksys为遵守GPL而放出的, 为WRT54G所编写的代码, 以及uclibc项目的buildroot. 这个版本以OpenWrt &ldquo;stable release&rdquo;之名为人所知, 使用广泛. 仍有许多OpenWrt应用程序是基于这一版的, 例如Freifunk-Firmware和Sip@Home.</p>
+
+<p>2005年初, 一些新的开发者进入了团队. 在封闭开发了数月之后, 团队决定发布OpenWrt的第一个experimental版本. 这个实验版本使用的build系统是基于buildroot2大改而成的, 而buildroot2来自于uclibc项目. OpenWrt使用官方版GNU/Linux内核代码, 只是额外添加了片上系统(SoC)的补丁和网络接口的驱动. 开发团队尝试重新实现GPL tarball中不同开发商的绝大多数专有代码. 其中有: 将新固件镜像文件直接写入闪存的自由工具(mtd), 配置无线局域网(wlcompat/wificonf), 通过proc文件系统对支持VLAN的switch(交换机)进行编程. 最初发布的OpenWrt的代号是&rdquo;White Russian&rdquo;, 来自于著名鸡尾酒的名称. 在OpenWrt发布0.9版的时候, White Russian的生命周期结束.</p>
+
+<p>下一个版本的开发正在我们的SVN中进行. 下面一张图将很清晰的反映OpenWrt的版本史. 从图上可以看出最新的稳定版本代号为Attitude Adjustment, 早期的稳定版本为Backfire 和 Kamikaze, 开发版本一直都是trunk. 各个版本的官方下载地址为 <a href="https://dev.openwrt.org/wiki/GetSource">https://dev.openwrt.org/wiki/GetSource</a></p>
+
+<p><img src="http://akagi201.qiniudn.com/code_overview.png" alt="code_overview" />
+</p>
+
+<h3 id="toc_1">下载编译OpenWrt</h3>
+
+<ol>
+<li>安装依赖包(deb系列)</li>
+</ol>
+
+<pre><code class="language-bash">sudo aptitude install -y libncurses5-dev zlib1g-dev gawk flex patch git-core g++ subversion
+</code></pre>
+
+<ol>
+<li>OpenWrt的源代码管理默认用的是SVN, 当然你还可以用Git, 本教程中使用最新的trunk版本, 用SVN工具下载源码</li>
+</ol>
+
+<pre><code class="language-bash">svn co svn://svn.openwrt.org/openwrt/trunk/ openwrt-pcduino
+</code></pre>
+
+<p>还可以用Git下载</p>
+
+<pre><code class="language-bash">git clone git://git.openwrt.org/openwrt.git
+git clone git://git.openwrt.org/packages.git
+</code></pre>
+
+<ol>
+<li>扩展软件包package feeds, feeds即为包含到你的OpenWrt环境中的额外软件包的软件列表索引(类似linux发行版中的软件源, 不过此处为软件包的源码). 目前常用的feeds有:</li>
+</ol>
+
+<pre><code class="language-bash">src-git packages git://git.openwrt.org/packages.git
+src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+src-git luci git://nbd.name/luci.git
+src-git routing git://github.com/openwrt-routing/packages.git
+src-git telephony http://feeds.openwrt.nanl.de/openwrt/telephony.git
+src-svn phone svn://svn.openwrt.org/openwrt/feeds/phone
+src-svn efl svn://svn.openwrt.org/openwrt/feeds/efl
+src-svn xorg svn://svn.openwrt.org/openwrt/feeds/xorg
+src-svn desktop svn://svn.openwrt.org/openwrt/feeds/desktop
+src-svn xfce svn://svn.openwrt.org/openwrt/feeds/xfce
+src-svn lxde svn://svn.openwrt.org/openwrt/feeds/lxde
+src-link custom /usr/src/openwrt/custom-feed
+</code></pre>
+
+<p>一般情况, 你至少需要含packages feeds, 其他可根据需求下载, 安装feeds.
+* packages – 提供众多库, 工具等基本功能. 也是其他feed所依赖的软件源, 因此在安装其他feed前一定要先安装packages!
+* luci – OpenWrt默认的GUI(WEB管理界面).
+* xwrt – 另一种可替换LuCI的GUI
+* qpe – DreamBox维护的基于Qt的图形界面, 包含Qt2, Qt4, Qtopia, OPIE, SMPlayer等众多图形界面.
+* device – DreamBox维护与硬件密切相关的软件, 如uboot, qemu等.
+* dreambox_packages – DreamBox维护的国内常用网络工具, 如oh3c, njit8021xclient等.
+* desktop - OpenWrt用于桌面的一些软件包.
+* xfce - 基于Xorg的著名轻量级桌面环境. Xfce建基在GTK+2.x之上, 它使用Xfwm作为窗口管理器.
+* efl - 针对enlightenment.
+* phone -针对fso, paroli.</p>
+
+<p>Trunk中默认的feeds下载有packages、xwrt、luci、routing、telephony。如果你需要其他的软件包，你只需要打开源码根目录下面的feeds.conf.default文去掉你需要的软件包前面的#号，本教程中使用默认的软件，确定了软件源之后，更新源:</p>
+
+<pre><code class="language-bash">./scripts/feeds update -a
+</code></pre>
+
+<p>安装下载好的包:</p>
+
+<pre><code class="language-bash">./scripts/feeds install -a
+</code></pre>
+
+<ol>
+<li>OpenWrt源码目录结构, 执行上面命令之后你就可以得到全部的Openwrt源码.</li>
+</ol>
+
+<p>目录结构:</p>
+
+<ul>
+<li>tools和toolchain包含了一些通用命令, 用来生成固件, 编译器, 和C库.</li>
+<li>build dir/host是一个临时目录, 用来储存不依赖于目标平台的工具.</li>
+<li>build dir/toolchain-<arch>用来储存依赖于指定平台的编译链. 只是编译文件存放目录无需修改.</li>
+<li>build dir/target-<arch>用来储存依赖于指定平台的软件包的编译文件, 其中包括linux内核, u-boot, packages, 只是编译文件存放目录无需修改.</li>
+<li>staging_dir是编译目标的最终安装位置, 其中包括rootfs, package, toolchain.</li>
+<li>package软件包的下载编译规则, 在OpenWrt固件中, 几乎所有东西都是.ipk, 这样就可以很方便的安装和卸载.</li>
+<li>target目标系统指嵌入式设备, 针对不同的平台有不同的特性, 针对这些特性, &ldquo;target/linux&rdquo;目录下按照平台<arch>进行目录划分, 里面包括了针对标准内核的补丁, 特殊配置等.</li>
+<li>bin编译完OpenWrt的二进制文件生成目录, 其中包括sdk, uImage, u-boot, dts, rootfs构建一个嵌入式系统完整的二进制文件.</li>
+<li>config存放着整个系统的的配置文件.</li>
+<li>docs里面不断包含了整个宿主机的文件源码的介绍, 里面还有Makefile为目标系统生成docs.</li>
+<li>include里面包括了整个系统的编译需要的头文件, 但是是以Make进行连接的.</li>
+<li>feeds扩展软件包索引目录.</li>
+<li>scripts组织编译整个OpenWrt的规则.</li>
+<li>tmp编译文件夹, 一般情况为空.</li>
+<li>dl所有软件的下载目录, 包括u-boot, kernel.</li>
+
+<li><p>logs如果编译出错, 可以在这里找到编译出错的log.</p></li>
+
+<li><p>配置OpenWrt编译系统</p></li>
+</ul>
+
+<pre><code class="language-bash">make menuconfig
+</code></pre>
+
+<p><img src="http://akagi201.qiniudn.com/openwrt-buildroot.png" alt="openwrt-buildroot" />
+</p>
+
+<p>在官方最新的trunk分支中已经支持pcDuino这个target了.</p>
+
+<p>具体配置如下:
+A. 配置目标系统(Target System)</p>
+
+<pre><code>Target System (Allwinner A1x/A20/A3x) —&gt; 
+</code></pre>
+
+<p>B. 配置目标硬件(Target Profile)</p>
+
+<pre><code>Target Profile (pcDuino) —&gt; 
+</code></pre>
+
+<p>C. 配置编译出来的image, 配置rootfs文件系统的格式这里选择ext4, rootfs文件系统的大小这里设置(48M).</p>
+
+<pre><code>Target Images  —&gt; 
+[ ] ramdisk  —&gt; 
+*** Root filesystem archives *** 
+[ ] cpio.gz
+[*] tar.gz 
+*** Root filesystem images *** 
+[*] ext4
+[ ] jffs2
+[ ] squashfs
+[*] GZip images
+*** Image Options ***
+(48) Root filesystem partition size (in MB)
+(6000) Maximum number of inodes in root filesystem
+(0) Percentage of reserved blocks in root filesystem
+[ ] Include kernel in root filesystem  —&gt;
+[ ] Include DTB in root filesystem
+</code></pre>
+
+<p>D. 选择编译交叉编译器, 还有开发SDK.</p>
+
+<pre><code>[*] Build the OpenWrt Image Builder
+[*] Build the OpenWrt SDK
+</code></pre>
+
+<p>E. 配置无线网卡, V2/V3都是用的rtl8188cus无线网卡</p>
+
+<pre><code>Kernel modules  —&gt;
+Wireless Drivers  —&gt;
+-*- kmod-cfg80211…………………. cfg80211 – wireless configuration API
+&lt;*&gt; kmod-lib80211……………………………… 802.11 Networking stack
+{M} kmod-mac80211………………… Linux 802.11 Wireless Networking Stack
+&lt;M&gt; kmod-rtl8192cu………………….. Realtek RTL8192CU/RTL8188CU support
+{M} kmod-rtlwifi……………………………. Realtek common driver part 
+</code></pre>
+
+<p>F. LucI系统快速配置接口</p>
+
+<pre><code>LuCI  —&gt;
+
+1. Collections  —&gt;
+{*} luci
+&lt;M&gt; luci-ssl……………………. Standard OpenWrt set with HTTPS
+
+4. Themes  —&gt; 
+-*- luci-theme-base…………………………. Common base for all
+-*- luci-theme-bootstrap……………………… Bootstrap Theme
+&lt;*&gt; luci-theme-freifunk-bno……………….. Freifunk Berlin Nordost Theme
+&lt;*&gt; luci-theme-freifunk-generic………………….. Freifunk Generic Theme
+&lt;*&gt; luci-theme-openwrt……………………………………. OpenWrt.org
+
+5. Translations  —&gt;
+&lt;*&gt; luci-i18n-chinese………………….. Chinese (by Chinese Translators)
+-*- luci-i18n-english………………………………………… English
+</code></pre>
+
+<ol>
+<li>编译OpenWrt系统</li>
+</ol>
+
+<pre><code class="language-bash">make –j 8 V=s 
+</code></pre>
+
+<p>由于OpenWrt整个系统非常庞大, 编译很慢. &ldquo;-j 8&rdquo; 表示用8线程进行编译, &ldquo;V=s&rdquo;编译的时候显示编译信息. 如果你的电脑是4核建议你用8线程进行编译, 双核建议你使用4线程. 这里测试8线程编译需要一个小时才能编译完成.</p>
+
+<h3 id="toc_2">构建pcDuino BSP</h3>
+
+<p>由于OpenWrt的u-boot用的是u-boot-2013的版本, 目前只支持SD卡启动, 而且内核用的是3.12.5版本. 另外我们的3.4.29的内核用的是全志fex, 而且3.12.5用的是linux官方的kernel使用的是dts设备树.这样的话我们就不能用之前的BSP方案, 我们要自己做一个从SD卡启动的系统.</p>
+
+<p>pcDuino从SD卡启动顺序是A10—&gt;u-boot–&gt;uImage–&gt;OpenWrt.</p>
+
+<p>根据全志官网的说明, 这些软件都必须放在SD卡固定的地址. 那么首先要对A10进行分区. 根据全志芯片的说明, 需要对SD卡进行下表固定分区.</p>
+
+<p><img src="http://akagi201.qiniudn.com/a10-flash.png" alt="a10-flash" />
+</p>
+
+<ol>
+<li>先格式化TF卡前面的1M空间, 这里是将TF卡通过读卡器插入到PC的虚拟机. 可以看出TF卡的设备是sdb.</li>
+</ol>
+
+<pre><code>Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       195G   60G  126G  33% /
+udev            989M  4.0K  989M   1% /dev
+tmpfs           400M  940K  399M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            998M   76K  998M   1% /run/shm
+/dev/sdb1       3.8G   12K  3.8G   1% /media/0005-559B
+
+sudo dd if=/dev/zero of=/dev/sdb bs=1M count=1
+</code></pre>
+
+<ol>
+<li>写入u-boot-spl.bin和u-boot.bin. OpenWrt的生成的二进制文件都在openwrt/trunk/bin/sunxi目录下, 这里OpenWrt做了一些工作将u-boot-spl.bin和u-boot.bin合在了一起, 只需要把openwrt-sunxi-pcDuino-sunxi-with-spl.bin写到</li>
+</ol>
+
+<pre><code>cd  uboot-sunxi-pcDuino
+pillar@monster:~/openwrt/trunk/bin/sunxi/uboot-sunxi-pcDuino$ ls 
+openwrt-sunxi-pcDuino-sunxi-spl.bin       openwrt-sunxi-pcDuino-u-boot.bin
+openwrt-sunxi-pcDuino-sunxi-with-spl.bin
+sudo dd if=openwrt-sunxi-pcDuino-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8
+</code></pre>
+
+<p>这时候把SD卡插到板子上, 重新上电就会看到下面打印信息.</p>
+
+<pre><code>U-Boot 2013.10-rc2 (Jan 15 2014 – 17:48:38) Allwinner Technology
+CPU:   Allwinner A10 (SUN4I)
+Board: pcDuino
+I2C:   ready
+DRAM:  1 GiB
+MMC:   SUNXI SD/MMC: 0
+
+*** Warning – bad CRC, using default environment
+In:    serial
+Out:   serial
+Err:   serial
+Net:   emac
+Hit any key to stop autoboot:  0
+
+sun4i#
+</code></pre>
+
+<p>从上面可以看到u-boot已经完全启动了, 上面的时间是编译的时间. 上面的信息还可以看到我们的环境变量没有设置, 它使用的是默认的环境变量. 前面介绍, 系统建立在分区表不同的地方, 但是我们现在SD卡还没有分区表, 我们需要先建立分区表再做环境变量.</p>
+
+<ol>
+<li>建立分区表. 重新把SD卡插回到电脑的虚拟机里面, 使用fdisk创建分区表. 具体的分区见下操作, 步骤的说明请看#后面的注释.</li>
+</ol>
+
+<pre><code class="language-bash">pillar@monster:~/openwrt/trunk/bin/sunxi$ sudo fdisk /dev/sdb 
+[sudo] password for pillar: 
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0x97bf3019.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won’t be recoverable.
+Warning: invalid flag 0×0000 of partition table 4 will be corrected by w(rite) 
+Command (m for help): m   #帮助 
+Command action 
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition   #创建分区
+   o   create a new empty DOS partition table
+   p   print the partition table  #查看分区
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition’s system id   #改变分区类型
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only) 
+
+Command (m for help): p             #查看分区
+Disk /dev/sdb: 4027 MB, 4027580416 bytes
+124 heads, 62 sectors/track, 1023 cylinders, total 7866368 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x97bf3019
+
+Device Boot      Start         End      Blocks   Id  System
+
+#没有分区 
+
+Command (m for help): n      #创建分区 
+
+Partition type: 
+   p   primary (0 primary, 0 extended, 4 free)    #主分区 
+   e   extended                                   #扩展分区 
+
+Select (default p):                            #选择默认主分区
+Using default response p
+Partition number (1-4, default 1):                #分区号为1
+Using default value 1
+First sector (2048-7866367, default 2048):         #选择默认值
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-7866367, default 7866367): 34815 #这个根据全志的手册来第一个分区必须这么大
+
+Command (m for help): p                       #查看分区 
+
+Disk /dev/sdb: 4027 MB, 4027580416 bytes
+124 heads, 62 sectors/track, 1023 cylinders, total 7866368 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x97bf3019
+
+   Device Boot      Start         End      Blocks   Id  System 
+/dev/sdb1            2048       34815       16384   83  Linux  #创建的第一个分区
+
+Command (m for help): n                    #再创建一个分区 
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free) 
+   e   extended 
+
+Select (default p):                          #主分区
+Using default response p 
+Partition number (1-4, default 2):              #第二个主分区
+Using default value 2
+First sector (34816-7866367, default 34816):      #默认大小从34816开始
+Using default value 34816
+Last sector, +sectors or +size{K,M,G} (34816-7866367, default 7866367): #默认全部分到第二分区 
+
+Using default value 7866367 
+
+Command (m for help): p                       #再一次查看分区 
+
+Disk /dev/sdb: 4027 MB, 4027580416 bytes
+124 heads, 62 sectors/track, 1023 cylinders, total 7866368 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x97bf3019
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048       34815       16384   83  Linux
+/dev/sdb2           34816     7866367     3915776   83  Linux
+
+#可以看出创建了两个分区都为linux类型，但是u-boot只能识别第一个分区为FAT32分区 
+
+Command (m for help): t            #修改分区类型
+Partition number (1-4): 1            #选择修改哪个分区
+Hex code (type L to list codes): L      #列出所有类型
+
+ 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris
+ 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden C:  c6  DRDOS/sec (FAT-
+ 4  FAT16 &lt;32M      40  Venix 80286     85  Linux extended  c7  Syrinx
+ 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data
+ 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility
+ 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt
+ 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access
+ a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor
+ c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi eb  BeOS fs
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT
+ f  W95 Ext’d (LBA) 54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC b
+11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f4  SpeedStor
+14  Hidden FAT16 &lt;3 61  SpeedStor       ab  Darwin boot     f2  DOS secondary
+16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS
+17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE
+18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fd  Linux raid auto
+1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fe  LANstep
+1c  Hidden W95 FAT3 75  PC/IX           be  Solaris boot    ff  BBT
+1e  Hidden W95 FAT1 80  Old Minix
+
+Hex code (type L to list codes): c             #选择FAT32
+Changed system type of partition 1 to c (W95 FAT32 (LBA))
+
+Command (m for help): p                  #再一次查看分区 
+
+Disk /dev/sdb: 4027 MB, 4027580416 bytes
+124 heads, 62 sectors/track, 1023 cylinders, total 7866368 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x97bf3019
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1        2048       34815     16384    c  W95 FAT32 (LBA)#已经修改过了了
+/dev/sdb2           34816     7866367     3915776   83  Linux
+
+Command (m for help): w                                   #保存分区表
+The partition table has been altered! 
+Calling ioctl() to re-read partition table.
+WARNING: If you have created or modified any DOS 6.x
+partitions, please see the fdisk manual page for additional
+information.
+Syncing disks.
+</code></pre>
+
+<ol>
+<li>格式化分区. 刚才创建了分区, 但是没有格式化, 我们还是不能使用.</li>
+</ol>
+
+<pre><code>pillar@monster :~/openwrt/trunk/bin/sunxi$ ls /dev/sdb  #查看已经分好的分区
+sdb   sdb1  sdb2
+pillar@monster :~/openwrt/trunk/bin/sunxi$ mkf        #查看有哪些分区类型
+mkfifo        mkfontscale   mkfs.bfs      mkfs.ext2     mkfs.ext4     mkfs.minix    mkfs.ntfs
+mkfontdir     mkfs          mkfs.cramfs   mkfs.ext3     mkfs.ext4dev  mkfs.msdos    mkfs.vfat 
+
+pillar@monster :~/openwrt/trunk/bin/sunxi$ sudo mkfs.vfat /dev/sdb1 #第一个分区格式化为fat分区
+[sudo] password for pillar:
+mkfs.vfat 3.0.12 (29 Oct 2011)
+
+pillar@monster :~/openwrt/trunk/bin/sunxi$ sudo mkfs.ext4 /dev/sdb2 #第二个分区格式化为ext4分区，这里需要几分钟
+
+mke2fs 1.42 (29-Nov-2011)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+244800 inodes, 978944 blocks
+48947 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1002438656
+30 block groups
+32768 blocks per group, 32768 fragments per group
+8160 inodes per group
+Superblock backups stored on blocks:
+         32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done
+</code></pre>
+
+<ol>
+<li>挂载分区</li>
+</ol>
+
+<pre><code>pillar@monster :~/openwrt/trunk/bin/sunxi$ sudo mount /dev/sdb1 /media/1
+pillar@monster :~/openwrt/trunk/bin/sunxi$ sudo mount /dev/sdb2 /media/2
+pillar@monster :~/openwrt/trunk/bin/sunxi$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       195G   60G  126G  33% /
+udev            989M  4.0K  989M   1% /dev
+tmpfs           400M  944K  399M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            998M   76K  998M   1% /run/shm
+/dev/sdb1        16M     0   16M   0% /media/1
+/dev/sdb2       3.7G  7.5M  3.5G   1% /media/2
+</code></pre>
+
+<ol>
+<li>制作u-boot环境变量文件. 刚刚创建了分区, 这里只需要将环境变量文件, 还有uImage拷贝到第一分区让u-boot读取, 就可以引导系统了. 下面开始制作u-boot环境变量文件.</li>
+</ol>
+
+<pre><code>pillar@monster :/media/1$ vim boot.cmd
+  1 setenv bootargs console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait panic=10 ${extra}
+  2 fatload mmc 0 0×46000000 uImage
+  3 fatload mmc 0 0×49000000 sun4i-a10-pcduino.dtb
+  4 fdt_high ffffffff
+  5 bootm 0×46000000 – 0×49000000
+pillar@monster :/media/1$mkimage -C none -A arm -T script -d boot.cmd boot.scr
+</code></pre>
+
+<ol>
+<li>将系统文件拷贝到第一和第二分区.</li>
+</ol>
+
+<pre><code>pillar@monster :/media/1$ cp ~/openwrt/trunk/bin/sunxi/sun4i-a10-pcduino.dtb .
+pillar@monster :/media/1$ cp ~/openwrt/trunk/bin/sunxi/openwrt-sunxi-uImage uImage 
+pillar@monster :/media/1$ ls           #第一分区文件
+boot.scr  sun4i-a10-pcduino.dtb    uImage
+pillar@monster :/media$ sudo dd if=~/openwrt/trunk/bin/sunxi/openwrt-sunxi-root.ext4 of=/dev/sdb2 bs=1M                   #拷贝第二分区文件
+</code></pre>
+
+<p>好了, 现在整个的从SD启动的BSP已经最好了.</p>
+
+<ol>
+<li>发布并烧写系统. 现在把系统做好了, 你可以发布你制作的系统, 然后别人可以通过win32diskimager来把你的系统写入到他的SD卡, 他就可以和你一起玩OpenWrt了.</li>
+</ol>
+
+<pre><code>pillar@monster :/media$ sudo dd if=/dev/sdc of=OpenWrt.img  bs=4M 
+</code></pre>
+
+<p>现在把OpenWrt.img拷贝到windows上, 把你新的SD卡插到电脑开始用win32diskimager写入</p>
+
+<p><img src="http://akagi201.qiniudn.com/win32-disk-imager.png" alt="win32-disk-imager" />
+</p>
+
+<h3 id="toc_3">配置OpenWrt系统</h3>
+
+<ol>
+<li>让系统上网</li>
+</ol>
+
+<pre><code>vim /etc/config/network
+config interface ‘net’
+        option ifname ‘eth0′
+        option proto ‘dhcp’
+</code></pre>
+
+<ol>
+<li>设置固定的mac地址</li>
+</ol>
+
+<p>当系统的启动的时候发现mac地址老是在变，这就会出现一个问题, 有时候能获取到ip, 有时候获取不到ip. 这里可以做一个系统服务, 让系统开机保存mac地址, 然后再开机的时候恢复之前的mac地址.</p>
+
+<p>1) 在/etc/init.d/mac里面编写如下脚本</p>
+
+<pre><code>#!/bin/sh /etc/rc.common
+START=18
+STOP=91
+start() {
+if [ -f /mac ]; then
+dd if=/mac bs=1 count=17 of=/tmp/mac &gt;/dev/null 2&gt;&amp;1
+mac_addr=`cat /tmp/mac`
+else
+mac_file=/sys/class/net/eth0/address
+dd if=$mac_file bs=1 of=/mac count=17 &gt;/dev/null 2&gt;&amp;1
+mac_addr=`cat /tmp/mac`
+fi
+ifconfig eth0 down
+ifconfig eth0 hw ether $mac_addr
+#if failed, save current mac address
+if [ $? -ne 0 ]; then
+mac_file=/sys/class/net/eth0/address
+dd if=$mac_file bs=1 of=/mac count=17 &gt;/dev/null 2&gt;&amp;1
+fi
+}
+</code></pre>
+
+<p>2) 指定运行的模式</p>
+
+<p>/etc/rc.d/rc则根据其参数指定的运行模式(运行级别, 你在inittab文件中可以设置)来执行相应目录下的脚本. 凡是以Kxx开头的, 都以stop为参数来调用. 凡是以Sxx开头的, 都以start为参数来调用. 调用的顺序按xx 从小到大来执行. 例如, 假设缺省的运行模式是3, /etc/rc.d/rc就会按上述方式调用.
+由于设定mac地址要在network之前. 所以要创建链接:</p>
+
+<pre><code>ln  -s   /etc/init.d/mac   /etc/rc.d/S18mac
+</code></pre>
+
+<ol>
+<li>开启wifi</li>
+</ol>
+
+<p>openwrt启动之后输入:</p>
+
+<pre><code>root@OpenWrt :/# ifconfig
+eth0      Link encap:Ethernet  HWaddr AE:DB:9A:D9:31:DE
+inet addr:192.168.1.119  Bcast:192.168.1.255  Mask:255.255.255.0
+inet6 addr: fe80::acdb:9aff:fed9:31de/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+RX packets:696 errors:0 dropped:0 overruns:0 frame:0
+TX packets:640 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:86028 (84.0 KiB)  TX bytes:377264 (368.4 KiB)
+Interrupt:17 Base address:0×4000 
+
+lo        Link encap:Local Loopback
+inet addr:127.0.0.1  Mask:255.0.0.0
+inet6 addr: ::1/128 Scope:Host
+UP LOOPBACK RUNNING  MTU:65536  Metric:1
+RX packets:16 errors:0 dropped:0 overruns:0 frame:0
+TX packets:16 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:0
+RX bytes:1786 (1.7 KiB)  TX bytes:1786 (1.7 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 00:7A:03:00:29:F4
+inet6 addr: fe80::27a:3ff:fe00:29f4/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:0 (0.0 B)  TX bytes:864 (864.0 B)
+</code></pre>
+
+<p>确保ethX和wlanX都有. openwrt的root密码是没有设置, 你需要从serial debug进入系统设置root密码, 设置方法如下:</p>
+
+<pre><code>passwd  root
+</code></pre>
+
+<p>然后在同一个局域网内你的PC的浏览器上输入: ethX的ip, 这里是192.168.1.119.就会出现下面界面:</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-login.png" alt="luci-login" />
+</p>
+
+<p>输入你刚才设置的密码, 进入系统管理界面, 默认是进入状态标签, 这里你可以看到整个系统的运行的状态.</p>
+
+<p><img src="http://akagi201.qiniudn.com/system-status.png" alt="system-status" />
+</p>
+
+<p>如果你对当前页面不太习惯, 而且在使用上语言上也有些困难, 你可以进入system标签, 在System Properties里面设置language and style如下图所示. 设置完之后save &amp; apply, 重新刷新一下浏览器就可以使用你设置的语言和主题.</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-theme.png" alt="luci-theme" />
+</p>
+
+<p>下面进入网络标签栏设置wifi节点, 这个部分是openwrt比较复杂的一个部分, 这个部分的设置直接决定着你的openwrt能不能使用.</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-wifi.png" alt="luci-wifi" />
+</p>
+
+<p>添加新接口, 选择静态ip, 新接口的名称, 你需要用英文自定义一个名字, 在包括一下接口里面选择无线网络. 设置完之后提交, 进入下一个页面继续设置.</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-interface.png" alt="luci-interface" />
+</p>
+
+<p>基本设置设置完成之后, 进入防火墙设置, 这里wifi必须选择为lan口. 设置完成之后保存应用. 这个时候你电脑就可以连接使用openwrt这个路由器了.</p>
+
+<p><img src="http://akagi201.qiniudn.com/pc-wifi.png" alt="pc-wifi" />
+</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-wifi-net.png" alt="luci-wifi-net" />
+</p>
+
+<p>点击修改后进入防火墙设置标签栏, 分配防火墙区域为wan, 设置完成之后保存&amp;应用.</p>
+
+<p><img src="http://akagi201.qiniudn.com/luci-firewall.png" alt="luci-firewall" />
+</p>
+
+<h3 id="toc_4">制作内核补丁</h3>
+
+<ol>
+<li>清空恢复上一个全新的内核</li>
+</ol>
+
+<pre><code>make target/linux/{clean,prepare} V=s QUILT=1
+</code></pre>
+
+<ol>
+<li>到内核源码目录</li>
+</ol>
+
+<pre><code>cd build_dir/target-*/linux-*/linux-3.*
+</code></pre>
+
+<ol>
+<li>建立git代码仓库</li>
+</ol>
+
+<pre><code>git init
+git add * -f
+git commit -am &quot;initial commit&quot;
+</code></pre>
+
+<ol>
+<li>修改你的代码, 这里我给我的代码添加<code>rtl8188cus</code>驱动.</li>
+</ol>
+
+<pre><code>mkdir drivers/net/wireless/rtl8192cus
+
+cp  /home/pillar/openwrt/openwrt-pcDuino/RTL8188C_8192C_USB_linux_v4.0.2_9000.20130911/driver/rtl8188C_8192C_usb_linux_v4.0.2_9000.20130911/*   drivers/net/wireless/rtl8192cus/ -rf
+
+vim  drivers/net/wireless/Kconfig
+284  source “drivers/net/wireless/rtl8192cus/Kconfig”
+
+vim drivers/net/wireless/rtl8192cus/Kconfig
+  1 config RTL8192CU_SW
+  2 tristate “Realtek 8192C USB WiFi for SW”
+  3 depends on USB
+  4 select WIRELESS_EXT
+  5 select WEXT_PRIV
+
+vim  drivers/net/wireless/Makefile
+28             obj-$(CONFIG_RTL8192CU_SW)  += rtl8192cus/
+
+vim  drivers/net/wireless/rtl8192cus/Makefile
+575  obj-$(CONFIG_RTL8192CU_SW) := $(MODULE_NAME).o 
+
+579  export CONFIG_RTL8192CU_SW = m
+</code></pre>
+
+<ol>
+<li>建立git分支, 并制作补丁</li>
+</ol>
+
+<pre><code>git branch rtl8192
+git checkout rtl8192
+git add * -f
+git commit -a -m  &quot;add rtl8192cus for pcDuino&quot;
+git format-patch -M master  #会生成0002-add-rtl8192cus-for-pcDuino.patch 
+
+cp  0001-add-rtl8192cus-for-pcDuino.patch patches/
+cd ../../../../
+make target/linux/update package/index V=s
+cp  build_dir/target-arm_cortex-a8+vfpv3_uClibc-0.9.33.2_eabi/linux-sunxi/linux-3.12.5/patches/0001-add-rtl8192cus-for-pcDuino.patch target/linux/sunxi/patches-3.12/
+</code></pre>
+
+<ol>
+<li>检测是否生效, 执行完之后就是<code>rtl8192</code>分支的代码了.</li>
+</ol>
+
+<pre><code>make target/linux/{clean,prepare} V=s QUILT=1
+</code></pre>
+
+<ol>
+<li>配置内核应用选项</li>
+</ol>
+
+<pre><code>make kernel_menuconfig
+         Device Drivers  —&gt; 
+                   [*] Network device support  —&gt; 
+                                     [*]   Wireless LAN  —&gt; 
+                                                          &lt;*&gt;   Realtek 8192C USB WiFi
+</code></pre>
+
+<p>其他的patch的制作方法请参考: <a href="http://wiki.openwrt.org/doc/devel/patches">http://wiki.openwrt.org/doc/devel/patches</a></p>
+
+<h3 id="toc_5">建立App服务器</h3>
+
+<p>OpenWrt通过opkg来管理安装整个系统的软件. 目前有很多OpenWrt的软件源, 但是哪些都是针对于MIPS平台的, pcDuino使用的ARM平台, 我们必须自己搭建软件源. 查看了一下MIPS平台的服务器, 其实很简单的, 就是一个apache服务器, 而且OpenWrt编译完成之后, 在openwrt/trunk/bin/sunxi/packages下面已经生成了软件源. 我们只需要将他们联系起来就行了, 这里是在我的PC的虚拟机上搭建的.</p>
+
+<pre><code># sudo apt-get install apache2
+</code></pre>
+
+<p>修改https的根目录</p>
+
+<pre><code>pillar@monster :~/openwrt$ vim /etc/apache2/sites-available/default
+4     DocumentRoot /home/pillar/openwrt/trunk/bin/sunxi/
+</code></pre>
+
+<p>重启服务器使修改过的配置生效</p>
+
+<pre><code>pillar@monster :~/openwrt$ sudo /etc/init.d/apache2 restart
+</code></pre>
+
+<p>修改pcDuino上OpenWrt的源配置</p>
+
+<pre><code>root@OpenWrt :/# vim /etc/opkg.conf
+src/gz barrier_breaker http://192.168.1.125/packages
+dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+</code></pre>
+
+<p>上面的IP为我们电脑虚拟机的IP, 下面更新一下软件源.</p>
+
+<pre><code># opkg update
+</code></pre>
+
+<h3 id="toc_6">应用程序开发</h3>
+
+<p>OpenWrt上面应用程序开发有两种方式, 一种是利用OpenWrt SDK, 一种是利用OpenWrt源码. 这里主要介绍利用OpenWrt源码, 进行开发应用程序, 制作成ipk软件可以安装.</p>
+
+<ol>
+<li>进入package目录, 创建软件目录</li>
+</ol>
+
+<pre><code>#cd   /home/pillar/openwrt/trunk/package
+#mkdir example1
+</code></pre>
+
+<ol>
+<li>进入example1目录, 创建Makefile文件和代码路径</li>
+</ol>
+
+<pre><code>#cd example1
+#touch Makefile
+#mkdir  src
+</code></pre>
+
+<p>该Makefile具体内容如下:</p>
+
+<pre><code class="language-Makefile">#User mode tool example
+include $(TOPDIR)/rules.mk
+include $(INCLUDE_DIR)/kernel.mk
+PKG_NAME:=example1
+PKG_RELEASE:=1
+PKG_BUILD_DIR := $(KERNEL_BUILD_DIR)/$(PKG_NAME)
+include $(INCLUDE_DIR)/package.mk
+
+define Package/example1
+　SECTION:=utils
+　CATEGORY:=Base system
+　TITLE:=Build for example1 commands
+endef
+
+define Package/example1/description
+　This package contains an utility useful to use example1 commands.
+endef
+
+define Build/Prepare
+　　mkdir -p $(PKG_BUILD_DIR)
+　　$(CP) ./src/* $(PKG_BUILD_DIR)/
+endef 
+
+target=$(firstword $(subst -, ,$(BOARD)))
+MAKE_FLAGS += TARGET=&quot;$(target)&quot;
+TARGET_CFLAGS += -Dtarget_$(target)=1 -Wall
+
+define Build/example1/compile
+　　$(MAKE) -C “$(LINUX_DIR)” \
+　　　CROSS_COMPILE=”$(TARGET_CROSS)” \
+　　　ARCH=”$(LINUX_KARCH)” \
+　　　SUBDIRS=”$(PKG_BUILD_DIR)” \
+　　　EXTRA_CFLAGS=”$(BUILDFLAGS)”
+endef 
+
+define Package/example1/install
+　　$(INSTALL_DIR) $(1)/sbin
+　　$(INSTALL_BIN) $(PKG_BUILD_DIR)/example1 $(1)/sbin/
+endef 
+
+$(eval $(call BuildPackage,example1))
+</code></pre>
+
+<ol>
+<li>进入src目录, 创建相关源文件</li>
+</ol>
+
+<pre><code>cd src 
+touch example１.c Makefile 
+</code></pre>
+
+<p>example１.c　具体内容如下:</p>
+
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+int main(void)
+{
+　　printf(“Hello, world\n”);
+　　return 0;
+}
+</code></pre>
+
+<p>Makefile文件具体内容如下:</p>
+
+<pre><code class="language-Makefile">.NOTPARALLEL: 
+#OCTEON_ROOT=$(PWD)/src/ 
+CC=~/openwrt/main/staging_dir/toolchain-mips64_gcc-4.4.1_eglibc-2.10.1/usr/bin/mips64-openwrt-linux-gnu-gcc
+CFLAGS=-mips64r2 -mabi=64 -march=octeon -mtune=octeon
+LFLAGS=
+.PHONY: all
+all: example1
+example1:example1.c
+　　${CC} ${CFLAGS} ${LFLAGS} -W -g -Wall -Wno-unused-parameter -DUSE_RUNTIME_MODEL_CHECKS=1 \
+　　　　-o $@ example1.c
+</code></pre>
+
+<ol>
+<li>回到主路径/home/pillar/openwrt/trunk/, 编译选项配置保存并编译.</li>
+</ol>
+
+<pre><code>make menuconfig
+　　Base system —&gt;
+　　　example1
+</code></pre>
+
+<p>选项设置为M, 保存退出.
+然后编译该模块:</p>
+
+<pre><code>make package/example1/compile
+</code></pre>
+
+<ol>
+<li>更新package</li>
+</ol>
+
+<pre><code>make package/ example1/install
+make package/index
+</code></pre>
+
+<h3 id="toc_7">内核驱动开发</h3>
+
+<p>OpenWrt开发内核驱动有多种方式, 前面讲到的制作内核补丁也是一种开发方法. 这里介绍直接在OpenWrt系统上开发内核驱动, 把内核驱动做成ipk软件包的形式.</p>
+
+<ol>
+<li>建立工作目录</li>
+</ol>
+
+<pre><code>cd  openwrt/trunk/package
+mkdir example
+</code></pre>
+
+<ol>
+<li>进入example目录, 创建Makefile文件和代码路径</li>
+</ol>
+
+<pre><code class="language-bash">cd example 
+mkdir src
+vim Makefile
+</code></pre>
+
+<pre><code class="language-Makefile"># Kernel module example
+include $(TOPDIR)/rules.mk
+include $(INCLUDE_DIR)/kernel.mk
+PKG_NAME:=example
+PKG_RELEASE:=1
+include $(INCLUDE_DIR)/package.mk
+
+define KernelPackage/example
+　　SUBMENU:=Other modules
+　　DEPENDS:=@TARGET_octeon
+　　TITLE:=Support Module for example
+　　AUTOLOAD:=$(call AutoLoad,81,example)
+　　FILES:=$(PKG_BUILD_DIR)/example/example.$(LINUX_KMOD_SUFFIX)
+endef
+
+define Build/Prepare
+　　mkdir -p $(PKG_BUILD_DIR)
+　　$(CP) -R ./src/* $(PKG_BUILD_DIR)/
+endef 
+
+define Build/Compile
+　　$(MAKE) -C “$(LINUX_DIR)” \
+　　　　CROSS_COMPILE=”$(TARGET_CROSS)” \
+　　　　ARCH=”$(LINUX_KARCH)” \
+　　　　SUBDIRS=”$(PKG_BUILD_DIR)/example” \
+　　　　EXTRA_CFLAGS=”-g $(BUILDFLAGS)” \
+　　　　modules
+endef 
+
+$(eval $(call KernelPackage,example))
+</code></pre>
+
+<ol>
+<li>进入src目录, 创建代码路径和相关源文件</li>
+</ol>
+
+<pre><code class="language-bash">cd src
+mkdir example
+cd example
+vim example.c
+</code></pre>
+
+<pre><code class="language-C">#include &lt;linux/init.h&gt;
+#include &lt;linux/module.h&gt;
+#include &lt;linux/kernel.h&gt;
+
+/* hello_init —- 初始化函数, 当模块装载时被调用, 如果成功装载返回0, 否则返回非0值 */ 
+
+static int __init hello_init(void)
+{
+　　　printk(&quot;I bear a charmed life.\n&quot;);
+　　　return 0;
+} 
+
+/ * hello_exit —- 退出函数, 当模块卸载时被调用 */
+static void __exit hello_exit(void) 
+{
+　　　printk(&quot;Out, out, brief candle\n&quot;);
+} 
+
+module_init(hello_init);
+module_exit(hello_exit);
+MODULE_LICENSE(&quot;GPL&quot;);
+MODULE_AUTHOR(&quot;Pillar_zuo&quot;);
+</code></pre>
+
+<pre><code>vim Kconfig
+
+config EXAMPLE
+　　tristate &quot;Just a example&quot;
+　　default n
+　　help
+　　　This is a example, for debugging kernel model.
+　　　If unsure, say N.
+
+vim Makefile
+
+obj-m := example.o
+</code></pre>
+
+<ol>
+<li>回到OpenWrt源码根目录下</li>
+</ol>
+
+<pre><code>make menuconfig
+　　Kernel modules —&gt;
+　　　　Other modules —&gt;
+　　　　　　kmod-example
+</code></pre>
+
+<p>选项设置为M, 保存退出
+然后编译该模块:</p>
+
+<pre><code>make package/example/compile
+make package/index
+</code></pre>
+
+<ol>
+<li>在OpenWrt系统里面就可以用opkg下载使用了.</li>
+</ol>
+
+<h3 id="toc_8">使用OpenWrt SDK</h3>
+
+<p>OpenWrt为了避免每次都重新编译系统, 引入了SDK机制. 我们在发布系统的时候也需要发布SDK, 具体的使用方法请下面例子.</p>
+
+<ol>
+<li>解压SDK</li>
+</ol>
+
+<pre><code>pillar@monster :~/openwrt/trunk/bin/sunxi$ tar xvf OpenWrt-SDK-sunxi-for-linux-x86_64-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+cd  OpenWrt-SDK-sunxi-for-linux-x86_64-gcc-4.6-linaro_uClibc-0.9.33.2
+</code></pre>
+
+<ol>
+<li>建立软件工作目录</li>
+</ol>
+
+<pre><code>cd package
+mkdir helloworld
+vim Makefile    #这个Makefile可以作为模板
+##############################################
+# OpenWrt Makefile for helloworld program
+#
+#
+# Most of the variables used here are defined in
+# the include directives below. We just need to
+# specify a basic description of the package,
+# where to build our program, where to find
+# the source files, and where to install the
+# compiled program on the router.
+#
+# Be very careful of spacing in this file.
+# Indents should be tabs, not spaces, and
+# there should be no trailing whitespace in
+# lines that are not commented.
+#
+############################################## 
+
+include $(TOPDIR)/rules.mk 
+
+# Name and release number of this package 
+PKG_NAME:=helloworld 
+PKG_RELEASE:=1 
+
+# This specifies the directory where we’re going to build the program.
+# The root build directory, $(BUILD_DIR), is by default the build_mipsel
+# directory in your OpenWrt SDK directory
+
+PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+include $(INCLUDE_DIR)/package.mk
+
+# Specify package information for this program.
+# The variables defined here should be self explanatory.
+# If you are running Kamikaze, delete the DESCRIPTION
+# variable below and uncomment the Kamikaze define
+# directive for the description below
+
+define Package/helloworld
+    SECTION:=utils
+    CATEGORY:=Utilities
+    TITLE:=Helloworld — prints a snarky message
+endef 
+
+# Uncomment portion below for Kamikaze and delete DESCRIPTION variable above
+define Package/helloworld/description
+        If you can’t figure out what this program does, you’re probably
+        brain-dead and need immediate medical attention.
+endef 
+
+# Specify what needs to be done to prepare for building the package.
+# In our case, we need to copy the source files to the build directory.
+# This is NOT the default.  The default uses the PKG_SOURCE_URL and the
+# PKG_SOURCE which is not defined here to download the source from the web.
+# In order to just build a simple program that we have just written, it is
+# much easier to do it this way. 
+
+define Build/Prepare
+    mkdir -p $(PKG_BUILD_DIR)
+    $(CP) ./src/* $(PKG_BUILD_DIR)/
+endef 
+
+# We do not need to define Build/Configure or Build/Compile directives
+# The defaults are appropriate for compiling a simple program such as this one
+# Specify where and how to install the program. Since we only have one file,
+# the helloworld executable, install it by copying it to the /bin directory on
+# the router. The $(1) variable represents the root directory on the router running
+# OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install
+# directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the
+# command to copy the binary file from its current location (in our case the build
+# directory) to the install directory. 
+
+define Package/helloworld/install
+    $(INSTALL_DIR) $(1)/bin
+    $(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
+endef 
+
+# This line executes the necessary commands to compile our program.
+# The above define directives specify all the information needed, but this
+# line calls BuildPackage which in turn actually uses this information to
+# build a package.
+
+$(eval $(call BuildPackage,helloworld))
+mkdir src
+cd src
+</code></pre>
+
+<ol>
+<li>编写自己的软件, 这里以helloworld为例.</li>
+</ol>
+
+<pre><code>vim helloworld.c
+
+#include&lt;stdio.h&gt;
+int main(void)
+{
+    printf(“Hell! O’ world, why won’t my code compile?\n\n”); 
+    return 0;
+}
+
+vim Makefile
+
+# build helloworld executable when user executes &quot;make&quot;
+helloworld: helloworld.o 
+    $(CC) $(LDFLAGS) helloworld.o -o helloworld
+
+helloworld.o: helloworld.c 
+    $(CC) $(CFLAGS) -c helloworld.c 
+
+# remove object files and executable when user executes &quot;make clean&quot;
+clean:
+    rm *.o helloworld
+</code></pre>
+
+<ol>
+<li>编译软件, 回到SDK根目录下.</li>
+</ol>
+
+<pre><code>cd ../../
+make V=s
+pillar@monster :~/openwrt/trunk/bin/sunxi/OpenWrt-SDK-sunxi-for-linux-x86_64-gcc-4.6-linaro_uClibc-0.9.33.2$ ls bin/sunxi/packages/
+helloworld_1_sunxi.ipk  Packages  Packages.gz
+</code></pre>
+
+<ol>
+<li>修改软件源根目录. 如果你不想每次都拷贝, 你可以把软件源的根目录下设置在</li>
+</ol>
+
+<pre><code>OpenWrt-SDK-sunxi-for-linux-x86_64-gcc-4.6-linaro_uClibc-0.9.33.2/bin/sunxi/packages 
+</code></pre>
+
+<p>然后你可以在OpenWrt系统里面下载安装.</p>
+
+<h3 id="toc_9">Refs</h3>
+
+<ul>
+<li><a href="http://cnlearn.linksprite.com/?p=2724#tab-1392544656-1-91">http://cnlearn.linksprite.com/?p=2724#tab-1392544656-1-91</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/protothreads/">
+        Protothreads
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Dec 14, 2013</span>
+
+    
+
+<h2 id="toc_0">Specs</h2>
+
+<ul>
+<li>没有专用的机器代码, 纯c实现.</li>
+<li>不使用容易犯错的跳转指令.</li>
+<li>占用极少内存.</li>
+<li>在不在操作系统里用都可以提供blocking event-handlers(可阻塞的事件句柄??).</li>
+<li>提供给事件触发系统(event-driven)线性代码执行(linear code execution).</li>
+<li>提供顺序的控制流程(sequential flow of control)不需要使用复杂的状态机(state machine)或者完全的多线程(full multi-threading).</li>
+<li>Protothreads 是无优先级的, 因此, 一个上下文切换(context switch)只会发生在阻塞操作(blocking operations)上.</li>
+<li>Protothreads function as stackless, lightweight threads providing a blocking context cheaply using minimal memory per protothread (on the order of single bytes).</li>
+<li>Protothreads 是无栈的, 表示需要全局变量来保持变量用来跨上下文切换(across context switches).</li>
+<li>Protothread 的概念是被Adam Dunkels和Oliver Schmidt开发的.</li>
+</ul>
+
+<h2 id="toc_1">Adam Dunkels</h2>
+
+<ul>
+<li>看了一下他的wiki页面, 原来这个人还是个牛人, 在嵌入式领域写了不少东西.</li>
+<li>博士, 瑞典的企业家和程序员, Thingsquare的创始人.</li>
+<li>IPSO Alliance的创始人, 推广对于小的设备(嵌入式和无线传感器)的IP网络通信. alliance&rsquo;s white paper的作者.</li>
+<li>他的工作主要是关注网络技术和小的嵌入式设备和无线传感器的分布式通信.</li>
+<li>作品有: uIP(micro-IP), lwIP, Protothreads, Contilki, uVNC, MiniWeb, phpstack, uBASIC.</li>
+<li>书籍: <Interconnecting Smart Objects with IP - the Next Internet>.</li>
+<li></li>
+</ul>
+
+<h2 id="toc_2">Example</h2>
+
+<pre><code class="language-C">#include &quot;pt.h&quot;
+ 
+struct pt pt;
+struct timer timer;
+ 
+PT_THREAD(example(struct pt *pt))
+{
+  PT_BEGIN(pt);
+ 
+  while(1) {
+    if(initiate_io()) {
+      timer_start(&amp;timer);
+      PT_WAIT_UNTIL(pt,
+         io_completed() ||
+         timer_expired(&amp;timer));
+      read_data();
+    }
+  }
+  PT_END(pt);
+}
+</code></pre>
+
+<h2 id="toc_3">Refs</h2>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Protothreads">http://en.wikipedia.org/wiki/Protothreads</a></li>
+<li><a href="http://dunkels.com/adam/pt/index.html">http://dunkels.com/adam/pt/index.html</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Adam_Dunkels">http://en.wikipedia.org/wiki/Adam_Dunkels</a></li>
+<li><a href="http://www.amazon.com/Interconnecting-Smart-Objects-IP-Internet/dp/0123751659">http://www.amazon.com/Interconnecting-Smart-Objects-IP-Internet/dp/0123751659</a></li>
+<li><a href="http://hi.baidu.com/hyper99/item/bcf1dbc50af11247a8ba9422">http://hi.baidu.com/hyper99/item/bcf1dbc50af11247a8ba9422</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-perl/">
+        Learning Perl
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Nov 3, 2013</span>
+
+    
+
+<h2 id="toc_0">Books</h2>
+
+<ul>
+<li>小骆驼/大骆驼, 在知乎上搜了一下,还有草泥马什么的, 呵呵, 好多搞生物信息学的用Perl.</li>
+<li>Modern Perl: 我选择了这本, 原因是github上有该书地址, 还有因为如 <a href="http://www.modernperlbooks.com/mt/2009/01/why-modern-perl.html">Why &ldquo;Modern Perl&rdquo;</a> 中所说的, 以前对于当时Perl的好的编程方法现在并不适用了.</li>
+</ul>
+
+<h2 id="toc_1">Tools</h2>
+
+<ul>
+<li>perlbrew: 方便的perl版本管理工具, 把多个perl版本下载到home目录, 然后可以随时切换,也可以关闭使用系统的perl.</li>
+</ul>
+
+<h2 id="toc_2">Refs</h2>
+
+<ul>
+<li><a href="http://modernperlbooks.com/books/modern_perl/">http://modernperlbooks.com/books/modern_perl/</a></li>
+<li><a href="https://github.com/chromatic/modern_perl_book">https://github.com/chromatic/modern_perl_book</a></li>
+<li><a href="https://github.com/gugod/App-perlbrew/wiki/Perlbrew-中文简介">https://github.com/gugod/App-perlbrew/wiki/Perlbrew-中文简介</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/openwrt-buildroot-on-macosx/">
+        在Mac OS X下配置OpenWrt Buildroot环境
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Oct 28, 2013</span>
+
+    
+
+<h2 id="toc_0">与linux相比会遇到的2个问题</h2>
+
+<ol>
+<li>OpenWrt需要一个case-sensitive filesystem, 而Mac OS X默认提供的文件系统是case-insensitive.</li>
+<li>Mac OS X下缺少大量的开发工具包, 在普通linux下都有.</li>
+<li>使用一个disk image(避免再次分区硬盘), 和Homebrew.</li>
+</ol>
+
+<h2 id="toc_1">steps</h2>
+
+<ol>
+<li>Disk Image Creation
+hdiutil create -size 20g -fs &ldquo;Case-sensitive HFS+&rdquo; -volname OpenWrt OpenWrt.dmg
+hdiutil attach OpenWrt.dmg
+这个命令会在当前目录创建一个20GB image, 并且attach他名字为&rdquo;OpenWrt&rdquo;, 执行后你会在Finder中看到OpenWrt volume, 是空的.
+cd /Volumes/OpenWrt</li>
+<li>Packages installation
+有两种类型的packages:</li>
+<li>XCode framework: Apple development SDK
+. 包含了core compilers和libraries.</li>
+<li>Homebrew framework: a package manager用来下载开源components到你的系统.
+brew install coreutils e2fsprogs ossp-uuid asciidoc binutils bzip2 fastjar flex getopt gtk2 intltool jikes hs-zlib openssl p5-extutils-makemaker python26 subversion rsync ruby sdcc unzip gettext libxslt bison gawk autoconf wget gmake ncurses findutils</li>
+<li>missing: bzip2 getopt(gnu-getopt代替, 将mac os x自带的/usr/bin/getopt 重命名备份，把gnu-getopt链接到/usr/local/bin/getopt) gtk2 jikes zlib p5-extutils-makemaker tar(gnu-tar代替) python26(python代替) rsync unzip gmake ncurses</li>
+</ol>
+
+<h2 id="toc_2">Easy Build</h2>
+
+<p>不需要产生或下载不必要的packages.<a href="http://wiki.openwrt.org/doc/howto/easy.build">http://wiki.openwrt.org/doc/howto/easy.build</a></p>
+
+<h2 id="toc_3">Refs</h2>
+
+<ul>
+<li><a href="http://wiki.openwrt.org/easy.build.macosx">Setup MacOSX as an OpenWrt build environment</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence.macosx">OpenWrt Buildroot – Installation on Mac OS X</a></li>
+<li><a href="https://forum.openwrt.org/viewtopic.php?id=34676">https://forum.openwrt.org/viewtopic.php?id=34676</a>
+<a href="http://digiland.tw/viewtopic.php?id=2105">http://digiland.tw/viewtopic.php?id=2105</a></li>
+<li><a href="http://blog.csdn.net/mirkerson/article/details/7287931">http://blog.csdn.net/mirkerson/article/details/7287931</a></li>
+</ul>
 
   </div>
   

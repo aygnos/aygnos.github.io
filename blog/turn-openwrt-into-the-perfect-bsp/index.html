@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> 将OpenWrt变成完美的BSP &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>将OpenWrt变成完美的BSP</h1>
+  <span class="post-date">Thu, Jul 3, 2014</span>
+      
+
+<p>BSP(Board Support Package)对于嵌入式开发者一定不陌生, 就是针对一种板子适配指定的操作系统(常见的是linux)所需要的bootloader, 板上外设的所有驱动, 还有内核, 通常还包括一个根文件系统(里面包含能确保板子能跑起来的基本的一些配置)和toolchain.</p>
+
+<p>随着软件系统的发展, 越来越多的统一化环境配置的工具出现, 像vagrant, docker等, 这样, 将运行环境一起打包就不会出现过去那种, 在我的机器上能运行, 在你的机器上运行不了的情况了.</p>
+
+<p>嵌入式开发也是一样, 每次面对一种新的SOC, 多要进行一些重复工作, 像裁剪系统, 裁剪busybox, 移植各种应用, 各种库等. 对于开发而言, 对于每种平台开发时, 都要有一些细小的差异. 而这些差异是可以统一起来的. 解决方案就是OpenWrt.</p>
+
+<p>用OpenWrt作为BSP, 这使得用户和开发者可以快速熟悉不同的/新的硬件产品. 关于OpenWrt的详细内容, 在OpenWrt的官方文档有非常详细的介绍. <a href="http://wiki.openwrt.org/doc/start">http://wiki.openwrt.org/doc/start</a></p>
+
+<p>那么公司如何用OpenWrt做自己的产品呢? 根据开源项目的特点需要进行一些修改.</p>
+
+<h2 id="toc_0">OpenWrt Buildroot的Makefile wrapper</h2>
+
+<ul>
+<li>download tool: 下载指定版本的OpenWrt</li>
+<li>patchset: 对指定版本的OpenWrt进行打补丁, 确保稳定</li>
+<li>package feed: 自己软件包的 package feed.</li>
+<li>dl link directory: 将~/dl链接到openwrt/dl.</li>
+</ul>
+
+<h2 id="toc_1">使用OpenWrt buildroot过程的技巧</h2>
+
+<ul>
+<li>OpenWrt的buildroot编译系统, 包含fetching, patching, compiling, packaging的过程. 在fetching阶段会联网下载源码到dl目录, 所以, 一个好的方法是, 将dl目录保存在自己本地机器的一个固定位置, 然后软链接到openwrt/dl目录, 这样就不用每次下载重复的包了, 另外, 有时由于网络原因, 可以手动下载包放到这个目录.</li>
+<li></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

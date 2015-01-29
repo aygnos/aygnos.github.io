@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Gdbserver On OpenWrt &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/tool">Tool</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Gdbserver On OpenWrt</h1>
+  <span class="post-date">Mon, Mar 24, 2014</span>
+      
+
+<p>编写的程序部署到OpenWrt上出错, 打日志是个好办法, 但是今天遇到的情况, 日志也不能显示出正确的程序流程, 实在诡异, 因此, 决定尝试调试器.</p>
+
+<p>熟悉在普通的电脑上使用gdb调试的基本方法: <a href="http://www.ibm.com/developerworks/linux/library/l-gdb/">http://www.ibm.com/developerworks/linux/library/l-gdb/</a></p>
+
+<p>下载<gdb quick reference>2张纸, 打印出来放在手边备用.</p>
+
+<p>路由器中的存储空间十分有限, OpenWRT的包管理器opkg提供的GDB占用大约1.5MB空间. 路由器本身有8M的存储空间, 目前只剩200KB了, GDB的大小不能接受. 相比之下, GDBServer的大小 不到100KB, 这是可以接受的.</p>
+
+<h2 id="toc_0">gdbserver远程调试方法</h2>
+
+<h3 id="toc_1">路由器端</h3>
+
+<ol>
+<li>安装gdbserver</li>
+</ol>
+
+<pre><code>opkg install gdbserver
+</code></pre>
+
+<ol>
+<li>进入目录, 运行gdbserver, 监听网络端口</li>
+</ol>
+
+<pre><code>gdbserver 192.168.8.1:4455 xxxx
+</code></pre>
+
+<h3 id="toc_2">PC端</h3>
+
+<ol>
+<li>根据OpenWrt SDK位置配置好PATH路径</li>
+<li>进入被调试的程序文件, 这是为了向gdb提供程序的调试信息.</li>
+<li>指定被调试的程序文件, 启动gdb.</li>
+</ol>
+
+<pre><code>mips-openwrt-linux-gdb xxxx
+</code></pre>
+
+<ol>
+<li>在gdb中连接远程调试器</li>
+</ol>
+
+<pre><code>target remote 192.168.8.1:4455
+</code></pre>
+
+<ol>
+<li>等待崩溃</li>
+</ol>
+
+<pre><code>bt
+</code></pre>
+
+<p>如果连接成功, 则此时就可以像平常一样使用gdb来调试程序了, 不过调试目标是位于路由器的程序. 使用这个方法可以很轻易的定位到程序错误的位置. 毕竟是动态调试.</p>
+
+<h2 id="toc_3">编译gdb和gdbserver方法</h2>
+
+<pre><code># gdb的编译
+cd ~/gdb/gdb-7.3.1
+mkdir bin
+cd bin
+../configure --prefix=/opt/gdb-7.3.1 --host=i686-pc-linux-gnu --target=mips-linux
+make
+make install
+
+# gdbserver的编译
+cd ~/gdb/gdb-7.3.1/gdb/gdbserver
+mkdir bin
+cd bin
+export CC=/opt/openwrt/kamikaze_7.09/staging_dir_mips/bin/mips-linux-gcc
+../configure --target=mips-linux --host=mips-linux
+make
+</code></pre>
+
+<h2 id="toc_4">补充</h2>
+
+<p>如果上面的方法不能工作, 有可能是openwrt设备上的库被stripped了, 可以在host主机上使用没有stripped的库来远程调试.</p>
+
+<h2 id="toc_5">openwrt源码上编译工具链</h2>
+
+<p>在menuconfig上enable gdb 和 gdbserver.</p>
+
+<pre><code>Advanced configuration options (for developers) → Toolchain Options → Build gdb
+</code></pre>
+
+<pre><code>Utilities → gdbserver
+</code></pre>
+
+<h2 id="toc_6">给你想调试的包增加调试信息</h2>
+
+<ol>
+<li>添加CFLAGS到你要调试的package的Makefile中.</li>
+</ol>
+
+<pre><code>TARGET_CFLAGS += -ggdb3
+</code></pre>
+
+<ol>
+<li>重新编译package带有CONFIG_DEBUG.</li>
+</ol>
+
+<pre><code>make package/busybox/{clean,compile} V=99 CONFIG_DEBUG=y
+</code></pre>
+
+<ol>
+<li>或者在menuconfig中使能debug info</li>
+</ol>
+
+<pre><code>Global build settings &gt; Compile packages with debugging info
+</code></pre>
+
+<h2 id="toc_7">Refs</h2>
+
+<ul>
+<li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">https://sourceware.org/gdb/current/onlinedocs/gdb/</a></li>
+<li><a href="http://h4x3rotab.github.io/blog/2014/02/27/openwrtxia-de-gdbyuan-cheng-diao-shi/">http://h4x3rotab.github.io/blog/2014/02/27/openwrtxia-de-gdbyuan-cheng-diao-shi/</a></li>
+<li><a href="http://blog.csdn.net/vastsmile/article/details/5614856">http://blog.csdn.net/vastsmile/article/details/5614856</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>
