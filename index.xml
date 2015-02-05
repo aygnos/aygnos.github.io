@@ -7,7 +7,94 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 29 Jan 2015 10:46:08 CST</updated>
+    <updated>Fri, 06 Feb 2015 01:51:08 CST</updated>
+    
+    <item>
+      <title>Golang on OpenWrt</title>
+      <link>http://akagi201.github.io/blog/golang-on-openwrt/</link>
+      <pubDate>Fri, 06 Feb 2015 01:51:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/golang-on-openwrt/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Repo&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go&#34;&gt;https://github.com/GeertJohan/openwrt-go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Steps&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/GeertJohan/openwrt-go&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout add-gccgo-and-libgo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make menuconfig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;-&amp;gt; Advanced configuration options
+-&amp;gt; Toolchain options
+....
+-&amp;gt; Select Build/Install gccgo
+....
+-&amp;gt; C library implementation
+-&amp;gt; Use eglibc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;make V=s&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;result&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;firmware with eglibc: &lt;code&gt;bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add toolchain to PATH: &lt;code&gt;export PATH=/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_eglibc-2.19/bin:$PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add toolchain alias: &lt;code&gt;alias mips_gccgo=&#39;mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;test&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use libgo non-static.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+import &amp;quot;fmt&amp;quot;
+func main() {
+    fmt.Println(&amp;quot;hello world&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mips_gccgo -Wall -o hello_static_libgo hello.go -static-libgo&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Before stripped&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1, dynamically linked (uses shared libs), for GNU/Linux 2.6.16, not stripped
+
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 2.6M Feb  6 01:47 hello_static_libgo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After stripped&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.16, stripped
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go/issues/2&#34;&gt;https://github.com/GeertJohan/openwrt-go/issues/2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Links</title>
@@ -342,17 +429,6 @@ limitations under the License.
       <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9&#34; data-role=&#34;mindmup-embed&#34; title=&#34;streaming protocols&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;streaming protocols on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning OpenWrt - Outline</title>
-      <link>http://akagi201.github.io/blog/learning-openwrt/</link>
-      <pubDate>Mon, 25 Aug 2014 03:02:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-openwrt/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1a4fe3d700e3201320be50ecffad778f1&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Learning OpenWrt&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Learning OpenWrt on MindMup&lt;/a&gt;
 &lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
     </item>

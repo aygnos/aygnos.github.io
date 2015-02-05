@@ -71,6 +71,96 @@
       
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/golang-on-openwrt/">
+        Golang on OpenWrt
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Feb 6, 2015</span>
+
+    
+
+<h2 id="toc_0">Repo</h2>
+
+<ul>
+<li><a href="https://github.com/GeertJohan/openwrt-go">https://github.com/GeertJohan/openwrt-go</a></li>
+</ul>
+
+<h2 id="toc_1">Steps</h2>
+
+<ul>
+<li><code>git clone https://github.com/GeertJohan/openwrt-go</code></li>
+<li><code>git checkout add-gccgo-and-libgo</code></li>
+<li><code>make menuconfig</code></li>
+</ul>
+
+<pre><code>-&gt; Advanced configuration options
+-&gt; Toolchain options
+....
+-&gt; Select Build/Install gccgo
+....
+-&gt; C library implementation
+-&gt; Use eglibc
+</code></pre>
+
+<ul>
+<li><code>make V=s</code></li>
+</ul>
+
+<h2 id="toc_2">result</h2>
+
+<ul>
+<li>firmware with eglibc: <code>bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin</code></li>
+<li>add toolchain to PATH: <code>export PATH=/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_eglibc-2.19/bin:$PATH</code></li>
+<li>add toolchain alias: <code>alias mips_gccgo='mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib'</code></li>
+</ul>
+
+<h2 id="toc_3">test</h2>
+
+<ul>
+<li>use libgo non-static.</li>
+</ul>
+
+<pre><code>package main
+import &quot;fmt&quot;
+func main() {
+    fmt.Println(&quot;hello world&quot;)
+}
+</code></pre>
+
+<ul>
+<li><p><code>mips_gccgo -Wall -o hello_static_libgo hello.go -static-libgo</code></p></li>
+
+<li><p>Before stripped</p></li>
+</ul>
+
+<pre><code>akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1, dynamically linked (uses shared libs), for GNU/Linux 2.6.16, not stripped
+
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 2.6M Feb  6 01:47 hello_static_libgo
+</code></pre>
+
+<ul>
+<li>After stripped</li>
+</ul>
+
+<pre><code>akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.16, stripped
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
+</code></pre>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="https://github.com/GeertJohan/openwrt-go/issues/2">https://github.com/GeertJohan/openwrt-go/issues/2</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/stream-encoder/">
         Stream Encoder
       </a>
