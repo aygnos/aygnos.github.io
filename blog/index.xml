@@ -184,8 +184,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
       <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-gtest.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-gtest&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-gtest on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/2015/02/bb115bf090e0013211ea76f2d1fbebd0/learning_gtest/index.html&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
 
