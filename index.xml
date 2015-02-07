@@ -243,7 +243,7 @@ limitations under the License.
       <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
-      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/2015/02/bb115bf090e0013211ea76f2d1fbebd0/learning_gtest/index.html&#34;&gt;&lt;/iframe&gt;
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/2015/02/bb115bf090e0013211ea76f2d1fbebd0/learning_gtest/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
 
