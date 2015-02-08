@@ -216,8 +216,7 @@ limitations under the License.
       <guid>http://akagi201.github.io/blog/learning-curl/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-curl.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-gtest&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-gtest on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_curl/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;cURL全称是&amp;rdquo;Client for URLs&amp;rdquo;, 即URL客户端.&lt;/p&gt;
 
@@ -261,8 +260,7 @@ limitations under the License.
       <pubDate>Thu, 13 Nov 2014 01:50:26 CST</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-libuv.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-libuv&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-libuv on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_libuv/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;想研究libuv很久了, 一直没有用他的机会, 这次项目中有个多进程管理的地方, 正纠结怎么操作麻烦的信号量时, 想起libuv也可以完成这件事, 所以, 赶紧用起来. 不用白不用.&lt;/p&gt;
 
@@ -276,8 +274,7 @@ limitations under the License.
       <pubDate>Thu, 13 Nov 2014 01:28:26 CST</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning-ucos.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning-ucos&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning-ucos on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ucos/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34; &gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就绪表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
 </description>
@@ -371,8 +368,7 @@ limitations under the License.
       <guid>http://akagi201.github.io/blog/learning-cmake/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning%20cmake.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning cmake&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning cmake on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_cmake/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;为了更好的掌握CLion, 最近把CMake Practice看完, 并练习了一下. 完成之后发现内容很少. 老的autotools也是要掌握的, openwrt上编译很多项目还是要用到他.&lt;/p&gt;
 
@@ -390,8 +386,7 @@ limitations under the License.
       <pubDate>Fri, 10 Oct 2014 10:31:26 CST</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-ffmpeg/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/b/akagi201/learning%20ffmpeg.mup&#34; data-role=&#34;mindmup-embed&#34; title=&#34;learning ffmpeg&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;learning ffmpeg on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ffmpeg/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;我自己购买了mindmup gold的账号, 有钱淫欢迎投资我啊!!&lt;/p&gt;
 
@@ -407,8 +402,7 @@ limitations under the License.
       <guid>http://akagi201.github.io/blog/learning-network/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1463fc090205c0132ece74a07efcd9b01&#34; data-role=&#34;mindmup-embed&#34; title=&#34;Introduction to Computer Networks&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;Introduction to Computer Networks on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/introduction_to_computer_networks/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Google Drive&lt;/h2&gt;
 
@@ -427,8 +421,7 @@ limitations under the License.
       <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
       <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.mindmup.com/map/a1ec1c10f01a470132be43265f407368e9&#34; data-role=&#34;mindmup-embed&#34; title=&#34;streaming protocols&#34; data-width=&#34;90%&#34; data-height=&#34;500&#34; data-style=&#34;border:1px solid black;margin-bottom:5px;&#34;&gt;streaming protocols on MindMup&lt;/a&gt;
-&lt;script async src=&#34;https://www.mindmup.com/external-embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/streaming_protocols/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     
