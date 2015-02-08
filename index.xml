@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title> on Akagi201 </title>
+      <title>Recent Content on Akagi201 </title>
       <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://akagi201.github.io/index.xml</link>
     <language>en-us</language>
     
     
-    <updated>Thu, 29 Jan 2015 10:46:08 CST</updated>
+    <updated>Fri, 06 Feb 2015 01:51:08 CST</updated>
+    
+    <item>
+      <title>Golang on OpenWrt</title>
+      <link>http://akagi201.github.io/blog/golang-on-openwrt/</link>
+      <pubDate>Fri, 06 Feb 2015 01:51:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/golang-on-openwrt/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Repo&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go&#34;&gt;https://github.com/GeertJohan/openwrt-go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Steps&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/GeertJohan/openwrt-go&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout add-gccgo-and-libgo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make menuconfig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;-&amp;gt; Advanced configuration options
+-&amp;gt; Toolchain options
+....
+-&amp;gt; Select Build/Install gccgo
+....
+-&amp;gt; C library implementation
+-&amp;gt; Use eglibc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;make V=s&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;result&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;firmware with eglibc: &lt;code&gt;bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add toolchain to PATH: &lt;code&gt;export PATH=/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_eglibc-2.19/bin:$PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add toolchain alias: &lt;code&gt;alias mips_gccgo=&#39;mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;test&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use libgo non-static.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+import &amp;quot;fmt&amp;quot;
+func main() {
+    fmt.Println(&amp;quot;hello world&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mips_gccgo -Wall -o hello_static_libgo hello.go -static-libgo&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Before stripped&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1, dynamically linked (uses shared libs), for GNU/Linux 2.6.16, not stripped
+
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 2.6M Feb  6 01:47 hello_static_libgo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After stripped&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.16, stripped
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go/issues/2&#34;&gt;https://github.com/GeertJohan/openwrt-go/issues/2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Links</title>
@@ -31,6 +118,35 @@
 &lt;li&gt;&lt;a href=&#34;http://www.8090sec.com/&#34;&gt;人生注入点&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.programlife.net/&#34;&gt;代码疯子&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://spud.in/&#34;&gt;茴香-徐嘉轶&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stream Encoder</title>
+      <link>http://akagi201.github.io/blog/stream-encoder/</link>
+      <pubDate>Wed, 14 Jan 2015 16:02:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/stream-encoder/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;OBS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jp9000/obs-studio&#34;&gt;https://github.com/jp9000/obs-studio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开发前说明: &lt;a href=&#34;https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/&#34;&gt;https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文档: &lt;a href=&#34;http://jp9000.github.io/OBS/&#34;&gt;http://jp9000.github.io/OBS/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OBS core: libobs, OBS UI: obs, core跟ui是独立的.&lt;/li&gt;
+&lt;li&gt;OBS core plugins: plugins&lt;/li&gt;
+&lt;li&gt;IRC: #obsproject on Freenode, #obs-dev on Quakenet&lt;/li&gt;
+&lt;li&gt;settings estimator: &lt;a href=&#34;https://obsproject.com/estimator&#34;&gt;https://obsproject.com/estimator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;BLE&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wenjiegit/Bull-Live-Encoder&#34;&gt;https://github.com/wenjiegit/Bull-Live-Encoder&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -69,6 +185,144 @@ limitations under the License.
     </item>
     
     <item>
+      <title>Learning RTP</title>
+      <link>http://akagi201.github.io/blog/learning-rtp/</link>
+      <pubDate>Mon, 15 Dec 2014 21:50:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-rtp/</guid>
+      <description>
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_rtp/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;code&gt;RTP&lt;/code&gt;(Real-time Transport Protocol)是用于Internet上针对多媒体数据流的一种传输协议. &lt;code&gt;RTP&lt;/code&gt;被定义为在一对一或一对多的传输情况下工作, 其目的是提供时间信息和实现流同步. &lt;code&gt;RTP&lt;/code&gt;通常使用&lt;code&gt;UDP&lt;/code&gt;来传送数据, 但&lt;code&gt;RTP&lt;/code&gt;也可以在&lt;code&gt;TCP&lt;/code&gt;或&lt;code&gt;ATM&lt;/code&gt;等其他协议之上工作.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;RTP&lt;/code&gt;本身并没有提供按时发送机制或其他服务质量(QoS)保证, 它依赖于底层服务去实现这一过程. &lt;code&gt;RTP&lt;/code&gt;并不保证传送或防止无序传送, 也不确定底层网络的可靠性.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;book&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&#34;&gt;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627&#34;&gt;http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning cURL</title>
+      <link>http://akagi201.github.io/blog/learning-curl/</link>
+      <pubDate>Tue, 09 Dec 2014 03:55:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-curl/</guid>
+      <description>
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_curl/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;cURL全称是&amp;rdquo;Client for URLs&amp;rdquo;, 即URL客户端.&lt;/p&gt;
+
+&lt;p&gt;是&lt;a href=&#34;https://github.com/bagder&#34;&gt;Daniel Stenberg&lt;/a&gt;的一个个人项目, 就放在个人的一个二级域名&lt;a href=&#34;http://curl.haxx.se/&#34;&gt;http://curl.haxx.se/&lt;/a&gt;下, 所以有的地方略显粗糙也可以理解了.&lt;/p&gt;
+
+&lt;p&gt;项目历史应该比较久远了, 文档全是用的&lt;code&gt;manpage&lt;/code&gt;写的, 不用到处找了, 直接&lt;code&gt;man&lt;/code&gt;就可以了.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl&lt;/code&gt;的&lt;code&gt;repo&lt;/code&gt;由两部分组成, &lt;code&gt;curl&lt;/code&gt;命令行跟&lt;code&gt;libcurl&lt;/code&gt;, 其中复杂的东西都在&lt;code&gt;libcurl&lt;/code&gt;中了.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;源码结构&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;curl&lt;/code&gt;命令行的源码在&lt;code&gt;src/&lt;/code&gt;, 入口在&lt;code&gt;tool_main.c&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;libcurl&lt;/code&gt;的源码在&lt;code&gt;lib/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;API example&lt;/code&gt;的源码在&lt;code&gt;docs/examples&lt;/code&gt;下.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning Google C&#43;&#43; Testing Framework</title>
+      <link>http://akagi201.github.io/blog/learning-gtest/</link>
+      <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_gtest/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
+
+&lt;p&gt;跟着牛人的脚本慢慢前进是不会错的. 选择了&lt;code&gt;CLion&lt;/code&gt;, 导致选择了&lt;code&gt;CMake&lt;/code&gt;, 又由&lt;code&gt;CMake&lt;/code&gt;跟&lt;code&gt;CLion&lt;/code&gt;选择了&lt;code&gt;GTest&lt;/code&gt;. 学习下来发现都是好东西.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Google C++ Testing Framework&lt;/code&gt;简称&lt;code&gt;GTest&lt;/code&gt;, 跟&lt;code&gt;CMake&lt;/code&gt;集成的非常好, 而且他本身就是用&lt;code&gt;CMake&lt;/code&gt;编译的, 作为一个转向&lt;code&gt;CMake&lt;/code&gt;开发者来说, 这是极赞的.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GTest&lt;/code&gt;文档相应比较少, 对于新手来说可能有点曲线, 我写了几个集成&lt;code&gt;Makefile&lt;/code&gt;跟&lt;code&gt;CMake&lt;/code&gt;的例子, 可以看看: &lt;a href=&#34;https://github.com/Akagi201/learning-gtest&#34;&gt;https://github.com/Akagi201/learning-gtest&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning Libuv</title>
+      <link>http://akagi201.github.io/blog/learning-libuv/</link>
+      <pubDate>Thu, 13 Nov 2014 01:50:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_libuv/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;想研究libuv很久了, 一直没有用他的机会, 这次项目中有个多进程管理的地方, 正纠结怎么操作麻烦的信号量时, 想起libuv也可以完成这件事, 所以, 赶紧用起来. 不用白不用.&lt;/p&gt;
+
+&lt;p&gt;Lua在嵌入式领域大有可以, 可以编译成一个liblua.a的库静态连接到C程序, 还有很多丰富的工具, 本身语言有非常小巧, 以后还是多用lua写写, 方便移植啊. 多平台各种差异, 搞死人啊.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning uC/OS</title>
+      <link>http://akagi201.github.io/blog/learning-ucos/</link>
+      <pubDate>Thu, 13 Nov 2014 01:28:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ucos/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34; &gt;&lt;/iframe&gt;
+
+&lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就绪表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About Blog</title>
+      <link>http://akagi201.github.io/blog/about-blog/</link>
+      <pubDate>Tue, 21 Oct 2014 02:53:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/about-blog/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;TODO&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在slide部分上方显示我的头像.&lt;/li&gt;
+&lt;li&gt;在手机跟PC上显示slide部分更优雅一点.&lt;/li&gt;
+&lt;li&gt;中英文两个版本切换.&lt;/li&gt;
+&lt;li&gt;不同分类用不同的样式.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Categories&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;blog, tool, book, talk, project&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Tags&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;openwrt, kernel, wifi, hardware, macosx, golang, algorithm, git, protocol, security&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Markdown Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/akblog&#34;&gt;https://github.com/Akagi201/akblog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Static Pages&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/akagi201.github.io&#34;&gt;https://github.com/Akagi201/akagi201.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>http://akagi201.github.io/about/</link>
       <pubDate>Tue, 21 Oct 2014 01:48:08 CST</pubDate>
@@ -102,6 +356,71 @@ limitations under the License.
 &lt;li&gt;A创: &lt;a href=&#34;http://akmaker.com&#34;&gt;http://akmaker.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Give me your gmail to join my HipChat room.&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning CMake</title>
+      <link>http://akagi201.github.io/blog/learning-cmake/</link>
+      <pubDate>Sun, 19 Oct 2014 00:35:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-cmake/</guid>
+      <description>
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_cmake/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;为了更好的掌握CLion, 最近把CMake Practice看完, 并练习了一下. 完成之后发现内容很少. 老的autotools也是要掌握的, openwrt上编译很多项目还是要用到他.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Github Repo&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/learning-cmake&#34;&gt;https://github.com/Akagi201/learning-cmake&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning FFmpeg</title>
+      <link>http://akagi201.github.io/blog/learning-ffmpeg/</link>
+      <pubDate>Fri, 10 Oct 2014 10:31:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-ffmpeg/</guid>
+      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ffmpeg/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;我自己购买了mindmup gold的账号, 有钱淫欢迎投资我啊!!&lt;/p&gt;
+
+&lt;p&gt;发现个ffmpeg领域的大牛, 他已经在读博士了, 天朝这样做学术的人还是值得赞赏的, ffmpeg中文资料必看: &lt;a href=&#34;http://blog.csdn.net/leixiaohua1020&#34;&gt;http://blog.csdn.net/leixiaohua1020&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning Network</title>
+      <link>http://akagi201.github.io/blog/learning-network/</link>
+      <pubDate>Wed, 17 Sep 2014 15:28:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-network/</guid>
+      <description>
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/introduction_to_computer_networks/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Google Drive&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mindmup 免费的在线分享放不下了, 只能放到google drive上了.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Streaming Protocols</title>
+      <link>http://akagi201.github.io/blog/streaming-protocols/</link>
+      <pubDate>Tue, 09 Sep 2014 15:28:26 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
+      <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/streaming_protocols/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     

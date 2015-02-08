@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>  &middot; Akagi201 </title>
+  <title> Akagi201 &middot; Akagi201 </title>
 
   
   <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
@@ -65,22 +65,212 @@
 </div>
 
 
-  <div class="content container">
-    <ul class="posts">
-        
-        <li>
-          <span><a href="http://akagi201.github.io/links/">Links</a> <time class="pull-right post-list">Thu, Jan 29, 2015</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://akagi201.github.io/license/">License</a> <time class="pull-right post-list">Tue, Dec 16, 2014</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://akagi201.github.io/about/">About</a> <time class="pull-right post-list">Tue, Oct 21, 2014</time></span>
-        </li>
-        
-    </ul>
+    <div class="content container">
+<div class="posts">
+
+      
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/golang-on-openwrt/">
+        Golang on OpenWrt
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Feb 6, 2015</span>
+
+    
+
+<h2 id="toc_0">Repo</h2>
+
+<ul>
+<li><a href="https://github.com/GeertJohan/openwrt-go">https://github.com/GeertJohan/openwrt-go</a></li>
+</ul>
+
+<h2 id="toc_1">Steps</h2>
+
+<ul>
+<li><code>git clone https://github.com/GeertJohan/openwrt-go</code></li>
+<li><code>git checkout add-gccgo-and-libgo</code></li>
+<li><code>make menuconfig</code></li>
+</ul>
+
+<pre><code>-&gt; Advanced configuration options
+-&gt; Toolchain options
+....
+-&gt; Select Build/Install gccgo
+....
+-&gt; C library implementation
+-&gt; Use eglibc
+</code></pre>
+
+<ul>
+<li><code>make V=s</code></li>
+</ul>
+
+<h2 id="toc_2">result</h2>
+
+<ul>
+<li>firmware with eglibc: <code>bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin</code></li>
+<li>add toolchain to PATH: <code>export PATH=/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_eglibc-2.19/bin:$PATH</code></li>
+<li>add toolchain alias: <code>alias mips_gccgo='mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib'</code></li>
+</ul>
+
+<h2 id="toc_3">test</h2>
+
+<ul>
+<li>use libgo non-static.</li>
+</ul>
+
+<pre><code>package main
+import &quot;fmt&quot;
+func main() {
+    fmt.Println(&quot;hello world&quot;)
+}
+</code></pre>
+
+<ul>
+<li><p><code>mips_gccgo -Wall -o hello_static_libgo hello.go -static-libgo</code></p></li>
+
+<li><p>Before stripped</p></li>
+</ul>
+
+<pre><code>akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1, dynamically linked (uses shared libs), for GNU/Linux 2.6.16, not stripped
+
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 2.6M Feb  6 01:47 hello_static_libgo
+</code></pre>
+
+<ul>
+<li>After stripped</li>
+</ul>
+
+<pre><code>akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ file hello_static_libgo
+hello_static_libgo: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.16, stripped
+akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
+-rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
+</code></pre>
+
+<h2 id="toc_4">Refs</h2>
+
+<ul>
+<li><a href="https://github.com/GeertJohan/openwrt-go/issues/2">https://github.com/GeertJohan/openwrt-go/issues/2</a></li>
+</ul>
+
   </div>
-</body>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/stream-encoder/">
+        Stream Encoder
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Jan 14, 2015</span>
+
+    
+
+<h2 id="toc_0">OBS</h2>
+
+<ul>
+<li><a href="https://github.com/jp9000/obs-studio">https://github.com/jp9000/obs-studio</a></li>
+<li>开发前说明: <a href="https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/">https://obsproject.com/forum/threads/getting-started-with-obs-development.21326/</a></li>
+<li>文档: <a href="http://jp9000.github.io/OBS/">http://jp9000.github.io/OBS/</a></li>
+<li>OBS core: libobs, OBS UI: obs, core跟ui是独立的.</li>
+<li>OBS core plugins: plugins</li>
+<li>IRC: #obsproject on Freenode, #obs-dev on Quakenet</li>
+<li>settings estimator: <a href="https://obsproject.com/estimator">https://obsproject.com/estimator</a></li>
+<li></li>
+</ul>
+
+<h2 id="toc_1">BLE</h2>
+
+<ul>
+<li><a href="https://github.com/wenjiegit/Bull-Live-Encoder">https://github.com/wenjiegit/Bull-Live-Encoder</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-rtp/">
+        Learning RTP
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Dec 15, 2014</span>
+
+    
+
+<iframe src="https://atlas.mindmup.com/akagi201/learning_rtp/index.html" height="100%" width = "100%"></iframe>
+
+<p><code>RTP</code>(Real-time Transport Protocol)是用于Internet上针对多媒体数据流的一种传输协议. <code>RTP</code>被定义为在一对一或一对多的传输情况下工作, 其目的是提供时间信息和实现流同步. <code>RTP</code>通常使用<code>UDP</code>来传送数据, 但<code>RTP</code>也可以在<code>TCP</code>或<code>ATM</code>等其他协议之上工作.</p>
+
+<p><code>RTP</code>本身并没有提供按时发送机制或其他服务质量(QoS)保证, 它依赖于底层服务去实现这一过程. <code>RTP</code>并不保证传送或防止无序传送, 也不确定底层网络的可靠性.</p>
+
+<h2 id="toc_0">book</h2>
+
+<ul>
+<li><a href="https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/">https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/</a></li>
+<li><a href="http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627">http://www.amazon.com/RTP-Audio-Video-Internet-paperback/dp/0321833627</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-curl/">
+        Learning cURL
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Dec 9, 2014</span>
+
+    
+
+<iframe src="https://atlas.mindmup.com/akagi201/learning_curl/index.html" height="100%" width = "100%"></iframe>
+
+<p>cURL全称是&rdquo;Client for URLs&rdquo;, 即URL客户端.</p>
+
+<p>是<a href="https://github.com/bagder">Daniel Stenberg</a>的一个个人项目, 就放在个人的一个二级域名<a href="http://curl.haxx.se/">http://curl.haxx.se/</a>下, 所以有的地方略显粗糙也可以理解了.</p>
+
+<p>项目历史应该比较久远了, 文档全是用的<code>manpage</code>写的, 不用到处找了, 直接<code>man</code>就可以了.</p>
+
+<p><code>curl</code>的<code>repo</code>由两部分组成, <code>curl</code>命令行跟<code>libcurl</code>, 其中复杂的东西都在<code>libcurl</code>中了.</p>
+
+<h2 id="toc_0">源码结构</h2>
+
+<ul>
+<li><code>curl</code>命令行的源码在<code>src/</code>, 入口在<code>tool_main.c</code>.</li>
+<li><code>libcurl</code>的源码在<code>lib/</code>.</li>
+<li><code>API example</code>的源码在<code>docs/examples</code>下.</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/learning-gtest/">
+        Learning Google C&#43;&#43; Testing Framework
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Dec 4, 2014</span>
+
+    <iframe src="https://atlas.mindmup.com/akagi201/learning_gtest/index.html" height="100%" width = "100%"></iframe>
+
+<p>最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. <code>clib</code>就让我对<code>js</code>跟<code>node</code>这帮人的印象大大改观.</p>
+
+<p>跟着牛人的脚本慢慢前进是不会错的. 选择了<code>CLion</code>, 导致选择了<code>CMake</code>, 又由<code>CMake</code>跟<code>CLion</code>选择了<code>GTest</code>. 学习下来发现都是好东西.</p>
+
+<p><code>Google C++ Testing Framework</code>简称<code>GTest</code>, 跟<code>CMake</code>集成的非常好, 而且他本身就是用<code>CMake</code>编译的, 作为一个转向<code>CMake</code>开发者来说, 这是极赞的.</p>
+
+<p><code>GTest</code>文档相应比较少, 对于新手来说可能有点曲线, 我写了几个集成<code>Makefile</code>跟<code>CMake</code>的例子, 可以看看: <a href="https://github.com/Akagi201/learning-gtest">https://github.com/Akagi201/learning-gtest</a></p>
+
+  </div>
+  
+</div>
+</div>
+
+  </body>
 </html>
