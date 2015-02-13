@@ -7,7 +7,30 @@
     <language>en-us</language>
     
     
-    <updated>Fri, 06 Feb 2015 01:51:08 CST</updated>
+    <updated>Thu, 12 Feb 2015 07:44:08 CST</updated>
+    
+    <item>
+      <title>The Missing C Package Manager Clib</title>
+      <link>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</link>
+      <pubDate>Thu, 12 Feb 2015 07:44:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</guid>
+      <description>
+
+&lt;p&gt;web与移动开发领域每种语言都有自己的包管理器. &lt;code&gt;nodejs&lt;/code&gt;的&lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;golang&lt;/code&gt;的&lt;code&gt;go get&lt;/code&gt;, &lt;code&gt;lua&lt;/code&gt;的&lt;code&gt;luarocks&lt;/code&gt;, ios&amp;amp;macosx平台的&lt;code&gt;cocoapods&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;的&lt;code&gt;Pip&lt;/code&gt;&amp;amp;&lt;code&gt;Eggs&lt;/code&gt;, &lt;code&gt;TeX&lt;/code&gt;的&lt;code&gt;CTAN&lt;/code&gt;, &lt;code&gt;Perl&lt;/code&gt;的&lt;code&gt;CPAN&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt;的&lt;code&gt;Maven&lt;/code&gt;, &lt;code&gt;Haskell&lt;/code&gt;的&lt;code&gt;cabal&lt;/code&gt;, &lt;code&gt;Ruby&lt;/code&gt;的&lt;code&gt;Gems&lt;/code&gt;, &lt;code&gt;.Net&lt;/code&gt;的&lt;code&gt;NuGet&lt;/code&gt;. 如果有兴趣, 可以看下这个播客&lt;a href=&#34;https://ipn.li/kernelpanic/7/&#34;&gt;https://ipn.li/kernelpanic/7/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;不过C语言确一直没有一个这样的工具. 导致的问题就是, 当你需要用功C语言实现一个很通用的功能的时候, 你没有一个合适的地方去找, 只能google, stackoverflow, github去搜, 然后你有发现你要的这个功能在一个很大的项目里面的一个小模块, 然后很难独立提取出来, 然后只好重复造轮子.&lt;/p&gt;
+
+&lt;p&gt;还好, nodejs社区的几个人创造了Clib. C语言终于有自己的包管理器啦: Clib. TJ Holowaychuk先用node.js写了Clib, 然后Stephen Mathieson把他port成了C.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Clib developer&amp;rsquo;s blog&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/code-adventures/introducing-clib-b32e6e769cb3&#34;&gt;Introducing Clib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.ashworth.in/the-advent-of-clib-the-c-package-manager/&#34;&gt;The Advent of Clib: the C Package Manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Golang on OpenWrt</title>
@@ -409,18 +432,6 @@ limitations under the License.
 &lt;li&gt;mindmup 免费的在线分享放不下了, 只能放到google drive上了.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Streaming Protocols</title>
-      <link>http://akagi201.github.io/blog/streaming-protocols/</link>
-      <pubDate>Tue, 09 Sep 2014 15:28:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
-      <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/streaming_protocols/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     

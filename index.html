@@ -71,6 +71,32 @@
       
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/the-missing-c-package-manager-clib/">
+        The Missing C Package Manager Clib
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Feb 12, 2015</span>
+
+    
+
+<p>web与移动开发领域每种语言都有自己的包管理器. <code>nodejs</code>的<code>npm</code>, <code>golang</code>的<code>go get</code>, <code>lua</code>的<code>luarocks</code>, ios&amp;macosx平台的<code>cocoapods</code>, <code>Python</code>的<code>Pip</code>&amp;<code>Eggs</code>, <code>TeX</code>的<code>CTAN</code>, <code>Perl</code>的<code>CPAN</code>, <code>Java</code>的<code>Maven</code>, <code>Haskell</code>的<code>cabal</code>, <code>Ruby</code>的<code>Gems</code>, <code>.Net</code>的<code>NuGet</code>. 如果有兴趣, 可以看下这个播客<a href="https://ipn.li/kernelpanic/7/">https://ipn.li/kernelpanic/7/</a></p>
+
+<p>不过C语言确一直没有一个这样的工具. 导致的问题就是, 当你需要用功C语言实现一个很通用的功能的时候, 你没有一个合适的地方去找, 只能google, stackoverflow, github去搜, 然后你有发现你要的这个功能在一个很大的项目里面的一个小模块, 然后很难独立提取出来, 然后只好重复造轮子.</p>
+
+<p>还好, nodejs社区的几个人创造了Clib. C语言终于有自己的包管理器啦: Clib. TJ Holowaychuk先用node.js写了Clib, 然后Stephen Mathieson把他port成了C.</p>
+
+<h2 id="toc_0">Clib developer&rsquo;s blog</h2>
+
+<ul>
+<li><a href="https://medium.com/code-adventures/introducing-clib-b32e6e769cb3">Introducing Clib</a></li>
+<li><a href="https://blog.ashworth.in/the-advent-of-clib-the-c-package-manager/">The Advent of Clib: the C Package Manager</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/golang-on-openwrt/">
         Golang on OpenWrt
       </a>
@@ -245,27 +271,6 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 <li><code>libcurl</code>的源码在<code>lib/</code>.</li>
 <li><code>API example</code>的源码在<code>docs/examples</code>下.</li>
 </ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://akagi201.github.io/blog/learning-gtest/">
-        Learning Google C&#43;&#43; Testing Framework
-      </a>
-    </h1>
-
-    <span class="post-date">Thu, Dec 4, 2014</span>
-
-    <iframe src="https://atlas.mindmup.com/akagi201/learning_gtest/index.html" height="100%" width = "100%"></iframe>
-
-<p>最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. <code>clib</code>就让我对<code>js</code>跟<code>node</code>这帮人的印象大大改观.</p>
-
-<p>跟着牛人的脚本慢慢前进是不会错的. 选择了<code>CLion</code>, 导致选择了<code>CMake</code>, 又由<code>CMake</code>跟<code>CLion</code>选择了<code>GTest</code>. 学习下来发现都是好东西.</p>
-
-<p><code>Google C++ Testing Framework</code>简称<code>GTest</code>, 跟<code>CMake</code>集成的非常好, 而且他本身就是用<code>CMake</code>编译的, 作为一个转向<code>CMake</code>开发者来说, 这是极赞的.</p>
-
-<p><code>GTest</code>文档相应比较少, 对于新手来说可能有点曲线, 我写了几个集成<code>Makefile</code>跟<code>CMake</code>的例子, 可以看看: <a href="https://github.com/Akagi201/learning-gtest">https://github.com/Akagi201/learning-gtest</a></p>
 
   </div>
   

@@ -7,7 +7,30 @@
     <language>en-us</language>
     
     
-    <updated>Fri, 06 Feb 2015 01:51:08 CST</updated>
+    <updated>Thu, 12 Feb 2015 07:44:08 CST</updated>
+    
+    <item>
+      <title>The Missing C Package Manager Clib</title>
+      <link>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</link>
+      <pubDate>Thu, 12 Feb 2015 07:44:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</guid>
+      <description>
+
+&lt;p&gt;web与移动开发领域每种语言都有自己的包管理器. &lt;code&gt;nodejs&lt;/code&gt;的&lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;golang&lt;/code&gt;的&lt;code&gt;go get&lt;/code&gt;, &lt;code&gt;lua&lt;/code&gt;的&lt;code&gt;luarocks&lt;/code&gt;, ios&amp;amp;macosx平台的&lt;code&gt;cocoapods&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;的&lt;code&gt;Pip&lt;/code&gt;&amp;amp;&lt;code&gt;Eggs&lt;/code&gt;, &lt;code&gt;TeX&lt;/code&gt;的&lt;code&gt;CTAN&lt;/code&gt;, &lt;code&gt;Perl&lt;/code&gt;的&lt;code&gt;CPAN&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt;的&lt;code&gt;Maven&lt;/code&gt;, &lt;code&gt;Haskell&lt;/code&gt;的&lt;code&gt;cabal&lt;/code&gt;, &lt;code&gt;Ruby&lt;/code&gt;的&lt;code&gt;Gems&lt;/code&gt;, &lt;code&gt;.Net&lt;/code&gt;的&lt;code&gt;NuGet&lt;/code&gt;. 如果有兴趣, 可以看下这个播客&lt;a href=&#34;https://ipn.li/kernelpanic/7/&#34;&gt;https://ipn.li/kernelpanic/7/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;不过C语言确一直没有一个这样的工具. 导致的问题就是, 当你需要用功C语言实现一个很通用的功能的时候, 你没有一个合适的地方去找, 只能google, stackoverflow, github去搜, 然后你有发现你要的这个功能在一个很大的项目里面的一个小模块, 然后很难独立提取出来, 然后只好重复造轮子.&lt;/p&gt;
+
+&lt;p&gt;还好, nodejs社区的几个人创造了Clib. C语言终于有自己的包管理器啦: Clib. TJ Holowaychuk先用node.js写了Clib, 然后Stephen Mathieson把他port成了C.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Clib developer&amp;rsquo;s blog&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/code-adventures/introducing-clib-b32e6e769cb3&#34;&gt;Introducing Clib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.ashworth.in/the-advent-of-clib-the-c-package-manager/&#34;&gt;The Advent of Clib: the C Package Manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Golang on OpenWrt</title>
@@ -365,42 +388,6 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/freeradius-beginners-guide&#34;&gt;https://github.com/Akagi201/freeradius-beginners-guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>将OpenWrt变成完美的BSP</title>
-      <link>http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/</link>
-      <pubDate>Thu, 03 Jul 2014 12:26:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/</guid>
-      <description>
-
-&lt;p&gt;BSP(Board Support Package)对于嵌入式开发者一定不陌生, 就是针对一种板子适配指定的操作系统(常见的是linux)所需要的bootloader, 板上外设的所有驱动, 还有内核, 通常还包括一个根文件系统(里面包含能确保板子能跑起来的基本的一些配置)和toolchain.&lt;/p&gt;
-
-&lt;p&gt;随着软件系统的发展, 越来越多的统一化环境配置的工具出现, 像vagrant, docker等, 这样, 将运行环境一起打包就不会出现过去那种, 在我的机器上能运行, 在你的机器上运行不了的情况了.&lt;/p&gt;
-
-&lt;p&gt;嵌入式开发也是一样, 每次面对一种新的SOC, 多要进行一些重复工作, 像裁剪系统, 裁剪busybox, 移植各种应用, 各种库等. 对于开发而言, 对于每种平台开发时, 都要有一些细小的差异. 而这些差异是可以统一起来的. 解决方案就是OpenWrt.&lt;/p&gt;
-
-&lt;p&gt;用OpenWrt作为BSP, 这使得用户和开发者可以快速熟悉不同的/新的硬件产品. 关于OpenWrt的详细内容, 在OpenWrt的官方文档有非常详细的介绍. &lt;a href=&#34;http://wiki.openwrt.org/doc/start&#34;&gt;http://wiki.openwrt.org/doc/start&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;那么公司如何用OpenWrt做自己的产品呢? 根据开源项目的特点需要进行一些修改.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;OpenWrt Buildroot的Makefile wrapper&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;download tool: 下载指定版本的OpenWrt&lt;/li&gt;
-&lt;li&gt;patchset: 对指定版本的OpenWrt进行打补丁, 确保稳定&lt;/li&gt;
-&lt;li&gt;package feed: 自己软件包的 package feed.&lt;/li&gt;
-&lt;li&gt;dl link directory: 将~/dl链接到openwrt/dl.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;使用OpenWrt buildroot过程的技巧&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;OpenWrt的buildroot编译系统, 包含fetching, patching, compiling, packaging的过程. 在fetching阶段会联网下载源码到dl目录, 所以, 一个好的方法是, 将dl目录保存在自己本地机器的一个固定位置, 然后软链接到openwrt/dl目录, 这样就不用每次下载重复的包了, 另外, 有时由于网络原因, 可以手动下载包放到这个目录.&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
