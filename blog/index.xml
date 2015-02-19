@@ -7,7 +7,73 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 12 Feb 2015 07:44:08 CST</updated>
+    <updated>Thu, 19 Feb 2015 13:30:08 CST</updated>
+    
+    <item>
+      <title>教不懂电脑的父母上网</title>
+      <link>http://akagi201.github.io/blog/parents-network/</link>
+      <pubDate>Thu, 19 Feb 2015 13:30:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/parents-network/</guid>
+      <description>
+
+&lt;p&gt;估计跟我一样80后的人都会涉及这个头大的问题, &amp;ldquo;教父母上网&amp;rdquo;. 下面整理些要点.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;父母知识背景&lt;/h2&gt;
+
+&lt;p&gt;父母虽然年轻时候也算接受过一些中等教育, 不过工作不是从事脑力方面, 学习能力几乎为零. 电脑跟智能手机方面知识几乎为零. 不手把手教, 一点不肯学, 不学习借口一堆.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;想要教的东西&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基本的硬件组成跟连接&lt;/li&gt;
+&lt;li&gt;拼音打字, 基本快捷键&lt;/li&gt;
+&lt;li&gt;帮助注册邮箱跟必备的账号&lt;/li&gt;
+&lt;li&gt;QQ, 包含语音跟视频&lt;/li&gt;
+&lt;li&gt;淘宝等网上购物&lt;/li&gt;
+&lt;li&gt;推荐一些应该上的网站&lt;/li&gt;
+&lt;li&gt;打免费电话&lt;/li&gt;
+&lt;li&gt;手机上好用的app&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;email, qq&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;要求不需要翻墙, 中文界面&lt;/li&gt;
+&lt;li&gt;选择qq邮箱(需要手机号才行)&lt;/li&gt;
+&lt;li&gt;备用邮箱用我的, 密码, 密保跟账号我都保留记录好.&lt;/li&gt;
+&lt;li&gt;加我的账号为好友&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;电脑上软件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;装了腾讯系列的浏览器, 电脑管家等, 先观察看看, 不行就换360吧.&lt;/li&gt;
+&lt;li&gt;qq, 千牛, 迅雷, 360wifi, winrar, 酷盘, 百度云, 搜狗输入法, 爱奇艺PPS(看综艺节目)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;电脑硬件配件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;耳机插孔的双音响(不需要配件, 连接不无线的简单)&lt;/li&gt;
+&lt;li&gt;耳麦, 摄像头(用于远程视频通话)&lt;/li&gt;
+&lt;li&gt;360随身wifi(家里这边移动宽带限制, 路由器上拨号失败, 只能电脑上拨号, 用于分享网络给手机)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;引导使用的网站&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;我的博客, 我公司的网站, 淘宝, 支付宝, 知乎, 优酷, 爱奇艺PPS, 百度地图, 携程, V2EX, 百度云.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_6&#34;&gt;手机app&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;红米+酷派大神+小米充电宝 两台&lt;/li&gt;
+&lt;li&gt;微信, 微博, qq, 支付宝, 淘宝, 千牛, 百度地图, qq邮箱, 爱奇艺, 优酷, 携程, 虾米音乐, 易信, 叮叮, 滴滴打车, 手机营业厅&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>The Missing C Package Manager Clib</title>
@@ -358,37 +424,6 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
       
       <guid>http://akagi201.github.io/blog/learning-openwrt/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_openwrt/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>FreeRADIUS新手入门 - 我翻译的开源书</title>
-      <link>http://akagi201.github.io/blog/freeradius-beginners-guide/</link>
-      <pubDate>Fri, 22 Aug 2014 13:35:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/freeradius-beginners-guide/</guid>
-      <description>
-
-&lt;p&gt;最近在搭建CoovaChilli + FreeRadius的认证系统. 顺便把一本英文书翻译一下. 由于时间比较匆忙, 所以还不保证质量, 想尽快翻译完, 然后在慢慢斟酌个别语句. 这个项目本身也是试水作品, 为以后写自己的书做些&lt;strong&gt;技术储备&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;在写书的过程中发现几个问题:
-* gitbook中文支持有写问题, 有时候文本最左边字会叠在一起.
-* 有时候gitbook会崩溃, 有时候搜狗输入法会比较卡, 不知道是否是兼容性问题, 要及时保存.
-* 原文章节层次结构太乱了, 只有一级跟二级标题, 三级标题, 四级标题跟二级标题字体样式完全一样, 没法区分, 抽空要整理下.
-* markdown感觉层次太多的时候会记不住自己在哪层了.
-* github还没同步过来, 国内用gitbook写书的还不多, 问了一圈没得到答复.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;在线阅读地址&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://freeradius.akagi201.org&#34;&gt;http://freeradius.akagi201.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;github地址(还没同步过来, 求助)&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/freeradius-beginners-guide&#34;&gt;https://github.com/Akagi201/freeradius-beginners-guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
