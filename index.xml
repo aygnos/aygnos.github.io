@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on Akagi201 </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://akagi201.github.io/index.xml</link>
+    <link>http://localhost:1313/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,11 +11,15 @@
     
     <item>
       <title>一个简单的汇编程序分析</title>
-      <link>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</link>
+      <link>http://localhost:1313/blog/a-simple-assembly-program-analysis/</link>
       <pubDate>Sun, 01 Mar 2015 12:38:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</guid>
+      <guid>http://localhost:1313/blog/a-simple-assembly-program-analysis/</guid>
       <description>
+
+&lt;p&gt;最近打算跟一下&lt;linux内核分析&gt;这门mooc课程. 刚完成了第一周的内容. mindmup内容开源如下:&lt;/p&gt;
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_kernel/index.html&#34; width=&#34;600&#34; height=&#34;800&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里使用跟linux内核一样的AT&amp;amp;T汇编语法.&lt;/p&gt;
 
@@ -108,10 +112,10 @@ main:
     
     <item>
       <title>教不懂电脑的父母上网</title>
-      <link>http://akagi201.github.io/blog/parents-network/</link>
+      <link>http://localhost:1313/blog/parents-network/</link>
       <pubDate>Thu, 19 Feb 2015 13:30:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/parents-network/</guid>
+      <guid>http://localhost:1313/blog/parents-network/</guid>
       <description>
 
 &lt;p&gt;估计跟我一样80后的人都会涉及这个头大的问题, &amp;ldquo;教父母上网&amp;rdquo;. 下面整理些要点.&lt;/p&gt;
@@ -174,10 +178,10 @@ main:
     
     <item>
       <title>The Missing C Package Manager Clib</title>
-      <link>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</link>
+      <link>http://localhost:1313/blog/the-missing-c-package-manager-clib/</link>
       <pubDate>Thu, 12 Feb 2015 07:44:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</guid>
+      <guid>http://localhost:1313/blog/the-missing-c-package-manager-clib/</guid>
       <description>
 
 &lt;p&gt;web与移动开发领域每种语言都有自己的包管理器. &lt;code&gt;nodejs&lt;/code&gt;的&lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;golang&lt;/code&gt;的&lt;code&gt;go get&lt;/code&gt;, &lt;code&gt;lua&lt;/code&gt;的&lt;code&gt;luarocks&lt;/code&gt;, ios&amp;amp;macosx平台的&lt;code&gt;cocoapods&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;的&lt;code&gt;Pip&lt;/code&gt;&amp;amp;&lt;code&gt;Eggs&lt;/code&gt;, &lt;code&gt;TeX&lt;/code&gt;的&lt;code&gt;CTAN&lt;/code&gt;, &lt;code&gt;Perl&lt;/code&gt;的&lt;code&gt;CPAN&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt;的&lt;code&gt;Maven&lt;/code&gt;, &lt;code&gt;Haskell&lt;/code&gt;的&lt;code&gt;cabal&lt;/code&gt;, &lt;code&gt;Ruby&lt;/code&gt;的&lt;code&gt;Gems&lt;/code&gt;, &lt;code&gt;.Net&lt;/code&gt;的&lt;code&gt;NuGet&lt;/code&gt;. 如果有兴趣, 可以看下这个播客&lt;a href=&#34;https://ipn.li/kernelpanic/7/&#34;&gt;https://ipn.li/kernelpanic/7/&lt;/a&gt;&lt;/p&gt;
@@ -197,10 +201,10 @@ main:
     
     <item>
       <title>Golang on OpenWrt</title>
-      <link>http://akagi201.github.io/blog/golang-on-openwrt/</link>
+      <link>http://localhost:1313/blog/golang-on-openwrt/</link>
       <pubDate>Fri, 06 Feb 2015 01:51:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/golang-on-openwrt/</guid>
+      <guid>http://localhost:1313/blog/golang-on-openwrt/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Repo&lt;/h2&gt;
@@ -284,10 +288,10 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     
     <item>
       <title>Links</title>
-      <link>http://akagi201.github.io/links/</link>
+      <link>http://localhost:1313/links/</link>
       <pubDate>Thu, 29 Jan 2015 10:46:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/links/</guid>
+      <guid>http://localhost:1313/links/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Invite Link&lt;/h2&gt;
@@ -310,10 +314,10 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     
     <item>
       <title>Stream Encoder</title>
-      <link>http://akagi201.github.io/blog/stream-encoder/</link>
+      <link>http://localhost:1313/blog/stream-encoder/</link>
       <pubDate>Wed, 14 Jan 2015 16:02:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/stream-encoder/</guid>
+      <guid>http://localhost:1313/blog/stream-encoder/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;OBS&lt;/h2&gt;
@@ -339,10 +343,10 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     
     <item>
       <title>License</title>
-      <link>http://akagi201.github.io/license/</link>
+      <link>http://localhost:1313/license/</link>
       <pubDate>Tue, 16 Dec 2014 03:37:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/license/</guid>
+      <guid>http://localhost:1313/license/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Content license&lt;/h2&gt;
@@ -372,10 +376,10 @@ limitations under the License.
     
     <item>
       <title>Learning RTP</title>
-      <link>http://akagi201.github.io/blog/learning-rtp/</link>
+      <link>http://localhost:1313/blog/learning-rtp/</link>
       <pubDate>Mon, 15 Dec 2014 21:50:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-rtp/</guid>
+      <guid>http://localhost:1313/blog/learning-rtp/</guid>
       <description>
 
 &lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_rtp/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
@@ -395,10 +399,10 @@ limitations under the License.
     
     <item>
       <title>Learning cURL</title>
-      <link>http://akagi201.github.io/blog/learning-curl/</link>
+      <link>http://localhost:1313/blog/learning-curl/</link>
       <pubDate>Tue, 09 Dec 2014 03:55:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-curl/</guid>
+      <guid>http://localhost:1313/blog/learning-curl/</guid>
       <description>
 
 &lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_curl/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
@@ -423,10 +427,10 @@ limitations under the License.
     
     <item>
       <title>Learning Google C&#43;&#43; Testing Framework</title>
-      <link>http://akagi201.github.io/blog/learning-gtest/</link>
+      <link>http://localhost:1313/blog/learning-gtest/</link>
       <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
+      <guid>http://localhost:1313/blog/learning-gtest/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_gtest/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
@@ -441,10 +445,10 @@ limitations under the License.
     
     <item>
       <title>Learning Libuv</title>
-      <link>http://akagi201.github.io/blog/learning-libuv/</link>
+      <link>http://localhost:1313/blog/learning-libuv/</link>
       <pubDate>Thu, 13 Nov 2014 01:50:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
+      <guid>http://localhost:1313/blog/learning-libuv/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_libuv/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;想研究libuv很久了, 一直没有用他的机会, 这次项目中有个多进程管理的地方, 正纠结怎么操作麻烦的信号量时, 想起libuv也可以完成这件事, 所以, 赶紧用起来. 不用白不用.&lt;/p&gt;
@@ -455,10 +459,10 @@ limitations under the License.
     
     <item>
       <title>Learning uC/OS</title>
-      <link>http://akagi201.github.io/blog/learning-ucos/</link>
+      <link>http://localhost:1313/blog/learning-ucos/</link>
       <pubDate>Thu, 13 Nov 2014 01:28:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
+      <guid>http://localhost:1313/blog/learning-ucos/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ucos/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34; &gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就绪表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
@@ -467,10 +471,10 @@ limitations under the License.
     
     <item>
       <title>About Blog</title>
-      <link>http://akagi201.github.io/blog/about-blog/</link>
+      <link>http://localhost:1313/blog/about-blog/</link>
       <pubDate>Tue, 21 Oct 2014 02:53:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/about-blog/</guid>
+      <guid>http://localhost:1313/blog/about-blog/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;TODO&lt;/h2&gt;
@@ -510,10 +514,10 @@ limitations under the License.
     
     <item>
       <title>About</title>
-      <link>http://akagi201.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Tue, 21 Oct 2014 01:48:08 CST</pubDate>
       
-      <guid>http://akagi201.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Time Line&lt;/h2&gt;
@@ -547,10 +551,10 @@ limitations under the License.
     
     <item>
       <title>Learning CMake</title>
-      <link>http://akagi201.github.io/blog/learning-cmake/</link>
+      <link>http://localhost:1313/blog/learning-cmake/</link>
       <pubDate>Sun, 19 Oct 2014 00:35:26 CST</pubDate>
       
-      <guid>http://akagi201.github.io/blog/learning-cmake/</guid>
+      <guid>http://localhost:1313/blog/learning-cmake/</guid>
       <description>
 
 &lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_cmake/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;

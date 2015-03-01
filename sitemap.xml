@@ -2,263 +2,263 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://akagi201.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2015-03-01T12:38:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</loc>
+    <loc>http://localhost:1313/blog/a-simple-assembly-program-analysis/</loc>
     <lastmod>2015-03-01T12:38:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/parents-network/</loc>
+    <loc>http://localhost:1313/blog/parents-network/</loc>
     <lastmod>2015-02-19T13:30:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</loc>
+    <loc>http://localhost:1313/blog/the-missing-c-package-manager-clib/</loc>
     <lastmod>2015-02-12T07:44:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/golang-on-openwrt/</loc>
+    <loc>http://localhost:1313/blog/golang-on-openwrt/</loc>
     <lastmod>2015-02-06T01:51:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/links/</loc>
+    <loc>http://localhost:1313/links/</loc>
     <lastmod>2015-01-29T10:46:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/stream-encoder/</loc>
+    <loc>http://localhost:1313/blog/stream-encoder/</loc>
     <lastmod>2015-01-14T16:02:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/license/</loc>
+    <loc>http://localhost:1313/license/</loc>
     <lastmod>2014-12-16T03:37:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-rtp/</loc>
+    <loc>http://localhost:1313/blog/learning-rtp/</loc>
     <lastmod>2014-12-15T21:50:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-curl/</loc>
+    <loc>http://localhost:1313/blog/learning-curl/</loc>
     <lastmod>2014-12-09T03:55:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-gtest/</loc>
+    <loc>http://localhost:1313/blog/learning-gtest/</loc>
     <lastmod>2014-12-04T21:35:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-libuv/</loc>
+    <loc>http://localhost:1313/blog/learning-libuv/</loc>
     <lastmod>2014-11-13T01:50:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-ucos/</loc>
+    <loc>http://localhost:1313/blog/learning-ucos/</loc>
     <lastmod>2014-11-13T01:28:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/about-blog/</loc>
+    <loc>http://localhost:1313/blog/about-blog/</loc>
     <lastmod>2014-10-21T02:53:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2014-10-21T01:48:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-cmake/</loc>
+    <loc>http://localhost:1313/blog/learning-cmake/</loc>
     <lastmod>2014-10-19T00:35:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-ffmpeg/</loc>
+    <loc>http://localhost:1313/blog/learning-ffmpeg/</loc>
     <lastmod>2014-10-10T10:31:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-network/</loc>
+    <loc>http://localhost:1313/blog/learning-network/</loc>
     <lastmod>2014-09-17T15:28:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/streaming-protocols/</loc>
+    <loc>http://localhost:1313/blog/streaming-protocols/</loc>
     <lastmod>2014-09-09T15:28:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-openwrt/</loc>
+    <loc>http://localhost:1313/blog/learning-openwrt/</loc>
     <lastmod>2014-08-25T03:02:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/freeradius-beginners-guide/</loc>
+    <loc>http://localhost:1313/blog/freeradius-beginners-guide/</loc>
     <lastmod>2014-08-22T13:35:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/turn-openwrt-into-the-perfect-bsp/</loc>
+    <loc>http://localhost:1313/blog/turn-openwrt-into-the-perfect-bsp/</loc>
     <lastmod>2014-07-03T12:26:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/geo-fencing/</loc>
+    <loc>http://localhost:1313/blog/geo-fencing/</loc>
     <lastmod>2014-06-26T02:21:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-makefile/</loc>
+    <loc>http://localhost:1313/blog/learning-makefile/</loc>
     <lastmod>2014-06-05T01:08:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/root-nook-simple-touch/</loc>
+    <loc>http://localhost:1313/blog/root-nook-simple-touch/</loc>
     <lastmod>2014-05-31T23:14:24+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/wireless-penetration/</loc>
+    <loc>http://localhost:1313/blog/wireless-penetration/</loc>
     <lastmod>2014-05-28T15:28:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/wireless-device/</loc>
+    <loc>http://localhost:1313/blog/wireless-device/</loc>
     <lastmod>2014-05-05T07:14:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-kernel/</loc>
+    <loc>http://localhost:1313/blog/learning-kernel/</loc>
     <lastmod>2014-05-01T06:14:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/protect-your-privacy-with-pgp/</loc>
+    <loc>http://localhost:1313/blog/protect-your-privacy-with-pgp/</loc>
     <lastmod>2014-03-29T07:11:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/network-device-framework/</loc>
+    <loc>http://localhost:1313/blog/network-device-framework/</loc>
     <lastmod>2014-03-26T07:46:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/httpd-framework/</loc>
+    <loc>http://localhost:1313/blog/httpd-framework/</loc>
     <lastmod>2014-03-25T07:14:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/openwrt-on-virtual-machine/</loc>
+    <loc>http://localhost:1313/blog/openwrt-on-virtual-machine/</loc>
     <lastmod>2014-03-25T03:18:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/gdbserver-on-openwrt/</loc>
+    <loc>http://localhost:1313/blog/gdbserver-on-openwrt/</loc>
     <lastmod>2014-03-24T02:56:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/git-commit-convention/</loc>
+    <loc>http://localhost:1313/blog/git-commit-convention/</loc>
     <lastmod>2014-03-24T01:32:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/mov-vs-ldr/</loc>
+    <loc>http://localhost:1313/blog/mov-vs-ldr/</loc>
     <lastmod>2014-03-19T09:24:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/experience-design/</loc>
+    <loc>http://localhost:1313/blog/experience-design/</loc>
     <lastmod>2014-03-16T07:09:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-lua/</loc>
+    <loc>http://localhost:1313/blog/learning-lua/</loc>
     <lastmod>2014-03-13T12:45:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/mindmup/</loc>
+    <loc>http://localhost:1313/blog/mindmup/</loc>
     <lastmod>2014-03-10T01:52:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-embedded-system-note/</loc>
+    <loc>http://localhost:1313/blog/learning-embedded-system-note/</loc>
     <lastmod>2014-03-09T13:41:47+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/wireless-device-workflow/</loc>
+    <loc>http://localhost:1313/blog/wireless-device-workflow/</loc>
     <lastmod>2014-03-09T02:39:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/802_11ac-hardware/</loc>
+    <loc>http://localhost:1313/blog/802_11ac-hardware/</loc>
     <lastmod>2014-03-08T09:08:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/openwrt-10-years/</loc>
+    <loc>http://localhost:1313/blog/openwrt-10-years/</loc>
     <lastmod>2014-03-08T02:37:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/openwrt-developing/</loc>
+    <loc>http://localhost:1313/blog/openwrt-developing/</loc>
     <lastmod>2014-02-22T02:44:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/port-openwrt-to-pcduino/</loc>
+    <loc>http://localhost:1313/blog/port-openwrt-to-pcduino/</loc>
     <lastmod>2014-02-19T10:34:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/protothreads/</loc>
+    <loc>http://localhost:1313/blog/protothreads/</loc>
     <lastmod>2013-12-14T09:04:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/learning-perl/</loc>
+    <loc>http://localhost:1313/blog/learning-perl/</loc>
     <lastmod>2013-11-03T12:50:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/openwrt-buildroot-on-macosx/</loc>
+    <loc>http://localhost:1313/blog/openwrt-buildroot-on-macosx/</loc>
     <lastmod>2013-10-28T15:00:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/minicom-on-mac/</loc>
+    <loc>http://localhost:1313/blog/minicom-on-mac/</loc>
     <lastmod>2013-10-27T05:41:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/keep-gitting-my-cv-with-markdown/</loc>
+    <loc>http://localhost:1313/blog/keep-gitting-my-cv-with-markdown/</loc>
     <lastmod>2013-09-27T00:43:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/fitbit-flex/</loc>
+    <loc>http://localhost:1313/blog/fitbit-flex/</loc>
     <lastmod>2013-09-17T14:32:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/compile-debian-kernel/</loc>
+    <loc>http://localhost:1313/blog/compile-debian-kernel/</loc>
     <lastmod>2013-05-20T20:27:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://akagi201.github.io/blog/ak-dotfiles/</loc>
+    <loc>http://localhost:1313/blog/ak-dotfiles/</loc>
     <lastmod>2013-05-20T13:29:26+08:00</lastmod>
   </url>
   
