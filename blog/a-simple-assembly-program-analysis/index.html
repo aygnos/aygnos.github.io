@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> 一个简单的汇编程序分析 &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>一个简单的汇编程序分析</h1>
+  <span class="post-date">Sun, Mar 1, 2015</span>
+      
+
+<p>这里使用跟linux内核一样的AT&amp;T汇编语法.</p>
+
+<h2 id="toc_0">AT&amp;T 汇编语法注意事项</h2>
+
+<ul>
+<li>大小写: 指令语句使用小写字母.</li>
+<li>操作符赋值方向: 第一个为源操作数, 第二个为目的操作数, 方向从左到右, 合乎自然(与C库相反)</li>
+<li>前缀: 寄存器需要加前缀&rdquo;%&ldquo;, 立即数需要加前缀&rdquo;$&ldquo;.</li>
+<li>间接寻址语法: 使用 &ldquo;(&rdquo;, &ldquo;)&rdquo;</li>
+<li>后缀: 大部分指令操作码的最后一个字母表示操作数大小, &ldquo;b&rdquo;表示byte, &ldquo;w&rdquo;表示word(2个字节), &ldquo;l&rdquo;表示long(4个字节).</li>
+<li>注释: @用于一行代码后面添加注释内容, #是整行注释.</li>
+</ul>
+
+<h2 id="toc_1">简单的C源程序</h2>
+
+<pre><code>/*
+ * @file main.c
+ * @author Akagi201
+ * @date 2015/03/01
+ *
+ * A simple code to learn how assembly code works.
+ * build on linux x64: gcc -S -o main.s main.c -m32
+ */
+
+int g(int x) {
+  return x + 3;
+}
+
+int f(int x) {
+  return g(x);
+}
+
+int main (void) {
+  return f(8) + 1;
+}
+
+</code></pre>
+
+<h2 id="toc_2">Linux x64平台汇编命令</h2>
+
+<p><img src="http://akagi201.qiniudn.com/assembly.png" alt="asm" />
+</p>
+
+<ul>
+<li>我的编译环境是: 物理机是rmbp, 运行的virtualbox, guest OS是gentoo x64.</li>
+<li>汇编命令: <code>gcc –S –o main.s main.c -m32</code></li>
+<li>将得到的main.s文件中以.开头的行删掉(用于辅助链接的).</li>
+<li>生成的汇编代码中增加了部分注释说明了程序执行的过程.</li>
+</ul>
+
+<pre><code>g:
+	pushl	%ebp
+	movl	%esp, %ebp
+	movl	8(%ebp), %eax # eax = 8
+	addl	$3, %eax # eax = 8 + 3 = 11
+	popl	%ebp
+	ret
+
+f:
+	pushl	%ebp
+	movl	%esp, %ebp # 每个函数前两句都是这个, 用于保存上一个堆栈的栈顶, 跟清空出一个新的堆栈
+	subl	$4, %esp
+	movl	8(%ebp), %eax # eax = 8
+	movl	%eax, (%esp) # 把8放到栈顶
+	call	g # 跳到g标号
+	leave
+	ret
+
+main:
+	pushl	%ebp # 将当前ebp的值压栈, 同时esp的值被修改(即减4)
+	movl	%esp, %ebp # 将ebp指向esp
+	subl	$4, %esp # 将esp向下移动一个位置
+	movl	$8, (%esp) # 将立即数8赋值给esp指向的位置(即当前的栈顶)
+	call	f # 等价于两条语句 pushl eip; movl f eip =&gt; 当前eip实际指向addl $1, %eax这条指令, 跳转到f标号处执行
+	addl	$1, %eax # eax = 11 + 1 = 12
+	leave
+	ret # 最终ebp, esp回到main函数最初的栈的位置.
+
+</code></pre>
+
+<h2 id="toc_3">备注</h2>
+
+<ul>
+<li>本文为刘博原创作品转载请注明出处.</li>
+<li>《Linux内核分析》MOOC课程<a href="http://mooc.study.163.com/course/USTC-1000029000">http://mooc.study.163.com/course/USTC-1000029000</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>

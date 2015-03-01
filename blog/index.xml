@@ -7,7 +7,104 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 19 Feb 2015 13:30:08 CST</updated>
+    <updated>Sun, 01 Mar 2015 12:38:08 CST</updated>
+    
+    <item>
+      <title>一个简单的汇编程序分析</title>
+      <link>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</link>
+      <pubDate>Sun, 01 Mar 2015 12:38:08 CST</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</guid>
+      <description>
+
+&lt;p&gt;这里使用跟linux内核一样的AT&amp;amp;T汇编语法.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;AT&amp;amp;T 汇编语法注意事项&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;大小写: 指令语句使用小写字母.&lt;/li&gt;
+&lt;li&gt;操作符赋值方向: 第一个为源操作数, 第二个为目的操作数, 方向从左到右, 合乎自然(与C库相反)&lt;/li&gt;
+&lt;li&gt;前缀: 寄存器需要加前缀&amp;rdquo;%&amp;ldquo;, 立即数需要加前缀&amp;rdquo;$&amp;ldquo;.&lt;/li&gt;
+&lt;li&gt;间接寻址语法: 使用 &amp;ldquo;(&amp;rdquo;, &amp;ldquo;)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;后缀: 大部分指令操作码的最后一个字母表示操作数大小, &amp;ldquo;b&amp;rdquo;表示byte, &amp;ldquo;w&amp;rdquo;表示word(2个字节), &amp;ldquo;l&amp;rdquo;表示long(4个字节).&lt;/li&gt;
+&lt;li&gt;注释: @用于一行代码后面添加注释内容, #是整行注释.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;简单的C源程序&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * @file main.c
+ * @author Akagi201
+ * @date 2015/03/01
+ *
+ * A simple code to learn how assembly code works.
+ * build on linux x64: gcc -S -o main.s main.c -m32
+ */
+
+int g(int x) {
+  return x + 3;
+}
+
+int f(int x) {
+  return g(x);
+}
+
+int main (void) {
+  return f(8) + 1;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Linux x64平台汇编命令&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/assembly.png&#34; alt=&#34;asm&#34; /&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;我的编译环境是: 物理机是rmbp, 运行的virtualbox, guest OS是gentoo x64.&lt;/li&gt;
+&lt;li&gt;汇编命令: &lt;code&gt;gcc –S –o main.s main.c -m32&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将得到的main.s文件中以.开头的行删掉(用于辅助链接的).&lt;/li&gt;
+&lt;li&gt;生成的汇编代码中增加了部分注释说明了程序执行的过程.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;g:
+	pushl	%ebp
+	movl	%esp, %ebp
+	movl	8(%ebp), %eax # eax = 8
+	addl	$3, %eax # eax = 8 + 3 = 11
+	popl	%ebp
+	ret
+
+f:
+	pushl	%ebp
+	movl	%esp, %ebp # 每个函数前两句都是这个, 用于保存上一个堆栈的栈顶, 跟清空出一个新的堆栈
+	subl	$4, %esp
+	movl	8(%ebp), %eax # eax = 8
+	movl	%eax, (%esp) # 把8放到栈顶
+	call	g # 跳到g标号
+	leave
+	ret
+
+main:
+	pushl	%ebp # 将当前ebp的值压栈, 同时esp的值被修改(即减4)
+	movl	%esp, %ebp # 将ebp指向esp
+	subl	$4, %esp # 将esp向下移动一个位置
+	movl	$8, (%esp) # 将立即数8赋值给esp指向的位置(即当前的栈顶)
+	call	f # 等价于两条语句 pushl eip; movl f eip =&amp;gt; 当前eip实际指向addl $1, %eax这条指令, 跳转到f标号处执行
+	addl	$1, %eax # eax = 11 + 1 = 12
+	leave
+	ret # 最终ebp, esp回到main函数最初的栈的位置.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;备注&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;本文为刘博原创作品转载请注明出处.&lt;/li&gt;
+&lt;li&gt;《Linux内核分析》MOOC课程&lt;a href=&#34;http://mooc.study.163.com/course/USTC-1000029000&#34;&gt;http://mooc.study.163.com/course/USTC-1000029000&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>教不懂电脑的父母上网</title>
@@ -414,16 +511,6 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
       <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
 
 &lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/streaming_protocols/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning OpenWrt - Outline</title>
-      <link>http://akagi201.github.io/blog/learning-openwrt/</link>
-      <pubDate>Mon, 25 Aug 2014 03:02:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-openwrt/</guid>
-      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_openwrt/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     
