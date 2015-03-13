@@ -10,9 +10,9 @@
   <title> ARM汇编:MOV, LDR, LDR伪指令之间区别 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -73,12 +73,12 @@
 
 <p>在编译ARM汇编时, 用MOV指令编译有时会出错, 但是, 有时又对了, 还有LDR, 有时要加个&rdquo;=&ldquo;, 有时又不加了, 非常容易搞混.</p>
 
-<h2 id="toc_0">1. &ldquo;8位图&rdquo;数据</h2>
+<h2 id="1-8位图-数据:958b8f20f475d49786c1cc78f4d8c8f8">1. &ldquo;8位图&rdquo;数据</h2>
 
 <p><img src="http://akagi201.qiniudn.com/8bit.jpg" alt="8bit" />
 </p>
 
-<h2 id="toc_1">2. MOV指令</h2>
+<h2 id="2-mov指令:958b8f20f475d49786c1cc78f4d8c8f8">2. MOV指令</h2>
 
 <p>MOV指令可以把立即数或者寄存器内容(注意: 这里绝对不可以是内存!!)传递给一个寄存器.
 对于立即数是有要求的, 就是上边的&rdquo;8位图&rdquo;数据. 只能由一个8bit连续有效位通过偶数次移位得到的数.
@@ -86,14 +86,14 @@
 原因是, MOV本身就是一个32bit指令, 除了指令码本身, 他不可能再带一个可以表示32bit的数字, 所以用了其中的12bit来表示立即数, 其中4bit表示移位的尾数(循环右移, 且数值*2), 8bit用来表示要移位的一个基数.
 如果立即数超过这个范围, 就没有办法用一条MOV指令给寄存器赋值(这里就要用到LDR伪指令了, 查看反汇编指令, 你会看到LDR伪指令此变成了两条指令~~).</p>
 
-<h2 id="toc_2">3. LDR指令</h2>
+<h2 id="3-ldr指令:958b8f20f475d49786c1cc78f4d8c8f8">3. LDR指令</h2>
 
 <p>首先呢, ldr指令既可以是大范围的地址读取伪指令, 也可以内存访问指令. 当它的第二个参数前面有&rdquo;=&ldquo;时, 表示伪指令, 否则表示内存访问指令.
 LDR指令就是个单寄存器存储的ARM存储器访问指令, 补充了MOV指令不能访问内存的缺陷.
 ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指令(我说的是单个寄存器~~).
 想要把数据从内存中某处读取到寄存器中, 只能用ldr.</p>
 
-<h2 id="toc_3">4. LDR伪指令</h2>
+<h2 id="4-ldr伪指令:958b8f20f475d49786c1cc78f4d8c8f8">4. LDR伪指令</h2>
 
 <ol>
 <li><p>LDR伪指令没有立即数范围的限制, 即可以直接赋值, 因为这是一条伪指令.
@@ -107,7 +107,7 @@ ARM是RISC结构的, 数据从内存到CPU之间的移动只能通过ldr/str指�
 <p>其实真正的汇编代码是将某个地址的值传递给r1, 就是说需要一个地址存放0x70000000这个立即数, 在反汇编中,
 如果仔细看会发现, 如果这个立即数可以用mov指令的表达形式来表达, 编译器就直接用mov了.</p>
 
-<h2 id="toc_4">Refs</h2>
+<h2 id="refs:958b8f20f475d49786c1cc78f4d8c8f8">Refs</h2>
 
 <ul>
 <li><a href="http://blog.sina.com.cn/s/blog_7ec8fc2c01014epa.html">http://blog.sina.com.cn/s/blog_7ec8fc2c01014epa.html</a></li>

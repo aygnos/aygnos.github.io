@@ -10,9 +10,9 @@
   <title> 在虚拟机上搭建OpenWrt平台 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -71,15 +71,15 @@
   <span class="post-date">Tue, Mar 25, 2014</span>
       
 
-<h2 id="toc_0">1. OpenWrt平台搭建</h2>
+<h2 id="1-openwrt平台搭建:2051826d5f4b7ad1c2e4e11aac8754af">1. OpenWrt平台搭建</h2>
 
-<h3 id="toc_1">1.1 环境准备</h3>
+<h3 id="1-1-环境准备:2051826d5f4b7ad1c2e4e11aac8754af">1.1 环境准备</h3>
 
 <p>系统Debian7.4, 安装好官网buildroot说明的必备软件包 <a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">http://wiki.openwrt.org/doc/howto/buildroot.exigence</a></p>
 
 <p>注意, 尽量使用较新的linux发行版, 因为openwrt比较新, 而且通常要在trunk分支下开发, 所以依赖的软件包都比较新, 避免繁琐的依赖关系问题.</p>
 
-<h3 id="toc_2">1.2 编译固件</h3>
+<h3 id="1-2-编译固件:2051826d5f4b7ad1c2e4e11aac8754af">1.2 编译固件</h3>
 
 <p>使用git或者svn下载源码
 修改<code>feeds.conf.default</code>
@@ -100,11 +100,11 @@
 
 <p>最后运行make, 开始编译(可以使用make -j4 V=s加速编译和增加打印编译出错信息), 自动创建dl, build_dir两个目录, 依次调用tools, toolchain, package, target目录中的Makefile编译(前两者是工具, 然后用这个工具编译后两者). 自动根据指示下载所需的源码包, 放在dl目录下, 然后解压到build_dir目录中进行编译. build_dir中有3个子目录, host是于平台无关的一些工具, toolchain中式特定平台的工具, ulibc中式C库, 应用程序等.</p>
 
-<h3 id="toc_3">1.3 VMware中运行OpenWrt</h3>
+<h3 id="1-3-vmware中运行openwrt:2051826d5f4b7ad1c2e4e11aac8754af">1.3 VMware中运行OpenWrt</h3>
 
 <p>启动VMware, 新建虚拟机(custom), 以编译出的VMDK文件为硬盘, 直接power on就可以进入OpenWrt, 在目录/bin, /usr/bin等目录下, 有我们选择安装的应用程序的可执行文件, 运行他们实现各种功能.</p>
 
-<h2 id="toc_4">2. 网络配置的简单示例</h2>
+<h2 id="2-网络配置的简单示例:2051826d5f4b7ad1c2e4e11aac8754af">2. 网络配置的简单示例</h2>
 
 <p>我们在虚拟机下运行, 虚拟机的网络模式有3种: nat, host-only, bridge. 我们安装完VMware后, 主机新增了2快虚拟网卡VMnet1, VMnet8, 前者相当于所有host-only模式的VM的交换机, 所有host-only模式的VM可通过它相互通信, 但不能与外界通信; 后者相当于素有nat模式的VM的交换机, 不同之处在于, 他可以NAT到主机的实际网口, 去访问外网(即相当于有个上行口(WAN口)), bridge模式指利用主机的实际网口与外界通信.</p>
 
@@ -139,11 +139,11 @@ Route add default gw 10.10.10.130
 
 <p>这样, 实际局域网的主机就可通过OpenWrt这个路由器与host-only虚拟语句网的主机通信了, 当然前提是各主机应设一条网关路由到182.168.68.187</p>
 
-<h2 id="toc_5">3. 应用程序开发</h2>
+<h2 id="3-应用程序开发:2051826d5f4b7ad1c2e4e11aac8754af">3. 应用程序开发</h2>
 
 <p>应用程序开发有2种方法.</p>
 
-<h3 id="toc_6">3.1 方法一</h3>
+<h3 id="3-1-方法一:2051826d5f4b7ad1c2e4e11aac8754af">3.1 方法一</h3>
 
 <p>利用menuconfig, 直接与固件一起编译, 即预先把相关文件放到 <code>trunk/package/myapp</code> 目录下, make menuconfig时就能找到该软件包, 选择(可以选y编译进固件中, 或m只编译成.ipk包)即可.</p>
 
@@ -153,7 +153,7 @@ Route add default gw 10.10.10.130
 
 <p>后面几节描述了他的编译安装方法. 一般就是把src里的内容copy到build_dir/uClib下, 然后用toolchain来编译, 最后install一节可以指明该app在固件中被放在哪个目录下(/bin, 或 /usr/bin等).</p>
 
-<h3 id="toc_7">3.2 方法二</h3>
+<h3 id="3-2-方法二:2051826d5f4b7ad1c2e4e11aac8754af">3.2 方法二</h3>
 
 <p>利用SDK, 就像android开发一样, 利用sdk编译出软件安装包, 上传到设备, 安装即可使用. 首先在make menuconfig的时候, 把build SDK选项选上, 那么, 固件编译好后, 在trunk/bin/x86下就有一个SDK.tar文件, 解压, 进入里面.</p>
 
@@ -161,13 +161,13 @@ Route add default gw 10.10.10.130
 
 <p>至于上传.ipk包到路由器上, 对于实际设备, 可以scp工具, 在VMware下没找到更好的方法.</p>
 
-<h3 id="toc_8">3.3 为什么要用ipk包</h3>
+<h3 id="3-3-为什么要用ipk包:2051826d5f4b7ad1c2e4e11aac8754af">3.3 为什么要用ipk包</h3>
 
 <p>ilk包是openwrt特有的, 为什么用这个呢, 直接把可执行文件copy到设备中不就行了吗? 回头看看hello world中的Makefile的最后一节install就ming明白了, ilk包li里不仅有可执行文件, 还有安装该文件的具体指示, 甚至还有其他一些配置, 启动文件, 以及他们的安装方式.</p>
 
 <p>联想network命令就是这样的, 进到package/conf下, 看他的Makefile最后, 其实就是拷贝文件.</p>
 
-<h2 id="toc_9">Refs</h2>
+<h2 id="refs:2051826d5f4b7ad1c2e4e11aac8754af">Refs</h2>
 
 <ul>
 <li><a href="http://www.cnblogs.com/zmkeil/archive/2013/04/17/3027385.html">http://www.cnblogs.com/zmkeil/archive/2013/04/17/3027385.html</a></li>

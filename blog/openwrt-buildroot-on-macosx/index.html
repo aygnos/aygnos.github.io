@@ -10,9 +10,9 @@
   <title> 在Mac OS X下配置OpenWrt Buildroot环境 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -71,7 +71,7 @@
   <span class="post-date">Mon, Oct 28, 2013</span>
       
 
-<h2 id="toc_0">与linux相比会遇到的2个问题</h2>
+<h2 id="与linux相比会遇到的2个问题:46931e08e2d7bd01383e2d8ea64286c9">与linux相比会遇到的2个问题</h2>
 
 <ol>
 <li>OpenWrt需要一个case-sensitive filesystem, 而Mac OS X默认提供的文件系统是case-insensitive.</li>
@@ -79,7 +79,7 @@
 <li>使用一个disk image(避免再次分区硬盘), 和Homebrew.</li>
 </ol>
 
-<h2 id="toc_1">steps</h2>
+<h2 id="steps:46931e08e2d7bd01383e2d8ea64286c9">steps</h2>
 
 <ol>
 <li>Disk Image Creation
@@ -96,11 +96,11 @@ brew install coreutils e2fsprogs ossp-uuid asciidoc binutils bzip2 fastjar flex 
 <li>missing: bzip2 getopt(gnu-getopt代替, 将mac os x自带的/usr/bin/getopt 重命名备份，把gnu-getopt链接到/usr/local/bin/getopt) gtk2 jikes zlib p5-extutils-makemaker tar(gnu-tar代替) python26(python代替) rsync unzip gmake ncurses</li>
 </ol>
 
-<h2 id="toc_2">Easy Build</h2>
+<h2 id="easy-build:46931e08e2d7bd01383e2d8ea64286c9">Easy Build</h2>
 
 <p>不需要产生或下载不必要的packages.<a href="http://wiki.openwrt.org/doc/howto/easy.build">http://wiki.openwrt.org/doc/howto/easy.build</a></p>
 
-<h2 id="toc_3">Refs</h2>
+<h2 id="refs:46931e08e2d7bd01383e2d8ea64286c9">Refs</h2>
 
 <ul>
 <li><a href="http://wiki.openwrt.org/easy.build.macosx">Setup MacOSX as an OpenWrt build environment</a></li>

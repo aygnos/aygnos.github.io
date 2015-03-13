@@ -10,9 +10,9 @@
   <title> 网络嵌入式设备框架 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -73,7 +73,7 @@
 
 <p>这不是什么新鲜东西, 无线路由器很早前就开始使用了, 不过最近才慢慢理解其原理. 现在网络嵌入式设备的功能越来越强大了, 各芯片厂商的解决方法支持着这种复杂性.</p>
 
-<h2 id="toc_0">1. 一个网络芯片架构</h2>
+<h2 id="1-一个网络芯片架构:363c2f129fc0684c38c2d2d9c80942dc">1. 一个网络芯片架构</h2>
 
 <p><img src="http://akagi201.qiniudn.com/network-device-hardware.png" alt="network-device-hardware" />
 </p>
@@ -98,9 +98,9 @@
 
 <p>注意, 所有这些功能都是switch core自动完成的, 网络数据包不需要进入SoC的协议栈, 这和后面讲的一般的路由器是不同的.</p>
 
-<h2 id="toc_1">2. 嵌入式片上系统</h2>
+<h2 id="2-嵌入式片上系统:363c2f129fc0684c38c2d2d9c80942dc">2. 嵌入式片上系统</h2>
 
-<h3 id="toc_2">2.1 与外界的交互方式</h3>
+<h3 id="2-1-与外界的交互方式:363c2f129fc0684c38c2d2d9c80942dc">2.1 与外界的交互方式</h3>
 
 <p>这里的SoC系统主要功能有: 与外界用户的交互, 解析用户指令, 配置系统.</p>
 
@@ -123,7 +123,7 @@
 
 <p>最后, 外界用户读写电平, 当然不同用示波器了. 呵呵, PC上装个串口驱动, 那么PC的键盘/显示器就为嵌入式板子所用啦.</p>
 
-<h3 id="toc_3">2.2 bootloader</h3>
+<h3 id="2-2-bootloader:363c2f129fc0684c38c2d2d9c80942dc">2.2 bootloader</h3>
 
 <p>这就像一个心结, 你一天不理解它, 就一天不能安心地开发嵌入式系统, 尽管你可以把软件写得很出色.</p>
 
@@ -157,7 +157,7 @@
 
 <p>最后, flash里面的内容怎么变? 很简单, 它既然也在cpu的变址内, 直接用cpu把数据写到flash中不就行了. 一般用http服务, client会post一个image文件上来, server端检查没问题, 就写到flash中, 这就是手动升级.</p>
 
-<h3 id="toc_4">3. 一个无线路由器的架构分析</h3>
+<h3 id="3-一个无线路由器的架构分析:363c2f129fc0684c38c2d2d9c80942dc">3. 一个无线路由器的架构分析</h3>
 
 <p>前面提到的公司芯片解决方案, SoC子系统的功能很有限, 通信数据包一般不会到SoC的协议栈. 而目前市场上的无线路由器系统, 系统中的CPU功能一般很强大, RAM配置也很强大, 一般都能运行大型系统软件, 如Linux.</p>
 
@@ -186,7 +186,7 @@
 
 <p>当然这里只是最基本的情况, 现在的路由器设备已经集成了非常多的功能, 如DHCP, NAT, DNS等等.</p>
 
-<h2 id="toc_5">Refs</h2>
+<h2 id="refs:363c2f129fc0684c38c2d2d9c80942dc">Refs</h2>
 
 <ul>
 <li><a href="http://www.cnblogs.com/zmkeil/archive/2013/05/26/3100096.html">http://www.cnblogs.com/zmkeil/archive/2013/05/26/3100096.html</a></li>

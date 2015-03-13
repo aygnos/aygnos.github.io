@@ -10,9 +10,9 @@
   <title> About &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -81,25 +81,25 @@
 
 <p>在各种路由器的hack固件中, OpenWrt为什么能脱颖而出? 笔者认为关键原因是OpenWrt社区彻底的开源精神, 不要忽视<a href="http://openwrt.org">http://openwrt.org</a>上面明晃晃的&rdquo;Wireless Freedom&rdquo;几个字. OpenWrt社区的组织者Gregers Petersen第一title是人类学家, 专注于自由软件及相关社会学研究. 以此为基因, OpenWrt社区聚集了一大批纯正的Linux各个方向的死忠级专家, 从而使OpenWrt具备了如下与传统nor flash嵌入式Linux截然不同的高级特征:</p>
 
-<h2 id="toc_0">1.SquashFS与JFFS2文件系统的整合形成的overlayfs机制</h2>
+<h2 id="1-squashfs与jffs2文件系统的整合形成的overlayfs机制:66294f3d58598c1e51e1b243504f6610">1.SquashFS与JFFS2文件系统的整合形成的overlayfs机制</h2>
 
 <p>对用户而言, OpenWrt的整个文件系统是完全动态可读写的, 而其中的固件部分是用SquashFS实施的只读压缩文件系统, 而用户所有的对文件系统的增删改都是用类似&rdquo;差值&rdquo;的形态存储在JFFS2文件系统中的, 二者用overlayfs机制黏合, 对用户完全透明. 因此我们可以在文件系统中肆意发挥, 随便折腾, 出现任何问题则可像手机一样恢复出厂设置, 并提供fail-safe模式帮助用户修复系统.</p>
 
 <p>而在传统的嵌入式Linux里, 固件是静态的, 对系统做任何一点与可运行程序相关的变动, 比如增加一个模块, 删除一个应用程序, 都要重新编译全部固件, 并重新刷写, 就好比你一个Android手机要升级微信就要重新刷机. 这种反人类的传统文件系统完全阻挡了非专业爱好者进入嵌入式Linux这一领域.</p>
 
-<h2 id="toc_1">2. UCI(Unified Configuration Interface)</h2>
+<h2 id="2-uci-unified-configuration-interface:66294f3d58598c1e51e1b243504f6610">2. UCI(Unified Configuration Interface)</h2>
 
 <p>帮助用户在任何平台的OpenWrt上用同样的方法配置系统, 网络和应用. 在Boardcom的平台上, 在Atheros的平台上, 甚至x86的平台上, 修改系统配置均为同样的命令. 而UCI的机制并不是二进制硬件虚拟层实现的, 是由Linux shell脚本实现的. 这毫无疑问是一种别致的创新, 比Android来的轻巧得多. OpenWrt里的Linux shell脚本用得很帅很高端, 那种感觉怎么形容呢? 就好像精通十八般武艺的高手有一天特别复古地拿起铅笔刀在硬盘上刻出来了系统, 就是这种感觉.</p>
 
-<h2 id="toc_2">3. Opkg包管理系统与丰富的软件源</h2>
+<h2 id="3-opkg包管理系统与丰富的软件源:66294f3d58598c1e51e1b243504f6610">3. Opkg包管理系统与丰富的软件源</h2>
 
 <p>是一个与桌面级Linux使用的apt-get, yum等同级别的包管理系统, 使用形如: <code>opkg install xxxx-app</code> 的命令从互联网软件源中安装大约3000余种各种软件. 软件数量虽然没法跟手机的应用市场比, 但是要知道, 这里头的任何一个软件都来头不小, 是经过Linux社区千锤百炼的东西, 一个应用折腾一个月都玩不够. 类型覆盖网络, 音频, 视频, 程序开发, Linux系统管理等. 当然, 如果是专业比较偏的东西OpenWrt的软件源里还是不够完善, 比如笔者团队用到的OpenCV的东西, 源里就没有, 就靠自己交叉编译了.</p>
 
-<h2 id="toc_3">4. Luci WEB界面系统</h2>
+<h2 id="4-luci-web界面系统:66294f3d58598c1e51e1b243504f6610">4. Luci WEB界面系统</h2>
 
 <p>除CLI命令行终端界面外, 不同于桌面级Linux使用屏幕GUI作为交互界面, OpenWrt使用WEB界面交互. 而不同于传统路由器web管理界面的是, luci是用户可订制的, 安装了支持luci的软件后, WEB界面系统就中出现了新的模块, 而opkg本身也web化了.这个特征让用户感觉很像手机的app store.</p>
 
-<h2 id="toc_4">5.积极, 完整的社区</h2>
+<h2 id="5-积极-完整的社区:66294f3d58598c1e51e1b243504f6610">5.积极, 完整的社区</h2>
 
 <p>OpenWrt与Arch Linux, Debian, FFmpeg, MinGW, PostgreSQL等开源领域重要的软件一起, 是Software in the Public Interest, Inc.资助和保护的项目, OpenWrt社区在美国, 欧洲, 中国, 俄罗斯有大量的追随者, 有不计其数的分支和代码贡献者. 社区活跃度非常高.</p>
 
@@ -111,7 +111,7 @@
 
 <p>在这个重新强调人工智能, 机器学习, 重新重视物理机械交互的新兴智能机器人的时代, 我们有理由相信因为其纯正的Linux味道, 小型化, 亲近物理交互的特征, 身为Linux社区与物理交互的最佳桥梁, OpenWrt会迎来新一轮的发展.</p>
 
-<h2 id="toc_5">Refs</h2>
+<h2 id="refs:66294f3d58598c1e51e1b243504f6610">Refs</h2>
 
 <ul>
 <li><a href="http://wemaker.cc/322">http://wemaker.cc/322</a></li>

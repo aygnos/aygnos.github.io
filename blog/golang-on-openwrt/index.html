@@ -10,9 +10,9 @@
   <title> Golang on OpenWrt &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -71,13 +71,13 @@
   <span class="post-date">Fri, Feb 6, 2015</span>
       
 
-<h2 id="toc_0">Repo</h2>
+<h2 id="repo:771690f5aca57d887d51a64a24f5174e">Repo</h2>
 
 <ul>
 <li><a href="https://github.com/GeertJohan/openwrt-go">https://github.com/GeertJohan/openwrt-go</a></li>
 </ul>
 
-<h2 id="toc_1">Steps</h2>
+<h2 id="steps:771690f5aca57d887d51a64a24f5174e">Steps</h2>
 
 <ul>
 <li><code>git clone https://github.com/GeertJohan/openwrt-go</code></li>
@@ -98,7 +98,7 @@
 <li><code>make V=s</code></li>
 </ul>
 
-<h2 id="toc_2">result</h2>
+<h2 id="result:771690f5aca57d887d51a64a24f5174e">result</h2>
 
 <ul>
 <li>firmware with eglibc: <code>bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin</code></li>
@@ -106,7 +106,7 @@
 <li>add toolchain alias: <code>alias mips_gccgo='mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib'</code></li>
 </ul>
 
-<h2 id="toc_3">test</h2>
+<h2 id="test:771690f5aca57d887d51a64a24f5174e">test</h2>
 
 <ul>
 <li>use libgo non-static.</li>
@@ -142,7 +142,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 -rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
 </code></pre>
 
-<h2 id="toc_4">Refs</h2>
+<h2 id="refs:771690f5aca57d887d51a64a24f5174e">Refs</h2>
 
 <ul>
 <li><a href="https://github.com/GeertJohan/openwrt-go/issues/2">https://github.com/GeertJohan/openwrt-go/issues/2</a></li>

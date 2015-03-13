@@ -10,9 +10,9 @@
   <title> uhttpd实现框架 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -73,7 +73,7 @@
 
 <p>uhttpd是一个简单的web服务器程序, 以前没怎么接触过, 所以这里主要是对web服务器设计的一些学习总结. OpenWrt系统中, 真正用到的(需要了解的), 其实不多, 主要就是cgi的处理, 包括与cgi程序的信息交互等, 最后一节详细描述一下.</p>
 
-<h2 id="toc_0">1. HTTP协议概述</h2>
+<h2 id="1-http协议概述:308239ecab5ae4f8239942a6a6c7571a">1. HTTP协议概述</h2>
 
 <p>HTTP协议是目前互联网使用最广泛的应用层协议. 其协议框架很简单, 在一个TCP连接中, 以一问一答的方式进行信息交互. 具体讲, 就是客户端(如常见的浏览器)connect服务端的知名端口(通常是80), 建立一个TCP连接, 然后发送一个request; 服务器端对该request解析后, 发回相应的request应答, 并关闭TCP连接. 这就是一次交互, 之后客户端再有请求, 则重复上面的过程.</p>
 
@@ -86,7 +86,7 @@
 
 <p>两种报文后面具体的内容格式差不多, 都是一些headers(其中, 冒号前的str指明header类型), 然后以一个空行标识header结束, 后面是数据. 对于request, 只有POST类型的请求需要提交数据, 其他类型的是没有数据的. Response报文的数据就是URL所指定的资源文件(HTML, DOC, gif等).</p>
 
-<h2 id="toc_1">2. 服务器架构</h2>
+<h2 id="2-服务器架构:308239ecab5ae4f8239942a6a6c7571a">2. 服务器架构</h2>
 
 <p>uhttpd作为一个简单的web服务器, 其代码量并不多, 而且组织结构比较清楚. 和其他网络服务器差不多, 其main函数进行一些初始化(首先parse config-file, 然后parse argv), 然后进入一个循环, 不断地监听, 每当有一个客户请求到达时, 则对他进行处理.</p>
 
@@ -95,11 +95,11 @@
 <p><img src="http://akagi201.qiniudn.com/uhttpd-framework.png" alt="uhttpd-framework" />
 </p>
 
-<h2 id="toc_2">3. cgi-response流程</h2>
+<h2 id="3-cgi-response流程:308239ecab5ae4f8239942a6a6c7571a">3. cgi-response流程</h2>
 
 <p>前面已提到, openwrt系统中使用uhttpd服务, 主要是用cgi方式来回应客户请求的, 下面就对这种方式详细阐述.</p>
 
-<h3 id="toc_3">3.1 URL解析</h3>
+<h3 id="3-1-url解析:308239ecab5ae4f8239942a6a6c7571a">3.1 URL解析</h3>
 
 <p>由上图红字所示, uh_cgi_request需要两个参数path info和interpreter, 其中, pin是一个struct, 包含了路径中各种有用信息; ipr指明所用的cgi程序, 因为一个服务器中可以有多个cgi程序.</p>
 
@@ -108,7 +108,7 @@
 
 <p>如图所示, docroot是服务器的资源目录, 是为了os准确定位资源位置, 由uhttpd的config文件设定, 如openwrt中为/www. 后面的是client传来的url, 开头的为cgi-prefix, 也是由uhttpd的config文件设定的, 它指明server端采用cgi处理方式, 如openwrt中的为/www/cgi-bin; 紧接着的是cgi的程序名, 它指明了使用哪个cgi程序; 再后面就是实际的path信息了, 在cgi方式中, 它会被当成参数供cgi程序使用.</p>
 
-<h3 id="toc_4">3.2 CGI处理框架</h3>
+<h3 id="3-2-cgi处理框架:308239ecab5ae4f8239942a6a6c7571a">3.2 CGI处理框架</h3>
 
 <p>要运行cgi程序, 首先意味着需fork出一个子进程, 并通过execl函数替换进程空间为cgi程序; 其次, 数据传递, 子进程替换了进程空间后, 怎么获得原信息, 又怎么把回馈数据传输给父进程(即uhttpd), 父进程又怎么接收这些数据.</p>
 
@@ -125,7 +125,7 @@
 <p><img src="http://akagi201.qiniudn.com/uhttpd-post.png" alt="uhttpd-post" />
 </p>
 
-<h2 id="toc_5">Refs</h2>
+<h2 id="refs:308239ecab5ae4f8239942a6a6c7571a">Refs</h2>
 
 <ul>
 <li><a href="http://www.cnblogs.com/zmkeil/archive/2013/05/14/3078766.html">http://www.cnblogs.com/zmkeil/archive/2013/05/14/3078766.html</a></li>

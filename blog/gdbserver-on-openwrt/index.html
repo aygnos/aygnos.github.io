@@ -10,9 +10,9 @@
   <title> Gdbserver On OpenWrt &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -79,9 +79,9 @@
 
 <p>路由器中的存储空间十分有限, OpenWRT的包管理器opkg提供的GDB占用大约1.5MB空间. 路由器本身有8M的存储空间, 目前只剩200KB了, GDB的大小不能接受. 相比之下, GDBServer的大小 不到100KB, 这是可以接受的.</p>
 
-<h2 id="toc_0">gdbserver远程调试方法</h2>
+<h2 id="gdbserver远程调试方法:494d5fd4222793181c51edbf1fb1b23a">gdbserver远程调试方法</h2>
 
-<h3 id="toc_1">路由器端</h3>
+<h3 id="路由器端:494d5fd4222793181c51edbf1fb1b23a">路由器端</h3>
 
 <ol>
 <li>安装gdbserver</li>
@@ -97,7 +97,7 @@
 <pre><code>gdbserver 192.168.8.1:4455 xxxx
 </code></pre>
 
-<h3 id="toc_2">PC端</h3>
+<h3 id="pc端:494d5fd4222793181c51edbf1fb1b23a">PC端</h3>
 
 <ol>
 <li>根据OpenWrt SDK位置配置好PATH路径</li>
@@ -124,7 +124,7 @@
 
 <p>如果连接成功, 则此时就可以像平常一样使用gdb来调试程序了, 不过调试目标是位于路由器的程序. 使用这个方法可以很轻易的定位到程序错误的位置. 毕竟是动态调试.</p>
 
-<h2 id="toc_3">编译gdb和gdbserver方法</h2>
+<h2 id="编译gdb和gdbserver方法:494d5fd4222793181c51edbf1fb1b23a">编译gdb和gdbserver方法</h2>
 
 <pre><code># gdb的编译
 cd ~/gdb/gdb-7.3.1
@@ -143,11 +143,11 @@ export CC=/opt/openwrt/kamikaze_7.09/staging_dir_mips/bin/mips-linux-gcc
 make
 </code></pre>
 
-<h2 id="toc_4">补充</h2>
+<h2 id="补充:494d5fd4222793181c51edbf1fb1b23a">补充</h2>
 
 <p>如果上面的方法不能工作, 有可能是openwrt设备上的库被stripped了, 可以在host主机上使用没有stripped的库来远程调试.</p>
 
-<h2 id="toc_5">openwrt源码上编译工具链</h2>
+<h2 id="openwrt源码上编译工具链:494d5fd4222793181c51edbf1fb1b23a">openwrt源码上编译工具链</h2>
 
 <p>在menuconfig上enable gdb 和 gdbserver.</p>
 
@@ -157,7 +157,7 @@ make
 <pre><code>Utilities → gdbserver
 </code></pre>
 
-<h2 id="toc_6">给你想调试的包增加调试信息</h2>
+<h2 id="给你想调试的包增加调试信息:494d5fd4222793181c51edbf1fb1b23a">给你想调试的包增加调试信息</h2>
 
 <ol>
 <li>添加CFLAGS到你要调试的package的Makefile中.</li>
@@ -180,7 +180,7 @@ make
 <pre><code>Global build settings &gt; Compile packages with debugging info
 </code></pre>
 
-<h2 id="toc_7">Refs</h2>
+<h2 id="refs:494d5fd4222793181c51edbf1fb1b23a">Refs</h2>
 
 <ul>
 <li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">https://sourceware.org/gdb/current/onlinedocs/gdb/</a></li>

@@ -1,18 +1,294 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Blogs on Akagi201 </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://akagi201.github.io/blog/index.xml</link>
+    <title>Blogs on Akagi201</title>
+    <link>http://akagi201.github.io/blog/</link>
+    <description>Recent content in Blogs on Akagi201</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 13 Mar 2015 08:24:08 +0800</lastBuildDate>
+    <atom:link href="http://akagi201.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Simple RTMP Server分析</title>
+      <link>http://akagi201.github.io/blog/simple-rtmp-server-analysis/</link>
+      <pubDate>Fri, 13 Mar 2015 08:24:08 +0800</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/simple-rtmp-server-analysis/</guid>
+      <description>
+
+&lt;h2 id=&#34;源码目录分析:864ce55adec621a5238bcdc00b65e669&#34;&gt;源码目录分析&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;整体目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── 3rdparty/ # 第三方库源码跟补丁
+├── Makefile  # 通过configure生成的Makefile
+├── auto/     # configure读取执行特定功能的脚本
+├── conf/     # srs启动的配置文件*.conf
+├── configure # 编译脚本用于根据用户参数生成Makefile跟.h文件
+├── doc/      # 协议RFC
+├── etc/      # linux启动脚本
+├── ide/      # IDE工程文件
+├── modules/  # 目前为空
+├── objs/     # 编译结果
+├── research/ # 预研项目
+├── scripts/  # 辅助脚本
+└── src/      # 源码
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;源码目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── app
+│   ├── srs_app_bandwidth.cpp
+│   ├── srs_app_bandwidth.hpp
+│   ├── srs_app_config.cpp
+│   ├── srs_app_config.hpp
+│   ├── srs_app_conn.cpp
+│   ├── srs_app_conn.hpp
+│   ├── srs_app_dvr.cpp
+│   ├── srs_app_dvr.hpp
+│   ├── srs_app_edge.cpp
+│   ├── srs_app_edge.hpp
+│   ├── srs_app_empty.cpp
+│   ├── srs_app_empty.hpp
+│   ├── srs_app_encoder.cpp
+│   ├── srs_app_encoder.hpp
+│   ├── srs_app_ffmpeg.cpp
+│   ├── srs_app_ffmpeg.hpp
+│   ├── srs_app_forward.cpp
+│   ├── srs_app_forward.hpp
+│   ├── srs_app_hds.cpp
+│   ├── srs_app_hds.hpp
+│   ├── srs_app_heartbeat.cpp
+│   ├── srs_app_heartbeat.hpp
+│   ├── srs_app_hls.cpp
+│   ├── srs_app_hls.hpp
+│   ├── srs_app_http.cpp
+│   ├── srs_app_http.hpp
+│   ├── srs_app_http_api.cpp
+│   ├── srs_app_http_api.hpp
+│   ├── srs_app_http_client.cpp
+│   ├── srs_app_http_client.hpp
+│   ├── srs_app_http_conn.cpp
+│   ├── srs_app_http_conn.hpp
+│   ├── srs_app_http_hooks.cpp
+│   ├── srs_app_http_hooks.hpp
+│   ├── srs_app_ingest.cpp
+│   ├── srs_app_ingest.hpp
+│   ├── srs_app_json.cpp
+│   ├── srs_app_json.hpp
+│   ├── srs_app_kbps.cpp
+│   ├── srs_app_kbps.hpp
+│   ├── srs_app_listener.cpp
+│   ├── srs_app_listener.hpp
+│   ├── srs_app_log.cpp
+│   ├── srs_app_log.hpp
+│   ├── srs_app_mpegts_udp.cpp
+│   ├── srs_app_mpegts_udp.hpp
+│   ├── srs_app_pithy_print.cpp
+│   ├── srs_app_pithy_print.hpp
+│   ├── srs_app_recv_thread.cpp
+│   ├── srs_app_recv_thread.hpp
+│   ├── srs_app_refer.cpp
+│   ├── srs_app_refer.hpp
+│   ├── srs_app_reload.cpp
+│   ├── srs_app_reload.hpp
+│   ├── srs_app_rtmp_conn.cpp
+│   ├── srs_app_rtmp_conn.hpp
+│   ├── srs_app_rtsp.cpp
+│   ├── srs_app_rtsp.hpp
+│   ├── srs_app_security.cpp
+│   ├── srs_app_security.hpp
+│   ├── srs_app_server.cpp
+│   ├── srs_app_server.hpp
+│   ├── srs_app_source.cpp
+│   ├── srs_app_source.hpp
+│   ├── srs_app_st.cpp
+│   ├── srs_app_st.hpp
+│   ├── srs_app_st_socket.cpp
+│   ├── srs_app_st_socket.hpp
+│   ├── srs_app_statistic.cpp
+│   ├── srs_app_statistic.hpp
+│   ├── srs_app_thread.cpp
+│   ├── srs_app_thread.hpp
+│   ├── srs_app_utility.cpp
+│   └── srs_app_utility.hpp
+├── core
+│   ├── srs_core.cpp
+│   ├── srs_core.hpp
+│   ├── srs_core_autofree.cpp
+│   ├── srs_core_autofree.hpp
+│   ├── srs_core_performance.cpp
+│   └── srs_core_performance.hpp
+├── kernel
+│   ├── srs_kernel_aac.cpp
+│   ├── srs_kernel_aac.hpp
+│   ├── srs_kernel_buffer.cpp
+│   ├── srs_kernel_buffer.hpp
+│   ├── srs_kernel_codec.cpp
+│   ├── srs_kernel_codec.hpp
+│   ├── srs_kernel_consts.cpp
+│   ├── srs_kernel_consts.hpp
+│   ├── srs_kernel_error.cpp
+│   ├── srs_kernel_error.hpp
+│   ├── srs_kernel_file.cpp
+│   ├── srs_kernel_file.hpp
+│   ├── srs_kernel_flv.cpp
+│   ├── srs_kernel_flv.hpp
+│   ├── srs_kernel_log.cpp
+│   ├── srs_kernel_log.hpp
+│   ├── srs_kernel_mp3.cpp
+│   ├── srs_kernel_mp3.hpp
+│   ├── srs_kernel_stream.cpp
+│   ├── srs_kernel_stream.hpp
+│   ├── srs_kernel_ts.cpp
+│   ├── srs_kernel_ts.hpp
+│   ├── srs_kernel_utility.cpp
+│   └── srs_kernel_utility.hpp
+├── libs
+│   ├── srs_lib_bandwidth.cpp
+│   ├── srs_lib_bandwidth.hpp
+│   ├── srs_lib_simple_socket.cpp
+│   ├── srs_lib_simple_socket.hpp
+│   ├── srs_librtmp.cpp
+│   └── srs_librtmp.hpp
+├── main
+│   └── srs_main_server.cpp
+├── protocol
+│   ├── srs_raw_avc.cpp
+│   ├── srs_raw_avc.hpp
+│   ├── srs_rtmp_amf0.cpp
+│   ├── srs_rtmp_amf0.hpp
+│   ├── srs_rtmp_buffer.cpp
+│   ├── srs_rtmp_buffer.hpp
+│   ├── srs_rtmp_handshake.cpp
+│   ├── srs_rtmp_handshake.hpp
+│   ├── srs_rtmp_io.cpp
+│   ├── srs_rtmp_io.hpp
+│   ├── srs_rtmp_msg_array.cpp
+│   ├── srs_rtmp_msg_array.hpp
+│   ├── srs_rtmp_sdk.cpp
+│   ├── srs_rtmp_sdk.hpp
+│   ├── srs_rtmp_stack.cpp
+│   ├── srs_rtmp_stack.hpp
+│   ├── srs_rtmp_utility.cpp
+│   ├── srs_rtmp_utility.hpp
+│   ├── srs_rtsp_stack.cpp
+│   └── srs_rtsp_stack.hpp
+└── utest
+    ├── srs_utest.cpp
+    ├── srs_utest.hpp
+    ├── srs_utest_amf0.cpp
+    ├── srs_utest_amf0.hpp
+    ├── srs_utest_config.cpp
+    ├── srs_utest_config.hpp
+    ├── srs_utest_core.cpp
+    ├── srs_utest_core.hpp
+    ├── srs_utest_kernel.cpp
+    ├── srs_utest_kernel.hpp
+    ├── srs_utest_protocol.cpp
+    ├── srs_utest_protocol.hpp
+    ├── srs_utest_reload.cpp
+    └── srs_utest_reload.hpp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;编译脚本分析:864ce55adec621a5238bcdc00b65e669&#34;&gt;编译脚本分析&lt;/h2&gt;
+
+&lt;h3 id=&#34;trunk-configure:864ce55adec621a5238bcdc00b65e669&#34;&gt;&lt;code&gt;/trunk/configure&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;configure&lt;/code&gt;是个&lt;code&gt;Bash&lt;/code&gt;脚本, 根据配置来生成&lt;code&gt;Makefile&lt;/code&gt;跟&lt;code&gt;.h&lt;/code&gt;文件.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果存在&lt;code&gt;Makefile&lt;/code&gt;文件, 则执行&lt;code&gt;make clean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建&lt;code&gt;objs&lt;/code&gt;目录&lt;/li&gt;
+&lt;li&gt;导入并执行&lt;code&gt;auto/options.sh&lt;/code&gt;用于解析用户的编译参数, 对相应的SRS_XXX的变量进行赋值.&lt;/li&gt;
+&lt;li&gt;导入&lt;code&gt;auto/generate-srs-librtmp-project.sh&lt;/code&gt;用于生成srs-librtmp项目, 创建项目目录, 拷贝一些文件到对应目录. &lt;code&gt;research/librtmp/*.c research/librtmp/Makefile auto/generate_header.sh auto/generate-srs-librtmp-single.sh src/core/* src/kernel/* src/protocol/* src/libs/*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;导入并执行&lt;code&gt;auto/depends.sh&lt;/code&gt;, 检查缺少的依赖工具并安装&lt;/li&gt;
+&lt;li&gt;导入并执行&lt;code&gt;auto/auto_headers.sh&lt;/code&gt;, 生成&lt;code&gt;srs_auto_headers.hpp&lt;/code&gt;, 声明配置的宏.&lt;/li&gt;
+&lt;li&gt;srs modules相关&lt;/li&gt;
+&lt;li&gt;编译工具跟编译参数赋值.&lt;/li&gt;
+&lt;li&gt;指定第三方库路径&lt;/li&gt;
+&lt;li&gt;调用&lt;code&gt;auto/modules.sh&lt;/code&gt;将不同模块写入Makefile中.&lt;/li&gt;
+&lt;li&gt;生成srs app的编译目标的相关的Makefile代码. &lt;code&gt;auto/apps.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;生成utest的编译目标的相关的Makefile代码. &lt;code&gt;auto/utest.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;颜色化输出&lt;code&gt;auto/summary.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;生成&lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;导出-srs-librtmp-项目源码与编译:864ce55adec621a5238bcdc00b65e669&#34;&gt;导出&lt;code&gt;srs-librtmp&lt;/code&gt;项目源码与编译&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./configure --export-librtmp-project=srs-librtmp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd srs-librtmp &amp;amp;&amp;amp; make&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;成果物: &lt;code&gt;objs/include/srs_librtmp.h&lt;/code&gt; &lt;code&gt;objs/lib/srs_librtmp.a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;examples: &lt;code&gt;research/librtmp&lt;/code&gt; &lt;a href=&#34;https://github.com/winlinvip/simple-rtmp-server/wiki/v2_CN_SrsLibrtmp#srs-librtmp-examples&#34;&gt;https://github.com/winlinvip/simple-rtmp-server/wiki/v2_CN_SrsLibrtmp#srs-librtmp-examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;源码: &lt;code&gt;src&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
-    <updated>Sun, 01 Mar 2015 12:38:08 CST</updated>
+    <item>
+      <title>学习State Threads</title>
+      <link>http://akagi201.github.io/blog/learning-state-threads/</link>
+      <pubDate>Tue, 10 Mar 2015 12:35:08 +0800</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/learning-state-threads/</guid>
+      <description>
+
+&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_state_threads/index.html&#34; width=&#34;600&#34; height=&#34;300&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;State Threads(简称ST)是一个C语言轻量级用户层的线程库, 总共4631行C代码. 这个线程库有助于开发者实现一个具有高性能和可扩展性的网络应用程序. 是Apache项目里面的一个子项目.(?Apache以前听说是用的select啊, 可能apache最后没用st, 懒得去考证了)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;akagi201@akrmbp ~/Documents/state-threads (master) $ cloc .
+      41 text files.
+      38 unique files.
+      11 files ignored.
+
+http://cloc.sourceforge.net v 1.62  T=0.22 s (139.8 files/s, 61376.1 lines/s)
+---------------------------------------------------------------------------------------
+Language                             files          blank        comment           code
+---------------------------------------------------------------------------------------
+C                                       16           1046           1174           4631
+HTML                                     3            236              0           3822
+C/C++ Header                             6            270            288            939
+make                                     3            106            205            364
+Assembly                                 1             31            161            239
+Windows Module Definition                1              0              0             51
+Bourne Shell                             1             10              9             26
+---------------------------------------------------------------------------------------
+SUM:                                    31           1699           1837          10072
+---------------------------------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docs:38d9278d749fcead82dfaa9cdfb529e2&#34;&gt;Docs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;项目官方只有4页文档. &lt;a href=&#34;http://state-threads.sourceforge.net/docs/index.html&#34;&gt;http://state-threads.sourceforge.net/docs/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;其中introductory已经被好多国人翻译过了.(见下面Refs)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;refs:38d9278d749fcead82dfaa9cdfb529e2&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://coolshell.cn/articles/12012.html&#34;&gt;http://coolshell.cn/articles/12012.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/zfengzhen/Blog/blob/master/article/%E4%B8%BA%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%80%8C%E7%94%9F%E7%9A%84State%20Threads%5B%E5%B8%B8%E8%A7%81%E5%90%8E%E5%8F%B0%E6%9E%B6%E6%9E%84%E6%B5%85%E6%9E%90%5D.md&#34;&gt;https://github.com/zfengzhen/Blog/blob/master/article/%E4%B8%BA%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%80%8C%E7%94%9F%E7%9A%84State%20Threads%5B%E5%B8%B8%E8%A7%81%E5%90%8E%E5%8F%B0%E6%9E%B6%E6%9E%84%E6%B5%85%E6%9E%90%5D.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.csdn.net/win_lin/article/details/8242653&#34;&gt;http://blog.csdn.net/win_lin/article/details/8242653&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wuyu201321060203/wuyu201321060203.github.io/blob/master/_posts/2014-10-15-ST.md&#34;&gt;https://github.com/wuyu201321060203/wuyu201321060203.github.io/blob/master/_posts/2014-10-15-ST.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>一个简单的汇编程序分析</title>
       <link>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</link>
-      <pubDate>Sun, 01 Mar 2015 12:38:08 CST</pubDate>
+      <pubDate>Sun, 01 Mar 2015 12:38:08 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/a-simple-assembly-program-analysis/</guid>
       <description>
@@ -23,7 +299,7 @@
 
 &lt;p&gt;这里使用跟linux内核一样的AT&amp;amp;T汇编语法.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;AT&amp;amp;T 汇编语法注意事项&lt;/h2&gt;
+&lt;h2 id=&#34;at-t-汇编语法注意事项:6263f68368f4d2b872366aacc7002c39&#34;&gt;AT&amp;amp;T 汇编语法注意事项&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;大小写: 指令语句使用小写字母.&lt;/li&gt;
@@ -34,7 +310,7 @@
 &lt;li&gt;注释: @用于一行代码后面添加注释内容, #是整行注释.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;简单的C源程序&lt;/h2&gt;
+&lt;h2 id=&#34;简单的c源程序:6263f68368f4d2b872366aacc7002c39&#34;&gt;简单的C源程序&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;/*
  * @file main.c
@@ -59,7 +335,7 @@ int main (void) {
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Linux x64平台汇编命令&lt;/h2&gt;
+&lt;h2 id=&#34;linux-x64平台汇编命令:6263f68368f4d2b872366aacc7002c39&#34;&gt;Linux x64平台汇编命令&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://akagi201.qiniudn.com/assembly.png&#34; alt=&#34;asm&#34; /&gt;
 &lt;/p&gt;
@@ -101,7 +377,7 @@ main:
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;备注&lt;/h2&gt;
+&lt;h2 id=&#34;备注:6263f68368f4d2b872366aacc7002c39&#34;&gt;备注&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;本文为刘博原创作品转载请注明出处.&lt;/li&gt;
@@ -113,18 +389,18 @@ main:
     <item>
       <title>教不懂电脑的父母上网</title>
       <link>http://akagi201.github.io/blog/parents-network/</link>
-      <pubDate>Thu, 19 Feb 2015 13:30:08 CST</pubDate>
+      <pubDate>Thu, 19 Feb 2015 13:30:08 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/parents-network/</guid>
       <description>
 
 &lt;p&gt;估计跟我一样80后的人都会涉及这个头大的问题, &amp;ldquo;教父母上网&amp;rdquo;. 下面整理些要点.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;父母知识背景&lt;/h2&gt;
+&lt;h2 id=&#34;父母知识背景:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;父母知识背景&lt;/h2&gt;
 
 &lt;p&gt;父母虽然年轻时候也算接受过一些中等教育, 不过工作不是从事脑力方面, 学习能力几乎为零. 电脑跟智能手机方面知识几乎为零. 不手把手教, 一点不肯学, 不学习借口一堆.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;想要教的东西&lt;/h2&gt;
+&lt;h2 id=&#34;想要教的东西:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;想要教的东西&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;基本的硬件组成跟连接&lt;/li&gt;
@@ -137,7 +413,7 @@ main:
 &lt;li&gt;手机上好用的app&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;email, qq&lt;/h2&gt;
+&lt;h2 id=&#34;email-qq:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;email, qq&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;要求不需要翻墙, 中文界面&lt;/li&gt;
@@ -146,14 +422,14 @@ main:
 &lt;li&gt;加我的账号为好友&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;电脑上软件&lt;/h2&gt;
+&lt;h2 id=&#34;电脑上软件:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;电脑上软件&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;装了腾讯系列的浏览器, 电脑管家等, 先观察看看, 不行就换360吧.&lt;/li&gt;
 &lt;li&gt;qq, 千牛, 迅雷, 360wifi, winrar, 酷盘, 百度云, 搜狗输入法, 爱奇艺PPS(看综艺节目)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;电脑硬件配件&lt;/h2&gt;
+&lt;h2 id=&#34;电脑硬件配件:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;电脑硬件配件&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;耳机插孔的双音响(不需要配件, 连接不无线的简单)&lt;/li&gt;
@@ -161,13 +437,13 @@ main:
 &lt;li&gt;360随身wifi(家里这边移动宽带限制, 路由器上拨号失败, 只能电脑上拨号, 用于分享网络给手机)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_5&#34;&gt;引导使用的网站&lt;/h2&gt;
+&lt;h2 id=&#34;引导使用的网站:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;引导使用的网站&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;我的博客, 我公司的网站, 淘宝, 支付宝, 知乎, 优酷, 爱奇艺PPS, 百度地图, 携程, V2EX, 百度云.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_6&#34;&gt;手机app&lt;/h2&gt;
+&lt;h2 id=&#34;手机app:dcbf7deb443f2c3061d933a6626bb95a&#34;&gt;手机app&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;红米+酷派大神+小米充电宝 两台&lt;/li&gt;
@@ -179,7 +455,7 @@ main:
     <item>
       <title>The Missing C Package Manager Clib</title>
       <link>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</link>
-      <pubDate>Thu, 12 Feb 2015 07:44:08 CST</pubDate>
+      <pubDate>Thu, 12 Feb 2015 07:44:08 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/the-missing-c-package-manager-clib/</guid>
       <description>
@@ -190,7 +466,7 @@ main:
 
 &lt;p&gt;还好, nodejs社区的几个人创造了Clib. C语言终于有自己的包管理器啦: Clib. TJ Holowaychuk先用node.js写了Clib, 然后Stephen Mathieson把他port成了C.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Clib developer&amp;rsquo;s blog&lt;/h2&gt;
+&lt;h2 id=&#34;clib-developer-s-blog:debc6fc2bbaa8343a981b776ce000593&#34;&gt;Clib developer&amp;rsquo;s blog&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/code-adventures/introducing-clib-b32e6e769cb3&#34;&gt;Introducing Clib&lt;/a&gt;&lt;/li&gt;
@@ -202,18 +478,18 @@ main:
     <item>
       <title>Golang on OpenWrt</title>
       <link>http://akagi201.github.io/blog/golang-on-openwrt/</link>
-      <pubDate>Fri, 06 Feb 2015 01:51:08 CST</pubDate>
+      <pubDate>Fri, 06 Feb 2015 01:51:08 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/golang-on-openwrt/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Repo&lt;/h2&gt;
+&lt;h2 id=&#34;repo:771690f5aca57d887d51a64a24f5174e&#34;&gt;Repo&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go&#34;&gt;https://github.com/GeertJohan/openwrt-go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Steps&lt;/h2&gt;
+&lt;h2 id=&#34;steps:771690f5aca57d887d51a64a24f5174e&#34;&gt;Steps&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git clone https://github.com/GeertJohan/openwrt-go&lt;/code&gt;&lt;/li&gt;
@@ -234,7 +510,7 @@ main:
 &lt;li&gt;&lt;code&gt;make V=s&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;result&lt;/h2&gt;
+&lt;h2 id=&#34;result:771690f5aca57d887d51a64a24f5174e&#34;&gt;result&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;firmware with eglibc: &lt;code&gt;bin/ar71xx-eglibc/openwrt-ar71xx-generic-carambola2-squashfs-sysupgrade.bin&lt;/code&gt;&lt;/li&gt;
@@ -242,7 +518,7 @@ main:
 &lt;li&gt;add toolchain alias: &lt;code&gt;alias mips_gccgo=&#39;mips-openwrt-linux-gccgo -Wl,-R,/home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib/gcc/mips-openwrt-linux-gnu/4.8.3 -L /home/akagi201/openwrt-go/staging_dir/toolchain-mips_34kc_gcc-4.8.0_eglibc-2.19/lib&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;test&lt;/h2&gt;
+&lt;h2 id=&#34;test:771690f5aca57d887d51a64a24f5174e&#34;&gt;test&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;use libgo non-static.&lt;/li&gt;
@@ -278,7 +554,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 -rwxr-xr-x 1 akagi201 akagi201 1.2M Feb  6 02:02 hello_static_libgo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;Refs&lt;/h2&gt;
+&lt;h2 id=&#34;refs:771690f5aca57d887d51a64a24f5174e&#34;&gt;Refs&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/GeertJohan/openwrt-go/issues/2&#34;&gt;https://github.com/GeertJohan/openwrt-go/issues/2&lt;/a&gt;&lt;/li&gt;
@@ -289,12 +565,12 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Stream Encoder</title>
       <link>http://akagi201.github.io/blog/stream-encoder/</link>
-      <pubDate>Wed, 14 Jan 2015 16:02:08 CST</pubDate>
+      <pubDate>Wed, 14 Jan 2015 16:02:08 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/stream-encoder/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;OBS&lt;/h2&gt;
+&lt;h2 id=&#34;obs:4514a440f10e9be1d43982889f1a0c6b&#34;&gt;OBS&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/jp9000/obs-studio&#34;&gt;https://github.com/jp9000/obs-studio&lt;/a&gt;&lt;/li&gt;
@@ -307,7 +583,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;BLE&lt;/h2&gt;
+&lt;h2 id=&#34;ble:4514a440f10e9be1d43982889f1a0c6b&#34;&gt;BLE&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/wenjiegit/Bull-Live-Encoder&#34;&gt;https://github.com/wenjiegit/Bull-Live-Encoder&lt;/a&gt;&lt;/li&gt;
@@ -318,7 +594,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning RTP</title>
       <link>http://akagi201.github.io/blog/learning-rtp/</link>
-      <pubDate>Mon, 15 Dec 2014 21:50:26 CST</pubDate>
+      <pubDate>Mon, 15 Dec 2014 21:50:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-rtp/</guid>
       <description>
@@ -329,7 +605,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 
 &lt;p&gt;&lt;code&gt;RTP&lt;/code&gt;本身并没有提供按时发送机制或其他服务质量(QoS)保证, 它依赖于底层服务去实现这一过程. &lt;code&gt;RTP&lt;/code&gt;并不保证传送或防止无序传送, 也不确定底层网络的可靠性.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;book&lt;/h2&gt;
+&lt;h2 id=&#34;book:5ff01fee8fb5e05d09be76e2278c94dc&#34;&gt;book&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&#34;&gt;https://www.safaribooksonline.com/library/view/rtp-audio-and/0672322498/&lt;/a&gt;&lt;/li&gt;
@@ -341,7 +617,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning cURL</title>
       <link>http://akagi201.github.io/blog/learning-curl/</link>
-      <pubDate>Tue, 09 Dec 2014 03:55:26 CST</pubDate>
+      <pubDate>Tue, 09 Dec 2014 03:55:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-curl/</guid>
       <description>
@@ -356,7 +632,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 
 &lt;p&gt;&lt;code&gt;curl&lt;/code&gt;的&lt;code&gt;repo&lt;/code&gt;由两部分组成, &lt;code&gt;curl&lt;/code&gt;命令行跟&lt;code&gt;libcurl&lt;/code&gt;, 其中复杂的东西都在&lt;code&gt;libcurl&lt;/code&gt;中了.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;源码结构&lt;/h2&gt;
+&lt;h2 id=&#34;源码结构:6096a6507df9bf016a80e7cff1b680d5&#34;&gt;源码结构&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;curl&lt;/code&gt;命令行的源码在&lt;code&gt;src/&lt;/code&gt;, 入口在&lt;code&gt;tool_main.c&lt;/code&gt;.&lt;/li&gt;
@@ -369,7 +645,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning Google C&#43;&#43; Testing Framework</title>
       <link>http://akagi201.github.io/blog/learning-gtest/</link>
-      <pubDate>Thu, 04 Dec 2014 21:35:26 CST</pubDate>
+      <pubDate>Thu, 04 Dec 2014 21:35:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_gtest/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
@@ -387,7 +663,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning Libuv</title>
       <link>http://akagi201.github.io/blog/learning-libuv/</link>
-      <pubDate>Thu, 13 Nov 2014 01:50:26 CST</pubDate>
+      <pubDate>Thu, 13 Nov 2014 01:50:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_libuv/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
@@ -401,7 +677,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning uC/OS</title>
       <link>http://akagi201.github.io/blog/learning-ucos/</link>
-      <pubDate>Thu, 13 Nov 2014 01:28:26 CST</pubDate>
+      <pubDate>Thu, 13 Nov 2014 01:28:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ucos/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34; &gt;&lt;/iframe&gt;
@@ -413,12 +689,12 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>About Blog</title>
       <link>http://akagi201.github.io/blog/about-blog/</link>
-      <pubDate>Tue, 21 Oct 2014 02:53:26 CST</pubDate>
+      <pubDate>Tue, 21 Oct 2014 02:53:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/about-blog/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;TODO&lt;/h2&gt;
+&lt;h2 id=&#34;todo:5b91864e4f81b389b9925634abfa70fe&#34;&gt;TODO&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;在slide部分上方显示我的头像.&lt;/li&gt;
@@ -427,25 +703,25 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 &lt;li&gt;不同分类用不同的样式.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Categories&lt;/h2&gt;
+&lt;h2 id=&#34;categories:5b91864e4f81b389b9925634abfa70fe&#34;&gt;Categories&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;blog, tool, book, talk, project&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Tags&lt;/h2&gt;
+&lt;h2 id=&#34;tags:5b91864e4f81b389b9925634abfa70fe&#34;&gt;Tags&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;openwrt, kernel, wifi, hardware, macosx, golang, algorithm, git, protocol, security&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Markdown Contents&lt;/h2&gt;
+&lt;h2 id=&#34;markdown-contents:5b91864e4f81b389b9925634abfa70fe&#34;&gt;Markdown Contents&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/akblog&#34;&gt;https://github.com/Akagi201/akblog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;Static Pages&lt;/h2&gt;
+&lt;h2 id=&#34;static-pages:5b91864e4f81b389b9925634abfa70fe&#34;&gt;Static Pages&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/akagi201.github.io&#34;&gt;https://github.com/Akagi201/akagi201.github.io&lt;/a&gt;&lt;/li&gt;
@@ -456,7 +732,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning CMake</title>
       <link>http://akagi201.github.io/blog/learning-cmake/</link>
-      <pubDate>Sun, 19 Oct 2014 00:35:26 CST</pubDate>
+      <pubDate>Sun, 19 Oct 2014 00:35:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-cmake/</guid>
       <description>
@@ -465,7 +741,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 
 &lt;p&gt;为了更好的掌握CLion, 最近把CMake Practice看完, 并练习了一下. 完成之后发现内容很少. 老的autotools也是要掌握的, openwrt上编译很多项目还是要用到他.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Github Repo&lt;/h2&gt;
+&lt;h2 id=&#34;github-repo:0d56437fc926be6e958731154d7b79a6&#34;&gt;Github Repo&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/learning-cmake&#34;&gt;https://github.com/Akagi201/learning-cmake&lt;/a&gt;&lt;/li&gt;
@@ -476,7 +752,7 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
     <item>
       <title>Learning FFmpeg</title>
       <link>http://akagi201.github.io/blog/learning-ffmpeg/</link>
-      <pubDate>Fri, 10 Oct 2014 10:31:26 CST</pubDate>
+      <pubDate>Fri, 10 Oct 2014 10:31:26 +0800</pubDate>
       
       <guid>http://akagi201.github.io/blog/learning-ffmpeg/</guid>
       <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ffmpeg/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
@@ -484,37 +760,6 @@ akagi201@akgentoo ~/openwrt-go (add-gccgo-and-libgo*) $ ll hello_static_libgo
 &lt;p&gt;我自己购买了mindmup gold的账号, 有钱淫欢迎投资我啊!!&lt;/p&gt;
 
 &lt;p&gt;发现个ffmpeg领域的大牛, 他已经在读博士了, 天朝这样做学术的人还是值得赞赏的, ffmpeg中文资料必看: &lt;a href=&#34;http://blog.csdn.net/leixiaohua1020&#34;&gt;http://blog.csdn.net/leixiaohua1020&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Network</title>
-      <link>http://akagi201.github.io/blog/learning-network/</link>
-      <pubDate>Wed, 17 Sep 2014 15:28:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-network/</guid>
-      <description>
-
-&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/introduction_to_computer_networks/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Google Drive&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mindmup 免费的在线分享放不下了, 只能放到google drive上了.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&#34;&gt;https://drive.google.com/file/d/0BzJcP7mynkO5aVIyRlg4X0xxYlU/view?usp=sharing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Streaming Protocols</title>
-      <link>http://akagi201.github.io/blog/streaming-protocols/</link>
-      <pubDate>Tue, 09 Sep 2014 15:28:26 CST</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/streaming-protocols/</guid>
-      <description>&lt;p&gt;整理了一下流媒体相关的协议, 可能部分划分的不科学, 展开的不够细致. 先分享出来好了.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/streaming_protocols/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     

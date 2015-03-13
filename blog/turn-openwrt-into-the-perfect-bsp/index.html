@@ -10,9 +10,9 @@
   <title> 将OpenWrt变成完美的BSP &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -81,7 +81,7 @@
 
 <p>那么公司如何用OpenWrt做自己的产品呢? 根据开源项目的特点需要进行一些修改.</p>
 
-<h2 id="toc_0">OpenWrt Buildroot的Makefile wrapper</h2>
+<h2 id="openwrt-buildroot的makefile-wrapper:23fe5c687fcad711e90101451a4a3c26">OpenWrt Buildroot的Makefile wrapper</h2>
 
 <ul>
 <li>download tool: 下载指定版本的OpenWrt</li>
@@ -90,7 +90,7 @@
 <li>dl link directory: 将~/dl链接到openwrt/dl.</li>
 </ul>
 
-<h2 id="toc_1">使用OpenWrt buildroot过程的技巧</h2>
+<h2 id="使用openwrt-buildroot过程的技巧:23fe5c687fcad711e90101451a4a3c26">使用OpenWrt buildroot过程的技巧</h2>
 
 <ul>
 <li>OpenWrt的buildroot编译系统, 包含fetching, patching, compiling, packaging的过程. 在fetching阶段会联网下载源码到dl目录, 所以, 一个好的方法是, 将dl目录保存在自己本地机器的一个固定位置, 然后软链接到openwrt/dl目录, 这样就不用每次下载重复的包了, 另外, 有时由于网络原因, 可以手动下载包放到这个目录.</li>

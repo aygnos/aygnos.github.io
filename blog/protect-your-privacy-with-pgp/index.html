@@ -10,9 +10,9 @@
   <title> 保护你的隐私, 从PGP开始 &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -75,7 +75,7 @@
 
 <p>PGP(OpenPGP)是一个历史悠久的电子加密和签章系统, 透过public key加密演算法, 保护个人电子资料, 不会在散布过程或存储媒体中被有心者窥视, 破坏或伪装. 不同于一般以CA(Certificate Authority, 认证机构)为基础的签章, 加密系统, PGP是分散式的系统, PGP没有中央的控制或信任机构, 因此不会被政府, 少数机构所控制,入侵. 在这个公权力无法被信任的年代, 我们正需要这样的系统, 保护我们的通讯安全.</p>
 
-<h2 id="toc_0">Web Of Trust</h2>
+<h2 id="web-of-trust:2e80b47c36695dd877f96f07216c88d1">Web Of Trust</h2>
 
 <p>PGP是透过所谓的web of trust, 建构信任网. 也对于, 透过人际网路, 一对一的交换PGP key(public key), 安全的通讯管道, 建立在人和人之们的信任感上. 相对的, 以CA为基础的系统, 是透过少数集中的组织, 交换public key. 因此, CA容易受政府或少数机构的控制, 而破坏其安全性. 而web of trust则没这样的问题, 没有中央机构可以伪造你的PGP key. PGP的使用者, 透过web of trust确保所使用的 key, 不是政府或第三方所伪造的.</p>
 
@@ -83,15 +83,15 @@
 <li>Web Of Trust的运作: <a href="http://www.pgpi.org/doc/pgpintro/#p20">http://www.pgpi.org/doc/pgpintro/#p20</a></li>
 </ul>
 
-<h2 id="toc_1">伪造Public Key</h2>
+<h2 id="伪造public-key:2e80b47c36695dd877f96f07216c88d1">伪造Public Key</h2>
 
 <p>CA为基础的系统, Public Key的散布是透过CA对Public Key进行签名. CA会有一份公开的Public Key, 透过使用对应的secret key对某Public Key签名, 由CA保证其正确性. 而使用者, 透过验证通讯对方的Public Key是否有CA的正确签名, 确保使用正确的Public Key. 这样的系统, 建立在对CA的信任, 因此CA必需是公信的第三者. 然而, 事实上没有绝对公信的第三者, 政治力量随时可能入侵CA, 透过CA的Key, 伪造任何人的Public Key. 因此, 像CA这类中央式的系统, 容易受外力影向, 进行大规模隐私侵害, 无法保护通信的自由和隐密. 事实上, 中国某CA运作单位, 就被怀疑有这种<a href="http://blog.nutsfactory.net/2010/02/02/remove-cnnic-cert-on-linux/">可能</a>.</p>
 
-<h2 id="toc_2">PGP工具</h2>
+<h2 id="pgp工具:2e80b47c36695dd877f96f07216c88d1">PGP工具</h2>
 
 <p>PGP系统的实现, 有两项主要工具, PGP和GPG. PGP是原先的实现, 而GPG则是GNU实现的相容工具, 和PGP相容. 本文介绍GPG的使用.</p>
 
-<h2 id="toc_3">产生PGP Key</h2>
+<h2 id="产生pgp-key:2e80b47c36695dd877f96f07216c88d1">产生PGP Key</h2>
 
 <p>GPG基本上会产生两对key, 一组用来sign(签章), 另一组用来encrypt(加密).  Encryption用途的key, 因为比较常被使用, 因此较容易受攻击. (透过分析加密的样本, 数量愈多, 愈可能分析出原本的key.) 因此, 一般建议定期更换加密用的 key. 然而, 更换key非常麻烦, 必需一一重新和拥有你的key的朋友交换. 因此, 签章用途的key通常是和加密用途的key分开的. 签章用途的key较少使用, 因此较不易被破解, 通常是永久使用. 在你更换新加密用途的key时, 能够使用签章用途的key, 为新的key签名. 因此, 你可以透过email或其它网路的方式散布你加密用途的新key. 收到新key的朋友, 就可以使用你签章用途的key, 验证你的新key.</p>
 
@@ -296,7 +296,7 @@ sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
 
 <p>上面指令能列出你的public key的fingerprint(指纹)印出来, 这相当于public key浓缩之后的特征(digest). 因此, 其它使用者只需比对这组fingerprint是否和public key的相符, 就能确定这把key的正确性. 因此, 通常你会把fingerprint 印在纸上, 面对面交给对方. 必要时, 还会检查对方的身份证, 护照或其它身份证明文件.</p>
 
-<h2 id="toc_4">交换key</h2>
+<h2 id="交换key:2e80b47c36695dd877f96f07216c88d1">交换key</h2>
 
 <p>在开始交换key之前, 建议先把你的public key上传到key server, 别人只需从key server上下载你的key. key server 是由第三方所维护的, 只负责key的散布, 而不负责签名, 因此不会有前面所述伪造的问题.</p>
 
@@ -351,7 +351,7 @@ sub   2048R/6E980A59 2014-05-27 [expires: 2016-05-26]
 sig          BAD7F7A3 2014-05-27  Akagi201 (Bob Liu) &lt;akagi201@gmail.com&gt;
 </code></pre>
 
-<h2 id="toc_5">加密</h2>
+<h2 id="加密:2e80b47c36695dd877f96f07216c88d1">加密</h2>
 
 <p>当你想要传送机密资料给其它人时, 可使用对方的public key为信件和资料加密. 只有对应的secret key, 才能解开该份信件或资料.</p>
 
@@ -386,7 +386,7 @@ This is secret
 
 <p>例如上面的指令, 使用0x6E980A59这把key(0xBAD7F7A3的subkey), 将akmsg.txt这份文件加密, 并存成akmsg.asc. 上面指令中, 只需输入对方的email address或者user ID(uid), 就会从你的keyring中, 找出对方用来加密的public key.</p>
 
-<h2 id="toc_6">解密</h2>
+<h2 id="解密:2e80b47c36695dd877f96f07216c88d1">解密</h2>
 
 <p>在你收到加密的文件时, 只需使用下面指令就可以使用存在keyring里的secret key, 为文件解密.</p>
 
@@ -403,11 +403,11 @@ akagi201@akrmbp ~ $ cat akmsg.txt
 This is secret
 </code></pre>
 
-<h2 id="toc_7">提醒</h2>
+<h2 id="提醒:2e80b47c36695dd877f96f07216c88d1">提醒</h2>
 
 <p>虽然可能性不是那么高, 但你永远不知道哪一天会需要这样的科技, 以保障你的通讯安全. 若不从现在开始建立你的web of trust, 需要时, 可能为时已晚. 请妥善保管你的secret key, 别让任何人有机可趁. 保护自己, 也保护朋友.</p>
 
-<h2 id="toc_8">Refs</h2>
+<h2 id="refs:2e80b47c36695dd877f96f07216c88d1">Refs</h2>
 
 <ul>
 <li><a href="http://www.codemud.net/~thinker/GinGin_CGI.py/show_id_doc/478">http://www.codemud.net/~thinker/GinGin_CGI.py/show_id_doc/478</a></li>

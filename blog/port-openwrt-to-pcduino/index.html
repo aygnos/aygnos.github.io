@@ -10,9 +10,9 @@
   <title> 移植OpenWrt到pcDuino &middot; Akagi201 </title>
 
   
-  <link rel="stylesheet" href="http://akagi201.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://akagi201.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -38,15 +38,15 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
-      <li><a href="http://akagi201.github.io/blog">Blog</a> </li>
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
       
-      <li><a href="http://akagi201.github.io/book">Book</a> </li>
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
       
-      <li><a href="http://akagi201.github.io/talk">Talk</a> </li>
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
       
-      <li><a href="http://akagi201.github.io/project">Project</a> </li>
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
       
-      <li><a href="http://akagi201.github.io/about">About</a> </li>
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
       
     </ul>
 
@@ -59,7 +59,7 @@
       
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io/license">License</a><br/>
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
   </div>
 </div>
@@ -71,7 +71,7 @@
   <span class="post-date">Wed, Feb 19, 2014</span>
       
 
-<h3 id="toc_0">OpenWrt</h3>
+<h3 id="openwrt:d36e2c8032bd10134f6445240f695c40">OpenWrt</h3>
 
 <p>OpenWrt是一个高度模块化, 高度自动化的嵌入式Linux系统, 拥有强大的网络组件, 常常被用于工控设备, 电话, 小型机器人, 智能家居, 路由器以及VOIP设备中. OpenWrt支持各种处理器架构，无论是对ARM，X86，PowerPC或者MIPS都有很好的支持. 其多达3000多种软件包, 囊括从工具链(toolchain), 到内核(linux kernel), 到软件包(packages), 再到根文件系统(rootfs)整个体系, 使得用户只需简单的一个make命令即可方便快速地定制一个具有特定功能的嵌入式系统来制作固件. 其模块化设计也可以方便的移植各类功能到OpenWrt下, 加快开发速度.</p>
 
@@ -91,7 +91,7 @@
 <p><img src="http://akagi201.qiniudn.com/code_overview.png" alt="code_overview" />
 </p>
 
-<h3 id="toc_1">下载编译OpenWrt</h3>
+<h3 id="下载编译openwrt:d36e2c8032bd10134f6445240f695c40">下载编译OpenWrt</h3>
 
 <ol>
 <li>安装依赖包(deb系列)</li>
@@ -266,7 +266,7 @@ Wireless Drivers  —&gt;
 
 <p>由于OpenWrt整个系统非常庞大, 编译很慢. &ldquo;-j 8&rdquo; 表示用8线程进行编译, &ldquo;V=s&rdquo;编译的时候显示编译信息. 如果你的电脑是4核建议你用8线程进行编译, 双核建议你使用4线程. 这里测试8线程编译需要一个小时才能编译完成.</p>
 
-<h3 id="toc_2">构建pcDuino BSP</h3>
+<h3 id="构建pcduino-bsp:d36e2c8032bd10134f6445240f695c40">构建pcDuino BSP</h3>
 
 <p>由于OpenWrt的u-boot用的是u-boot-2013的版本, 目前只支持SD卡启动, 而且内核用的是3.12.5版本. 另外我们的3.4.29的内核用的是全志fex, 而且3.12.5用的是linux官方的kernel使用的是dts设备树.这样的话我们就不能用之前的BSP方案, 我们要自己做一个从SD卡启动的系统.</p>
 
@@ -570,7 +570,7 @@ pillar@monster :/media$ sudo dd if=~/openwrt/trunk/bin/sunxi/openwrt-sunxi-root.
 <p><img src="http://akagi201.qiniudn.com/win32-disk-imager.png" alt="win32-disk-imager" />
 </p>
 
-<h3 id="toc_3">配置OpenWrt系统</h3>
+<h3 id="配置openwrt系统:d36e2c8032bd10134f6445240f695c40">配置OpenWrt系统</h3>
 
 <ol>
 <li>让系统上网</li>
@@ -698,7 +698,7 @@ RX bytes:0 (0.0 B)  TX bytes:864 (864.0 B)
 <p><img src="http://akagi201.qiniudn.com/luci-firewall.png" alt="luci-firewall" />
 </p>
 
-<h3 id="toc_4">制作内核补丁</h3>
+<h3 id="制作内核补丁:d36e2c8032bd10134f6445240f695c40">制作内核补丁</h3>
 
 <ol>
 <li>清空恢复上一个全新的内核</li>
@@ -786,7 +786,7 @@ cp  build_dir/target-arm_cortex-a8+vfpv3_uClibc-0.9.33.2_eabi/linux-sunxi/linux-
 
 <p>其他的patch的制作方法请参考: <a href="http://wiki.openwrt.org/doc/devel/patches">http://wiki.openwrt.org/doc/devel/patches</a></p>
 
-<h3 id="toc_5">建立App服务器</h3>
+<h3 id="建立app服务器:d36e2c8032bd10134f6445240f695c40">建立App服务器</h3>
 
 <p>OpenWrt通过opkg来管理安装整个系统的软件. 目前有很多OpenWrt的软件源, 但是哪些都是针对于MIPS平台的, pcDuino使用的ARM平台, 我们必须自己搭建软件源. 查看了一下MIPS平台的服务器, 其实很简单的, 就是一个apache服务器, 而且OpenWrt编译完成之后, 在openwrt/trunk/bin/sunxi/packages下面已经生成了软件源. 我们只需要将他们联系起来就行了, 这里是在我的PC的虚拟机上搭建的.</p>
 
@@ -819,7 +819,7 @@ option overlay_root /overlay
 <pre><code># opkg update
 </code></pre>
 
-<h3 id="toc_6">应用程序开发</h3>
+<h3 id="应用程序开发:d36e2c8032bd10134f6445240f695c40">应用程序开发</h3>
 
 <p>OpenWrt上面应用程序开发有两种方式, 一种是利用OpenWrt SDK, 一种是利用OpenWrt源码. 这里主要介绍利用OpenWrt源码, 进行开发应用程序, 制作成ipk软件可以安装.</p>
 
@@ -940,7 +940,7 @@ example1:example1.c
 make package/index
 </code></pre>
 
-<h3 id="toc_7">内核驱动开发</h3>
+<h3 id="内核驱动开发:d36e2c8032bd10134f6445240f695c40">内核驱动开发</h3>
 
 <p>OpenWrt开发内核驱动有多种方式, 前面讲到的制作内核补丁也是一种开发方法. 这里介绍直接在OpenWrt系统上开发内核驱动, 把内核驱动做成ipk软件包的形式.</p>
 
@@ -1062,7 +1062,7 @@ make package/index
 <li>在OpenWrt系统里面就可以用opkg下载使用了.</li>
 </ol>
 
-<h3 id="toc_8">使用OpenWrt SDK</h3>
+<h3 id="使用openwrt-sdk:d36e2c8032bd10134f6445240f695c40">使用OpenWrt SDK</h3>
 
 <p>OpenWrt为了避免每次都重新编译系统, 引入了SDK机制. 我们在发布系统的时候也需要发布SDK, 具体的使用方法请下面例子.</p>
 
@@ -1213,7 +1213,7 @@ helloworld_1_sunxi.ipk  Packages  Packages.gz
 
 <p>然后你可以在OpenWrt系统里面下载安装.</p>
 
-<h3 id="toc_9">Refs</h3>
+<h3 id="refs:d36e2c8032bd10134f6445240f695c40">Refs</h3>
 
 <ul>
 <li><a href="http://cnlearn.linksprite.com/?p=2724#tab-1392544656-1-91">http://cnlearn.linksprite.com/?p=2724#tab-1392544656-1-91</a></li>
