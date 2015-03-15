@@ -71,6 +71,71 @@
       
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/simple-time-round-in-kernel/">
+        简单的内核态时间片轮转程序
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Mar 15, 2015</span>
+
+    
+
+<h2 id="实验环境:093d9357b654dcd6bf1cbeea6cc01358">实验环境</h2>
+
+<ul>
+<li>硬件: qemu(i386)(TODO: 由于我的gentoo没有装图形界面, 暂时在实验楼上做的)</li>
+<li>OS: linux-3.94 + <a href="https://raw.github.com/mengning/mykernel/master/mykernel_for_linux3.9.4sc.patch">patch</a></li>
+<li>程序: <a href="https://github.com/mengning/mykernel/tree/master/mykernel-1.1">https://github.com/mengning/mykernel/tree/master/mykernel-1.1</a></li>
+<li>repo: <a href="https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel">https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel</a></li>
+</ul>
+
+<h2 id="lab:093d9357b654dcd6bf1cbeea6cc01358">lab</h2>
+
+<h3 id="test1-环境测试:093d9357b654dcd6bf1cbeea6cc01358">test1 环境测试</h3>
+
+<ul>
+<li>测试下环境, 仅仅是模拟了时钟中断, 一直都是一个进程在运行.</li>
+<li><code>cd LinuxKernel/linux-3.9.4</code></li>
+<li><code>qemu -kernel arch/x86/boot/bzImage</code></li>
+</ul>
+
+<p><img src="http://akagi201.qiniudn.com/mykernel-start.png" alt="mykernel-start" />
+</p>
+
+<h3 id="test2-运行时间片轮转程序:093d9357b654dcd6bf1cbeea6cc01358">test2 运行时间片轮转程序</h3>
+
+<ul>
+<li>更新<code>mykernel</code>下的<code>myinterrupt.c</code>, <code>mymain.c</code>, <code>mypcb.h</code> 为: <a href="https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel/1.0">https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel/1.0</a> (复制不方便的话, 实验楼提供的ssh的方式连接系统)</li>
+<li><code>make allnoconfig</code></li>
+<li><code>make</code></li>
+<li><code>qemu -kernel arch/x86/boot/bzImage</code></li>
+</ul>
+
+<h2 id="分析:093d9357b654dcd6bf1cbeea6cc01358">分析</h2>
+
+<h3 id="进程的启动:093d9357b654dcd6bf1cbeea6cc01358">进程的启动</h3>
+
+<p>进程从<code>void __init my_start_kernel(void)</code>开始启动</p>
+
+<p>嵌入式汇编代码, 初始化第0号进程</p>
+
+<h3 id="进程的切换:093d9357b654dcd6bf1cbeea6cc01358">进程的切换</h3>
+
+<p><code>schedule()</code>函数</p>
+
+<p>未完待续.</p>
+
+<h2 id="备注:093d9357b654dcd6bf1cbeea6cc01358">备注</h2>
+
+<ul>
+<li>本文为刘博原创作品转载请注明出处.</li>
+<li>《Linux内核分析》MOOC课程 <a href="http://mooc.study.163.com/course/USTC-1000029000">http://mooc.study.163.com/course/USTC-1000029000</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/simple-rtmp-server-analysis/">
         Simple RTMP Server分析
       </a>
@@ -520,32 +585,6 @@ main:
 <ul>
 <li>红米+酷派大神+小米充电宝 两台</li>
 <li>微信, 微博, qq, 支付宝, 淘宝, 千牛, 百度地图, qq邮箱, 爱奇艺, 优酷, 携程, 虾米音乐, 易信, 叮叮, 滴滴打车, 手机营业厅</li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://akagi201.github.io/blog/the-missing-c-package-manager-clib/">
-        The Missing C Package Manager Clib
-      </a>
-    </h1>
-
-    <span class="post-date">Thu, Feb 12, 2015</span>
-
-    
-
-<p>web与移动开发领域每种语言都有自己的包管理器. <code>nodejs</code>的<code>npm</code>, <code>golang</code>的<code>go get</code>, <code>lua</code>的<code>luarocks</code>, ios&amp;macosx平台的<code>cocoapods</code>, <code>Python</code>的<code>Pip</code>&amp;<code>Eggs</code>, <code>TeX</code>的<code>CTAN</code>, <code>Perl</code>的<code>CPAN</code>, <code>Java</code>的<code>Maven</code>, <code>Haskell</code>的<code>cabal</code>, <code>Ruby</code>的<code>Gems</code>, <code>.Net</code>的<code>NuGet</code>. 如果有兴趣, 可以看下这个播客<a href="https://ipn.li/kernelpanic/7/">https://ipn.li/kernelpanic/7/</a></p>
-
-<p>不过C语言确一直没有一个这样的工具. 导致的问题就是, 当你需要用功C语言实现一个很通用的功能的时候, 你没有一个合适的地方去找, 只能google, stackoverflow, github去搜, 然后你有发现你要的这个功能在一个很大的项目里面的一个小模块, 然后很难独立提取出来, 然后只好重复造轮子.</p>
-
-<p>还好, nodejs社区的几个人创造了Clib. C语言终于有自己的包管理器啦: Clib. TJ Holowaychuk先用node.js写了Clib, 然后Stephen Mathieson把他port成了C.</p>
-
-<h2 id="clib-developer-s-blog:debc6fc2bbaa8343a981b776ce000593">Clib developer&rsquo;s blog</h2>
-
-<ul>
-<li><a href="https://medium.com/code-adventures/introducing-clib-b32e6e769cb3">Introducing Clib</a></li>
-<li><a href="https://blog.ashworth.in/the-advent-of-clib-the-c-package-manager/">The Advent of Clib: the C Package Manager</a></li>
 </ul>
 
   </div>

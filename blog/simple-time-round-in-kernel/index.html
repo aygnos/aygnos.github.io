@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> 简单的内核态时间片轮转程序 &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>简单的内核态时间片轮转程序</h1>
+  <span class="post-date">Sun, Mar 15, 2015</span>
+      
+
+<h2 id="实验环境:093d9357b654dcd6bf1cbeea6cc01358">实验环境</h2>
+
+<ul>
+<li>硬件: qemu(i386)(TODO: 由于我的gentoo没有装图形界面, 暂时在实验楼上做的)</li>
+<li>OS: linux-3.94 + <a href="https://raw.github.com/mengning/mykernel/master/mykernel_for_linux3.9.4sc.patch">patch</a></li>
+<li>程序: <a href="https://github.com/mengning/mykernel/tree/master/mykernel-1.1">https://github.com/mengning/mykernel/tree/master/mykernel-1.1</a></li>
+<li>repo: <a href="https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel">https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel</a></li>
+</ul>
+
+<h2 id="lab:093d9357b654dcd6bf1cbeea6cc01358">lab</h2>
+
+<h3 id="test1-环境测试:093d9357b654dcd6bf1cbeea6cc01358">test1 环境测试</h3>
+
+<ul>
+<li>测试下环境, 仅仅是模拟了时钟中断, 一直都是一个进程在运行.</li>
+<li><code>cd LinuxKernel/linux-3.9.4</code></li>
+<li><code>qemu -kernel arch/x86/boot/bzImage</code></li>
+</ul>
+
+<p><img src="http://akagi201.qiniudn.com/mykernel-start.png" alt="mykernel-start" />
+</p>
+
+<h3 id="test2-运行时间片轮转程序:093d9357b654dcd6bf1cbeea6cc01358">test2 运行时间片轮转程序</h3>
+
+<ul>
+<li>更新<code>mykernel</code>下的<code>myinterrupt.c</code>, <code>mymain.c</code>, <code>mypcb.h</code> 为: <a href="https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel/1.0">https://github.com/Akagi201/learning-kernel/tree/master/kernel-inside/week2/mykernel/1.0</a> (复制不方便的话, 实验楼提供的ssh的方式连接系统)</li>
+<li><code>make allnoconfig</code></li>
+<li><code>make</code></li>
+<li><code>qemu -kernel arch/x86/boot/bzImage</code></li>
+</ul>
+
+<h2 id="分析:093d9357b654dcd6bf1cbeea6cc01358">分析</h2>
+
+<h3 id="进程的启动:093d9357b654dcd6bf1cbeea6cc01358">进程的启动</h3>
+
+<p>进程从<code>void __init my_start_kernel(void)</code>开始启动</p>
+
+<p>嵌入式汇编代码, 初始化第0号进程</p>
+
+<h3 id="进程的切换:093d9357b654dcd6bf1cbeea6cc01358">进程的切换</h3>
+
+<p><code>schedule()</code>函数</p>
+
+<p>未完待续.</p>
+
+<h2 id="备注:093d9357b654dcd6bf1cbeea6cc01358">备注</h2>
+
+<ul>
+<li>本文为刘博原创作品转载请注明出处.</li>
+<li>《Linux内核分析》MOOC课程 <a href="http://mooc.study.163.com/course/USTC-1000029000">http://mooc.study.163.com/course/USTC-1000029000</a></li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>
