@@ -71,6 +71,161 @@
       
   <div class="post">
     <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/break-firewall/">
+        break GxFxW
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Mar 19, 2015</span>
+
+    
+
+<h2 id="gxfxw工作方式:1a79e2e6f86f6cb637f43dff18cb85a4">GxFxW工作方式</h2>
+
+<ul>
+<li>GxFxW本身是一个人人都知道他的存在, 却从来不会被官方承认的机构.</li>
+<li>GxFxW封锁重点: 新闻, 社交, 政治, 色情, 文件共享类网站.</li>
+<li>DNS劫持和污染: DNS缓存投毒, 虚假IP劫持, 空包劫持, 轻松的扩展污染.</li>
+<li>敏感词过滤.</li>
+<li>IP阻断.</li>
+</ul>
+
+<h2 id="网络工具:1a79e2e6f86f6cb637f43dff18cb85a4">网络工具</h2>
+
+<ul>
+<li>nslookup</li>
+<li>ping, tcping</li>
+<li>traceroute</li>
+<li>route</li>
+<li>dig</li>
+</ul>
+
+<h2 id="openwrt组件:1a79e2e6f86f6cb637f43dff18cb85a4">OpenWrt组件</h2>
+
+<ul>
+<li>ipset</li>
+<li>iptables-mod-ipopt, kmod-ipt-ipopt</li>
+<li>ip</li>
+<li>iptables-mod-filter, kmod-ipt-filter</li>
+<li>iptables-mod-u32, kmod-ipt-u32</li>
+<li>ppp-mod-pptp</li>
+<li>openvpn-ssl</li>
+<li>dnsmasq-full</li>
+<li>bind-dig, bind-libs</li>
+</ul>
+
+<h2 id="refs:1a79e2e6f86f6cb637f43dff18cb85a4">Refs</h2>
+
+<ul>
+<li>freerouter_v2</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/port-list_h-in-kernel-to-userspace/">
+        移植linux内核的list.h到用户态
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Mar 18, 2015</span>
+
+    
+
+<p>以前工作的时候在项目里使用过的, 随着离职, 代码已经无法找到了. :(</p>
+
+<p>没关系这次放到github上面就不会丢失了.</p>
+
+<h2 id="features:0b28ac4f2a3963b5632e45371a251515">Features</h2>
+
+<ul>
+<li>Type Oblivious</li>
+<li>Portable</li>
+<li>Easy to Use</li>
+<li>Readable</li>
+<li>Saves Time</li>
+</ul>
+
+<h2 id="usages:0b28ac4f2a3963b5632e45371a251515">Usages</h2>
+
+<ul>
+<li>List is inside the data item you want to link together.</li>
+<li>You can put <code>struct list_head</code> anywhere in your structure.</li>
+<li>You can name <code>struct list_head</code> variable anything you wish.</li>
+<li>You can have multiple lists!</li>
+</ul>
+
+<h2 id="repo:0b28ac4f2a3963b5632e45371a251515">Repo</h2>
+
+<ul>
+<li><a href="https://github.com/Akagi201/list">https://github.com/Akagi201/list</a></li>
+</ul>
+
+<h2 id="refs:0b28ac4f2a3963b5632e45371a251515">Refs</h2>
+
+<ul>
+<li><a href="http://isis.poly.edu/kulesh/stuff/src/klist/">http://isis.poly.edu/kulesh/stuff/src/klist/</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://akagi201.github.io/blog/a-file-oriented-c-cpp-dependency-manager-biicode/">
+        A File-oriented C/C&#43;&#43; Dependency Manager Biicode
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Mar 16, 2015</span>
+
+    
+
+<p>Biicode is a file-oriented Dependencies Manager for C and C++ developers.</p>
+
+<h2 id="features:2055adacb55920d35b64e7e2263bb34a">Features</h2>
+
+<ul>
+<li>在C++中实现Go语言的modularity, 类似低是通过写合适的<code>#include</code>语句实现.</li>
+<li>文件级别的依赖管理, 重用已有项目的任何独立文件.</li>
+<li>使用一条命令分享和发布到biicode</li>
+<li>不用打包, 直接使用源码进行模块管理.</li>
+<li>基于CMake编译</li>
+<li>支持依赖包的版本控制.</li>
+<li>biicode保存meta-data在文本文件中.</li>
+</ul>
+
+<h2 id="docs:2055adacb55920d35b64e7e2263bb34a">docs</h2>
+
+<ul>
+<li><a href="http://docs.biicode.com/c++.html">http://docs.biicode.com/c++.html</a></li>
+</ul>
+
+<h2 id="基础命令:2055adacb55920d35b64e7e2263bb34a">基础命令</h2>
+
+<ul>
+<li>版本: <code>bii version</code></li>
+<li>检查并安装编译工具: <code>bii setup:cpp</code></li>
+<li>搜索依赖: <code>bii find</code></li>
+<li>编译: <code>bii cpp:build</code></li>
+<li>创建项目: <code>bii init myproject</code>, 生成<code>bii</code>目录</li>
+<li>创建hello world项目: <code>bii new myuser/myblock --hello=cpp</code>, 生成<code>blocks</code>目录.</li>
+<li>发布到biicode: <code>bii publish</code> 默认发布到<code>DEV</code>, 每次默认覆盖上次的<code>DEV</code>代码.</li>
+<li>Release life-cycle tags: DEV, ALPHA, BETA, STABLE. <code>bii publish --tag=STABLE</code></li>
+<li>清理编译生成的结果: <code>bii clean</code></li>
+<li>下载一个block到本地项目block中: <code>bii open owner/block_name</code></li>
+</ul>
+
+<h2 id="吐槽:2055adacb55920d35b64e7e2263bb34a">吐槽</h2>
+
+<ul>
+<li>支持nodejs是什么鬼啊! 就算技术上能实现, 可不可以完善好C/C++再搞其他的.</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://akagi201.github.io/blog/simple-time-round-in-kernel/">
         简单的内核态时间片轮转程序
       </a>
@@ -358,233 +513,6 @@
 <li>成果物: <code>objs/include/srs_librtmp.h</code> <code>objs/lib/srs_librtmp.a</code></li>
 <li>examples: <code>research/librtmp</code> <a href="https://github.com/winlinvip/simple-rtmp-server/wiki/v2_CN_SrsLibrtmp#srs-librtmp-examples">https://github.com/winlinvip/simple-rtmp-server/wiki/v2_CN_SrsLibrtmp#srs-librtmp-examples</a></li>
 <li>源码: <code>src</code></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://akagi201.github.io/blog/learning-state-threads/">
-        学习State Threads
-      </a>
-    </h1>
-
-    <span class="post-date">Tue, Mar 10, 2015</span>
-
-    
-
-<iframe src="https://atlas.mindmup.com/akagi201/learning_state_threads/index.html" width="600" height="300"></iframe>
-
-<p>State Threads(简称ST)是一个C语言轻量级用户层的线程库, 总共4631行C代码. 这个线程库有助于开发者实现一个具有高性能和可扩展性的网络应用程序. 是Apache项目里面的一个子项目.(?Apache以前听说是用的select啊, 可能apache最后没用st, 懒得去考证了)</p>
-
-<pre><code>akagi201@akrmbp ~/Documents/state-threads (master) $ cloc .
-      41 text files.
-      38 unique files.
-      11 files ignored.
-
-http://cloc.sourceforge.net v 1.62  T=0.22 s (139.8 files/s, 61376.1 lines/s)
----------------------------------------------------------------------------------------
-Language                             files          blank        comment           code
----------------------------------------------------------------------------------------
-C                                       16           1046           1174           4631
-HTML                                     3            236              0           3822
-C/C++ Header                             6            270            288            939
-make                                     3            106            205            364
-Assembly                                 1             31            161            239
-Windows Module Definition                1              0              0             51
-Bourne Shell                             1             10              9             26
----------------------------------------------------------------------------------------
-SUM:                                    31           1699           1837          10072
----------------------------------------------------------------------------------------
-</code></pre>
-
-<h2 id="docs:38d9278d749fcead82dfaa9cdfb529e2">Docs</h2>
-
-<ul>
-<li>项目官方只有4页文档. <a href="http://state-threads.sourceforge.net/docs/index.html">http://state-threads.sourceforge.net/docs/index.html</a></li>
-<li>其中introductory已经被好多国人翻译过了.(见下面Refs)</li>
-</ul>
-
-<h2 id="refs:38d9278d749fcead82dfaa9cdfb529e2">Refs</h2>
-
-<ul>
-<li><a href="http://coolshell.cn/articles/12012.html">http://coolshell.cn/articles/12012.html</a></li>
-<li><a href="https://github.com/zfengzhen/Blog/blob/master/article/%E4%B8%BA%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%80%8C%E7%94%9F%E7%9A%84State%20Threads%5B%E5%B8%B8%E8%A7%81%E5%90%8E%E5%8F%B0%E6%9E%B6%E6%9E%84%E6%B5%85%E6%9E%90%5D.md">https://github.com/zfengzhen/Blog/blob/master/article/%E4%B8%BA%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%80%8C%E7%94%9F%E7%9A%84State%20Threads%5B%E5%B8%B8%E8%A7%81%E5%90%8E%E5%8F%B0%E6%9E%B6%E6%9E%84%E6%B5%85%E6%9E%90%5D.md</a></li>
-<li><a href="http://blog.csdn.net/win_lin/article/details/8242653">http://blog.csdn.net/win_lin/article/details/8242653</a></li>
-<li><a href="https://github.com/wuyu201321060203/wuyu201321060203.github.io/blob/master/_posts/2014-10-15-ST.md">https://github.com/wuyu201321060203/wuyu201321060203.github.io/blob/master/_posts/2014-10-15-ST.md</a></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://akagi201.github.io/blog/a-simple-assembly-program-analysis/">
-        一个简单的汇编程序分析
-      </a>
-    </h1>
-
-    <span class="post-date">Sun, Mar 1, 2015</span>
-
-    
-
-<p>最近打算跟一下<linux内核分析>这门mooc课程. 刚完成了第一周的内容. mindmup内容开源如下:</p>
-
-<iframe src="https://atlas.mindmup.com/akagi201/learning_kernel/index.html" width="600" height="800"></iframe>
-
-<p>这里使用跟linux内核一样的AT&amp;T汇编语法.</p>
-
-<h2 id="at-t-汇编语法注意事项:6263f68368f4d2b872366aacc7002c39">AT&amp;T 汇编语法注意事项</h2>
-
-<ul>
-<li>大小写: 指令语句使用小写字母.</li>
-<li>操作符赋值方向: 第一个为源操作数, 第二个为目的操作数, 方向从左到右, 合乎自然(与C库相反)</li>
-<li>前缀: 寄存器需要加前缀&rdquo;%&ldquo;, 立即数需要加前缀&rdquo;$&ldquo;.</li>
-<li>间接寻址语法: 使用 &ldquo;(&rdquo;, &ldquo;)&rdquo;</li>
-<li>后缀: 大部分指令操作码的最后一个字母表示操作数大小, &ldquo;b&rdquo;表示byte, &ldquo;w&rdquo;表示word(2个字节), &ldquo;l&rdquo;表示long(4个字节).</li>
-<li>注释: @用于一行代码后面添加注释内容, #是整行注释.</li>
-</ul>
-
-<h2 id="简单的c源程序:6263f68368f4d2b872366aacc7002c39">简单的C源程序</h2>
-
-<pre><code>/*
- * @file main.c
- * @author Akagi201
- * @date 2015/03/01
- *
- * A simple code to learn how assembly code works.
- * build on linux x64: gcc -S -o main.s main.c -m32
- */
-
-int g(int x) {
-  return x + 3;
-}
-
-int f(int x) {
-  return g(x);
-}
-
-int main (void) {
-  return f(8) + 1;
-}
-
-</code></pre>
-
-<h2 id="linux-x64平台汇编命令:6263f68368f4d2b872366aacc7002c39">Linux x64平台汇编命令</h2>
-
-<p><img src="http://akagi201.qiniudn.com/assembly.png" alt="asm" />
-</p>
-
-<ul>
-<li>我的编译环境是: 物理机是rmbp, 运行的virtualbox, guest OS是gentoo x64.</li>
-<li>汇编命令: <code>gcc –S –o main.s main.c -m32</code></li>
-<li>将得到的main.s文件中以.开头的行删掉(用于辅助链接的).</li>
-<li>生成的汇编代码中增加了部分注释说明了程序执行的过程.</li>
-</ul>
-
-<pre><code>g:
-	pushl	%ebp
-	movl	%esp, %ebp
-	movl	8(%ebp), %eax # eax = 8
-	addl	$3, %eax # eax = 8 + 3 = 11
-	popl	%ebp
-	ret
-
-f:
-	pushl	%ebp
-	movl	%esp, %ebp # 每个函数前两句都是这个, 用于保存上一个堆栈的栈顶, 跟清空出一个新的堆栈
-	subl	$4, %esp
-	movl	8(%ebp), %eax # eax = 8
-	movl	%eax, (%esp) # 把8放到栈顶
-	call	g # 跳到g标号
-	leave
-	ret
-
-main:
-	pushl	%ebp # 将当前ebp的值压栈, 同时esp的值被修改(即减4)
-	movl	%esp, %ebp # 将ebp指向esp
-	subl	$4, %esp # 将esp向下移动一个位置
-	movl	$8, (%esp) # 将立即数8赋值给esp指向的位置(即当前的栈顶)
-	call	f # 等价于两条语句 pushl eip; movl f eip =&gt; 当前eip实际指向addl $1, %eax这条指令, 跳转到f标号处执行
-	addl	$1, %eax # eax = 11 + 1 = 12
-	leave
-	ret # 最终ebp, esp回到main函数最初的栈的位置.
-
-</code></pre>
-
-<h2 id="备注:6263f68368f4d2b872366aacc7002c39">备注</h2>
-
-<ul>
-<li>本文为刘博原创作品转载请注明出处.</li>
-<li>《Linux内核分析》MOOC课程<a href="http://mooc.study.163.com/course/USTC-1000029000">http://mooc.study.163.com/course/USTC-1000029000</a></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://akagi201.github.io/blog/parents-network/">
-        教不懂电脑的父母上网
-      </a>
-    </h1>
-
-    <span class="post-date">Thu, Feb 19, 2015</span>
-
-    
-
-<p>估计跟我一样80后的人都会涉及这个头大的问题, &ldquo;教父母上网&rdquo;. 下面整理些要点.</p>
-
-<h2 id="父母知识背景:dcbf7deb443f2c3061d933a6626bb95a">父母知识背景</h2>
-
-<p>父母虽然年轻时候也算接受过一些中等教育, 不过工作不是从事脑力方面, 学习能力几乎为零. 电脑跟智能手机方面知识几乎为零. 不手把手教, 一点不肯学, 不学习借口一堆.</p>
-
-<h2 id="想要教的东西:dcbf7deb443f2c3061d933a6626bb95a">想要教的东西</h2>
-
-<ul>
-<li>基本的硬件组成跟连接</li>
-<li>拼音打字, 基本快捷键</li>
-<li>帮助注册邮箱跟必备的账号</li>
-<li>QQ, 包含语音跟视频</li>
-<li>淘宝等网上购物</li>
-<li>推荐一些应该上的网站</li>
-<li>打免费电话</li>
-<li>手机上好用的app</li>
-</ul>
-
-<h2 id="email-qq:dcbf7deb443f2c3061d933a6626bb95a">email, qq</h2>
-
-<ul>
-<li>要求不需要翻墙, 中文界面</li>
-<li>选择qq邮箱(需要手机号才行)</li>
-<li>备用邮箱用我的, 密码, 密保跟账号我都保留记录好.</li>
-<li>加我的账号为好友</li>
-</ul>
-
-<h2 id="电脑上软件:dcbf7deb443f2c3061d933a6626bb95a">电脑上软件</h2>
-
-<ul>
-<li>装了腾讯系列的浏览器, 电脑管家等, 先观察看看, 不行就换360吧.</li>
-<li>qq, 千牛, 迅雷, 360wifi, winrar, 酷盘, 百度云, 搜狗输入法, 爱奇艺PPS(看综艺节目)</li>
-</ul>
-
-<h2 id="电脑硬件配件:dcbf7deb443f2c3061d933a6626bb95a">电脑硬件配件</h2>
-
-<ul>
-<li>耳机插孔的双音响(不需要配件, 连接不无线的简单)</li>
-<li>耳麦, 摄像头(用于远程视频通话)</li>
-<li>360随身wifi(家里这边移动宽带限制, 路由器上拨号失败, 只能电脑上拨号, 用于分享网络给手机)</li>
-</ul>
-
-<h2 id="引导使用的网站:dcbf7deb443f2c3061d933a6626bb95a">引导使用的网站</h2>
-
-<ul>
-<li>我的博客, 我公司的网站, 淘宝, 支付宝, 知乎, 优酷, 爱奇艺PPS, 百度地图, 携程, V2EX, 百度云.</li>
-</ul>
-
-<h2 id="手机app:dcbf7deb443f2c3061d933a6626bb95a">手机app</h2>
-
-<ul>
-<li>红米+酷派大神+小米充电宝 两台</li>
-<li>微信, 微博, qq, 支付宝, 淘宝, 千牛, 百度地图, qq邮箱, 爱奇艺, 优酷, 携程, 虾米音乐, 易信, 叮叮, 滴滴打车, 手机营业厅</li>
 </ul>
 
   </div>

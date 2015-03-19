@@ -6,8 +6,154 @@
     <description>Recent content on Akagi201</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2015 10:45:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2015 11:32:26 +0800</lastBuildDate>
     <atom:link href="http://akagi201.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>break GxFxW</title>
+      <link>http://akagi201.github.io/blog/break-firewall/</link>
+      <pubDate>Thu, 19 Mar 2015 11:32:26 +0800</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/break-firewall/</guid>
+      <description>
+
+&lt;h2 id=&#34;gxfxw工作方式:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;GxFxW工作方式&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GxFxW本身是一个人人都知道他的存在, 却从来不会被官方承认的机构.&lt;/li&gt;
+&lt;li&gt;GxFxW封锁重点: 新闻, 社交, 政治, 色情, 文件共享类网站.&lt;/li&gt;
+&lt;li&gt;DNS劫持和污染: DNS缓存投毒, 虚假IP劫持, 空包劫持, 轻松的扩展污染.&lt;/li&gt;
+&lt;li&gt;敏感词过滤.&lt;/li&gt;
+&lt;li&gt;IP阻断.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;网络工具:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;网络工具&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;nslookup&lt;/li&gt;
+&lt;li&gt;ping, tcping&lt;/li&gt;
+&lt;li&gt;traceroute&lt;/li&gt;
+&lt;li&gt;route&lt;/li&gt;
+&lt;li&gt;dig&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;openwrt组件:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;OpenWrt组件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ipset&lt;/li&gt;
+&lt;li&gt;iptables-mod-ipopt, kmod-ipt-ipopt&lt;/li&gt;
+&lt;li&gt;ip&lt;/li&gt;
+&lt;li&gt;iptables-mod-filter, kmod-ipt-filter&lt;/li&gt;
+&lt;li&gt;iptables-mod-u32, kmod-ipt-u32&lt;/li&gt;
+&lt;li&gt;ppp-mod-pptp&lt;/li&gt;
+&lt;li&gt;openvpn-ssl&lt;/li&gt;
+&lt;li&gt;dnsmasq-full&lt;/li&gt;
+&lt;li&gt;bind-dig, bind-libs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;refs:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;freerouter_v2&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>移植linux内核的list.h到用户态</title>
+      <link>http://akagi201.github.io/blog/port-list_h-in-kernel-to-userspace/</link>
+      <pubDate>Wed, 18 Mar 2015 08:32:26 +0800</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/port-list_h-in-kernel-to-userspace/</guid>
+      <description>
+
+&lt;p&gt;以前工作的时候在项目里使用过的, 随着离职, 代码已经无法找到了. :(&lt;/p&gt;
+
+&lt;p&gt;没关系这次放到github上面就不会丢失了.&lt;/p&gt;
+
+&lt;h2 id=&#34;features:0b28ac4f2a3963b5632e45371a251515&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Type Oblivious&lt;/li&gt;
+&lt;li&gt;Portable&lt;/li&gt;
+&lt;li&gt;Easy to Use&lt;/li&gt;
+&lt;li&gt;Readable&lt;/li&gt;
+&lt;li&gt;Saves Time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;usages:0b28ac4f2a3963b5632e45371a251515&#34;&gt;Usages&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;List is inside the data item you want to link together.&lt;/li&gt;
+&lt;li&gt;You can put &lt;code&gt;struct list_head&lt;/code&gt; anywhere in your structure.&lt;/li&gt;
+&lt;li&gt;You can name &lt;code&gt;struct list_head&lt;/code&gt; variable anything you wish.&lt;/li&gt;
+&lt;li&gt;You can have multiple lists!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;repo:0b28ac4f2a3963b5632e45371a251515&#34;&gt;Repo&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Akagi201/list&#34;&gt;https://github.com/Akagi201/list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;refs:0b28ac4f2a3963b5632e45371a251515&#34;&gt;Refs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://isis.poly.edu/kulesh/stuff/src/klist/&#34;&gt;http://isis.poly.edu/kulesh/stuff/src/klist/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A File-oriented C/C&#43;&#43; Dependency Manager Biicode</title>
+      <link>http://akagi201.github.io/blog/a-file-oriented-c-cpp-dependency-manager-biicode/</link>
+      <pubDate>Mon, 16 Mar 2015 04:45:08 +0800</pubDate>
+      
+      <guid>http://akagi201.github.io/blog/a-file-oriented-c-cpp-dependency-manager-biicode/</guid>
+      <description>
+
+&lt;p&gt;Biicode is a file-oriented Dependencies Manager for C and C++ developers.&lt;/p&gt;
+
+&lt;h2 id=&#34;features:2055adacb55920d35b64e7e2263bb34a&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在C++中实现Go语言的modularity, 类似低是通过写合适的&lt;code&gt;#include&lt;/code&gt;语句实现.&lt;/li&gt;
+&lt;li&gt;文件级别的依赖管理, 重用已有项目的任何独立文件.&lt;/li&gt;
+&lt;li&gt;使用一条命令分享和发布到biicode&lt;/li&gt;
+&lt;li&gt;不用打包, 直接使用源码进行模块管理.&lt;/li&gt;
+&lt;li&gt;基于CMake编译&lt;/li&gt;
+&lt;li&gt;支持依赖包的版本控制.&lt;/li&gt;
+&lt;li&gt;biicode保存meta-data在文本文件中.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;docs:2055adacb55920d35b64e7e2263bb34a&#34;&gt;docs&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.biicode.com/c++.html&#34;&gt;http://docs.biicode.com/c++.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;基础命令:2055adacb55920d35b64e7e2263bb34a&#34;&gt;基础命令&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;版本: &lt;code&gt;bii version&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;检查并安装编译工具: &lt;code&gt;bii setup:cpp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;搜索依赖: &lt;code&gt;bii find&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编译: &lt;code&gt;bii cpp:build&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建项目: &lt;code&gt;bii init myproject&lt;/code&gt;, 生成&lt;code&gt;bii&lt;/code&gt;目录&lt;/li&gt;
+&lt;li&gt;创建hello world项目: &lt;code&gt;bii new myuser/myblock --hello=cpp&lt;/code&gt;, 生成&lt;code&gt;blocks&lt;/code&gt;目录.&lt;/li&gt;
+&lt;li&gt;发布到biicode: &lt;code&gt;bii publish&lt;/code&gt; 默认发布到&lt;code&gt;DEV&lt;/code&gt;, 每次默认覆盖上次的&lt;code&gt;DEV&lt;/code&gt;代码.&lt;/li&gt;
+&lt;li&gt;Release life-cycle tags: DEV, ALPHA, BETA, STABLE. &lt;code&gt;bii publish --tag=STABLE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;清理编译生成的结果: &lt;code&gt;bii clean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;下载一个block到本地项目block中: &lt;code&gt;bii open owner/block_name&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;吐槽:2055adacb55920d35b64e7e2263bb34a&#34;&gt;吐槽&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;支持nodejs是什么鬼啊! 就算技术上能实现, 可不可以完善好C/C++再搞其他的.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>简单的内核态时间片轮转程序</title>
@@ -760,50 +906,6 @@ limitations under the License.
 &lt;li&gt;&lt;code&gt;libcurl&lt;/code&gt;的源码在&lt;code&gt;lib/&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;API example&lt;/code&gt;的源码在&lt;code&gt;docs/examples&lt;/code&gt;下.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Google C&#43;&#43; Testing Framework</title>
-      <link>http://akagi201.github.io/blog/learning-gtest/</link>
-      <pubDate>Thu, 04 Dec 2014 21:35:26 +0800</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-gtest/</guid>
-      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_gtest/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;最近接触不少有趣的小项目, 让我重拾C语言的乐趣了. 现在移动和web发展非常块, web领域技术的发展, 也推进了底层技术的发展. &lt;code&gt;clib&lt;/code&gt;就让我对&lt;code&gt;js&lt;/code&gt;跟&lt;code&gt;node&lt;/code&gt;这帮人的印象大大改观.&lt;/p&gt;
-
-&lt;p&gt;跟着牛人的脚本慢慢前进是不会错的. 选择了&lt;code&gt;CLion&lt;/code&gt;, 导致选择了&lt;code&gt;CMake&lt;/code&gt;, 又由&lt;code&gt;CMake&lt;/code&gt;跟&lt;code&gt;CLion&lt;/code&gt;选择了&lt;code&gt;GTest&lt;/code&gt;. 学习下来发现都是好东西.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Google C++ Testing Framework&lt;/code&gt;简称&lt;code&gt;GTest&lt;/code&gt;, 跟&lt;code&gt;CMake&lt;/code&gt;集成的非常好, 而且他本身就是用&lt;code&gt;CMake&lt;/code&gt;编译的, 作为一个转向&lt;code&gt;CMake&lt;/code&gt;开发者来说, 这是极赞的.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;GTest&lt;/code&gt;文档相应比较少, 对于新手来说可能有点曲线, 我写了几个集成&lt;code&gt;Makefile&lt;/code&gt;跟&lt;code&gt;CMake&lt;/code&gt;的例子, 可以看看: &lt;a href=&#34;https://github.com/Akagi201/learning-gtest&#34;&gt;https://github.com/Akagi201/learning-gtest&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Libuv</title>
-      <link>http://akagi201.github.io/blog/learning-libuv/</link>
-      <pubDate>Thu, 13 Nov 2014 01:50:26 +0800</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-libuv/</guid>
-      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_libuv/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;想研究libuv很久了, 一直没有用他的机会, 这次项目中有个多进程管理的地方, 正纠结怎么操作麻烦的信号量时, 想起libuv也可以完成这件事, 所以, 赶紧用起来. 不用白不用.&lt;/p&gt;
-
-&lt;p&gt;Lua在嵌入式领域大有可以, 可以编译成一个liblua.a的库静态连接到C程序, 还有很多丰富的工具, 本身语言有非常小巧, 以后还是多用lua写写, 方便移植啊. 多平台各种差异, 搞死人啊.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning uC/OS</title>
-      <link>http://akagi201.github.io/blog/learning-ucos/</link>
-      <pubDate>Thu, 13 Nov 2014 01:28:26 +0800</pubDate>
-      
-      <guid>http://akagi201.github.io/blog/learning-ucos/</guid>
-      <description>&lt;iframe src=&#34;https://atlas.mindmup.com/akagi201/learning_ucos/index.html&#34; height=&#34;100%&#34; width = &#34;100%&#34; &gt;&lt;/iframe&gt;
-
-&lt;p&gt;最近比较粗略的学习了一下uC/OS-II的系统, 感觉设计上中规中矩吧, 很多类似的结构, 应该可以设计得更精简些的, 不过, 在单片机系统上用的还是蛮多的. 其中任务就绪表跟内存管理部分, 还需要有空再详细看看.&lt;/p&gt;
 </description>
     </item>
     

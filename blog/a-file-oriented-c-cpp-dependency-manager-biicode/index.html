@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A File-oriented C/C&#43;&#43; Dependency Manager Biicode &middot; Akagi201 </title>
+
+  
+  <link rel="stylesheet" href="http://akagi201.github.io//css/poole.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/syntax.css">
+  <link rel="stylesheet" href="http://akagi201.github.io//css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Akagi201" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://www.gravatar.com/avatar/fe6efcdd159a897e3937d132538129bb?s=200" alt="gravatar">
+      <h1>Akagi201</h1>
+      <p class="lead">
+      The quieter, the more!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      <li><a href="http://akagi201.github.io//blog">Blog</a> </li>
+      
+      <li><a href="http://akagi201.github.io//book">Book</a> </li>
+      
+      <li><a href="http://akagi201.github.io//talk">Talk</a> </li>
+      
+      <li><a href="http://akagi201.github.io//project">Project</a> </li>
+      
+      <li><a href="http://akagi201.github.io//about">About</a> </li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://github.com/Akagi201">GitHub</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://plus.google.com/&#43;BobLiuAkagi201">Google+</a></li>
+      
+      
+      
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://akagi201.github.io//license">License</a><br/>
+      Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/spf13/hyde">Hyde</a></p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A File-oriented C/C&#43;&#43; Dependency Manager Biicode</h1>
+  <span class="post-date">Mon, Mar 16, 2015</span>
+      
+
+<p>Biicode is a file-oriented Dependencies Manager for C and C++ developers.</p>
+
+<h2 id="features:2055adacb55920d35b64e7e2263bb34a">Features</h2>
+
+<ul>
+<li>在C++中实现Go语言的modularity, 类似低是通过写合适的<code>#include</code>语句实现.</li>
+<li>文件级别的依赖管理, 重用已有项目的任何独立文件.</li>
+<li>使用一条命令分享和发布到biicode</li>
+<li>不用打包, 直接使用源码进行模块管理.</li>
+<li>基于CMake编译</li>
+<li>支持依赖包的版本控制.</li>
+<li>biicode保存meta-data在文本文件中.</li>
+</ul>
+
+<h2 id="docs:2055adacb55920d35b64e7e2263bb34a">docs</h2>
+
+<ul>
+<li><a href="http://docs.biicode.com/c++.html">http://docs.biicode.com/c++.html</a></li>
+</ul>
+
+<h2 id="基础命令:2055adacb55920d35b64e7e2263bb34a">基础命令</h2>
+
+<ul>
+<li>版本: <code>bii version</code></li>
+<li>检查并安装编译工具: <code>bii setup:cpp</code></li>
+<li>搜索依赖: <code>bii find</code></li>
+<li>编译: <code>bii cpp:build</code></li>
+<li>创建项目: <code>bii init myproject</code>, 生成<code>bii</code>目录</li>
+<li>创建hello world项目: <code>bii new myuser/myblock --hello=cpp</code>, 生成<code>blocks</code>目录.</li>
+<li>发布到biicode: <code>bii publish</code> 默认发布到<code>DEV</code>, 每次默认覆盖上次的<code>DEV</code>代码.</li>
+<li>Release life-cycle tags: DEV, ALPHA, BETA, STABLE. <code>bii publish --tag=STABLE</code></li>
+<li>清理编译生成的结果: <code>bii clean</code></li>
+<li>下载一个block到本地项目block中: <code>bii open owner/block_name</code></li>
+</ul>
+
+<h2 id="吐槽:2055adacb55920d35b64e7e2263bb34a">吐槽</h2>
+
+<ul>
+<li>支持nodejs是什么鬼啊! 就算技术上能实现, 可不可以完善好C/C++再搞其他的.</li>
+</ul>
+
+</div>
+</div>
+
+  </body>
+</html>
