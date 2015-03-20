@@ -30,11 +30,10 @@
 &lt;h2 id=&#34;网络工具:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;网络工具&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;nslookup&lt;/li&gt;
-&lt;li&gt;ping, tcping&lt;/li&gt;
-&lt;li&gt;traceroute&lt;/li&gt;
-&lt;li&gt;route&lt;/li&gt;
-&lt;li&gt;dig&lt;/li&gt;
+&lt;li&gt;ping, tcping(可测tcp端口) 测试网络是否连通&lt;/li&gt;
+&lt;li&gt;traceroute 显示路由跳跃情况&lt;/li&gt;
+&lt;li&gt;route (netstat -nr) 打印和修改本地路由表&lt;/li&gt;
+&lt;li&gt;dig/nslookup 解析域名&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;openwrt组件:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;OpenWrt组件&lt;/h2&gt;
@@ -54,7 +53,9 @@
 &lt;h2 id=&#34;refs:1a79e2e6f86f6cb637f43dff18cb85a4&#34;&gt;Refs&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;freerouter_v2&lt;/li&gt;
+&lt;li&gt;freerouter_v2 &lt;a href=&#34;http://www.lifetyper.com/&#34;&gt;http://www.lifetyper.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.chinagfw.org/&#34;&gt;http://www.chinagfw.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.greatfire.org/&#34;&gt;https://zh.greatfire.org/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
